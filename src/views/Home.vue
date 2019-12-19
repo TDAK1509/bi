@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <page-title>BÁO CÁO TÀI CHÍNH</page-title>
+
     <div class="home__transaction-filter">
       <transaction-filter @filter="onFilter" />
 
@@ -25,12 +27,14 @@
 import TransactionFilter from "@/components/TransactionFilter.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 import TransactionFilterContent from "@/components/TransactionFilterContent.vue";
+import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue } from "vue-property-decorator";
 import { FilterType, TransactionView } from "@/models/transaction";
 import filtersMixin from "@/mixins/filters";
 
 @Component({
   components: {
+    PageTitle,
     TransactionFilter,
     TransactionTable,
     TransactionFilterContent

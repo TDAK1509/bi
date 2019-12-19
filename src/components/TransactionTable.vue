@@ -11,8 +11,17 @@
           {{ props.row.date }}
         </b-table-column>
 
-        <b-table-column field="client" label="Khách Hàng" sortable searchable>
-          {{ props.row.client }}
+        <b-table-column
+          field="client_name"
+          label="Khách Hàng"
+          sortable
+          searchable
+        >
+          <b-tooltip label="Xem chi tiết khách hàng" type="is-dark">
+            <router-link :to="`/client/${props.row.client_id}`">{{
+              props.row.client_name
+            }}</router-link>
+          </b-tooltip>
         </b-table-column>
 
         <b-table-column

@@ -31,4 +31,16 @@ export default {
 #app {
   color: #000;
 }
+
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Links
+$link: $link;
+$link-invert: $link-invert;
+$link-focus-border: $link;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
