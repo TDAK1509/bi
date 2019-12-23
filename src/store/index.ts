@@ -1,8 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "axios";
-import { ApiUrl } from "@/api/api-url";
-import { TransactionView, Client } from "@/models/transaction";
+import {
+  TransactionView,
+  Client,
+  ClientInfo,
+  ClientToAddToDatabase
+} from "@/models/transaction";
+import * as API from "@/api/api-methods";
+import { formatDateToString } from "@/utils/date";
 
 Vue.use(Vuex);
 
@@ -55,6 +60,14 @@ export default new Vuex.Store({
           return date.getFullYear() === state.filterValue;
         }
       );
+    },
+
+    clientList: function(state): ClientInfo[] {
+      const clientList: ClientInfo[] = [];
+      state.clients.forEach(client => {
+        clientList.push({ id: client._id, name: client.name });
+      });
+      return clientList;
     }
   },
 
@@ -68,155 +81,49 @@ export default new Vuex.Store({
   },
 
   actions: {
-    async getClients({ commit }) {
-      // const response = await axios.get(ApiUrl.GET_CLIENT);
-      // commit("setClient", response.data());
+    async fetchClients({ commit }) {
+      const clients: Client[] = await API.getAllClients();
+      commit("setClients", clients);
+    },
 
-      const client: Client[] = [
-        {
-          _id: 1,
-          name: "Nguyen Van A",
-          created_at: "2019-09-13",
-          transactions: [
-            {
-              _id: 1,
-              date: "2018-09-15",
-              name: "Anh A mua 5kg cam",
-              type: "VCB 0331003811273",
-              amount: 100000
-            },
+    async addTransaction({ state }, { clientId, transaction }) {
+      await API.addTransaction(clientId, transaction);
 
-            {
-              _id: 2,
-              date: "2019-09-16",
-              name: "Anh B mua 6kg cam",
-              type: "VCB 0331003811273",
-              amount: 100000
-            },
+      const clientToAdd: Client | undefined = state.clients.find(
+        (client: Client) => client._id === clientId
+      );
 
-            {
-              _id: 3,
-              date: "2019-12-13",
-              name: "Anh C mua 7kg cam",
-              type: "Tien Mat",
-              amount: 100000
-            },
+      // No need to commit because clientToAdd is not cloned
+      if (typeof clientToAdd !== "undefined")
+        clientToAdd.transactions.push(transaction);
+    },
 
-            {
-              _id: 4,
-              date: "2019-09-17",
-              name: "Anh D mua 8kg cam",
-              type: "Tien Mat",
-              amount: 100000
-            },
+    async addClient({ state, commit }, clientName: string) {
+      const newClientInfo: ClientToAddToDatabase = {
+        name: clientName,
+        created_at: formatDateToString(new Date()),
+        transactions: [],
+        debts: []
+      };
+      const clientId = await API.addClient(newClientInfo);
 
-            {
-              _id: 5,
-              date: "2019-12-17",
-              name: "Tra no 2 part 1",
-              type: "Tien Mat",
-              amount: 50000
-            },
+      const client: Client = {
+        _id: clientId,
+        ...newClientInfo
+      };
 
-            {
-              _id: 6,
-              date: "2019-12-18",
-              name: "Tra no 2 part 2",
-              type: "Tien Mat",
-              amount: 40000
-            }
-          ],
-          debts: [
-            {
-              _id: 1,
-              date: "2019-09-11",
-              name: "Tai sao no 1",
-              amount: 20000,
-              paid_transaction_list: []
-            },
+      commit("setClients", [...state.clients, client]);
+    },
 
-            {
-              _id: 2,
-              date: "2019-07-11",
-              name: "Tai sao no 2",
-              amount: 100000,
-              paid_transaction_list: [
-                {
-                  id: 5,
-                  amount: 50000
-                },
-                {
-                  id: 6,
-                  amount: 40000
-                }
-              ]
-            }
-          ]
-        },
+    async addDebt({ state }, { clientId, debt }) {
+      await API.addDebt(clientId, debt);
 
-        {
-          _id: 2,
-          name: "Mike Miller",
-          created_at: "2019-09-13",
-          transactions: [
-            {
-              _id: 1,
-              date: "2019-09-25",
-              name: "Vai lon Mike",
-              type: "Tien Mat",
-              amount: 100000
-            },
+      const clientToAdd: Client | undefined = state.clients.find(
+        (client: Client) => client._id === clientId
+      );
 
-            {
-              _id: 2,
-              date: "2019-08-11",
-              name: "I'm Mike",
-              type: "Tien Mat",
-              amount: 100000
-            },
-
-            {
-              _id: 3,
-              date: "2019-12-13",
-              name: "Mike Casillas",
-              type: "VCB 0331003811273",
-              amount: 100000
-            },
-
-            {
-              _id: 4,
-              date: "2019-09-17",
-              name: "Still Mike",
-              type: "VCB 0331003811273",
-              amount: 100000
-            }
-          ],
-          debts: [
-            {
-              _id: 1,
-              date: "2019-05-11",
-              name: "Tai sao no 3",
-              amount: 200000,
-              paid_transaction_list: [
-                {
-                  id: 3,
-                  amount: 100000
-                }
-              ]
-            },
-
-            {
-              _id: 2,
-              date: "2019-07-11",
-              name: "Tai sao no 4",
-              amount: 100000,
-              paid_transaction_list: []
-            }
-          ]
-        }
-      ];
-
-      commit("setClients", client);
+      // No need to commit because clientToAdd is not cloned
+      if (typeof clientToAdd !== "undefined") clientToAdd.debts.push(debt);
     }
   }
 });

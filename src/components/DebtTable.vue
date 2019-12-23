@@ -70,9 +70,14 @@
         <section class="section">
           <div class="content has-text-grey has-text-centered">
             <p>
-              <b-icon icon="sad-tear" pack="fas" size="is-large"></b-icon>
+              <b-icon
+                icon="laugh-beam"
+                pack="fas"
+                size="is-large"
+                type="is-success"
+              ></b-icon>
             </p>
-            <p>Không có giao dịch nào.</p>
+            <p>Không nợ nần gì cả.</p>
           </div>
         </section>
       </template>

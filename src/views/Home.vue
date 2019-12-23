@@ -20,6 +20,23 @@
       class="home__transaction-table"
       :transactions="transactionsToShow"
     />
+
+    <add-button @click="isShowAddModal = true" />
+
+    <b-modal
+      :active.sync="isShowAddModal"
+      has-modal-card
+      trap-focus
+      aria-role="dialog"
+      aria-modal
+    >
+      <transaction-modal-add
+        :is-adding-client="isAddingClient"
+        :is-adding-transaction="isAddingTransaction"
+        @add-transaction="addTransaction"
+        @add-client="addClient"
+      />
+    </b-modal>
   </div>
 </template>
 
@@ -27,9 +44,16 @@
 import TransactionFilter from "@/components/TransactionFilter.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 import TransactionFilterContent from "@/components/TransactionFilterContent.vue";
+import AddButton from "@/components/AddButton.vue";
+import TransactionModalAdd from "@/components/TransactionModalAdd.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue } from "vue-property-decorator";
-import { FilterType, TransactionView } from "@/models/transaction";
+import {
+  FilterType,
+  TransactionView,
+  Transaction,
+  Client
+} from "@/models/transaction";
 import filtersMixin from "@/mixins/filters";
 
 @Component({
@@ -37,12 +61,17 @@ import filtersMixin from "@/mixins/filters";
     PageTitle,
     TransactionFilter,
     TransactionTable,
-    TransactionFilterContent
+    TransactionFilterContent,
+    AddButton,
+    TransactionModalAdd
   },
   mixins: [filtersMixin]
 })
 export default class Home extends Vue {
   filterType: FilterType = "month";
+  isShowAddModal: boolean = false;
+  isAddingClient: boolean = false;
+  isAddingTransaction: boolean = false;
 
   get transactionsToShow(): TransactionView[] {
     if (this.filterType === "month") {
@@ -80,6 +109,42 @@ export default class Home extends Vue {
       const filterValue = new Date().getFullYear();
       this.$store.commit("setFilterValue", filterValue);
     }
+  }
+
+  async addTransaction(transactionView: TransactionView) {
+    this.isAddingTransaction = true;
+
+    const transaction: Transaction = {
+      date: transactionView.date,
+      name: transactionView.name,
+      type: transactionView.type,
+      amount: transactionView.amount
+    };
+
+    await this.$store.dispatch("addTransaction", {
+      clientId: transactionView.client_id,
+      transaction
+    });
+
+    this.isAddingTransaction = false;
+
+    this.$buefy.toast.open({
+      message: `Thêm giao dịch thành công!`,
+      type: "is-success"
+    });
+
+    this.isShowAddModal = false;
+  }
+
+  async addClient(clientName: string) {
+    this.isAddingClient = true;
+    await this.$store.dispatch("addClient", clientName);
+    this.isAddingClient = false;
+
+    this.$buefy.toast.open({
+      message: `Khách hàng ${clientName} đã được tạo!`,
+      type: "is-success"
+    });
   }
 }
 </script>

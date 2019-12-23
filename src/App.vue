@@ -17,7 +17,7 @@ export default {
 
   methods: {
     getClients() {
-      return this.$store.dispatch("getClients");
+      return this.$store.dispatch("fetchClients");
     }
   },
 

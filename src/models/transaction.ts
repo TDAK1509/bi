@@ -1,5 +1,4 @@
 export interface Transaction {
-  _id: string | number;
   date: string;
   name: string;
   type: string;
@@ -8,11 +7,10 @@ export interface Transaction {
 
 export interface TransactionView extends Transaction {
   client_name: string;
-  client_id: string | number;
+  client_id: string;
 }
 
 export interface Debt {
-  _id: string | number;
   date: string;
   name: string;
   amount: number;
@@ -24,16 +22,24 @@ export interface DebtView extends Debt {
 }
 
 export interface DebtTransaction {
-  id: string | number;
+  id: string;
   amount: number;
 }
 
-export interface Client {
-  _id: string | number;
+export interface ClientToAddToDatabase {
   name: string;
   created_at: string;
   transactions: Transaction[];
   debts: Debt[];
+}
+
+export interface Client extends ClientToAddToDatabase {
+  _id: string;
+}
+
+export interface ClientInfo {
+  id: string;
+  name: string;
 }
 
 export type FilterType = "month" | "year" | "all";
