@@ -1,0 +1,1874 @@
+date,client,seller,transaction_type,product_name,quantity,payment_type,amount
+2019-07-01,Kadgeyy,Long,Gdtt,Cam Cành,100g,Tiền Mặt,2300000
+2019-07-01,Kwon,Long,Bưu Cục,Kush Class A,10g,ACB,3000000
+2019-07-01,Phương Đèn Dầu,Long,Gdtt,King Glue,1g,Tiền Mặt,270000
+2019-07-01,Trần Kiên,Mi,Gdtt,Cam Lẻ,15g,Tiền Mặt,500000
+2019-07-01,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-01,Khoa Đoàn,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-07-01,Cậu Minh Tân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-01,Nho Xanh,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-01,Huy 18Cm,Bw Team,Gdtt,Kush Class A,15g,Tiền Mặt,3300000
+2019-07-01,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
+2019-07-01,Dũng ( Quân ) ,Long,Gdtt,Cam Điếu,11 điếu,Tiền Mặt,231000
+2019-07-01,Nam Hoàng,Mi,Bưu Cục,Cam Cành,100g,ACB,2300000
+2019-07-01,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-07-02,Minh Triết,Long,Bưu Cục,Cam Cành,50g,ACB,1200000
+2019-07-02,Tổng Sơn,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-07-02,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-02,Tài Trương,Long,Gdtt,Cam Cành,3000g,Tiền Mặt,54000000
+2019-07-02,Đốm Khánh,Long,Bưu Cục,Cam Cành,200g,ACB,4000000
+2019-07-02,Vũ Mạnh,Long,Bưu Cục,Cam Cành,550g,ACB,11000000
+2019-07-02,Vũ Mạnh,Long,Bưu Cục,Kush Class A,1g,ACB,0
+2019-07-02,Vũ Mạnh,Long,Bưu Cục,Kush Vụn,1g,ACB,0
+2019-07-02,Vid,Duy ,Gdtt,Cam Lọc,850g,VIB,12200000
+2019-07-02,Long Phan,Long,Bưu Cục,Cam Cành,2000g,ACB,36000000
+2019-07-02,Nguyên,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-02,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-07-02,Phạm Hiền,Mi,Ats,Kush Class A,2g,Tiền Mặt,900000
+2019-07-02,Cậu Minh Tân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-02,Khang,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-02,An,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-07-02,Ngọc Đăng,Mi,Gdtt,Cam Điếu,2 điếu,Tiền Mặt,70000
+2019-07-03,Thanh Minh,Mi,Bưu Cục,Golden Glue,5g,ACB,1700000
+2019-07-03,Thanh Minh,Mi,Bưu Cục,King Glue,5g,ACB,1700000
+2019-07-03,Bin,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-04,Tài,Hải,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-07-04,Tài,Hải,Ats,Cam Điếu,3 điếu,Tiền Mặt,100000
+2019-07-04,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-07-04,Khang,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-04,Đỗ Tình,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-04,Cơ Minh,Duy ,Bưu Cục,Cam Lẻ,25g,VIB,1000000
+2019-07-04,Linh,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-04,Hải,Duy ,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-04,Minh,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-05,Sơn,Mi,Ats,Kush Class A,2g,Tiền Mặt,900000
+2019-07-05,Huy 18Cm,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-05,Minh Mario,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-05,Khách Mi,Mi,Gdtt,Cam Điếu,10 điếu,Tiền Mặt,350000
+2019-07-05,Khách Hải,Hải,Đại Ship,Cam Điếu,3 điếu,Tiền Mặt,105000
+2019-07-05,Hoàng Anh,Long,Bưu Cục,Cam Cành,400g,ACB,8000000
+2019-07-05,Trịnh Tú Hải,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-07-05,Trịnh Tú Hải,Long,Bưu Cục,Kush Class A+,10g,ACB,3300000
+2019-07-05,Huy 18Cm,Bw Team,Gdtt,Golden Glue,5g,Tiền Mặt,1200000
+2019-07-06,Huy 18Cm,Bw Team,Gdtt,G4B,5g,Tiền Mặt,1100000
+2019-07-06,Huy 18Cm,Bw Team,Gdtt,Kush Vụn,5g,Tiền Mặt,1000000
+2019-07-06,Huy 18Cm,Bw Team,Gdtt,Golden Glue,4g,Tiền Mặt,960000
+2019-07-06,Huy 18Cm,Bw Team,Gdtt,G4B,1g,Tiền Mặt,220000
+2019-07-06,Phương Đèn Dầu,Long,Gdtt,King Glue,1g,Tiền Mặt,260000
+2019-07-06,An The,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-06,Hằng Nguyễn,Mi,Bưu Cục,Kush Class A,20g,ACB,6000000
+2019-07-06,Nin Pi,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-06,Phú Trịnh,Duy ,Ats,Kush Vụn,2.8g,VIB,1000000
+2019-07-06,An Lê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-06,An Lê,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-07-06,Sandra,Mi,Gdtt,Kush Điếu,1 điếu,Tiền Mặt,250000
+2019-07-06,Sandra,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-07,Xuân Tân,Long,Bưu Cục,Kush Class A+,40g,ACB,9600000
+2019-07-08,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-08,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-08,Huy 18Cm,Bw Team,Gdtt,Kush Vụn,15g,Tiền Mặt,3000000
+2019-07-08,Phương Đèn Dầu,Long,Gdtt,Kush Class A,2g,Tiền Mặt,480000
+2019-07-08,Phương Đèn Dầu,Long,Gdtt,King Glue,1g,Tiền Mặt,260000
+2019-07-08,Long Trần,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-08,Ngọc Hùng,Duy ,Bưu Cục,Cam Cành,100g,VIB,2200000
+2019-07-08,Jackcop,Long,Bưu Cục,Cam Cành,100g,ACB,2300000
+2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,4000000
+2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,250g,ACB,5000000
+2019-07-08,An ,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-08,Vid,Duy ,Gdtt,Cam Lọc,1000g,ACB,14000000
+2019-07-09,Vũ Hiếu,Long,Bưu Cục,Kush Class A,10g,ACB,2500000
+2019-07-09,Tuấn Trần,Duy ,Ats,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-09,Phú Trịnh,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-09,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1900000
+2019-07-09,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,ACB,5100000
+2019-07-09,Vũ Hiếu,Long,Bưu Cục,Cam Lọc,200g,ACB,2700000
+2019-07-09,Tuấn,Long,Gdtt,Cam Lẻ,7g,Tiền Mặt,300000
+2019-07-09,Huy 18Cm,Bw Team,Gdtt,Cam Cành,150g,Tiền Mặt,2550000
+2019-07-09,Huy 18Cm,Bw Team,Gdtt,Sgg,30g,Tiền Mặt,7200000
+2019-07-09,Huy 18Cm,Bw Team,Gdtt,Kush Class A,15g,Tiền Mặt,3300000
+2019-07-09,Long Phan,Long,Bưu Cục,Cam Lọc,1000g,ACB,15000000
+2019-07-09,Long Phan,Long,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-07-09,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-09,Vương Vũ,Phi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-09,Tài Trương,Long,Gdtt,Cam Cành,2000g,Tiền Mặt,36000000
+2019-07-09,Uyên Trúc,Mi,Đại Ship,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-10,Thanh Huyền,Duy ,Bưu Cục,Cam Lọc,1000g,VIB,14000000
+2019-07-10,Thanh Huyền,Duy ,Bưu Cục,Moon I,10g,VIB,6000000
+2019-07-10,Sơn,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-10,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
+2019-07-10,Kim Trường,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-10,Anh Khoa,Mi,Ats,King Glue,10g,Tiền Mặt,3300000
+2019-07-10,Minh Thiện,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-10,Minh,Hải,Ats,Cam Lẻ,5g,VIB,200000
+2019-07-10,Nguyễn Khoa,Mi,Gdtt,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-10,Nguyễn Khoa,Mi,Gdtt,Cam Điếu,2 điếu,Tiền Mặt,70000
+2019-07-10,Nguyên,Duy ,Hải Ship,Kush Class A,1g,Tiền Mặt,400000
+2019-07-10,Trung Phạm,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-11,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-11,Tú Mỡ,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-11,A Hoàng,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-11,Sơn,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-11,Bích Lào Cai,Long,Bưu Cục,King Glue,50g,ACB,13000000
+2019-07-11,Tuấn,Mi,Ats,Cam Điếu,10 điếu,Tiền Mặt,350000
+2019-07-11,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,1000g,ACB,15000000
+2019-07-11,Trang Đà Lạt,Long,Bưu Cục,Cam Cành,200g,ACB,4000000
+2019-07-11,Thanh Hải,Mi,Ats,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-11,Huy 18Cm,Bw Team,Gdtt,King Glue,10g,Tiền Mặt,2400000
+2019-07-11,Vũ Mạnh,Long,Bưu Cục,Tarantula,2 điếu,ACB,600000
+2019-07-11,Sandra,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-11,Huy 18Cm,Bw Team,Gdtt,Kush Class A,15g,Tiền Mặt,3300000
+2019-07-11,Huy 18Cm,Bw Team,Gdtt,Kush Class A+,5g,Tiền Mặt,1200000
+2019-07-11,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-11,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1700000
+2019-07-11,A Rex,Long,Gdtt,King Glue,10g,VCB,2600000
+2019-07-11,Bw ,Bw Team,Gdtt,King Glue,1g,Tiền Mặt,-220000
+2019-07-11,Viên Trần,Mi,Gdtt,Cam Lẻ,15g,Tiền Mặt,500000
+2019-07-11,Bảo,Mi,Ats,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-11,Tài Biên Hòa,Long,Gdtt,Cam Cành,1000g,ACB,18000000
+2019-07-11,Phương Đèn Dầu,Long,Gdtt,Golden Glue,2g,Tiền Mặt,520000
+2019-07-12,Nguyễn Quốc Luân,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-12,Dũng ( Quân ) ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-07-12,Huy Hoàng,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-12,Anh Quang,Mi,Bưu Cục,Cam Lọc,200g,ACB,3700000
+2019-07-12,Long An,Mi,Ats,Kush Class A+,1g,Tiền Mặt,520000
+2019-07-12,No Name,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-12,Huy 18Cm,Bw Team,Gdtt,King Glue,14g,Tiền Mặt,3360000
+2019-07-13,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-13,Tá Duy,Bw Team,Gdtt,Tarantula,2 điếu,Tiền Mặt,400000
+2019-07-13,Trịnh Tú Hải,Long,Bưu Cục,Cam Lọc,200g,ACB,3700000
+2019-07-13,Việt Linh,Phi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-13,Yến Nhi,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-13,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-13,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-07-13,Quân,Long,Gdtt,Kush Class A,1g,Tiền Mặt,240000
+2019-07-13,Anh Quân,Mi,Ats,Kush Class A+,10g,Tiền Mặt,3300000
+2019-07-13,Anh Quân,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-13,Phương Đèn Dầu,Long,Gdtt,Kush Class A+,2g,Tiền Mặt,520000
+2019-07-13,Tý Đô,Long,Gdtt,Cam Cành,200g,X,3600000
+2019-07-13,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-13,Bạn Khiêm,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-13,Phạm Bình,Mi,Gdtt,Cam Lẻ,27g,Tiền Mặt,1000000
+2019-07-13,Hà Nguyễn,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-13,Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-13,Thảo Uyên,Duy ,Ats,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-13,Thảo Uyên,Duy ,Ats,Kush Điếu,1 điếu,Tiền Mặt,200000
+2019-07-13,Sơn Suôn Sẻ,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-13,Minh Thuận,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-14,Bin,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-14,Bảo,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-14,Trọng Nghĩa,Mi,Ats,Cam Lẻ,14g,Tiền Mặt,500000
+2019-07-14,Tài,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-14,Huy 18Cm,Bw Team,Gdtt,Doom Day,5g,Tiền Mặt,1200000
+2019-07-14,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-14,Huy 18Cm,Bw Team,Gdtt,Kush Class A,1g,Tiền Mặt,220000
+2019-07-15,Tuấn Nguyễn,Mi,Gdtt,Cam Lẻ,7g,Tiền Mặt,300000
+2019-07-15,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-07-15,Khánh Ngọc,Mi,Bưu Cục,Cam Cành,50g,ACB,1200000
+2019-07-15,Gia Hân,Mi,Ats,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-15,Ngọc Long,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-15,Thành Đạt,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-15,Quỳnh Mai,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-07-15,Dũng ( Quân ) ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-07-15,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1050000
+2019-07-15,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-15,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,200g,ACB,3600000
+2019-07-16,Hưng Tuấn,Mi,Gdtt,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-16,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1000000
+2019-07-16,Đốm Khánh,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-16,Thiện Cá Vàng,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-16,Huy 18Cm,Long,Gdtt,Cam Cành,50g,Tiền Mặt,850000
+2019-07-16,Huy 18Cm,Long,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-16,Huy 18Cm,Long,Gdtt,Cam Lẻ,7g,Tiền Mặt,175000
+2019-07-17,Trịnh Tú Hải,Long,Bưu Cục,Kush Class A,10g,ACB,3000000
+2019-07-17,Trịnh Tú Hải,Long,Bưu Cục,Kush Class A,10g,ACB,3000000
+2019-07-17,Tú Anh,Long,Bưu Cục,Kush Class A,10g,ACB,3150000
+2019-07-17,Trung Xù,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-17,Thanh Huyền,Long,Bưu Cục,Kush Class A+,10g,ACB,2600000
+2019-07-17,Thanh Huyền,Long,Bưu Cục,Kush Class A,5g,ACB,1300000
+2019-07-17,Tuấn,Mi,Gdtt,Cam Điếu,10 điếu,Tiền Mặt,350000
+2019-07-17,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-17,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-07-17,Huy 18Cm,Bw Team,Gdtt,Kush Class A+,5g,Tiền Mặt,1200000
+2019-07-17,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-17,Mr.Bùi,Long,Ats,Cam Cành,200g,Tiền Mặt,4400000
+2019-07-17,Vi Lê,Duy ,Bưu Cục,Cam Lẻ,15g,VIB,500000
+2019-07-17,A Rex,Bw Team,Gdtt,Kush Class A+,10g,VCB,2600000
+2019-07-17,A Rex,Bw Team,Gdtt,Kush Class A,15g,VCB,3600000
+2019-07-17,Đờ Rê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-17,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-17,Tấn Lộc,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-17,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-07-17,Sandra,Mi,Gdtt,Cam Lẻ,5g,ACB,220000
+2019-07-18,A Đức,Bw Team,Gdtt,Master Super Glue A++,8.6g,VCB,2322000
+2019-07-18,A Đức,Bw Team,Gdtt,Durban Poison A,5g,VCB,1200000
+2019-07-18,A Đức,Bw Team,Gdtt,Pink Candy A+,5.1g,VCB,1326000
+2019-07-18,A Đức,Bw Team,Gdtt,Master Kush,10.1g,VCB,2424000
+2019-07-18,A Đức,Bw Team,Gdtt,Original Fash,1.3g,VCB,312000
+2019-07-18,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-07-18,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-18,Cao Minh,Mi,Ats,Cam Lẻ,5g,ACB,220000
+2019-07-18,Nguyên,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-18,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-18,Trinh Phụng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-18,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-18,A Hoàng,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-18,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-18,Bạn Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-19,Bích Lào Cai,Long,Bưu Cục,Kush Class A+,50g,ACB,13000000
+2019-07-19,Trang Đà Lạt,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-07-19,Quốc Đại,Duy ,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-07-20,Huy Hoàng,Mi,Bưu Cục,Cam Cành,50g,ACB,1200000
+2019-07-20,Thái,Mi,Đại Ship,Cam Điếu,3 điếu,Tiền Mặt,105000
+2019-07-20,Ngọc Đăng,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-20,Lê Phúc,Mi,Đại Ship,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-20,Lê Phúc,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-20,Anh Khoa,Mi,Ats,Tarantula,4 điếu,Tiền Mặt,1200000
+2019-07-20,Anh Khoa,Mi,Ats,Cam Điếu,7 điếu,Tiền Mặt,200000
+2019-07-20,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-20,Vương Vũ,Long,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-20,Quân,Long,Gdtt,Doom Day,1g,Tiền Mặt,260000
+2019-07-20,Teddy,Long,Gdtt,Cam Cành,1000g,Tiền Mặt,17500000
+2019-07-20,Trang Đà Lạt,Long,Gdtt,Cam Cành,100g,Tiền Mặt,2000000
+2019-07-20,Anh Quân,Bi,Gdtt,Tarantula,4 điếu,Tiền Mặt,1200000
+2019-07-20,Anh Quân,Bi,Gdtt,Kush Điếu,1 điếu,Tiền Mặt,-50000
+2019-07-20,Huy 18Cm,Bw Team,Gdtt,Pink Candy A+,2g,Tiền Mặt,480000
+2019-07-20,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-20,Huy 18Cm,Bw Team,Gdtt,Kush Class A+,5g,Tiền Mặt,1200000
+2019-07-20,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-07-21,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-07-21,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-07-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-07-22,Huy 18Cm,Bw Team,Gdtt,Cam Cành,200g,Tiền Mặt,3400000
+2019-07-22,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-22,Lu La,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-22,Nhật Hiếu,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-22,Trần Kiên,Mi,Ats,Cam Lẻ,14g,Tiền Mặt,670000
+2019-07-22,Trần Kiên,Mi,Ats,Kush Class A,1g,Tiền Mặt,0
+2019-07-22,Bảo,Mi,Ats,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-22,Phi Lê,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-22,Long,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-22,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-07-22,Huy Diamond,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-22,Dũng ( Quân ) ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-07-23,Đức Thịnh,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-23,Quang Đức,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-23,Đỗ Tình,Duy ,Bưu Cục,Cam Cành,100g,VIB,2200000
+2019-07-23,Quốc Đức,Mi,Bưu Cục,Cam Cành,50g,ACB,1200000
+2019-07-23,Quốc Đức,Mi,Bưu Cục,Kush Class A,1g,ACB,450000
+2019-07-23,Huyền,Long,Bưu Cục,Pink Candy A+,80g,ACB,22000000
+2019-07-23,Huyền,Long,Bưu Cục,Og,60g,ACB,0
+2019-07-23,Phúc,Mi,Gdtt,Cam Điếu,4 điếu,Tiền Mặt,140000
+2019-07-23,Hoàng Anh,Long,Bưu Cục,Cam Cành,500g,ACB,10000000
+2019-07-23,Vid,Duy ,Gdtt,Cam Lọc,400g,ACB,6000000
+2019-07-23,Nghĩa Minh,Mi,Bưu Cục,Cam Lẻ,14g,ACB,500000
+2019-07-23,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-23,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-23,Quang Duy,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-23,Tài,Hải,Đại Ship,Cam Điếu,3 điếu,Tiền Mặt,105000
+2019-07-23,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-07-23,Xuân Tân,Long,Bưu Cục,Kush Class A,30g,ACB,6600000
+2019-07-24,Huy 18Cm,Long,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-24,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-24,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-24,Thảo Vi,Mi,Ats,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-24,Thảo Vi,Mi,Ats,Tarantula,1g,Tiền Mặt,300000
+2019-07-24,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-24,Trí La,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-24,Trí La,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-07-24,Vũ Hiếu,Long,Bưu Cục,Kush Class A,5g,ACB,1300000
+2019-07-24,Vid,Duy ,Gdtt,Cam Lọc,1000g,VIB,14000000
+2019-07-24,Viết Hải,Long,Bưu Cục,Cam Cành,50g,ACB,1200000
+2019-07-24,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-24,Việt Linh,Phi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-25,Trịnh Tú Hải,Long,Bưu Cục,Cam Lọc,500g,ACB,8000000
+2019-07-25,Anh Quang,Mi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-07-25,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-25,Bin ( A Rex ),Long,Gdtt,Kush Class A,10g,VCB,3000000
+2019-07-25,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-07-26,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,100g,ACB,2000000
+2019-07-26,Cô Tiên Thơm,Long,Bưu Cục,Cam Lọc,200g,ACB,3500000
+2019-07-26,Cô Tiên Thơm,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-26,Tý Đô,Long,Gdtt,Cam Cành,100g,X,1800000
+2019-07-26,Kadgeyy,Duy ,Gdtt,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-26,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1700000
+2019-07-26,Huy 18Cm,Bw Team,Gdtt,Kush Vụn,5g,Tiền Mặt,1000000
+2019-07-26,Phương Đèn Dầu,Long,Gdtt,Doom Day,1g,Tiền Mặt,260000
+2019-07-26,Khánh Minh,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-07-26,Huy Diamond,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-26,A Hoàng,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-26,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-26,Chú A Nhân,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-26,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-26,Phú Trịnh,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-26,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-26,Bin,Mi,Đại Ship,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-27,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
+2019-07-27,The An,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-27,Kiều,Mi,Gdtt,Vpp,1g,Tiền Mặt,400000
+2019-07-27,Chính Quyền,Duy ,Hải Ship,Cam Lẻ,20g,Tiền Mặt,650000
+2019-07-27,A Thông,Bw Team,Gdtt,Durban Poison A,5g,VCB,1200000
+2019-07-28,Ming Nguyễn,Mi,Gdtt,Rove,1 ống,Tiền Mặt,2500000
+2019-07-28,Ming Nguyễn,Mi,Gdtt,Imini,1 cái,Tiền Mặt,500000
+2019-07-28,Huy Diamond,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-28,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-28,Huy 18Cm,Bw Team,Gdtt,Durban Poison A,5g,Tiền Mặt,1100000
+2019-07-28,Huy 18Cm,Bw Team,Gdtt,Elemon,3g,Tiền Mặt,660000
+2019-07-28,Huy 18Cm ,Bw Team,Gdtt,G4B,3g,Tiền Mặt,660000
+2019-07-28,Huy 18Cm,Bw Team,Gdtt,Nn,10g,Tiền Mặt,2200000
+2019-07-29,Tổng Sơn,Long,Bưu Cục,Cam Cành,100g,ACB,1700000
+2019-07-29,Triết,Long,Ats,Cam Lẻ,30g,Tiền Mặt,1000000
+2019-07-29,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-29,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-29,Anh Quân,Bi,Ats,Tarantula,4 điếu,Tiền Mặt,1200000
+2019-07-29,Anh Quân,Bi,Ats,Kush Điếu,1 điếu,X,-50000
+2019-07-29,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-29,Khách Y Y,Trịnh Y Y,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-07-29,Bảo,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-29,Nguyễn Ken,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-29,Nguyễn Ken,Mi,Ats,Cam Điếu,3 điếu,Tiền Mặt,100000
+2019-07-29,Tấn Đạt,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-29,Đức Thịnh,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-29,Kadgeyy,Long,Gdtt,Cam Cành,500g,Tiền Mặt,10000000
+2019-07-29,Quân,Long,Gdtt,Durban Poison A,1g,Tiền Mặt,240000
+2019-07-29,Tài Trương,Long,Gdtt,Cam Cành,3000g,Tiền Mặt,54000000
+2019-07-30,Đốm Khánh,Mi,Bưu Cục,Cam Cành,200g,ACB,4400000
+2019-07-30,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-07-30,Brick,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
+2019-07-30,Hồng Phú,Mi,Bưu Cục,Cam Lẻ,17g,ACB,600000
+2019-07-30,Hữu Mạnh,Mi,Bưu Cục,Cam Lẻ,27g,ACB,1000000
+2019-07-30,Huy Hoàng,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-30,Tài,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-30,Hoàng Lê,Mi,Bưu Cục,Cam Lọc,100g,ACB,1900000
+2019-07-30,Uyên Trúc,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-30,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-07-31,A Rex,Bw Team,Gdtt,Kush Class A,5g,VCB,1200000
+2019-07-31,Vũ Hiếu,Long,Bưu Cục,Cam Cành,400g,ACB,6800000
+2019-07-31,Vũ Hiếu,Long,Bưu Cục,Cam Lọc,100g,ACB,1350000
+2019-07-31,Jackcop,Long,Bưu Cục,Cam Cành,100g,ACB,2300000
+2019-07-31,Jackcop,Long,Bưu Cục,Kush Vụn,30g,ACB,-2400000
+2019-07-31,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,200g,Tiền Mặt,3800000
+2019-07-31,Đốm Khánh,Mi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-07-31,Tài Trương,Long,Gdtt,Cam Cành,3000g,Tiền Mặt,54000000
+2019-07-31,Tý Đô,Long,Gdtt,Cam Cành,100g,X,1900000
+2019-08-01,Thanh Huyền,Long,Bưu Cục,Kush Class A+,10g,ACB,2800000
+2019-08-01,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,100g,ACB,2000000
+2019-08-01,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,17000000
+2019-08-01,Xuân Tân,Long,Bưu Cục,Kush Class A,50g,ACB,11000000
+2019-08-01,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-02,Bích Lào Cai,Long,Bưu Cục,Kush Class A,25g,ACB,6000000
+2019-08-02,Bích Lào Cai,Long,Bưu Cục,Kush Class A+,25g,ACB,6500000
+2019-08-02,A Rex,Bw Team,Gdtt,Kush Class A,25g,VCB,6000000
+2019-08-02,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-02,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-08-02,Quân,Long,Gdtt,Kush Class A,2g,Tiền Mặt,480000
+2019-08-03,Wei Wei,Long,Gdtt,Cam Cành,100g,X,1900000
+2019-08-03,Quân,Long,Gdtt,Kush Class A,6g,Tiền Mặt,1440000
+2019-08-03,Quân,Long,Gdtt,Kush Class A+,2g,Tiền Mặt,520000
+2019-08-03,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-08-03,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,200g,ACB,3400000
+2019-08-03,Now,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-03,Sandra,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-08-03,Nguyễn Thanh,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-08-03,Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-03,Khang,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-03,An Lê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-03,Leo Toney,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-03,Quốc Tài,Mi,Ats,Cam Điếu,6 điếu,Tiền Mặt,210000
+2019-08-03,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-03,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-03,Kim Ngân,Duy,Ats,Cam Lẻ,12g,Tiền Mặt,400000
+2019-08-03,A Hoàng,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-03,Nguyễn Khoa,Mi,Ats,Cam Điếu,3 điếu,Tiền Mặt,105000
+2019-08-03,Đức Thục,Mi,Ats,Kush Class A,1g,VIB,450000
+2019-08-03,Minh Tân,Hải,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-08-03,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2200000
+2019-08-03,Ngọc Hùng,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-08-03,Vũ Hiếu,Long,Bưu Cục,Cam Cành,100g,ACB,1700000
+2019-08-03,Wei Wei,Long,Gdtt,Cam Cành,100g,X,1900000
+2019-08-03,Wei Wei,Long,Gdtt,Cam Lẻ,5g,X,150000
+2019-08-03,Wei Wei,Long,Gdtt,Kush Class A+,1g,X,260000
+2019-08-03,Phương Đèn Dầu,Long,Gdtt,Cam Cành,60g,Tiền Mặt,1140000
+2019-08-03,Quân ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-03,Phương Đèn Dầu,Long,Gdtt,Pink Candy,2g,Tiền Mặt,560000
+2019-08-06,Huy Diamond,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-06,A Hoàng,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-08-06,Bjn,Mi,Ats,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-06,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Hoàng,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-06,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-08-06,Vương Vũ,Phi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-08-06,Quang Gò Vấp,Phi,Ats,Cam Cành,500g,Tiền Mặt,10000000
+2019-08-06,Duyên Lê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-06,Bear,Mi,Ats,Kush Class A,5g,VIB,1600000
+2019-08-06,Gia Luân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-06,Khách Quen Mi,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-06,Sandra,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-08-06,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-08-06,Trịnh Tú Hải,Long,Bưu Cục,Kush Class A+,20g,ACB,5600000
+2019-08-07,A Rex,Bw Team,Gdtt,Kush Class A,15g,VCB,3600000
+2019-08-07,A Leo ( Đức Anh ),Bw Team,Gdtt,Kush Class A,5g,VCB,1200000
+2019-08-08,Vũ Mạnh,Long,Bưu Cục,Kush Điếu,2 điếu ,ACB,500000
+2019-08-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-08-08,Quang,Mi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-08-09,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-09,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-08-09,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-09,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2150000
+2019-08-09,Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-09,Rê Đờ,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-09,Ni Pin,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-08-09,Huy 18Cm,Bw Team,Gdtt,Kush Class ,11g,Tiền Mặt,2420000
+2019-08-09,Thiện Cá Vàng,Mi,Đại Ship,Cam Lẻ,20g,Tiền Mặt,650000
+2019-08-09,Thiện Cá Vàng,Mi,Đại Ship,Kush Vụn,2g,Tiền Mặt,600000
+2019-08-09,Anh Tú,Long,Bưu Cục,Kush Class A,12g,ACB,3350000
+2019-08-09,Vid,Duy,Gdtt,Cam Lọc,1000g,VIB,14000000
+2019-08-09,Phương Đèn Dầu,Long,Gdtt,Og Mp,1g,Tiền Mặt,240000
+2019-08-09,Dũng ( Quân ),Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
+2019-08-09,Khánh Võ,Mi,Gdtt,Kush Class A,1g,Tiền Mặt,450000
+2019-08-10,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
+2019-08-10,Tài Trương,Long,Gdtt,Cam Cành,2000g,Tiền Mặt,36000000
+2019-08-10,Tài Trương,Long,Gdtt,Cam Cành,2000g,Tiền Mặt,36000000
+2019-08-10,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-08-10,Sơn Hứa,Long,Bưu Cục,Cam Lọc,200g,ACB,3300000
+2019-08-10,Kadgeyy,Long,Gdtt,Kush Class A,10g,Tiền Mặt,2600000
+2019-08-11,Quân,Long,Gdtt,Cam Lẻ,25g,Tiền Mặt,625000
+2019-08-11,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1700000
+2019-08-11,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Thịnh,Hải,Ats,Cam Lẻ,28g,Tiền Mặt,1000000
+2019-08-11,Kiên,Hải,Ats,Cam Điếu,10 điếu,Tiền Mặt,350000
+2019-08-11,Huy Diamond,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-11,Tèo Thuận,Mi,Ats,Cam Cành,100g,ACB,220000
+2019-08-11,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-08-11,Lu Lala,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Khách Long,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-11,Khách Long,Long,Gdtt,Cam Điếu,1 điếu,Tiền Mặt,35000
+2019-08-11,Bùi Đức Tuấn,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-11,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-11,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-12,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-12,An Lê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-12,Nguyễn Tú,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-12,Nga,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-12,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2100000
+2019-08-12,Thanh Huyền,Long,Bưu Cục,Cam Lọc,300g,ACB,4500000
+2019-08-12,Thanh Huyền,Long,Bưu Cục,Cam Cành,200g,ACB,4100000
+2019-08-12,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-12,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-12,Huy 18Cm,Bw Team,Gdtt,Kush Class A,15g,Tiền Mặt,3300000
+2019-08-12,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,220000
+2019-08-13,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-13,Phương Đèn Dầu,Long,Gdtt,Og Mp,1g,Tiền Mặt,260000
+2019-08-13,Phương Đèn Dầu,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
+2019-08-13,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-13,Nguyễn Thương,Mi,Gdtt,Kush Class A,2g,Tiền Mặt,790000
+2019-08-13,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2100000
+2019-08-13,Đỗ Tình,Duy,Bưu Cục,Cam Cành,100g,VIB,2100000
+2019-08-13,Trịnh Hồng Phú,Mi,Bưu Cục,Cam Cành,25g,ACB,600000
+2019-08-13,Phạm Minh Việt,Hải,Bưu Cục,Cam Lẻ,28g,VIB,1000000
+2019-08-13,Trương Trung Nguyên,Duy,Bưu Cục,Kush Class A,10g,VIB,2800000
+2019-08-13,Quốc Đại ,Duy,Bưu Cục,Cam Cành,700g,VIB,12600000
+2019-08-13,A Hoàng,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-13,Leo Toney,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-13,Nhi,Hải,Ats,Kush Class A,1g,Tiền Mặt,400000
+2019-08-13,Phúc,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-13,Khách Mi,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-13,Vũ Thái An,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-13,Thành Đạt,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-14,Phạm Bình,Mi,Gdtt,Cam Lẻ,28g,Tiền Mặt,1000000
+2019-08-14,Kadgeyy,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1100000
+2019-08-14,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-08-14,Dũng ( Quân ),Long,Gdtt,Cam Điếu,10 điếu,Tiền Mặt,200000
+2019-08-14,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-14,Phương Đèn Dầu,Long,Gdtt,Kush Class A,2g,Tiền Mặt,480000
+2019-08-14,Văn Tâm,Duy,Bưu Cục,Cam Cành,100g,VIB,2100000
+2019-08-14,Thương,Duy,Bưu Cục,Cam Cành,100g,VIB,2100000
+2019-08-14,Thương,Duy,Bưu Cục,Kush Class A,1g,VIB,400000
+2019-08-14,Tú Mỡ,Duy,Ats,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-14,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-14,Thịnh,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-08-14,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-14,Bin,Mi,Ats,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-14,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-08-14,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-14,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-15,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,200g,ACB,3200000
+2019-08-15,Vũ Hiếu,Long,Bưu Cục,Cam Cành,700g,ACB,11900000
+2019-08-15,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-08-16,Khánh Võ,Mi,Gdtt,Kush Điếu,1 điếu,Tiền Mặt,250000
+2019-08-16,Minh Thiện ,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-16,Jackcop,Long,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-16,Vũ Mạnh,Long,Bưu Cục,Cam Cành,1000g,ACB,17000000
+2019-08-16,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-16,Hoàng Lê,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-16,Kadgeyy,Long,Gdtt,Kush Class A,12g,Tiền Mặt,3200000
+2019-08-17,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-08-17,Chính Quyền,Duy,Hải Ship,Cam Lẻ,20g,Tiền Mặt,650000
+2019-08-17,Huy 18Cm,Bw Team,Gdtt,Cc,5g,Tiền Mặt,1100000
+2019-08-17,Huy 18Cm,Bw Team,Gdtt,Rg,5g,Tiền Mặt,1100000
+2019-08-17,Huy 18Cm,Bw Team,Gdtt,Cam Lẻ,7g,Tiền Mặt,1540000
+2019-08-17,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-17,Kadgeyy,Duy,Ats,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-17,Chris Devlin,Duy,Ats,Cam Lẻ,13g,Tiền Mặt,500000
+2019-08-17,Chung Minh,Mi,Ats,Og Kush,1g,Tiền Mặt,420000
+2019-08-17,Trịnh Vũ Hoàng,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-17,Bạn Kha,Hải,Ats,Cam Lọc,100g,Tiền Mặt,1800000
+2019-08-17,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-17,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-17,Cao Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-17,Bw,Bw Team,Truc Tiep,Doom Day,4g,X,-880000
+2019-08-17,Bw,Bw Team,Truc Tiep,Rd,1g,X,-200000
+2019-08-17,Bw,Bw Team,Truc Tiep,Cc,1g,X,-200000
+2019-08-17,Bw,Bw Team,Truc Tiep,Og,1g,X,-200000
+2019-08-18,Kadgeyy,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1100000
+2019-08-18,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-18,Biu,Long,Gdtt,Cam Cành,50g,X,-800000
+2019-08-19,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-08-19,Biu,Long,Gdtt,Cam Cành,950g,ACB,16500000
+2019-08-19,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-08-19,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-08-19,Huy 18Cm,Bw Team,Gdtt,Rd,5g,Tiền Mặt,1100000
+2019-08-19,Huy 18Cm,Bw Team,Gdtt,Cam Lẻ,7g,Tiền Mặt,175000
+2019-08-19,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,850000
+2019-08-20,Tài Trương,Long,Gdtt,Cam Cành,4000g,Tiền Mặt,66000000
+2019-08-20,Biu,Long,Gdtt,Cam Cành,1000g,ACB,16500000
+2019-08-20,Bảo Thắng,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-08-20,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-08-20,Tuấn Trần,Duy,Ats,Cam Cành,100g,Tiền Mặt,2000000
+2019-08-20,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-20,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-20,Trung Phạm,Duy,Ats,Cam Lẻ,1g,Tiền Mặt,440000
+2019-08-20,Lan Võ,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-20,Bạn Thiện Cá Vàng,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-20,Vũ Mạnh,Long,Bưu Cục,Cam Cành,250g,ACB,4800000
+2019-08-20,Huy 18Cm,Bw Team,Gdtt,Og Mp,10g,Tiền Mặt,2400000
+2019-08-20,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-08-20,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,16000000
+2019-08-20,Bin,Mi,Ats,Og Mp,10g,Tiền Mặt,2800000
+2019-08-21,Phương Anh,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-21,Bùi Quang Mẫn,Duy,Bưu Cục,Cam Lẻ,17g,ACB,600000
+2019-08-21,Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-21,Leo Toney,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-21,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-21,Vũ Mạnh,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-08-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-21,Hoàng Hải,Duy,Bưu Cục,Og Mp,25g,VIB,6500000
+2019-08-21,Hoàng Hải,Duy,Bưu Cục,Rg,25g,VIB,6000000
+2019-08-21,Vid,Duy,Gdtt,Cam Lọc,600g,ACB,8400000
+2019-08-21,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1100000
+2019-08-21,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,Tiền Mặt,3200000
+2019-08-21,Biu,Long,Gdtt,Cam Cành,1000g,ACB,16500000
+2019-08-22,Phương Đèn Dầu,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-08-22,Huy 18Cm,Bw Team,Gdtt,Rd,6g,Tiền Mặt,1320000
+2019-08-22,Huy 18Cm,Bw Team,Gdtt,Cc,4g,Tiền Mặt,880000
+2019-08-22,Nhi,Hải,Đại Ship,Cc,1g,Tiền Mặt,400000
+2019-08-23,Minh Triết,Long,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-23,Huy 18Cm,Bw Team,Gdtt,Cc,2g,Tiền Mặt,440000
+2019-08-23,Huy 18Cm,Bw Team,Gdtt,Rd,2g,Tiền Mặt,440000
+2019-08-23,Huy 18Cm,Bw Team,Gdtt,Gg4,1g,Tiền Mặt,220000
+2019-08-23,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1100000
+2019-08-23,A Hoàng ,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Thuận Tèo,Mi,Ats,Cam Cành,100g,Tiền Mặt,2100000
+2019-08-24,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Duy Hải,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-08-24,Nguyễn Thanh,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-08-24,Bear,Mi,Ats,Cc,5g,ACB,1400000
+2019-08-24,Khánh Võ,Mi,Ats,Rd,1g,Tiền Mặt,450000
+2019-08-24,Hà Nguyễn,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-24,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Bạn Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Chris Devlin,Duy,Ats,Cam Lẻ,31g,Tiền Mặt,1000000
+2019-08-24,Quốc Đại ,Duy,Bưu Cục,Cam Cành,500g,VIB,9000000
+2019-08-24,Huy Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1150000
+2019-08-24,Hải Nguyễn,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-08-24,Lâm Nguyễn,Hải,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-24,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-24,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-24,Phương Đèn Dầu,Long,Gdtt,Kush Class A+,5g,Tiền Mặt,1300000
+2019-08-24,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-08-26,Bin,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-26,Huy ,Mi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-08-26,Pi Nin,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-08-26,Trịnh Tú Hải,Long,Bưu Cục,Kush Class A,20g,ACB,5200000
+2019-08-26,Thiện Cá Vàng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-26,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
+2019-08-26,Thanh Quang,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-26,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-26,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-08-26,Kadgeyy,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1100000
+2019-08-26,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-08-26,A Rex,Bw Team,Gdtt,Kush Class A,12.5g,VCB,3000000
+2019-08-26,A Rex,Bw Team,Gdtt,Kush Class A+,2.5g,VCB,650000
+2019-08-26,Ken Nguyễn,Duy,Quân Ship,Og,2g,Tiền Mặt,750000
+2019-08-27,Bro.Un,Bi,Bưu Cục,Cam Cành,150g,X,2550000
+2019-08-27,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,3800000
+2019-08-28,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-28,Anh Tú,Long,Bưu Cục,Kush Class A+,10g,ACB,2900000
+2019-08-28,Huy 18Cm,Bw Team,Gdtt,Purple Candy,5g,Tiền Mặt,1100000
+2019-08-28,Huy 18Cm,Bw Team,Gdtt,Og,5g,Tiền Mặt,1100000
+2019-08-28,Quân,Long,Gdtt,Kush Vụn Og,1g,Tiền Mặt,200000
+2019-08-28,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,Tiền Mặt,4800000
+2019-08-28,Vũ Hiếu,Long,Bưu Cục,Kush Class A,5g,Tiền Mặt,1100000
+2019-08-28,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,Tiền Mặt,1900000
+2019-08-28,Biu ,Long,Gdtt,Cam Cành,1000g,ACB,16500000
+2019-08-28,Xuân Tân,Long,Bưu Cục,Purple Candy,50g,ACB,11000000
+2019-08-28,Xuân Tân,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-08-29,Bùi Tuấn,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-08-29,Dung Chu,Bi,Gdtt,Kush Class A,2g,VCB,480000
+2019-08-29,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-08-29,Bin,Mi,Gdtt,Kush Class A,10g,Tiền Mặt,2600000
+2019-08-30,A Nhân,Hải,Hải Ship,Og,1g,Tiền Mặt,400000
+2019-08-30,Kadgeyy,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1150000
+2019-08-30,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-08-30,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-31,Bo,Mi,Ats,Cam Cành,100g,ACB,2100000
+2019-08-31,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-08-31,Dũng (Quân),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,250000
+2019-08-31,Giang Núi,Mi,Ats,Kush Điếu,1 điếu ,Tiền Mặt,250000
+2019-08-31,Thịnh,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-22,Vũ Quốc Đức,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-22,Vũ Quốc Đức,Mi,Bưu Cục,Kush Class A,1g,ACB,400000
+2019-08-22,Đạt,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,170000
+2019-08-22,Nguyễn Đình An,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-22,Nguyễn Đình An,Mi,Gdtt,Kush Class A+,1g,Tiền Mặt,450000
+2019-08-22,Trọng Phát,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,170000
+2019-08-22,Trọng Phát,Mi,Gdtt,Raw,1 tệp,Tiền Mặt,30000
+2019-08-22,Chuột,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-22,Nguyễn Thanh Minh,Mi,Bưu Cục,Cc,5g,ACB,1300000
+2019-08-22,Nguyễn Thanh Minh,Mi,Bưu Cục,Rd,5g,ACB,1300000
+2019-08-22,Nguyễn Thanh Minh,Mi,Bưu Cục,Og,5g,ACB,1700000
+2019-08-22,Trần Bình Minh,Mi,Bưu Cục,Cam Lẻ,18g,ACB,600000
+2019-08-23,Phạm Thế Dương,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-08-25,No Name,Hải,Ats,Pink Candy,1g,Tiền Mặt,400000
+2019-08-25,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-25,Huy Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1150000
+2019-08-26,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-26,Cao Phượng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-26,An The,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-26,A Sơn,Mi,Gdtt,Cam Điếu,3 điếu,Tiền Mặt,105000
+2019-08-27,Trần Hưng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-27,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-27,Thanh Phong,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-28,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-28,An Xu,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-28,Hoàng Lê,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-08-28,Hằng Nguyễn,Mi,Bưu Cục,Purple Candy,10g,ACB,2800000
+2019-08-29,Khoa Đoàn,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-08-29,A Hoàng,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-29,No Name,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-29,Tiến Mạnh,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
+2019-08-29,Tiến Mạnh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-08-29,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-08-29,Đức Anh,Mi,Ats,Pink Candy,1g,Tiền Mặt,450000
+2019-08-29,Trần Phương Bào,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-08-29,Cơ Minh,Hải,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-08-29,Phúc Hoàng,Duy,Bưu Cục,Cam Cành,100g,VIB,2100000
+2019-08-27,Thanh Huyền,Long,Bưu Cục,Cam Lọc,300g,ACB,4350000
+2019-08-27,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,13000000
+2019-11-01,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-11-01,Thắng,Long,Gdtt,Gelato,1g,Tiền Mặt,350000
+2019-11-01,Phú,Mi,Gdtt,Original Glue,3g,Tiền Mặt,1140000
+2019-11-01,Bảo Sam,Bw Team,Gdtt,Cookie Kush,1 cái,X,-200000
+2019-11-01,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-01,Quân,Long,Gdtt,Cam Lẻ,30g,Tiền Mặt,750000
+2019-11-01,Lala ( Mi ) ,Long,Gdtt,Original Glue,2g,X,560000
+2019-11-01,Lala ( Mi ) ,Long,Gdtt,Gelato,2g,X,480000
+2019-11-01,Lala ( Mi ) ,Long,Gdtt,Mr.T,1g,X,220000
+2019-11-01,Vương,Phi,Gdtt,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-01,Lê Ty,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-11-01,Bùi Quang Mẫn,Duy,Bưu Cục,Cam Lẻ,18g,ACB,600000
+2019-11-01,Nguyễn Sỹ Kiều Nhi,Mi,Bưu Cục,Tarantula,2 điếu,ACB,600000
+2019-11-01,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-01,Song Le,Phi,Gdtt,Cam Cành,1000g,Tiền Mặt,15000000
+2019-11-01,Song Le,Phi,Gdtt,Cookie Kush,1 cái,X,-130000
+2019-11-01,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-01,Hà,Phi,Ats,Cam Lẻ,15g,Tiền Mặt,600000
+2019-11-01,Khoa Đoàn,Hải,Ats,Tarantula,1 điếu ,Tiền Mặt,330000
+2019-11-01,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-01,Phương Đèn Dầu,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-11-02,Nhum,Bw Team,Gdtt,Original Glue,2g,X,560000
+2019-11-02,Nhum,Bw Team,Gdtt,Original Glue,2g,X,560000
+2019-11-02,An Le,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-02,A Quân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-02,A Quân,Mi,Ats,Original Glue,1g,Tiền Mặt,400000
+2019-11-02,A Quân,Mi,Ats,Gelato,1g,Tiền Mặt,380000
+2019-11-02,Khang,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-02,Nguyễn Vũ,Mi,Ats,Cookie Cam,2 cái,Tiền Mặt,240000
+2019-11-02,Nguyễn Vũ,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-02,Phú,Mi,Gdtt,Original Glue,2g,Tiền Mặt,760000
+2019-11-02,Trần Phúc,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-11-02,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-02,San B Boo,Phi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-02,Tiến Hải,Duy,Bưu Cục,Cam Cành,100g,VIB,1800000
+2019-11-02,Tiến Hải,Duy,Bưu Cục,Gelato,5g,VIB,1300000
+2019-11-02,Tiến Hải,Duy,Bưu Cục,Venom Bite,5g,VIB,1300000
+2019-11-03,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-03,Anh Hoàng,Mi,Ats,Kush Điếu,1 điếu ,Tiền Mặt,200000
+2019-11-03,Anh Hoàng,Mi,Ats,Cam Điếu,1 điếu,Tiền Mặt,35000
+2019-11-03,Flick,Duy,Gdtt,Kush Class A,1g,VIB,380000
+2019-11-03,Tá Duy,Bw Team,Gdtt,Cookie Kush,1 cái,Tiền Mặt,120000
+2019-11-03,Long Jpham,Mi,Gdtt,Cookie Kush,1 cái,Tiền Mặt,360000
+2019-11-04,Minh Quang,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-04,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-04,A Ken,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-04,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-11-04,Dũng ,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-04,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-04,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-04,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-11-04,Ryan,Long,Bưu Cục,Cam Lọc,100g,ACB,1500000
+2019-11-04,Xưởng Bánh,Bw Team,X,Cam Cành,200g,X,-2600000
+2019-11-04,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-04,Tuấn Trần,Duy,Dũng Ship,Cam Cành,100g,Tiền Mặt,1850000
+2019-11-04,Khang,Duy,Dũng Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-11-04,Đặng Quân,Mi,Gdtt,Cam Lẻ,30g,Tiền Mặt,900000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Mr.T,10g,VCB,2200000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Venom Bite,10g,VCB,2400000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Mr.T Ver 2.0,10g,VCB,2200000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Purple Punch,10g,VCB,2400000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Super Og,8g,VCB,1920000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Mr.T Ver 2.0,5g,VCB,1100000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Mr.T,10g,VCB,2200000
+2019-11-04,Anh Rex,Bw Team,Gdtt,Original Glue,7g,VCB,1960000
+2019-11-06,Phương Đèn Dầu,Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-11-06,Dũng,Long,Gdtt,Cam Cành,50g,Tiền Mặt,800000
+2019-11-06,Huy 18Cm,Bw Team,Gdtt,Cam Cành,150g,Tiền Mặt,2400000
+2019-11-07,Kadgeyy,Duy,Đại Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-07,Phạm Bình,Mi,Gdtt,Cam Cành,100g,Tiền Mặt,2000000
+2019-11-07,Ming Nguyễn,Mi,Gdtt,Kush Điếu,2 điếu,Tiền Mặt,400000
+2019-11-07,Ming Nguyễn,Mi,Gdtt,Cam Lẻ,3g,Tiền Mặt,100000
+2019-11-07,Ming Nguyễn,Mi,Gdtt,Cookie Cam,1 cái,Tiền Mặt,120000
+2019-11-07,Long,Mi,Gdtt,Cookie Cam,3 cái,Tiền Mặt,360000
+2019-11-07,Tim Trần,Mi,Gdtt,Mr.T,1g,ACB,360000
+2019-11-07,Thành Trung,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-11-07,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-07,Đức Cường,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-07,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-07,Phương Đèn Dầu,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-11-07,Cao Phượng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-07,Nguyễn Thanh Minh,Mi,Bưu Cục,Kush Class A,10g,ACB,2800000
+2019-11-07,Nguyễn Thanh Minh,Mi,Bưu Cục,Cam Lẻ,20g,ACB,700000
+2019-11-07,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-11-07,Trần Bình Minh,Mi,Bưu Cục,Gelato,3g,ACB,1100000
+2019-11-07,Trần Bình Minh,Mi,Bưu Cục,Purple Punch,3g,ACB,1100000
+2019-11-07,Trần Bình Minh,Mi,Bưu Cục,Tarantula,1 điếu,ACB,300000
+2019-11-07,Phương Anh,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-11-07,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-11-07,Xuân Tân,Long,Bưu Cục,Cam Cành,500g,ACB,8000000
+2019-11-07,Xuân Tân,Long,Bưu Cục,Gelato,10g,ACB,2200000
+2019-11-07,Xuân Tân,Long,Bưu Cục,Purple Punch,10g,ACB,2200000
+2019-11-07,Xuân Tân,Long,Bưu Cục,Hell Og,5g,ACB,1100000
+2019-11-07,Minh Ánh,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-11-07,Minh Ánh,Long,Bưu Cục,Tarantula,1 điếu,ACB,300000
+2019-11-07,Minh Việt,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-11-07,Vi Lê,Duy,Bưu Cục,Cam Lẻ,15g,VIB,500000
+2019-11-07,Đức Cường,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-07,Dũng,Long,Gdtt,Cookie Cam,3 cái,Tiền Mặt,168000
+2019-11-07,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-11-07,Quân,Long,Gdtt,Kush Class A,2g,Tiền Mặt,240000
+2019-11-07,Lala ( Mi ) ,Long,Gdtt,Mr.T,1g,X,220000
+2019-11-07,Thịnh,Long,Gdtt,Original Glue,1g,X,280000
+2019-11-07,Thịnh,Long,Gdtt,Mr.T,2g,X,220000
+2019-11-07,Kún,Long,Gdtt,Cookie Kush,1 cái,X,215000
+2019-11-07,Ming Nguyễn,Mi,Gdtt,Cookie Cam,2 cái,Tiền Mặt,240000
+2019-11-07,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-11-09,A Đức Motor,Bw Team,Gdtt,Cookie Kush,5 cái,VCB,1075000
+2019-11-09,Nguyễn Ngọc ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-09,Nhi,Hải,Ats,Bn,1g,Tiền Mặt,360000
+2019-11-09,Thiện Cá Vàng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-09,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-09,Bear Shilva,Mi,Ats,Purple Punch,2g,ACB,600000
+2019-11-09,Bear Shilva,Mi,Ats,Hell Og,3g,ACB,900000
+2019-11-09,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-09,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-09,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-09,Lala ( Mi ) ,Long,Now,Cookie Cam,6 cái,X,550000
+2019-11-09,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-09,Hà Bơ Vinh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-09,Vũ Mạnh,Long,Bưu Cục,Gelato,5g,ACB,1300000
+2019-11-09,Vũ Mạnh,Long,Bưu Cục,Purple Punch,5g,ACB,1300000
+2019-11-09,Trịnh Tú Hải,Long,Bưu Cục,Gelato,5g,ACB,1300000
+2019-11-09,Trịnh Tú Hải,Long,Bưu Cục,Hell Og,5g,ACB,1300000
+2019-11-09,Trịnh Tú Hải,Long,Bưu Cục,Purple Candy,5g,ACB,1300000
+2019-11-09,Trịnh Tú Hải,Long,Bưu Cục,Blue Mango,5g,ACB,1300000
+2019-11-09,Thanh Huyền,Long,Bưu Cục,Cam Lọc,800g,ACB,10800000
+2019-11-09,Thanh Huyền,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-11-09,Thanh Huyền,Long,Bưu Cục,Kush Vụn,50g,ACB,4500000
+2019-11-10,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-11-10,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-10,Hồng Quân,Duy,Bưu Cục,Cam Lẻ,26g,ACB,800000
+2019-11-10,Lê Hoàng,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-10,Khánh Võ,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-11-10,Sandra,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-10,A Ken,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-10,Phạm Minh Quang,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-10,Phạm Bình,Mi,Gdtt,Cam Lẻ,30g,Tiền Mặt,1000000
+2019-11-10,Phạm Bình,Mi,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-11-10,Đỗ Cường,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-10,Nguyễn Thanh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-10,Quang Vinh,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-10,Dũng ,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-11-10,Phạm Thế Dương,Mi,Đại Ship,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-12,Minh Ngữ,Mi,Ats,Gelato,2g,Tiền Mặt,520000
+2019-11-12,Minh Ngữ,Mi,Ats,Purple Punch,2g,Tiền Mặt,520000
+2019-11-12,Minh Ngữ,Mi,Ats,Hell Og,2g,Tiền Mặt,520000
+2019-11-12,Minh Ngữ,Mi,Ats,Blue Mango,2g,Tiền Mặt,520000
+2019-11-12,Minh Ngữ,Mi,Ats,Super Og,2g,Tiền Mặt,520000
+2019-11-12,Linh,Hải,Ats,Cam Lẻ,5g,Momo,200000
+2019-11-12,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-12,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-12,Tùng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-12,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-12,Nguyên,Duy,Ats,Kush Vụn,1g,Tiền Mặt,200000
+2019-11-12,Dũng ( Mỹ Hằng ),Long,Ats,Cookie Cam,1 cái,Tiền Mặt,56000
+2019-11-12,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-11-12,Ryan,Long,Bưu Cục,Cam Lọc,100g,ACB,1500000
+2019-11-12,Trịnh Quốc Bảo,Duy,Bưu Cục,Cam Cành,100g,ACB,1900000
+2019-11-12,Đức Nguyễn,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-11-12,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-12,Vũ Mạnh,Long,Bưu Cục,Tarantula,1 điếu ,ACB,300000
+2019-11-12,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-12,Kadgeyy,Duy,Hải Ship,Cam Cành,25g,Tiền Mặt,500000
+2019-11-12,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,13000000
+2019-11-12,Dũng,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-12,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-11-12,Thịnh,Long,Gdtt,Hell Og,1g,X,240000
+2019-11-12,Thịnh,Long,Gdtt,Super Og,1g,X,240000
+2019-11-12,Thịnh,Long,Gdtt,Cookie Cam,1 cái,X,0
+2019-11-12,Trần Kiên,Mi,Gdtt,Blue Mango,1g,Tiền Mặt,380000
+2019-11-13,A Quân,Mi,Ats,Purple Candy,1g,Tiền Mặt,380000
+2019-11-13,A Quân,Mi,Ats,Hell Og,1g,Tiền Mặt,380000
+2019-11-13,Chú A Nhân,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-13,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,3600000
+2019-11-13,Vũ Hiếu,Long,Bưu Cục,Cam Lẻ,20g,ACB,500000
+2019-11-13,Vũ Hiếu,Long,Bưu Cục,Cam Cành,50g,ACB,800000
+2019-11-13,Vũ Hiếu,Long,Bưu Cục,Kush Class A,5g,ACB,2600000
+2019-11-13,Vũ Hiếu,Long,Bưu Cục,Cookie Cam,1 cái,ACB,-50000
+2019-11-13,Đốm Khánh,Mi,Bưu Cục,Cam Lọc,100g,ACB,1700000
+2019-11-13,Lê Hữu Bằng Sơn,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-11-13,Lên Bùng,Phi,Bưu Cục,Gelato,10g,ACB,2600000
+2019-11-13,Đỗ Cường,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-05,Thịnh,Long,Gdtt,Cookie Cam,2 cái,X,0
+2019-11-05,Thịnh,Long,Gdtt,Cam Lẻ,10g,X,500000
+2019-11-04,Lala ( Mi ) ,Long,Gdtt,Cookie Cam,12 cái,Tiền Mặt,2245000
+2019-11-04,Lala ( Mi ) ,Long,Gdtt,Cookie Kush, 6 cái,Tiền Mặt,0
+2019-11-04,Thịnh,Long,Gdtt,Original Glue,1g,X,280000
+2019-11-04,Thịnh,Long,Gdtt,Mr.T,2g,X,440000
+2019-11-04,Lala ( Mi ) ,Long,Gdtt,Mr.T,1g,X,200000
+2019-11-13,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,100g,ACB,1450000
+2019-11-13,A Quân,Mi,Ats,Cam Lẻ,20g,Tiền Mặt,650000
+2019-11-13,A Quân,Mi,Ats,Ocb,1 tệp,Tiền Mặt,30000
+2019-11-13,Lala ( Mi ) ,Long,Gdtt,Mr.T,2g,X,400000
+2019-11-13,Lala ( Mi ) ,Long,Gdtt,Gelato,2g,X,440000
+2019-11-13,Lala ( Mi ) ,Long,Gdtt,Super Og,2g,X,440000
+2019-11-14,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-14,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,500000
+2019-11-14,Dũng,Long,Gdtt,Cookie Kush,2 cái,Tiền Mặt,430000
+2019-11-13,Dũng ,Long,Gdtt,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-13,Dũng,Long,Gdtt,Cookie Kush,2 cái,Tiền Mặt,430000
+2019-11-14,Đỗ Thành Đạt,Mi,Ats,Blue Mango,1g,Tiền Mặt,380000
+2019-11-14,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,Bear Shilva,Mi,Ats,Blue Mango,3g,ACB,900000
+2019-11-14,Bear Shilva,Mi,Ats,Hell Og,2g,ACB,600000
+2019-11-14,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,Khánh Võ,Mi,Ats,Kush Điếu,3 điếu ,Tiền Mặt,600000
+2019-11-14,Phạm Bình,Mi,Ats,Cam Lẻ,30g,Tiền Mặt,1000000
+2019-11-14,Khang,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,Trung Phạm,Duy,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-14,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-11-14,Bảo,Mi,Bưu Cục,Gelato,5g,ACB,1300000
+2019-11-14,Bảo,Mi,Bưu Cục,Hell Og,5g,ACB,1300000
+2019-11-14,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-14,Bảo,Mi,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-14,Duy Quang,Mi,Bưu Cục,Tarantula,5 điếu ,ACB,1500000
+2019-11-16,Thịnh,Long,Gdtt,Cookie Kush,1 cái,X,0
+2019-11-16,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,500000
+2019-11-16,Quân,Long,Gdtt,Gelato,1g,Tiền Mặt,240000
+2019-11-16,Quân,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-16,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-16,Thắng,Long,Gdtt,Blue Mango,1g,Tiền Mặt,280000
+2019-11-16,Thiện Cá Vàng,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-16,An Le,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-16,An Le,Mi,Đại Ship,Blue Mango,1g,Tiền Mặt,380000
+2019-11-16,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-16,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-11-16,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-11-16,Thanh Ngân,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-16,Đức Cường,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-16,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-16,Phương Đèn Dầu,Long,Gdtt,Cam Lẻ,30g,Tiền Mặt,750000
+2019-11-16,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-16,Jackcop,Phi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-16,Jackcop,Phi,Bưu Cục,Kush Vụn,1g,X,-100000
+2019-11-16,Bảo Trân,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-16,Bin,Mi,Dũng Ship,Cam Cành,50g,Tiền Mặt,950000
+2019-11-16,Tá Duy,Bw Team,X,Blue Mango,1g,X,-210000
+2019-11-16,Tá Duy,Bw Team,X,Cookie Kush,1 cái,X,-200000
+2019-11-16,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,1g,ACB,1450000
+2019-11-12,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-17,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,800000
+2019-11-17,Trang Đà Lạt,Long,Gdtt,Cam Lọc,100g,ACB,1450000
+2019-11-17,Cơ Minh,Hải,Bưu Cục,Cam Cành,50g,Momo,1100000
+2019-11-17,Cơ Minh,Hải,Bưu Cục,Kush Vụn,2g,Momo,400000
+2019-11-17,Như ( Đèn Dầu ),Đèn Dầu,Ats,Cookie Cam,6 cái,Tiền Mặt,580000
+2019-11-17,Xuân Tân,Long,Bưu Cục,Hell Og,15g,ACB,3300000
+2019-11-17,Xuân Tân,Long,Bưu Cục,Super Og,15g,ACB,3300000
+2019-11-17,Minh Triết,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-11-17,Minh Triết,Long,Bưu Cục,Cookie Cam,1 cái,ACB,-50000
+2019-11-17,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-11-17,Ryan,Long,Bưu Cục,Cam Lọc,100g,ACB,1500000
+2019-11-17,Hà Bơ Vinh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-17,Phú,Mi,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-11-17,Quân,Mi,Đại Ship,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-17,Thắng,Long,Gdtt,Hell Og,1g,Tiền Mặt,300000
+2019-11-17,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-17,Dũng,Long,Gdtt,Cookie Cam,2 cái,Tiền Mặt,112000
+2019-11-16,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-17,Cao Phượng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-17,Đình Linh,Long,Gdtt,Sundae,1g,X,260000
+2019-11-18,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-11-18,Khang,Hải,Ats,Cam Lẻ,5g,Momo,200000
+2019-11-18,Kadgeyy,Duy,Gdtt,Cam Cành,100g,Tiền Mặt,2000000
+2019-11-19,Xưởng Bánh,Bw Team,X,Cam Cành,100g,X,-1300000
+2019-11-21,Minh Thiện,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-21,Trung Phạm,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-21,Lan Võ,Hải,Dũng Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-11-21,Lan Võ,Hải,Dũng Ship,Ocb,1 tệp,Tiền Mặt,20000
+2019-11-21,Nguyễn Ngọc ,Duy,Ats,Cam Lẻ,5g,Momo,200000
+2019-11-21,Bear Shilva,Mi,Ats,Blue Mango,2g,ACB,600000
+2019-11-21,Bear Shilva,Mi,Ats,Purple Punch,3g,ACB,900000
+2019-11-21,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,5g,Momo,200000
+2019-11-21,Hồng Ngọc,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-21,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-11-21,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-21,Anh Hưng,Long,Gdtt,Purple Punch,1g,Tiền Mặt,380000
+2019-11-21,A Nhân,A,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-21,Long,Mi,Ats,Sundae,1g,Tiền Mặt,400000
+2019-11-21,Đức Cường,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-21,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-21,Trần Bình Mình,Mi,Bưu Cục,Cam Lẻ,15g ,ACB,500000
+2019-11-21,Trần Bình Mình,Mi,Bưu Cục,Gelato,2g,ACB,760000
+2019-11-21,Trần Bình Mình,Mi,Bưu Cục,Tarantula,1 điếu ,ACB,300000
+2019-11-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-21,Vũ Mạnh,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-11-21,Việt Anh,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-21,Thắng,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-11-21,Quang Bình,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-21,Dũng,Long,Gdtt,Cookie Cam,5 cái,Tiền Mặt,280000
+2019-11-21,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-11-21,Hà Anh,Duy,Bưu Cục,Cam Lẻ,20g,ACB,650000
+2019-11-21,Thanh Huyền,Long,Bưu Cục,Cam Lọc,800g,ACB,8800000
+2019-11-21,Thanh Huyền,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-11-21,Quốc Đại ,Duy,Bưu Cục,Cookie Kush,3 cái,VIB,645000
+2019-11-21,Quốc Đại ,Duy,Bưu Cục,Cam Cành,800g,VIB,12755000
+2019-11-21,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-21,Dũng,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-11-21,Quân,Long,Gdtt,Cam Lẻ,25g,Tiền Mặt,625000
+2019-11-21,Ming Nguyễn,Mi,Gdtt,Kush Điếu,1 điếu,Tiền Mặt,200000
+2019-11-21,Ming Nguyễn,Mi,Gdtt,Cam Điếu,2 điếu,Tiền Mặt,70000
+2019-11-21,Ming Nguyễn,Mi,Gdtt,Cookie Cam,1 cái ,Tiền Mặt,120000
+2019-11-21,An Le,Mi,Gdtt,Purple Punch,3g,Tiền Mặt,1000000
+2019-11-21,Tim Trần,Mi,Gdtt,King Kush,1g,Tiền Mặt,400000
+2019-11-21,Nguyên Vũ,Mi,Ats,Cam Lẻ,20g,Tiền Mặt,650000
+2019-11-21,Nguyên Vũ,Mi,Ats,Cookie Cam,1 cái,Tiền Mặt,120000
+2019-11-21,Ngân,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-21,Tùng Zip,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-11-21,Bình Minh,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-11-21,Bình Minh,Mi,Bưu Cục,Tarantula,1 điếu,ACB,300000
+2019-11-21,Bình Minh,Mi,Bưu Cục,Ocb,1 tệp,ACB,30000
+2019-11-21,Quốc Đại ,Duy,Bưu Cục,Cookie Kush,10 cái,VIB,2150000
+2019-11-21,Quốc Đại ,Duy,Bưu Cục,Kush Vụn,15g,VIB,2250000
+2019-11-22,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-11-22,Dũng,Long,Gdtt,Cam Cành,150g,Tiền Mặt,2400000
+2019-11-22,Kadgeyy,Long,Gdtt,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-23,Lộc ( Anh Vũ Hiếu ),Long,Gdtt,King Kush,1g,Tiền Mặt,350000
+2019-11-23,Lộc ( Anh Vũ Hiếu ),Long,Gdtt,Purple Punch,1g,Tiền Mặt,350000
+2019-11-23,Lộc ( Anh Vũ Hiếu ),Long,Gdtt,Original Glue,1g,Tiền Mặt,350000
+2019-11-23,Nhi,Hải,Ats,Blue Mango,1g,Tiền Mặt,360000
+2019-11-23,Ngọc Thắm,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-23,Huỳnh Anh,Duy,Ats,Sundae,1g,Tiền Mặt,400000
+2019-11-23,Huỳnh Anh,Duy,Ats,Blue Mango,1g,Tiền Mặt,380000
+2019-11-23,Huỳnh Anh,Duy,Ats,Purple Punch,1g,Tiền Mặt,380000
+2019-11-23,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-23,Cao Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-23,Hoàng Hải,Duy,Bưu Cục,King Kush,35g,VIB,8750000
+2019-11-23,Hoàng Hải,Duy,Bưu Cục,Sundae,35g,VIB,8750000
+2019-11-23,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,ACB,4800000
+2019-11-23,Vũ Hiếu,Long,Bưu Cục,Cookie Cam,1 cái,ACB,56000
+2019-11-23,Thịnh,Long,Ats,Cam Lẻ,10g,Tiền Mặt,250000
+2019-11-23,Thịnh,Long,Ats,Ocb,1 tệp,Tiền Mặt,20000
+2019-11-23,Minh Anh,Duy,Ats,Cookie Cam,3 cái,ACB,360000
+2019-11-23,Huy 18Cm,Long,Gdtt,Cam Cành,120g,Tiền Mặt,1920000
+2019-11-23,Đỗ Thành Đạt,Mi,Ats,King Kush,1g,Tiền Mặt,400000
+2019-11-23,Đỗ Thành Đạt,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-23,Đỗ Thành Đạt,Mi,Ats,Cookie Cam,1 cái,Tiền Mặt,120000
+2019-11-23,Vương Lâm ( Đại ) -,Long,Gdtt,Cookie Kush,1 cái ,X,200000
+2019-11-23,Nhum,Bw Team,Gdtt,Original Glue,2g,X,560000
+2019-11-24,Nhum,Bw Team,Gdtt,Sundae,1g,X,260000
+2019-11-24,Nhum,Bw Team,Gdtt,Blue Mango,1g,X,240000
+2019-11-24,Vương Lâm ( Đại ) -,Long,Gdtt,Cookie Kush,1 cái,X,200000
+2019-11-24,Trịnh Tú Hải,Long,Bưu Cục,Purple Punch,10g,ACB,2600000
+2019-11-24,Trịnh Tú Hải,Long,Bưu Cục,Purple Candy,10g,ACB,2600000
+2019-11-24,Trịnh Tú Hải,Long,Bưu Cục,Kush Vụn,10g,ACB,1500000
+2019-11-24,Lê Đức Minh,Mi,Ats,Cam Điếu,7 điếu,Tiền Mặt,245000
+2019-11-24,Dũng,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-11-24,Lala ( Mi ) ,Long,Gdtt,Cookie,1 cái,X,0
+2019-11-25,Thịnh,Long,Gdtt,Cookie Cam,5 cái,Tiền Mặt,387000
+2019-11-25,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-26,Thắng,Long,Gdtt,Kush Class A,1g,Tiền Mặt,350000
+2019-11-26,Ngân,Long,Gdtt,Cookie Cam,6 cái,Tiền Mặt,600000
+2019-11-26,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-11-26,A Thọ,Bw Team,Gdtt,Original Glue,50g,VCB,11500000
+2019-11-26,A Thọ,Bw Team,Gdtt,Bn,10g,X,2000000
+2019-11-26,A Thọ,Bw Team,Gdtt,Purple Punch,10g,X,2100000
+2019-11-26,A Thọ,Bw Team,Gdtt,Purple Candy,10g,X,2100000
+2019-11-26,A Thọ,Bw Team,Gdtt,Venom Bite,20g,X,4200000
+2019-11-26,Quân,Long,Gdtt,Cam Lọc Cành,100g,Tiền Mặt,2500000
+2019-11-27,Hải,Long,Gdtt,Cam Lẻ,5g,Momo,200000
+2019-11-27,Đỗ Cường,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Bạn Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Lâm Hoàng,Phi,Ats,Cam Cành,50g,Momo,1000000
+2019-11-27,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,5g,Momo,200000
+2019-11-27,Lê Đức Minh,Mi,Ats,Cam Điếu,7 điếu,Tiền Mặt,245000
+2019-11-27,Anh 420,Duy,Ats,Cam Cành,50g,ACB,1000000
+2019-11-27,Lê Đức Anh,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Ming Nguyễn,Mi,Ats,Sundae,1g,Tiền Mặt,400000
+2019-11-27,Nin Pi,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-11-27,Nguyễn Thanh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-27,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,100g,Momo,1450000
+2019-11-27,Vương Lâm ( Đại ) -,Long,Gdtt,Cookie Kush,2 cái,Tiền Mặt,500000
+2019-11-27,Vũ Mạnh,Long,Bưu Cục,Cam Cành,250g,ACB,4600000
+2019-11-27,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,13000000
+2019-11-27,Vid,Duy,Gdtt,Cookie Kush,1 cái,ACB,-200000
+2019-11-27,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-11-27,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-11-27,Lê Khánh Hoàng,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-11-27,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-27,Dũng,Long,Gdtt,Cam Lọc,100g,Tiền Mặt,1300000
+2019-11-27,Lê Ty,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-11-27,Quốc Đại ,Duy,Bưu Cục,Cam Cành,100g,VIB,1800000
+2019-11-27,Xuân Tân,Long,Bưu Cục,Cam Cành,500g,ACB,8000000
+2019-11-27,Xuân Tân,Long,Bưu Cục,Kush Class A,25g,ACB,5500000
+2019-11-27,Vũ Hiếu,Long,Bưu Cục,Cam Cành,500g,ACB,8000000
+2019-11-27,Phạm Minh Việt,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-11-29,Lộc ( Anh Vũ Hiếu ),Long,Gdtt,Gelato,1g,Tiền Mặt,350000
+2019-11-29,Kadgeyy,Duy,Hải Ship,Cam Cành,75g ,Tiền Mặt,1500000
+2019-11-29,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-29,Ngọc Nguyễn,Duy,Hải Ship,Cam Lẻ,15g,Tiền Mặt,500000
+2019-11-29,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,3600000
+2019-11-29,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-29,A Ken,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-29,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-29,Quân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-29,Quân,Mi,Ats,Sundae,2g,Tiền Mặt,800000
+2019-11-29,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-29,Tiến Mạnh,Mi,Ats,Sundae,1g,Tiền Mặt,400000
+2019-11-29,Tiến Mạnh,Mi,Ats,Cookie Kush,1 cái,Tiền Mặt,360000
+2019-11-29,Bá Thịnh,Phi,Bưu Cục,Bn,1g,ACB,240000
+2019-11-29,Bá Thịnh,Phi,Bưu Cục,Gelato,3g,ACB,780000
+2019-11-29,Bá Thịnh,Phi,Bưu Cục,King Kush,3g,ACB,840000
+2019-11-29,Bá Thịnh,Phi,Bưu Cục,Original Glue,3g,ACB,900000
+2019-11-30,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-30,Huy 18Cm,Bw Team,Gdtt,Cookie Kush,12 cái ,Tiền Mặt,2580000
+2019-11-30,Minh Quang,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-30,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-11-30,Chính Quyền,Duy,Gdtt,Cam Lẻ,5g,ACB,200000
+2019-11-30,Chính Quyền,Duy,Gdtt,Cookie Cam,2 cái,ACB,240000
+2019-11-30,Vũ Mạnh,Long,Bưu Cục,Purple Punch,5g,ACB,1300000
+2019-11-30,Vũ Mạnh,Long,Bưu Cục,Forbidden Fruit,5g,ACB,1300000
+2019-11-30,Vũ Mạnh,Long,Bưu Cục,Blue Dream,5g,ACB,1300000
+2019-11-30,Vũ Mạnh,Long,Bưu Cục,Super Og,5g,ACB,1300000
+2019-11-30,Vũ Mạnh,Long,Bưu Cục,Kush Vụn,2g,ACB,-200000
+2019-11-30,Sf ,Bw Team,X,Cookie Cam,1 cái,X,-50000
+2019-11-30,Dũng,Long,Gdtt,Cookie Kush,2 cái,Tiền Mặt,215000
+2019-11-30,Bear Shilva,Mi,Gdtt,Forbidden Fruit,2g,ACB,600000
+2019-11-30,Bear Shilva,Mi,Gdtt,Blue Dream,2g,ACB,600000
+2019-11-30,Bear Shilva,Mi,Gdtt,Sherbet,1g,ACB,300000
+2019-11-30,Bear Shilva,Mi,Gdtt,Cookie Cam,1 cái,ACB,-50000
+2019-11-30,Sơn,Mi,Gdtt,Cam Điếu,2 điếu,Tiền Mặt,90000
+2019-11-30,A Thọ,Bw Team,Gdtt,Gg4,50g,X,10500000
+2019-11-30,A Thọ,Bw Team,Gdtt,Super Og,50g,X,10500000
+2019-11-30,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-11-30,Dũng,Long,Gdtt,Purple Candy,1g,Tiền Mặt,260000
+2019-11-30,Dũng,Long,Gdtt,Purple Punch,1g,Tiền Mặt,260000
+2019-11-30,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-30,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-11-30,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-30,A Phong,Duy,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Cam Cành,50g,ACB,800000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Blue Dream,1g,ACB,260000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Forbidden Fruit,1g,ACB,260000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Sherbet,1g,ACB,260000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Sativa,1g,ACB,260000
+2019-11-30,Vũ Hiếu,Long,Bưu Cục,Purple Candy,1g,ACB,260000
+2019-11-30,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,800000
+2019-11-30,Minh Mario,Bw Team,Gdtt,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-01,An Lê,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-01,Khánh,Long,Gdtt,Black Water,1g,Tiền Mặt,360000
+2019-10-01,Dũng,Long,Gdtt,Cam Lẻ,7g,Tiền Mặt,175000
+2019-10-01,Nhi,Hải,Ats,Bn,1g,Tiền Mặt,380000
+2019-10-01,Tú Mỡ,Duy,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-10-01,Nguyên ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-01,Thảo,Mi,Ats,Kush,1g,Tiền Mặt,380000
+2019-10-01,Thảo,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-01,Khánh,Long,Gdtt,Kush,1g,Tiền Mặt,400000
+2019-10-01,Quang,Mi,Bưu Cục,Vụn Og,10g,ACB,1500000
+2019-10-01,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-10-01,Vũ Hiếu,Long,Bưu Cục,Moon II,1g,ACB,400000
+2019-10-01,Quốc Đại ,Duy,Bưu Cục,Cam Cành,400g,VIB,6400000
+2019-10-01,Nguyễn Tâm,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-10-01,Tiến Hải,Duy,Bưu Cục,Vụn Kush,7g,VIB,1000000
+2019-10-01,Tiến Hải,Duy,Bưu Cục,Cam Cành,100g,VIB,1800000
+2019-10-02,Huy Vũ,Mi,Ats,Cam Cành,100g,Tiền Mặt,2000000
+2019-10-02,Khánh Võ,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-10-02,Dũng,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-10-02,Quân,Mi,Ats,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-02,Vũ ,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-02,Vũ,Mi,Ats,Kush,1g,Tiền Mặt,360000
+2019-10-02,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-10-02,Phú Trịnh,Duy,Ats,Vụn Kush,3g,Tiền Mặt,600000
+2019-10-02,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-02,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-02,Dũng,Long,Gdtt,Kush Điếu,3 điếu,Tiền Mặt,435000
+2019-10-02,Quân,Long,Gdtt,Cam Lẻ,25g,Tiền Mặt,625000
+2019-10-02,Quân,Long,Gdtt,Tarantula,3 điếu,Tiền Mặt,900000
+2019-10-02,Bình,Mi,Gdtt,Cam Lẻ,33g,Tiền Mặt,1000000
+2019-10-02,Quân,Mi,Gdtt,Cam Lẻ,15g,Tiền Mặt,520000
+2019-10-02,Vũ Quốc Đức,Mi,Bưu Cục,Tarantula,2 điếu,ACB,600000
+2019-10-02,Vũ Quốc Đức,Mi,Bưu Cục,Kush,5g,ACB,1200000
+2019-10-02,Quang Mẫn,Duy,Bưu Cục,Cam Lẻ,17g,ACB,600000
+2019-10-02,Đức Anh,Hải,Dũng Ship,Cam Lẻ,10g,Tiền Mặt,330000
+2019-10-02,Dũng ,Long,Gdtt,Cam Lẻ,10g ,Tiền Mặt,250000
+2019-10-03,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-03,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-03,Nin Pi,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-10-03,Nguyễn Hoàng Long,Mi,Bưu Cục,Cam Lọc,100g,ACB,1700000
+2019-10-03,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-03,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-10-03,Hoàng Phúc,Duy,Bưu Cục,Tarantula,2 điếu,VIB,600000
+2019-10-03,Hà Anh,Duy,Bưu Cục,Cam Lẻ,15g ,ACB,520000
+2019-10-03,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-10-04,Christ Devlin,Duy,Ats,Cam Lẻ,15g ,Tiền Mặt,500000
+2019-10-04,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-04,Nguyên ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-04,A Phong,Bw Team,Gdtt,Cherry Kush,1g,Tiền Mặt,350000
+2019-10-04,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-04,An Lê,Mi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-04,Đức Anh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-10-04,Vũ Hiếu,Long,Bưu Cục,Cam Cành,650g,ACB,10400000
+2019-10-04,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,50g,ACB,750000
+2019-10-04,Tú Hải,Long,Bưu Cục,Candy Land,5g,ACB,1250000
+2019-10-04,Tú Hải,Long,Bưu Cục,Black Water,5g,ACB,1250000
+2019-10-04,Tú Hải,Long,Bưu Cục,Cherry Kush,10g,ACB,2600000
+2019-10-04,Tú Hải,Long,Bưu Cục,Tarantula,1 điếu ,ACB,300000
+2019-10-04,Huy 18Cm,Bw Team,Gdtt,Cam Cành,150g,Tiền Mặt,2400000
+2019-10-04,Dũng,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-10-04,Phương Đèn Dầu,Long,Gdtt,Cherry Kush,2g,Tiền Mặt,480000
+2019-10-04,Vi Lê,Duy,Bưu Cục,Cam Lẻ,15g,VIB,500000
+2019-10-04,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,12500000
+2019-10-04,Kadgeyy,Duy,Gdtt,Cam Cành,550g,Tiền Mặt,9600000
+2019-10-04,Kadgeyy,Duy,Gdtt,Cam Cookie,1 cái,Tiền Mặt,-50000
+2019-10-04,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-10-04,Xưởng Bánh,Bw Team,X,Kush Vụn,30g,X,-3000000
+2019-10-05,A Đức Motor,Bw Team,Gdtt,Cookie Kush,1 cái,VCB,215000
+2019-10-05,A Đức Motor,Bw Team,Gdtt,Candy Land,2.4g,VCB,576000
+2019-10-05,A Đức Motor,Bw Team,Gdtt,Cherry Kush,4.2g,VCB,1008000
+2019-10-05,A Đức Motor,Bw Team,Gdtt,Moon II,0.8g,VCB,640000
+2019-10-05,A Đức Motor,Bw Team,Gdtt,Moon I,0.3g,VCB,150000
+2019-10-06,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-10-06,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-10-06,Tuấn Minh,Phi,Gdtt,Tarantula,2 điếu,ACB,600000
+2019-10-06,Phượng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-06,Kim Kiều,Mi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-06,Vân Anh,Mi,Gdtt,Tarantula,3 điếu,ACB,900000
+2019-10-06,No Name,Mi,Đại Ship,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-06,Dũng,Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-10-06,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-06,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-10-06,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-06,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-06,A Nhân,Hải,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-06,Bạn Kha,Hải,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-06,Ngôn,Mi,Ats,Tarantula,4 điếu,Tiền Mặt,1200000
+2019-10-06,Leo Toney,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-06,Bạn Phùng Phú,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-06,Tấn Lộc,Mi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-06,Phùng Phú,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-06,Bw,Bw Team,X,Original Glue,1g,X,-230000
+2019-10-06,Bw,Bw Team,X,Bn,0.5g ,X,-95000
+2019-10-06,La La,Long,Gdtt,Original Glue,0.5g ,Tiền Mặt,140000
+2019-10-06,Bw,Bw Team,X,Original Glue,2g,X,-460000
+2019-10-06,Bw,Bw Team,X,Tarantula,2 điếu,X,-400000
+2019-10-07,Khả Duy,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,530000
+2019-10-07,Nguyên ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-07,Dũng,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-10-07,Ken Nguyễn,Hải,Hải Ship,Cherry Kush,2g,Tiền Mặt,690000
+2019-10-07,Thịnh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-10-07,An Lê,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-07,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-07,Trương Trung Nguyên,Duy,Bưu Cục,Black Water,5g,VIB,1350000
+2019-10-07,Trương Trung Nguyên,Duy,Bưu Cục,Cherry Kush,5g,VIB,1350000
+2019-10-08,Bear Shilva,Mi,Ats,Original Glue,5g,ACB,1800000
+2019-10-08,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-08,Khoa Trần,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-08,Trường Giang,Duy,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-10-08,A Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-08,A Quân,Mi,Ats,Kush Điếu,1 điếu ,Tiền Mặt,200000
+2019-10-08,Lê Minh Chí,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-08,Lê Khánh Hoàng,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-10-08,Lê Khánh Hoàng,Mi,Bưu Cục,Tarantula,1 điếu ,ACB,300000
+2019-10-08,Anh Thắng,Phi,Dũng Ship,Tarantula,3 điếu,Tiền Mặt,850000
+2019-10-08,Quang,Mi,Bưu Cục,Vụn Og,10g,ACB,1500000
+2019-10-08,Hoàng Hải,Duy,Bưu Cục,Original Glue,60g,VIB,15600000
+2019-10-08,Hoàng Hải,Duy,Bưu Cục,Venom Bite,1g,X,-230000
+2019-10-08,Thanh Huyền,Long,Bưu Cục,Cam Lọc,900g,ACB,12000000
+2019-10-08,Thanh Huyền,Long,Bưu Cục,Cam Cành,100g,ACB,1600000
+2019-10-08,Vũ Mạnh,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-10-08,Sơn,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-09,Leo Toney,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-09,Trúc Ly,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-09,Viễn,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-09,Đức Anh,Mi,Ats,Cam Lẻ,7g,Tiền Mặt,300000
+2019-10-09,Nhi,Mi,Ats,Black Water,1g,Tiền Mặt,360000
+2019-10-09,Nhi,Mi,Ats,Original Glue,1g,Tiền Mặt,400000
+2019-10-09,Huy Diamond,Mi,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-10-09,Thiên Phúc,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-10-09,Phương Anh,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-10-09,Phương Đèn Dầu,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-10-09,Xuân Tân,Long,Bưu Cục,Cherry Kush,10g,ACB,2200000
+2019-10-10,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-10,Kiên,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-10,Kiên,Mi,Ats,Original Glue,1g,Tiền Mặt,400000
+2019-10-10,Thanh Trí,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-10,Nguyên ,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-10,Brick,Mi,Bưu Cục,Cam Cành,250g,ACB,4750000
+2019-10-10,Brick,Mi,Bưu Cục,Tarantula,2 điếu,ACB,600000
+2019-10-10,Thịnh,Long,Gdtt,Original Glue,2g,Tiền Mặt,560000
+2019-10-10,Bảo Nguyễn,Mi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-10-10,Lê Phúc ,Mi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-10,Cao Đăng Khánh,Mi,Bưu Cục,Cam Lọc,100g,ACB,1700000
+2019-10-10,Kim Tân,Phi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-10,Minh Đức,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-10,Quốc Đại ,Duy,Bưu Cục,Cam Cành,300g,VIB,5400000
+2019-10-10,Dũng,Long,Gdtt,Vụn Kush,1g,Tiền Mặt,130000
+2019-10-10,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-10-10,Dũng,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-10-10,Minh,Mi,Gdtt,Cam Lẻ,5g ,Tiền Mặt,200000
+2019-10-11,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-11,Minh Con,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-11,An Lê,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-11,Sơn Thành,Mi,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-11,Cường ( Thịnh ),Long,Gdtt,Original Glue,1g,X,400000
+2019-10-11,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-11,Hằng Nguyễn,Mi,Bưu Cục,Original Glue,10g,ACB,2900000
+2019-10-12,Kinh Trường,Mi,Ats,Original Glue,1g,Tiền Mặt,400000
+2019-10-12,Khánh Hoàng,Mi,Ats,Vụn Kush,1g,Tiền Mặt,250000
+2019-10-12,No Name,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-12,Nhum,Long,Gdtt,Original Glue,2g,X,560000
+2019-10-12,Vũ Mạnh,Long,Bưu Cục,Tarantula,2 điếu,ACB,600000
+2019-10-12,Vũ Mạnh,Long,Bưu Cục,Cookie Cam,2 cái,ACB,112000
+2019-10-12,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-12,Quân,Long,Gdtt,Cam Lẻ,40g,Tiền Mặt,1000000
+2019-10-12,Dũng,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-10-13,Dũng ,Long,Gdtt,Cam Lẻ,25g,Tiền Mặt,625000
+2019-10-13,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-10-13,Christ Devlin,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-13,Bạn Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-13,Nguyễn Ngọc,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-13,Triều,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-13,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-13,Phong,Long,Ats,Original Glue,3g,Tiền Mặt,1200000
+2019-10-13,Thắng,Long,Gdtt,Original Glue,1g,Tiền Mặt,400000
+2019-10-13,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,50g,ACB,750000
+2019-10-13,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-10-13,Ryan,Long,Bưu Cục,Cookie Kush,5 cái,ACB,1325000
+2019-10-14,Quốc Bảo,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1150000
+2019-10-14,Quốc Đại ,Duy,Bưu Cục,Cam Cành,1000g,VIB,16000000
+2019-10-14,Nhựt San,Phi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-10-14,Nhựt San,Phi,Bưu Cục,Original Glue,1g,ACB,400000
+2019-10-14,Nhựt San,Phi,Bưu Cục,Kush Điếu,2 điếu ,ACB,300000
+2019-10-15,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-15,Tiến Mạnh,Mi,Ats,Venom Bite,1g,Tiền Mặt,400000
+2019-10-15,Tiến Nạnh,Mi,Ats,Cherry Kush,1g,Tiền Mặt,380000
+2019-10-15,Bùi Tuấn,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-10-15,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-15,Trịnh Tú Hải,Long,Bưu Cục,Cherry Kush,20g,ACB,5200000
+2019-10-15,Trịnh Tú Hải,Long,Bưu Cục,Tarantula,1 điếu ,ACB,200000
+2019-10-15,Dũng,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-10-15,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-10-15,Hải Nguyễn,Duy,Bưu Cục,Cam Cành,40g,VIB,900000
+2019-10-15,Hải Nguyễn,Duy,Bưu Cục,Tarantula,1 điếu ,VIB,300000
+2019-10-15,Lan Võ,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-15,Tá Duy,Bw Team,Hải Ship,Cookie Cam,1 cái,Tiền Mặt,50000
+2019-10-15,Nguyên ,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-15,Thắng,Long,Gdtt,Black Water,1g,Tiền Mặt,350000
+2019-10-15,Anh Rex,Long,Gdtt,Venom Bite,5g,VCB,1200000
+2019-10-15,Anh Rex,Long,Gdtt,Original Glue,11g,VCB,2860000
+2019-10-15,Anh Rex,Long,Gdtt,Cookie Kush Mini,1 cái,VCB,215000
+2019-10-16,Anh 420,Duy,Ats,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-16,Bear Shilva,Mi,Ats,Original Glue,2g,ACB,700000
+2019-10-16,Bear Shilva,Mi,Ats,Venom Bite,3g,ACB,900000
+2019-10-16,Huy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-16,Bang Đinh Thế,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-16,Bang Đinh Thế,Mi,Ats,Cookie Cam,1 cái,Tiền Mặt,120000
+2019-10-16,Anh Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-16,Ung Văn Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-16,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-14,Huy 18Cm,Bw Team,Gdtt,Cam Cành,400g,Tiền Mặt,6400000
+2019-10-16,Ryan,Long,Bưu Cục,Cam Lọc,100g,ACB,1500000
+2019-10-16,Phạm Minh Việt,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-10-16,Hoàng Thương,Duy,Bưu Cục,Cam Lẻ,20g,VIB,650000
+2019-10-16,A Ken,Hải,Hải Ship,Black Water,2g,Tiền Mặt,720000
+2019-10-16,Bùi Quang Mẫn,Duy,Bưu Cục,Cam Lẻ,17g,VIB,600000
+2019-10-17,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-17,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-17,Jackcop,Phi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-10-17,Jackcop,Phi,Bưu Cục,Cherry Kush,10g,ACB,2600000
+2019-10-17,Huy Hoàng,Duy,Bưu Cục,Cam Lẻ,20g ,VIB,650000
+2019-10-17,Khánh Võ,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-10-17,Cường,Mi,Ats,Cam Lẻ,10g ,VIB,380000
+2019-10-17,Đỗ Thành Đạt,Mi,Ats,Cam Lẻ,5g,ACB,200000
+2019-10-17,Dũng,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-10-17,An Lê,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-17,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-20,Khôi Nguyễn,Mi,Ats,Tarantula,2 điếu,Tiền Mặt,600000
+2019-10-20,Khôi Nguyễn,Mi,Ats,Original Glue,1g ,Tiền Mặt,400000
+2019-10-20,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-20,Anh 420,Duy,Ats,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-20,Khánh Hoàng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-20,Nguyễn Ngọc,Hải,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-20,Anh Leo,Bw Team,Gdtt,Original Glue,10g,Tiền Mặt,2600000
+2019-10-20,Đức Anh,Hải,Ats,Cam Lẻ,7g,Tiền Mặt,300000
+2019-10-20,Quân,Mi,Ats,Black Water,1g,Tiền Mặt,360000
+2019-10-20,Quân,Mi,Ats,Diamond ,1g,Tiền Mặt,360000
+2019-10-20,Bảo ( Thịnh ),Thịnh,Ats,Diamond ,1g,Tiền Mặt,450000
+2019-10-20,Trung Phạm,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-10-20,Dương,Mi,Dũng Ship,Cam Điếu,5 điếu,Tiền Mặt,125000
+2019-10-20,Quốc Văn,Thịnh,Bưu Cục,Og,5g,ACB,1000000
+2019-10-20,Xuân Tân,Long,Bưu Cục,Cam Cành,500g,ACB,8000000
+2019-10-20,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-10-20,Vũ Hiếu,Long,Bưu Cục,Cam Cành,500g,ACB,8000000
+2019-10-20,Vũ Hiếu,Long,Bưu Cục,Cookie Kush,1 cái,ACB,215000
+2019-10-21,Nho Xanh,Mi,Đại Ship,Kush Điếu,1 điếu ,Tiền Mặt,250000
+2019-10-21,Nho Xanh,Mi,Đại Ship,Cam Điếu,1 điếu ,Tiền Mặt,35000
+2019-10-21,Anh Đức,Mi,Ats,Cherry Kush,1g,Tiền Mặt,400000
+2019-10-21,Nguyên ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-21,Christ Devlin,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-21,No Name,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-21,Quân,Long,Gdtt,Cam Lẻ,25g,Tiền Mặt,625000
+2019-10-21,Dũng,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-10-21,Quân,Long,Gdtt,Cookie Cam,5 cái,Tiền Mặt,280000
+2019-10-21,Dũng,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-22,Đức Anh,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-22,A Quân,Mi,Ats,Kush Class A,2g,Tiền Mặt,800000
+2019-10-22,A Quân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-22,Nhi,Hải,Ats,Bn,1g,Tiền Mặt,360000
+2019-10-22,Nhi,Hải,Ats,Cherry Kush,1g,Tiền Mặt,380000
+2019-10-22,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-22,Đỗ Cường,Hải,Ats,Vụn Kush,2g,Tiền Mặt,400000
+2019-10-22,Mr.Tây ,Lala,Ats,Original Glue,3g,Tiền Mặt,1080000
+2019-10-22,Mr.Tây ,Lala,Ats,Venom Bite,2g,Tiền Mặt,640000
+2019-10-22,Mr.Tây ,Lala,Ats,Cookie Cam,2 cái,Tiền Mặt,220000
+2019-10-22,Phương Đèn Dầu,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-10-22,Phương Đèn Dầu,Long,Gdtt,Cherry Kush,2g,Tiền Mặt,480000
+2019-10-22,Dũng ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-22,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-22,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-22,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-10-22,Phú Trịnh,Duy,Ats,Vụn Kush,3g,Tiền Mặt,600000
+2019-10-22,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-22,Việt Linh,Phi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-22,Trương Công Quang,Phi,Bưu Cục,Vụn Kush,10g,ACB,1500000
+2019-10-22,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-10-22,Vũ Mạnh,Long,Bưu Cục,Cherry Kush,5g,ACB,1300000
+2019-10-22,Vũ Mạnh,Long,Bưu Cục,Bn,5g,ACB,1300000
+2019-10-22,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-10-22,Phúc Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-10-22,Tiến Hải,Duy,Bưu Cục,Cam Cành,100g,VIB,1800000
+2019-10-22,Tiến Hải,Duy,Bưu Cục,Venom Bite,5g,VIB,1600000
+2019-10-22,Hoàng Hải,Duy,Bưu Cục,Original Glue,60g,VIB,15600000
+2019-10-22,Hoàng Hải,Duy,Bưu Cục,Cookie Kush,1 cái,VIB,150000
+2019-10-23,Đỗ Cường,Duy,Đại Ship,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-23,Thanh Huyền,Long,Bưu Cục,Cam Lọc,800g,ACB,10400000
+2019-10-23,Thanh Huyền,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-10-23,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-10-23,Dũng,Long,Gdtt,Cookie Cam,1 cái,Tiền Mặt,56000
+2019-10-23,Huy 18Cm,Bw Team,Gdtt,Cam Cành,150g,Tiền Mặt,2400000
+2019-10-23,Dũng,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-23,Thắng,Phi,Gdtt,Original Glue,1g,Tiền Mặt,380000
+2019-10-23,Lan Võ,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-24,Dũng,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-10-24,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-10-23,Ngọc Nguyễn,Duy,Đại Ship,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-23,Bạn Kha,Hải,Hải Ship,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-23,Phương Đèn Dầu,Long,Gdtt,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-23,Bear Shilva,Mi,Ats,Original Glue,3g,ACB,1080000
+2019-10-23,Bear Shilva,Mi,Ats,Venom Bite,2g,ACB,670000
+2019-10-23,Nguyên ,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-23,Nguyễn Vũ ,Mi,Ats,Cam Lẻ,5g ,Tiền Mặt,200000
+2019-10-23,Nguyễn Vũ,Mi,Ats,Venom Bite,1g,Tiền Mặt,380000
+2019-10-23,Nguyễn Vũ,Mi,Ats,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-23,Lê Công Chung,Phi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-10-23,Tài - Bạn A Leo,Bw Team,Gdtt,Original Glue,5g,VCB,1300000
+2019-10-23,Lynh Miu,Duy,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-10-23,Lynh Miu,Duy,Bưu Cục,Cookie Kush,1 cái,ACB,360000
+2019-10-23,Hà Anh,Duy,Bưu Cục,Cam Lẻ,33g,ACB,1000000
+2019-10-23,Vũ Văn Huỳnh,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-26,Anh 420,Duy,Ats,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-26,Tuấn,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Ngân,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-10-26,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,No Name,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Nguyễn Phương,Phi,Ats,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-26,Việt Linh,Phi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Jackcop,Long,Bưu Cục,Cam Cành,100g,Tiền Mặt,2100000
+2019-10-26,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-10-26,Xưởng Bánh,Bw Team,X,Kush Vụn,30g,X,-3000000
+2019-10-26,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-10-25,Dũng,Long,Gdtt,Cam Lọc,50g,Tiền Mặt,800000
+2019-10-25,Kadgeyy,Duy,Đại Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-25,Anh Khoa,Mi,Ats,Original Glue,10g,Tiền Mặt,2900000
+2019-10-25,Tiến Mạnh,Mi,Ats,Bn,1g,Tiền Mặt,360000
+2019-10-25,Tiến Mạnh,Mi,Ats,Original Glue,1g,Tiền Mặt,400000
+2019-10-25,Linh,Đèn Dầu,Ats,Cookie Cam,2 cái,ACB,260000
+2019-10-25,Ryan,Long,Bưu Cục,Original Glue,2g,ACB,840000
+2019-10-25,Ryan,Long,Bưu Cục,Cookie Cam,1 cai,ACB,95000
+2019-10-25,A Quân,Mi,Ats,Original Glue,2g,Tiền Mặt,800000
+2019-10-25,A Quân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-25,Ryan,Long,Bưu Cục,Cam Cành,1000g,Tiền Mặt,15500000
+2019-10-25,Ryan,Long,Bưu Cục,Cam Lọc,100g,Tiền Mặt,1500000
+2019-10-25,Bùi Tuấn,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-10-25,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-10-25,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-25,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-25,Quốc Đại ,Duy,Bưu Cục,Cam Cành,200g,VIB,3600000
+2019-10-26,A Ken,Hải,Hải Ship,Original Glue,1g,Tiền Mặt,400000
+2019-10-26,A Ken,Hải,Hải Ship,Venom Bite,1g,Tiền Mặt,380000
+2019-10-26,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,13000000
+2019-10-26,Hoàn Sở Hứa,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Gia Huy,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-26,Khang,Hải,Ats,Cam Lẻ,5g,VIB,200000
+2019-10-26,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,ACB,4800000
+2019-10-26,Vũ Hiếu,Long,Bưu Cục,Cookie Kush,2 cái,ACB,430000
+2019-10-26,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-26,Hồng Quân,Duy,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-26,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-26,Thắng,Long,Gdtt,Original Glue,1g,Tiền Mặt,380000
+2019-10-26,Lâm Giang,Mi,Now,Tarantula,11 điếu,Momo,3000000
+2019-10-26,An Lê,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Dũng,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-10-26,Đỗ Cường,Hải,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Nguyên ,Duy,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-26,Thịnh,Hải,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-28,Ngọc Đăng,Mi,Đại Ship,Tarantula,1 điếu ,Tiền Mặt,300000
+2019-10-27,Dũng ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-10-28,Anh 420,Duy,Ats,Cam Cành,50g,Tiền Mặt,1000000
+2019-10-28,Dũng,Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-10-28,Quân,Mi,Ats,Cookie Kush,1 cái,X,-130000
+2019-10-28,Anh Duy,Duy,Ats,Original Glue,5g,Tiền Mặt,1800000
+2019-10-28,Tim Trần,Mi,Gdtt,Mr.T,1g,ACB,400000
+2019-10-28,Dũng,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-10-29,Quốc Đại ,Duy,Bưu Cục,Cam Cành,600g,VIB,10200000
+2019-10-29,Quốc Đại ,Duy,Bưu Cục,Tarantula,5 điếu,VIB,1500000
+2019-10-29,Thịnh,Long,Gdtt,Original Glue,1g,Tiền Mặt,280000
+2019-10-29,Em Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-29,Thắng,Phi,Bưu Cục,Original Glue,1g,Tiền Mặt,350000
+2019-10-29,Nguyễn Ngọc,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-10-29,Nguyễn Ngọc,Duy,Ats,Điếu Kush,0.25g,Tiền Mặt,50000
+2019-10-29,Nin Pi,Duy,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-10-29,Khả Duy,Mi,Ats,Cam Lẻ,7g,Tiền Mặt,300000
+2019-10-29,Đức Cường,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-10-29,Quân,Mi,Ats,Mr.T,1g,Tiền Mặt,380000
+2019-10-29,Quân,Mi,Ats,Og,1g,Tiền Mặt,400000
+2019-10-29,Đặng Quân,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-10-29,Phương Đèn Dầu,Long,Gdtt,Mr.T,3g,Tiền Mặt,440000
+2019-10-29,An Lê,Mi,Dũng Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-10-29,Khôi Nguyên,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-10-29,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,100g,ACB,1450000
+2019-10-29,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,15500000
+2019-10-29,Ryan,Long,Bưu Cục,Cam Lọc,100g,ACB,1500000
+2019-10-29,Phúc Trần,Duy,Bưu Cục,Cam Lẻ,32g,VIB,900000
+2019-10-29,Vũ Mạnh,Long,Bưu Cục,Bn,5g,ACB,1300000
+2019-10-29,Vũ Mạnh,Long,Bưu Cục,Venom Bite,5g,ACB,1300000
+2019-10-29,Quang,Mi,Bưu Cục,Vụn Kush,20g,ACB,3000000
+2019-10-29,Dũng,Long,Gdtt,Cookie Kush,2 cái,Tiền Mặt,430000
+2019-10-30,A Chiến Igo,Bi,Gdtt,Original Glue,1g,X,280000
+2019-10-30,A Chiến Igo,Bi,Gdtt,Tarantula,2 điếu,X,600000
+2019-10-30,A Chiến Igo,Bi,Gdtt,Cookie Kush,1 cái,X,-130000
+2019-10-30,Khánh Võ,Mi,Gdtt,Venom Bite,1g,Tiền Mặt,400000
+2019-10-31,Khang,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-31,Đỗ Cường,Hải,Ats,Black Water,3g,Tiền Mặt,1000000
+2019-10-31,Phú,Mi,Gdtt,Venom Bite,1g,Tiền Mặt,500000
+2019-10-31,Phú,Mi,Gdtt,Diamond ,1g,Tiền Mặt,500000
+2019-10-31,Hoàng Thương,Duy,Bưu Cục,Cam Lẻ,15g,VIB,500000
+2019-10-31,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-10-31,Vũ Mạnh,Long,Bưu Cục,Venom Bite,5g,ACB,1300000
+2019-10-31,Vũ Mạnh,Long,Bưu Cục,Bn,5g,ACB,1300000
+2019-10-31,Trịnh Tú Hải,Long,Bưu Cục,Venom Bite,20g,ACB,5200000
+2019-10-31,Kadgeyy,Duy,Gdtt,Cam Cành,550g,Tiền Mặt,9900000
+2019-10-31,Bear Shilva,Mi,Ats,Mr.T,2g,ACB,600000
+2019-10-31,Bear Shilva,Mi,Ats,Gelato,3g,ACB,900000
+2019-10-31,Kush High,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-10-31,Thiện,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-10-31,Đức Anh,Duy,Hải Ship,Venom Bite,1g,Tiền Mặt,400000
+2019-10-31,Châu Huy,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-10-31,Jackcop,Phi,Bưu Cục,Cam Cành,100g,ACB,2100000
+2019-10-31,Jackcop,Phi,Bưu Cục,Tarantula,1 điếu ,ACB,300000
+2019-10-31,Jackcop,Phi,Bưu Cục,Cookie Kush,1 cái,ACB,-130000
+2019-10-31,Hoàng Hải,Duy,Bưu Cục,Venom Bite,35g,VIB,8750000
+2019-10-31,Hoàng Hải,Duy,Bưu Cục,Original Glue,35g,VIB,8750000
+2019-09-01,Hoàng Hải,Duy,Ats,Kush Class A,50g,VIB,12000000
+2019-09-01,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1000000
+2019-09-01,Phú Trịnh,Duy,Ats,Kush Class A,2g,Tiền Mặt,800000
+2019-09-01,Bạn Kha,Duy,Ats,Cam Lẻ,18g,Tiền Mặt,600000
+2019-09-01,Khang,Mi,Ats,Cam Lẻ,7g,Tiền Mặt,300000
+2019-09-01,Trinh,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-01,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,17500000
+2019-09-01,Hải,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-01,Bạn Khiêm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-01,An ,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-01,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-03,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-09-03,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-09-03,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,800000
+2019-09-03,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
+2019-09-03,A Rex,Bw Team,Gdtt,24K Gold,5g,VCB,1200000
+2019-09-03,A Rex,Bw Team,Gdtt,Acid,10g,VCB,2400000
+2019-09-03,Vinh,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-03,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,7g,Tiền Mặt,175000
+2019-09-03,Dũng ( Quân ),Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-09-04,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,100g,ACB,1600000
+2019-09-04,Vũ Mạnh,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-09-04,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,16500000
+2019-09-05,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-05,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
+2019-09-05,Vũ Hiếu,Long,Bưu Cục,Cam Cành,250g,ACB,4000000
+2019-09-05,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-05,An Le,Mi,Gdtt,Kush Class A,1g,Tiền Mặt,400000
+2019-09-05,An Le,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Lan Võ,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Đức Anh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Đạt,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Kadgeyy,Duy,Gdtt,Cam Cành,450g,Tiền Mặt,8550000
+2019-09-05,Kadgeyy,Duy,Gdtt,Acid,5g,Tiền Mặt,1300000
+2019-09-05,Kadgeyy,Duy,Gdtt,24K Gold,5g,Tiền Mặt,1300000
+2019-09-06,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,ACB,4800000
+2019-09-06,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-09-06,Dũng ( Quân ),Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-09-06,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-09-06,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,5g,Tiền Mặt,1200000
+2019-09-06,A Rex,Bw Team,Gdtt,Kush Class A+,15g,VCB,3900000
+2019-09-06,Phùng Phú,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-06,A Nhân,Hải,Quân Ship,Super Glue A+,1g,Tiền Mặt,350000
+2019-09-07,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,10g,Tiền Mặt,2400000
+2019-09-07,No Name,Long,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-09-07,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,5g,Tiền Mặt,1200000
+2019-09-07,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1100000
+2019-09-07,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,1g,Tiền Mặt,240000
+2019-09-07,Dũng ( Quân ),Long,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,105000
+2019-09-07,Chính Quyền,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-07,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-07,Phạm Bình,Mi,Gdtt,Cam Lẻ,33g,Tiền Mặt,1000000
+2019-09-08,Biu,Long,Gdtt,Cam Cành,1000g,Tiền Mặt,16000000
+2019-09-08,Cao Phượng,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-08,Bear,Mi,Gdtt,Super Glue A+,5g,Tiền Mặt,1600000
+2019-09-08,Nguyễn Đình An,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-08,Nguyễn Đình An,Mi,Gdtt,Super Glue A+,1g,Tiền Mặt,400000
+2019-09-08,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,10g,Tiền Mặt,2400000
+2019-09-01,Một Trăm Mét,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-01,Thành,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
+2019-09-03,Trần Hưng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-03,Vinh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-03,Tường Phi Thái,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-03,Hoàng Thương,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-09-03,Khánh Đốm,Mi,Bưu Cục,Cam Lọc,100g,ACB,1700000
+2019-09-03,Mạnh Huy,Mi,Bưu Cục,Acid,1g,ACB,450000
+2019-09-03,Mạnh Huy,Mi,Bưu Cục,24K Gold,1g,ACB,450000
+2019-09-03,Hùng,Mi,Bưu Cục,Cam Lọc,100g,ACB,1800000
+2019-09-03,Dương Đình Khang,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-03,Quốc Đại,Duy,Bưu Cục,Cam Cành,1000g,ACB,17000000
+2019-09-03,Nhum ,Long,Gdtt,Kush Class A,2g,X,480000
+2019-09-04,Bin,Mi,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-09-04,Bin,Mi,Ats,Kush Class A,10g,Tiền Mặt,2600000
+2019-09-04,Trương Thoại,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
+2019-09-04,Khôi Nguyên,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-04,Trung Phạm,Duy,Ats,Kush Class A,2g,Tiền Mặt,800000
+2019-09-04,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-04,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-04,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-04,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,530000
+2019-09-04,Trương Trung Nguyên,Duy,Bưu Cục,Acid,5g,VIB,1350000
+2019-09-04,Trương Trung Nguyên,Duy,Bưu Cục,24K Gold,5g,VIB,1350000
+2019-09-05,Phi Lê,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-05,Quang Vinh,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,530000
+2019-09-05,Quang Vinh,Mi,Ats,Cam Điếu,10 điếu,Tiền Mặt,350000
+2019-09-05,Quang Vinh,Mi,Ats,Raw,1 tệp,Tiền Mặt,30000
+2019-09-05,Ni Pin,Mi,Ats,Cam Điếu,5 điếu ,Tiền Mặt,175000
+2019-09-05,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Nhi,Hải,Ats,Super Glue A+,1g,Tiền Mặt,400000
+2019-09-05,Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-05,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-06,Hoàng Hải,Duy,Bưu Cục,Super Glue A+,50g,VIB,13200000
+2019-09-06,Tèo Thuận,Mi,Ats,Cam Cành,100g,Tiền Mặt,2000000
+2019-09-07,Khách Hải,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-07,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-07,Anh Lam ,Mi,Gdtt,Cam Điếu,7 điếu,Tiền Mặt,245000
+2019-09-07,Trung Phạm,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-09,Dũng ( Quân ),Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-09-09,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,16000000
+2019-09-09,Thanh Huyền,Long,Bưu Cục,Cam Lọc,800g,ACB,10000000
+2019-09-09,Thanh Huyền,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-09-09,Hoàng Thương,Duy,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-09-09,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-09,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-09,Trần Hưng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-10,Tuấn Nguyễn,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-10,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-09-10,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-10,Dũng ( Quân ),Long,Gdtt,Super Glue A+,1g,Tiền Mặt,260000
+2019-09-10,Dũng ( Quân ),Long,Gdtt,Raw,2 tệp,Tiền Mặt,20000
+2019-09-10,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-09-10,Huy 18Cm,Bw Team,Gdtt,Kush Vụn,5g,Tiền Mặt,1000000
+2019-09-10,Hoàng Phúc,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-09-10,Hoàng Phúc,Duy,Bưu Cục,Super Glue A+,2g,VIB,800000
+2019-09-10,Một Trăm Mét,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-09-10,A Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,520000
+2019-09-10,Trang Đà Lạt,Long,Ats,Cam Lẻ,5g,X,-125000
+2019-09-10,Trang Đà Lạt,Long,Bưu Cục,Cam Cành,50g,ACB,750000
+2019-09-10,Biu,Long,Gdtt,Cam Cành,1000g,Tiền Mặt,16000000
+2019-09-10,Trọng Phát,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-10,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,10g,Tiền Mặt,2400000
+2019-09-11,Kha,Hải,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-11,Đức Anh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-11,Phương Đèn Dầu,Long,Gdtt,Super Glue A+,5g,Tiền Mặt,1200000
+2019-09-11,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-11,Quốc Đại,Duy,Bưu Cục,Cam Cành,200g,VIB,3700000
+2019-09-11,Phạm Minh Việt,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-09-12,A Nhân,Hải,Hải Ship,Super Glue A+,1g,Tiền Mặt,400000
+2019-09-12,Tá Duy,Bw Team,Gdtt,Super Glue A+,1g,Tiền Mặt,200000
+2019-09-12,Phương Đèn Dầu,Long,Gdtt,Super Glue A+,5g,Tiền Mặt,1300000
+2019-09-12,A Quân,Bi,Ats,Kush Điếu,6 điếu,Tiền Mặt,1000000
+2019-09-12,Gia Huy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2000000
+2019-09-13,Vid,Duy,Gdtt,Cam Lọc,685g,ACB,8900000
+2019-09-13,Tất Đạt,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-13,Nguyên,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Thịnh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Christ Devlin,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-09-13,An,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Khách Hải,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Huy 18Cm,Bw Team,Gdtt,Super Glue A+,5g,Tiền Mặt,1200000
+2019-09-13,Xuân Tân,Long,Bưu Cục,Super Glue A+,40g,ACB,9600000
+2019-09-13,Trung Phạm,Duy,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-13,Dũng ( Quân ),Long,Gdtt,Super Glue A+,1g,Tiền Mặt,260000
+2019-09-13,Chú A Nhân,Hải,Hải Ship,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-13,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Bạn Khả Duy,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,520000
+2019-09-14,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Lê Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Đỗ Thành Đạt,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Phú,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-14,Bùi Quang Mẫn,Duy,Bưu Cục,Cam Lẻ,17g,ACB,600000
+2019-09-14,Quốc Đại,Duy,Bưu Cục,Cam Cành,600g,VIB,10200000
+2019-09-14,Trang Đà Lạt,Long,Ats,Cam Lọc,50g,ACB,750000
+2019-09-14,Khánh Linh,Mi,Ats,Super Glue A+,3.2g,ACB,1500000
+2019-09-14,Khánh Linh,Mi,Ats,Doom Day,2.8g,ACB,0
+2019-09-14,Khánh Linh,Mi,Ats,Kush Điếu,1 điếu,ACB,-50000
+2019-09-14,A Quân,Bi,Ats,Kush Điếu,6 điếu,Tiền Mặt,1000000
+2019-09-15,Phương Đèn Dầu,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-09-15,Quân,Long,Gdtt,Cam Lẻ,20g,Tiền Mặt,500000
+2019-09-15,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-09-15,Kadgeyy,Duy,Hải Ship,Cam Cành,50g,Tiền Mặt,1100000
+2019-09-16,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,13g,Tiền Mặt,325000
+2019-09-16,Khách Mi,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-16,Phương Đèn Dầu,Long,Gdtt,24K Gold,2g,Tiền Mặt,440000
+2019-09-16,Phương Anh,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-09-16,Thanh Huyền,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-09-16,Brick,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-09-16,Khoa Trần,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-16,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-16,Bear,Mi,Ats,Vụn Doomday,5g,ACB,1400000
+2019-09-16,A Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,520000
+2019-09-16,Phương Đèn Dầu,Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-09-16,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,16000000
+2019-09-16,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,Quân,Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-09-17,Phương Đèn Dầu,Long,Gdtt,Purple Punch,2g,Tiền Mặt,520000
+2019-09-17,Phương Đèn Dầu,Long,Gdtt,Diamond A+,5g,Tiền Mặt,1300000
+2019-09-18,Huy 18Cm,Bw Team,Gdtt,Diamond A+,5g,Tiền Mặt,1200000
+2019-09-18,Huy 18Cm,Bw Team,Gdtt,Purple Punch A+,5g,Tiền Mặt,1200000
+2019-09-18,Huy 18Cm,Bw Team,Gdtt,Gsc,5g,Tiền Mặt,1100000
+2019-09-18,Huy 18Cm,Bw Team,Gdtt,Purple Punch A+,5g,Tiền Mặt,1200000
+2019-09-19,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-18,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-17,Vũ Mạnh,Long,Bưu Cục,Gsc,10g,ACB,2600000
+2019-09-17,Trần Nhựt San,Phi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-09-17,Trần Nhựt San,Phi,Bưu Cục,Kush Vụn,1g,ACB,200000
+2019-09-17,Vũ Mạnh,Long,Bưu Cục,Cam Lọc,100g,ACB,1600000
+2019-09-17,Trương Công Quang,Mi,Bưu Cục,Kush Vụn,10g,ACB,1600000
+2019-09-17,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,Kha,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-17,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-17,Hải,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-09-17,Quốc Đại,Duy,Bưu Cục,Cam Cành,100g,VIB,1859000
+2019-09-18,Anh Tú,Long,Bưu Cục,Gsc,5g,ACB,1300000
+2019-09-18,Anh Tú,Long,Bưu Cục,Kush Class A+,5g,ACB,1700000
+2019-09-18,A Rex,Bw Team,Gdtt,Purple Punch,5g,VCB,1300000
+2019-09-18,Long Hoàng,Bw Team,X,Purple Punch,2g,X,-220000
+2019-09-18,Long Hoàng,Bw Team,X,Gsc,2g,X,-200000
+2019-09-18,Long Hoàng,Bw Team,X,Dc,2g,X,-200000
+2019-09-18,A Rex,Bw Team,Gdtt,Diamond A,5g,VCB,1300000
+2019-09-18,Trương Trung Nguyên,Duy,Bưu Cục,Purple Punch,5g,VIB,1300000
+2019-09-18,Trương Trung Nguyên,Duy,Bưu Cục,Diamond ,5g,VIB,1500000
+2019-09-18,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-18,Một Trăm Mét,Mi,Ats,Cam Cành,50g,Tiền Mặt,1100000
+2019-09-18,Khả Duy,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-18,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,520000
+2019-09-18,Christ Devlin,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-09-18,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-18,Khánh Võ,Mi,Đại Ship,Kush Điếu,1 điếu,Tiền Mặt,200000
+2019-09-18,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-19,Vũ Hiếu,Long,Bưu Cục,Cam Cành,200g,ACB,3200000
+2019-09-20,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,16000000
+2019-09-20,A Leo (Đức Anh ),Bw Team,Gdtt,Kush Class A,5g,VCB,1200000
+2019-09-20,Trang Đà Lạt,Long,Bưu Cục,Cam Lọc,50g,ACB,750000
+2019-09-20,Hải Trịnh,Long,Bưu Cục,Purple Punch,10g,ACB,2700000
+2019-09-20,Hải Trịnh,Long,Bưu Cục,Dc,10g,ACB,2700000
+2019-09-20,Hằng Nguyễn,Mi,Bưu Cục,Gsc,5g,ACB,1400000
+2019-09-20,Hằng Nguyễn,Mi,Bưu Cục,Dc,5g,ACB,1400000
+2019-09-20,Hằng Nguyễn,Mi,Bưu Cục,Kush Vụn,1g,ACB,-100000
+2019-09-20,Đốm Khánh,Long,Bưu Cục,Cam Lọc,200g,ACB,3400000
+2019-09-20,Đỗ Thành Đạt,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,2200000
+2019-09-20,An Lê,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,380000
+2019-09-20,Minh Thiện,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-20,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-20,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2100000
+2019-09-20,Hoàng Hải,Duy,Bưu Cục,Purple Punch,25g,VIB,6500000
+2019-09-20,Hoàng Hải,Duy,Bưu Cục,Dc,25g,VIB,6500000
+2019-09-20,Huy Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-09-20,Nguyễn Hồng Quân,Duy,Bưu Cục,Cam Lẻ,17g,VIB,600000
+2019-09-20,Quốc Đại,Duy,Bưu Cục,Cam Cành,100g,VIB,1850000
+2019-09-20,Quốc Đại ,Duy,Bưu Cục,Dc,5g,VIB,1400000
+2019-09-20,Minh Mario,Duy,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-20,Minh Bình,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-09-20,Minh Bình,Mi,Bưu Cục,Purple Punch,1g,ACB,400000
+2019-09-20,Huy 18Cm,Bw Team,Gdtt,Purple Punch,5g,Tiền Mặt,1200000
+2019-09-20,Huy 18Cm,Bw Team,Gdtt,Dc,5g,Tiền Mặt,1100000
+2019-09-20,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-20,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-20,Jackcop,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-09-20,Jackcop,Long,Bưu Cục,Kush Vụn,1g,ACB,-100000
+2019-09-20,Thanh Huyền,Long,Bưu Cục,Kush Vụn,20g,ACB,0
+2019-09-20,Thanh Huyền,Long,Bưu Cục,Moon,5g,ACB,0
+2019-09-20,Vũ Mạnh,Long,Bưu Cục,Kush Class A,10g,ACB,2600000
+2019-09-20,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-09-20,Phương Đèn Dầu,Long,Gdtt,Gsc,1g,Tiền Mặt,240000
+2019-09-20,Nga,Hải,Dũng Ship,Cam Lẻ,5g,Tiền Mặt,150000
+2019-09-22,Bear,Mi,Ats,Purple Punch,5g,ACB,1600000
+2019-09-22,Lê Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-22,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-22,Dũng ( Quân ),Long,Gdtt,Cam Cành,50g,Tiền Mặt,900000
+2019-09-22,Huy 18Cm,Bw Team,Gdtt,Diamond ,5g,Tiền Mặt,1200000
+2019-09-22,Huy 18Cm,Bw Team,Gdtt,Diamond ,5g,Tiền Mặt,1200000
+2019-09-22,Huy 18Cm,Bw Team,Gdtt,Purple Punch,5g,Tiền Mặt,1200000
+2019-09-22,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-22,Đức Anh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-22,Một Trăm Mét,Mi,Ats,Cam Cành,50g,Tiền Mặt,1130000
+2019-09-22,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-22,Trang Đà Lạt,Long,Gdtt,Brass Pen,1 cái,ACB,450000
+2019-09-22,Trang Đà Lạt,Long,Gdtt,Kush Vụn,1g,X,-100000
+2019-09-24,Huy 18Cm,Bw Team,Gdtt,Cam Cành,50g,Tiền Mặt,800000
+2019-09-24,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-24,Dũng ( Quân ),Long,Gdtt,Raw,1 tệp,Tiền Mặt,20000
+2019-09-24,Huy 18Cm,Bw Team,Gdtt,Purple Punch,5g,Tiền Mặt,1200000
+2019-09-24,Huy 18Cm,Bw Team,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-24,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
+2019-09-20,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,3600000
+2019-09-23,Quang,Mi,Bưu Cục,Kush Vụn,10g,ACB,1600000
+2019-09-23,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-09-23,Hằng Nguyễn,Mi,Bưu Cục,Gsc,10g,ACB,2800000
+2019-09-23,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-24,Thanh Phong,Mi,Bưu Cục,Cam Cành,100g,ACB,2000000
+2019-09-24,John Trần,Mi,Bưu Cục,Kush Điếu,3 điếu,ACB,600000
+2019-09-24,Lê Ty,Duy,Bưu Cục,Cam Lẻ,15g,VIB,520000
+2019-09-24,Phúc Hoàng,Duy,Bưu Cục,Cam Cành,100g,VIB,2000000
+2019-09-24,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-24,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-24,Khả Duy,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-09-24,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-24,A Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,520000
+2019-09-24,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-24,Khánh Võ,Mi,Ats,Kush Điếu,3 điếu,Tiền Mặt,600000
+2019-09-24,Bạn Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-25,Trang Đà Lạt,Long,Bưu Cục,Kush Vụn,10g,ACB,1500000
+2019-09-25,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-25,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1600000
+2019-09-25,Phương Đèn Dầu,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1800000
+2019-09-25,Hồng Ngọc,Mi,Đại Ship,Cam Lẻ,7g,Tiền Mặt,300000
+2019-09-25,Winner Đen,Mi,Gdtt,Cam Lẻ,20g,Tiền Mặt,650000
+2019-09-25,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-25,Ngọc Hùng,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-09-25,Tiến Mạnh,Mi,Ats,Diamond ,1g,Tiền Mặt,450000
+2019-09-25,Tiến Mạnh,Mi,Ats,Purple Punch,1g,Tiền Mặt,450000
+2019-09-25,Tiến Mạnh,Mi,Ats,Kush Điếu,1 điếu,Tiền Mặt,-50000
+2019-09-25,Huỳnh Đức,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-26,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-26,Christ Devlin,Duy,Ats,Cam Lẻ,15g,Tiền Mặt,500000
+2019-09-26,Đức Anh,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-26,Cơ Minh,Duy,Bưu Cục,Cam Cành,50g,VIB,1100000
+2019-09-26,Quốc Đại,Duy,Bưu Cục,Cam Cành,200g,VIB,3700000
+2019-09-26,Vũ Văn Huỳnh,Mi,Bưu Cục,Cam Lẻ,15g,ACB,500000
+2019-09-27,Thanh Huyền,Long,Bưu Cục,Cam Cành,100g,ACB,1800000
+2019-09-26,Thanh Huyền,Long,Bưu Cục,Vụn Og,50g,ACB,4500000
+2019-09-27,Kadgeyy,Duy,Hải Ship,Cam Cành,100g,Tiền Mặt,2000000
+2019-09-27,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
+2019-09-27,Dũng ( Quân ),Long,Gdtt,Diamond ,1g,Tiền Mặt,260000
+2019-09-27,Dũng ( Quân ),Long,Gdtt,Purple Punch,1g,Tiền Mặt,260000
+2019-09-27,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-27,Ken Nguyễn,Hải,Ats,Candy Land,2g,Tiền Mặt,800000
+2019-09-27,Vinh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-27,Bear,Mi,Ats,Diamond ,5g,ACB,1600000
+2019-09-27,Bear,Mi,Ats,Kush Vụn,1g,ACB,-100000
+2019-09-29,Khiêm ,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-29,Thịnh,Hải,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-30,Dũng ( Quân ),Long,Gdtt,Cam Lẻ,15g,Tiền Mặt,375000
+2019-09-30,Dũng ( Quân ),Long,Gdtt,Diamond ,1g,Tiền Mặt,260000
+2019-09-27,Lê Minh Triết,Mi,Bưu Cục,Cam Cành,50g,ACB,1100000
+2019-09-27,Vũ Mạnh,Long,Bưu Cục,Candy Land,10g,ACB,2600000
+2019-09-27,Bùi Tuấn,Mi,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-09-27,Bùi Tuấn,Mi,Bưu Cục,Cam Lọc,100g,ACB,1700000
+2019-09-27,Bùi Tuấn,Mi,Bưu Cục,Kush Vụn,1g,ACB,-100000
+2019-09-27,Thanh Phong,Mi,Bưu Cục,Cam Cành,50g,ACB,1000000
+2019-09-28,Lê Thanh Hải,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-28,Nguyễn Thanh,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-09-30,Anh Đức Motor,Bw Team,Gdtt,Cookie Cam,6 cái,VCB,280000
+2019-09-30,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,16000000
+2019-09-30,Ryan,Long,Bưu Cục,Tarantula,1 điếu,ACB,-200000
+2019-09-30,Lê Tuấn,Mi,Ats,Tarantula,1 điếu,Tiền Mặt,300000
+2019-09-30,Lê Tuấn,Mi,Ats,Kush Điếu,1 điếu,Tiền Mặt,200000
+2019-09-30,Quốc Đại,Duy,Bưu Cục,Cam Cành,500g,VIB,11800000
+2019-09-30,Quốc Đại,Duy,Bưu Cục,Tarantula,10 điếu,VIB,0
+2019-09-30,Quốc Đại,Duy,Bưu Cục,Moon I,2g,VIB,0
+2019-09-30,Quốc Đại,Duy,Bưu Cục,Moon II,1g,X,-300000
