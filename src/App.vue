@@ -16,13 +16,13 @@ export default {
   },
 
   methods: {
-    getClients() {
-      return this.$store.dispatch("fetchClients");
+    init() {
+      return this.$store.dispatch("init");
     }
   },
 
   mounted() {
-    this.getClients();
+    this.init();
   }
 };
 </script>

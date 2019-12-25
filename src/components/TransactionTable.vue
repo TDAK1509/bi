@@ -25,16 +25,36 @@
         </b-table-column>
 
         <b-table-column
-          field="name"
-          label="Nội Dung Giao Dịch"
+          field="seller_name"
+          label="Tên Người Bán"
           sortable
           searchable
         >
-          {{ props.row.name }}
+          {{ props.row.seller_name }}
         </b-table-column>
 
-        <b-table-column field="type" label="Loại Giao Dịch" sortable>
-          {{ props.row.type }}
+        <b-table-column
+          field="transaction_type"
+          label="Hình Thức Giao Dịch"
+          sortable
+        >
+          {{ props.row.transaction_type }}
+        </b-table-column>
+
+        <b-table-column field="product_name" label="Tên Hàng Hóa" sortable>
+          {{ props.row.product_name }}
+        </b-table-column>
+
+        <b-table-column field="product_quantity" label="Số Lượng" sortable>
+          {{ props.row.product_quantity }}
+        </b-table-column>
+
+        <b-table-column
+          field="payment_type"
+          label="Hình Thức Thanh Toán"
+          sortable
+        >
+          {{ props.row.payment_type }}
         </b-table-column>
 
         <b-table-column field="amount" label="Thành Tiền" sortable numeric>

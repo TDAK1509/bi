@@ -27,7 +27,10 @@
           :type="errorDebtContent ? 'is-danger' : ''"
           :message="errorDebtContent"
         >
-          <b-input v-model="name"></b-input>
+          <b-input
+            v-model="name"
+            placeholder="Anh Long mua 5kg cam sành"
+          ></b-input>
         </b-field>
 
         <b-field

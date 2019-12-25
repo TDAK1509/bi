@@ -1,12 +1,16 @@
 <template>
-  <div class="client">
-    <page-title>KHÁCH HÀNG: {{ client.name }}</page-title>
-    <debt-table :debts="debts" />
-    <add-button @click="isShowAddModal = true" />
+  <div>
+    <div v-if="!isLoading" class="client">
+      <page-title>KHÁCH HÀNG: {{ client.name }}</page-title>
+      <debt-table :debts="debts" />
+      <add-button @click="isShowAddModal = true" />
 
-    <b-modal :active.sync="isShowAddModal" has-modal-card trap-focus aria-role="dialog" aria-modal>
-      <debt-modal-add :is-adding-debt="isAddingDebt" @add-debt="addDebt" />
-    </b-modal>
+      <b-modal :active.sync="isShowAddModal" has-modal-card trap-focus>
+        <debt-modal-add :is-adding-debt="isAddingDebt" @add-debt="addDebt" />
+      </b-modal>
+    </div>
+
+    <b-loading v-else :is-full-page="true" :active.sync="isLoading"></b-loading>
   </div>
 </template>
 
@@ -29,6 +33,10 @@ import DebtModalAdd from "@/components/DebtModalAdd.vue";
 export default class ClientView extends Vue {
   isShowAddModal = false;
   isAddingDebt = false;
+
+  get isLoading(): boolean {
+    return this.$store.state.isFetchingClients;
+  }
 
   get clientId(): string {
     return this.$route.params.clientId;

@@ -15,12 +15,7 @@
           {{ props.row.date }}
         </b-table-column>
 
-        <b-table-column
-          field="name"
-          label="Nội Dung Giao Dịch"
-          sortable
-          searchable
-        >
+        <b-table-column field="name" label="Nội Dung Nợ" sortable searchable>
           {{ props.row.name }}
         </b-table-column>
 

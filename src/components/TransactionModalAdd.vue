@@ -1,6 +1,6 @@
 <template>
   <form class="modal-add-transaction">
-    <div class="modal-card" style="width: 500px;">
+    <div v-if="!isLoading" class="modal-card" style="width: 500px;">
       <header class="modal-card-head modal-add-transaction__header">
         <p class="modal-card-title">Thêm Giao Dịch</p>
 
@@ -22,66 +22,59 @@
           ></b-datepicker>
         </b-field>
 
-        <b-field
-          label="Tên Khách Hàng (Chưa có thì tạo mới rồi chọn)"
-          :type="errorClientName ? 'is-danger' : ''"
-          :message="errorClientName"
-        >
-          <b-select placeholder="Chọn loại giao dịch" v-model="clientInfo">
-            <option
-              v-for="client in clientList"
-              :key="client.id"
-              :value="{ id: client.id, name: client.name }"
-              >{{ client.name }}</option
-            >
-          </b-select>
-        </b-field>
+        <transaction-modal-add-select-with-create-button
+          v-model="clientInfo"
+          label="Tên Khách Hàng"
+          :error-message="errorClientName"
+          :list="clientList"
+          @add-to-list="addClient"
+        />
 
-        <b-field>
-          <b-input
-            placeholder="Tạo khách hàng mới"
-            type="text"
-            v-model="newClient"
-            :disabled="isAddingClient"
-          ></b-input>
-          <p class="control">
-            <b-tooltip
-              label="Vui lòng điền tên khách hàng muốn tạo"
-              type="is-info"
-            >
-              <b-button
-                native-type="button"
-                type="is-danger"
-                icon-right="plus"
-                :loading="isAddingClient"
-                :disabled="!newClient"
-                @click="addClient"
-              />
-            </b-tooltip>
-          </p>
-        </b-field>
+        <transaction-modal-add-select-with-create-button
+          v-if="sellerNameList"
+          v-model="sellerName"
+          label="Tên Người Bán"
+          :error-message="errorSellerName"
+          :list="sellerNameList"
+          @add-to-list="addSeller"
+        />
+
+        <transaction-modal-add-select-with-create-button
+          v-if="transactionTypeList"
+          v-model="transactionType"
+          label="Hình Thức Giao Dịch"
+          :error-message="errorTransactionType"
+          :list="transactionTypeList"
+          @add-to-list="addTransactionType"
+        />
+
+        <transaction-modal-add-select-with-create-button
+          v-if="productNameList"
+          v-model="productName"
+          label="Tên Hàng Hóa"
+          :error-message="errorProductName"
+          :list="productNameList"
+          @add-to-list="addProductName"
+        />
 
         <b-field
-          label="Nội Dung Giao Dịch"
-          :type="errorTransactionName ? 'is-danger' : ''"
-          :message="errorTransactionName"
+          label="Số Lượng"
+          :type="errorProductQuantity ? 'is-danger' : ''"
+          :message="errorProductQuantity"
         >
-          <b-input v-model="transactionName"></b-input>
+          <b-input v-model="productQuantity"></b-input>
         </b-field>
 
-        <b-field
-          label="Loại Giao Dịch"
-          :type="errorTransactionType ? 'is-danger' : ''"
-          :message="errorTransactionType"
-        >
-          <b-select placeholder="Chọn loại giao dịch" v-model="transactionType">
-            <option v-for="type in transactionTypeList" :key="type">
-              {{ type }}
-            </option>
-          </b-select>
-        </b-field>
+        <transaction-modal-add-select-with-create-button
+          v-if="paymentTypeList"
+          v-model="paymentType"
+          label="Hình Thức Thanh Toán"
+          :error-message="errorPaymentType"
+          :list="paymentTypeList"
+          @add-to-list="addPaymentType"
+        />
 
-        <b-field label="Thành Tiền">
+        <b-field label="Thành Tiền" :message="amount | monetize">
           <b-numberinput
             v-model="amount"
             type="is-dark"
@@ -101,26 +94,40 @@
         >
       </footer>
     </div>
+
+    <b-loading v-else :is-full-page="true" :active.sync="isLoading"></b-loading>
   </form>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
-import { TransactionView, ClientInfo } from "@/models/transaction";
+import { ClientInfo, TransactionAddArguments } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
+import TransactionModalAddSelectWithCreateButton from "./TransactionModalAddSelectWithCreateButton.vue";
+import filterMixin from "@/mixins/filters";
 
-@Component
+@Component({
+  components: {
+    TransactionModalAddSelectWithCreateButton
+  },
+  mixins: [filterMixin]
+})
 export default class ModalAddTransaction extends Vue {
   date: Date = new Date();
   clientInfo: ClientInfo = { id: "", name: "" };
-  transactionName = "";
   transactionType = "";
   amount = 0;
-  newClient = "";
+  paymentType = "";
+  sellerName = "";
+  productName = "";
+  productQuantity = "";
 
   errorClientName = "";
-  errorTransactionName = "";
   errorTransactionType = "";
+  errorPaymentType = "";
+  errorSellerName = "";
+  errorProductName = "";
+  errorProductQuantity = "";
 
   @Prop({ type: Boolean, default: false })
   isAddingClient!: boolean;
@@ -128,12 +135,28 @@ export default class ModalAddTransaction extends Vue {
   @Prop({ type: Boolean, default: false })
   isAddingTransaction!: boolean;
 
-  get transactionTypeList(): string[] {
-    return ["Tien mat", "VCB"];
+  get isLoading(): boolean {
+    return this.$store.state.isFetchingOptions;
   }
 
   get clientList(): ClientInfo[] {
     return this.$store.getters.clientList;
+  }
+
+  get sellerNameList(): string[] {
+    return this.$store.state.options.sellers;
+  }
+
+  get transactionTypeList(): string[] {
+    return this.$store.state.options.transaction_types;
+  }
+
+  get productNameList(): string[] {
+    return this.$store.state.options.product_names;
+  }
+
+  get paymentTypeList(): string[] {
+    return this.$store.state.options.payment_types;
   }
 
   formatDateToString(date: Date): string {
@@ -144,35 +167,66 @@ export default class ModalAddTransaction extends Vue {
     this.errorClientName =
       this.clientInfo.name === "" ? "Vui lòng chọn khách hàng" : "";
 
-    this.errorTransactionName =
-      this.transactionName === "" ? "Vui lòng điền tên giao dịch" : "";
-
     this.errorTransactionType =
       this.transactionType === "" ? "Vui lòng chọn loại giao dịch" : "";
 
+    this.errorSellerName =
+      this.sellerName === "" ? "Vui lòng chọn người bán" : "";
+
+    this.errorPaymentType =
+      this.paymentType === "" ? "Vui lòng chọn hình thức thanh toán" : "";
+
+    this.errorProductName =
+      this.productName === "" ? "Vui lòng chọn tên hàng hóa" : "";
+
+    this.errorProductQuantity =
+      this.productQuantity === "" ? "Vui lòng chọn số lượng" : "";
+
     const isValid =
       !this.errorClientName &&
-      !this.errorTransactionName &&
-      !this.errorTransactionType;
+      !this.errorTransactionType &&
+      !this.errorSellerName &&
+      !this.errorPaymentType &&
+      !this.errorProductName &&
+      !this.errorProductQuantity;
 
     if (isValid === true) return this.addTransaction();
   }
 
   @Emit("add-transaction")
-  addTransaction(): TransactionView {
+  addTransaction(): TransactionAddArguments {
     return {
-      date: this.formatDateToString(this.date),
-      name: this.transactionName,
-      type: this.transactionType,
-      amount: this.amount,
-      client_name: this.clientInfo.name,
-      client_id: this.clientInfo.id
+      clientId: this.clientInfo.id,
+
+      transaction: {
+        date: this.formatDateToString(this.date),
+        transaction_type: this.transactionType,
+        amount: this.amount,
+        payment_type: this.paymentType,
+        seller_name: this.sellerName,
+        product_name: this.productName,
+        product_quantity: this.productQuantity
+      }
     };
   }
 
   @Emit("add-client")
-  addClient() {
-    return this.newClient;
+  addClient(value: string) {}
+
+  @Emit("add-seller")
+  addSeller(value: string) {}
+
+  @Emit("add-transaction-type")
+  addTransactionType(value: string) {}
+
+  @Emit("add-product-name")
+  addProductName(value: string) {}
+
+  @Emit("add-payment-type")
+  addPaymentType(value: string) {}
+
+  mounted() {
+    this.$store.dispatch("fetchOptions");
   }
 }
 </script>

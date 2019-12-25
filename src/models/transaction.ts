@@ -1,13 +1,21 @@
 export interface Transaction {
   date: string;
-  name: string;
-  type: string;
+  transaction_type: string;
   amount: number;
+  payment_type: string;
+  seller_name: string;
+  product_name: string;
+  product_quantity: string;
 }
 
 export interface TransactionView extends Transaction {
   client_name: string;
   client_id: string;
+}
+
+export interface TransactionAddArguments {
+  clientId: string;
+  transaction: Transaction;
 }
 
 export interface Debt {
@@ -43,3 +51,10 @@ export interface ClientInfo {
 }
 
 export type FilterType = "month" | "year" | "all";
+
+export interface SelectOptions {
+  sellers: string[];
+  transaction_types: string[];
+  product_names: string[];
+  payment_types: string[];
+}

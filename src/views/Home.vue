@@ -35,8 +35,14 @@
         :is-adding-transaction="isAddingTransaction"
         @add-transaction="addTransaction"
         @add-client="addClient"
+        @add-seller="addSeller"
+        @add-transaction-type="addTransactionType"
+        @add-product-name="addProductName"
+        @add-payment-type="addPaymentType"
       />
     </b-modal>
+
+    <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
   </div>
 </template>
 
@@ -51,8 +57,8 @@ import { Component, Vue } from "vue-property-decorator";
 import {
   FilterType,
   TransactionView,
-  Transaction,
-  Client
+  Client,
+  TransactionAddArguments
 } from "@/models/transaction";
 import filtersMixin from "@/mixins/filters";
 
@@ -72,6 +78,10 @@ export default class Home extends Vue {
   isShowAddModal: boolean = false;
   isAddingClient: boolean = false;
   isAddingTransaction: boolean = false;
+
+  get isLoading(): boolean {
+    return this.$store.state.isFetchingClients;
+  }
 
   get transactionsToShow(): TransactionView[] {
     if (this.filterType === "month") {
@@ -111,19 +121,12 @@ export default class Home extends Vue {
     }
   }
 
-  async addTransaction(transactionView: TransactionView) {
+  async addTransaction(transactionArgs: TransactionAddArguments) {
     this.isAddingTransaction = true;
 
-    const transaction: Transaction = {
-      date: transactionView.date,
-      name: transactionView.name,
-      type: transactionView.type,
-      amount: transactionView.amount
-    };
-
     await this.$store.dispatch("addTransaction", {
-      clientId: transactionView.client_id,
-      transaction
+      clientId: transactionArgs.clientId,
+      transaction: transactionArgs.transaction
     });
 
     this.isAddingTransaction = false;
@@ -145,6 +148,22 @@ export default class Home extends Vue {
       message: `Khách hàng ${clientName} đã được tạo!`,
       type: "is-success"
     });
+  }
+
+  async addSeller(sellerName: string) {
+    await this.$store.dispatch("addSeller", sellerName);
+  }
+
+  async addTransactionType(transactionType: string) {
+    await this.$store.dispatch("addTransactionType", transactionType);
+  }
+
+  async addProductName(productName: string) {
+    await this.$store.dispatch("addProductName", productName);
+  }
+
+  async addPaymentType(paymentType: string) {
+    await this.$store.dispatch("addPaymentType", paymentType);
   }
 }
 </script>

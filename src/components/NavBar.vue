@@ -22,6 +22,7 @@
           :key="client._id"
           class="nav-bar__search-results-item"
           :to="`/client/${client._id}`"
+          @click.native="searchText = ''"
           >{{ client.name }}</router-link
         >
       </div>
