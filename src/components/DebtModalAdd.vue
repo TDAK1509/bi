@@ -62,7 +62,7 @@
 
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
-import { ClientInfo } from "@/models/transaction";
+import { ClientInfo } from "@/models/client";
 import { formatDateToString } from "@/utils/date";
 
 @Component

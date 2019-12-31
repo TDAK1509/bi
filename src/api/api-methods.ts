@@ -1,58 +1,87 @@
 import * as firebase from "firebase";
 import { db } from "@/firebase";
-import {
-  ClientToAddToDatabase,
-  Client,
-  Transaction,
-  Debt,
-  SelectOptions
-} from "@/models/transaction";
+import { Transaction, TransactionView } from "@/models/transaction";
+import { Client, Debt, ClientView } from "@/models/client";
+import { SelectOptions } from "@/models/helpers";
+import { formatDateToString } from "@/utils/date";
 
 enum FirebaseCollection {
   CLIENTS = "clients",
+  TRANSACTIONS = "transactions",
   OPTIONS = "options"
 }
 
-export async function addClient(client: ClientToAddToDatabase) {
+export async function addClient(client: Client) {
   const docRef = await db.collection(FirebaseCollection.CLIENTS).add(client);
   return docRef.id;
 }
 
-export async function getAllClients(): Promise<Array<Client>> {
-  const clients: Client[] = [];
+export async function addTransaction(transaction: Transaction) {
+  const docRef = await db
+    .collection(FirebaseCollection.TRANSACTIONS)
+    .add(transaction);
+  return docRef.id;
+}
+
+export async function addDebt(clientId: string, debt: Debt) {
+  const docRef = db.collection(FirebaseCollection.CLIENTS).doc(clientId);
+  await docRef.update({
+    debts: firebase.firestore.FieldValue.arrayUnion(debt)
+  });
+}
+
+export async function updateDebts(clientId: string, debts: Debt[]) {
+  const docRef = db.collection(FirebaseCollection.CLIENTS).doc(clientId);
+  await docRef.update({ debts });
+}
+
+export async function fetchTransactions(startDate: Date, endDate: Date) {
+  const transactions: TransactionView[] = [];
+
+  const docRef = db
+    .collection(FirebaseCollection.TRANSACTIONS)
+    .where("date", ">=", formatDateToString(startDate))
+    .where("date", "<=", formatDateToString(endDate));
+  const querySnapshot = await docRef.get();
+
+  querySnapshot.forEach(doc => {
+    const data = doc.data();
+    const transaction: TransactionView = {
+      id: doc.id.toString(),
+      date: data.date,
+      transaction_type: data.transaction_type,
+      amount: data.amount,
+      payment_type: data.payment_type,
+      seller_name: data.seller_name,
+      product_name: data.product_name,
+      product_quantity: data.product_quantity,
+      client_name: data.client_name,
+      client_id: data.client_id
+    };
+    transactions.push(transaction);
+  });
+
+  return transactions;
+}
+
+export async function fetchClients(): Promise<Array<ClientView>> {
+  const clients: ClientView[] = [];
 
   const docRef = await db.collection(FirebaseCollection.CLIENTS);
   const querySnapshot = await docRef.get();
+
   querySnapshot.forEach(doc => {
     const data = doc.data();
-    const client: Client = {
-      _id: doc.id.toString(),
+    const client: ClientView = {
+      id: doc.id.toString(),
       name: data.name,
-      created_at: data.created_at,
-      transactions: data.transactions,
+      date: data.date,
       debts: data.debts
     };
     clients.push(client);
   });
 
   return clients;
-}
-
-export async function addTransaction(
-  clientId: string,
-  transaction: Transaction
-) {
-  const docRef = await db.collection(FirebaseCollection.CLIENTS).doc(clientId);
-  docRef.update({
-    transactions: firebase.firestore.FieldValue.arrayUnion(transaction)
-  });
-}
-
-export async function addDebt(clientId: string, debt: Debt) {
-  const docRef = await db.collection(FirebaseCollection.CLIENTS).doc(clientId);
-  docRef.update({
-    debts: firebase.firestore.FieldValue.arrayUnion(debt)
-  });
 }
 
 export async function getOptions(): Promise<SelectOptions> {

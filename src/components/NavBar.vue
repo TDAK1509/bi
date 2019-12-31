@@ -21,7 +21,7 @@
           v-for="client in searchedClients"
           :key="client._id"
           class="nav-bar__search-results-item"
-          :to="`/client/${client._id}`"
+          :to="`/client/${client.id}`"
           @click.native="searchText = ''"
           >{{ client.name }}</router-link
         >
@@ -44,22 +44,22 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Client } from "../models/transaction";
+import { ClientView } from "@/models/client";
 
 @Component
 export default class NavBar extends Vue {
   searchText: string = "";
 
-  get clients(): Client[] {
+  get clients(): ClientView[] {
     return this.$store.state.clients;
   }
 
-  get searchedClients(): Client[] | null {
+  get searchedClients(): ClientView[] | null {
     if (this.searchText === "") {
       return null;
     }
 
-    return this.clients.filter((client: Client) =>
+    return this.clients.filter((client: ClientView) =>
       client.name.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }

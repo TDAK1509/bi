@@ -21,8 +21,8 @@ export default {
     }
   },
 
-  mounted() {
-    this.init();
+  async mounted() {
+    await this.init();
   }
 };
 </script>

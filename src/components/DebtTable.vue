@@ -44,8 +44,13 @@
           >
             <router-link
               class="debt-table__transaction-detail-list-item-link"
-              :to="{ name: 'home', query: { id: transaction.id } }"
-              >Xem giao dịch trả nợ {{ transaction.amount | monetize }}
+              :to="{
+                name: 'home',
+                query: { transaction_date: transaction.date }
+              }"
+              >Trả nợ <strong>{{ transaction.amount | monetize }}</strong> vào
+              ngày
+              <strong>{{ transaction.date }}</strong>
             </router-link>
           </li>
         </ul>
@@ -82,7 +87,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { DebtView } from "../models/transaction";
+import { Debt } from "../models/client";
 import filtersMixin from "@/mixins/filters";
 
 @Component({
@@ -90,7 +95,7 @@ import filtersMixin from "@/mixins/filters";
 })
 export default class DebtTable extends Vue {
   @Prop({ type: Array, required: true })
-  debts!: Array<DebtView>;
+  debts!: Array<Debt>;
 }
 </script>
 

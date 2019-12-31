@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit, Model } from "vue-property-decorator";
-import { ClientInfo } from "@/models/transaction";
+import { ClientInfo } from "@/models/client";
 
 @Component
 export default class TransactionModalAddSelectWithCreateButton extends Vue {

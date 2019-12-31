@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Client, DebtView, Debt } from "@/models/transaction";
+import { Client, ClientView, Debt, ClientInfo } from "@/models/client";
 import DebtTable from "@/components/DebtTable.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import AddButton from "@/components/AddButton.vue";
@@ -30,7 +30,7 @@ import DebtModalAdd from "@/components/DebtModalAdd.vue";
     DebtModalAdd
   }
 })
-export default class ClientView extends Vue {
+export default class ClientComponent extends Vue {
   isShowAddModal = false;
   isAddingDebt = false;
 
@@ -42,15 +42,17 @@ export default class ClientView extends Vue {
     return this.$route.params.clientId;
   }
 
-  get clients(): Client[] {
+  get clients(): ClientView[] {
     return this.$store.state.clients;
   }
 
-  get client(): Client | undefined {
-    return this.clients.find((client: Client) => client._id == this.clientId);
+  get client(): ClientView | undefined {
+    return this.clients.find(
+      (client: ClientView) => client.id == this.clientId
+    );
   }
 
-  get debts(): DebtView[] {
+  get debts(): Debt[] {
     if (typeof this.client === "undefined") return [];
     return this.client.debts.map((debt: Debt) => {
       let totalPaid = 0;
@@ -78,6 +80,10 @@ export default class ClientView extends Vue {
     });
 
     this.isShowAddModal = false;
+  }
+
+  mounted() {
+    console.log(this.$route);
   }
 }
 </script>
