@@ -4,11 +4,11 @@ const db = firebase.firestore();
 const csv = require("csv-parser");
 const fs = require("fs");
 
-const clients = {};
+const dbRef = db.collection("transactions");
+
 fs.createReadStream("functions/transactions.csv")
   .pipe(csv())
   .on("data", async row => {
-    const clientName = row.client;
     const transaction = {
       date: row.date,
       transaction_type: row.transaction_type,
@@ -16,31 +16,18 @@ fs.createReadStream("functions/transactions.csv")
       payment_type: row.payment_type,
       seller_name: row.seller,
       product_name: row.product_name,
-      product_quantity: row.quantity
+      product_quantity: row.quantity,
+      client_name: row.client_name,
+      client_id: row.client_id
     };
-    if (!clients.hasOwnProperty(clientName)) {
-      clients[clientName] = {
-        name: clientName,
-        created_at: "2019-12-25",
-        transactions: [transaction],
-        debts: []
-      };
-    } else {
-      clients[clientName].transactions.push(transaction);
-    }
+
+    dbRef
+      .add(transaction)
+      .then()
+      .catch(() => {
+        console.log("ERROR: ", row);
+      });
   })
   .on("end", () => {
-    const docRef = db.collection("clients");
-
-    for (const clientName in clients) {
-      const client = clients[clientName];
-      docRef
-        .add(client)
-        .then()
-        .catch(() => {
-          console.log("ERROR: ", clientName);
-        });
-    }
-
     console.log("DONE");
   });

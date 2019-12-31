@@ -3,7 +3,7 @@ const firebase = require("./config");
 const db = firebase.firestore();
 
 const transaction_types = [
-  "Ats",
+  "ATS",
   "Bưu Cục",
   "Đại Ship",
   "Dũng Ship",
@@ -11,8 +11,8 @@ const transaction_types = [
   "Hải Ship",
   "Now",
   "Quân Ship",
-  "Truc Tiep",
-  "X"
+  "Trực Tiếp",
+  "x"
 ];
 
 const docRef = db.collection("options").doc("options");

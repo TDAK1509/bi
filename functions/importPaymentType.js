@@ -2,7 +2,7 @@ require("firebase/firestore");
 const firebase = require("./config");
 const db = firebase.firestore();
 
-const payment_types = ["ACB", "Momo", "Tiền Mặt", "VCB", "VIB", "X"];
+const payment_types = ["ACB", "Momo", "Tiền Mặt", "VCB", "VIB", "x"];
 
 const docRef = db.collection("options").doc("options");
 docRef
