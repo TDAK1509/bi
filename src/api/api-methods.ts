@@ -56,7 +56,8 @@ export async function fetchTransactions(startDate: Date, endDate: Date) {
       product_name: data.product_name,
       product_quantity: data.product_quantity,
       client_name: data.client_name,
-      client_id: data.client_id
+      client_id: data.client_id,
+      is_transaction_debt: data.is_transaction_debt || false
     };
     transactions.push(transaction);
   });

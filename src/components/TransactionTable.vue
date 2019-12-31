@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="transaction-table">
     <b-table
-      striped
       default-sort="date"
       sort-icon="chevron-up"
       :data="transactions"
+      :row-class="getIsDebtClass"
     >
+      >
       <template slot-scope="props">
         <b-table-column field="date" label="Ngày" sortable>
           {{ props.row.date }}
@@ -17,10 +18,17 @@
           sortable
           searchable
         >
-          <b-tooltip label="Xem chi tiết khách hàng" type="is-dark">
-            <router-link :to="`/client/${props.row.client_id}`">{{
-              props.row.client_name
-            }}</router-link>
+          <b-tooltip
+            label="Xem chi tiết khách hàng"
+            :type="
+              props.row.is_transaction_debt === true ? 'is-warning' : 'is-dark'
+            "
+          >
+            <router-link
+              class="transaction-table__link"
+              :to="`/client/${props.row.client_id}`"
+              >{{ props.row.client_name }}</router-link
+            >
           </b-tooltip>
         </b-table-column>
 
@@ -58,7 +66,16 @@
         </b-table-column>
 
         <b-table-column field="amount" label="Thành Tiền" sortable numeric>
-          {{ props.row.amount | monetize }}
+          <b-tooltip
+            v-if="props.row.is_transaction_debt === true"
+            label="Đây là giao dịch trả nợ"
+            type="is-warning"
+            position="is-left"
+          >
+            {{ props.row.amount | monetize }}
+          </b-tooltip>
+
+          <span v-else>{{ props.row.amount | monetize }}</span>
         </b-table-column>
       </template>
 
@@ -87,5 +104,23 @@ import filtersMixin from "@/mixins/filters";
 export default class TransactionTable extends Vue {
   @Prop({ type: Array, required: true })
   transactions!: Array<TransactionView>;
+
+  getIsDebtClass(row: TransactionView, index: number): string {
+    if (row.is_transaction_debt === true) {
+      return "transaction-table__row-debt";
+    }
+    return "";
+  }
 }
 </script>
+
+<style lang="scss">
+.transaction-table__row-debt {
+  background: #3d8b88;
+  color: #fff;
+
+  .transaction-table__link {
+    color: #fff;
+  }
+}
+</style>

@@ -239,6 +239,7 @@ export default class TransactionModalAdd extends Vue {
     };
 
     if (this.debtId >= 0) {
+      transaction.is_transaction_debt = true;
       return new TransactionForDebt(transaction, this.debtId);
     } else {
       return transaction;
