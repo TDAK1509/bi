@@ -66,11 +66,7 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
     AddButton,
     TransactionModalAdd
   },
-  mixins: [filtersMixin],
-  beforeRouteEnter(from, to, next) {
-    console.log("eeeee");
-    next();
-  }
+  mixins: [filtersMixin]
 })
 export default class Home extends Vue {
   isShowAddModal: boolean = false;
@@ -91,9 +87,9 @@ export default class Home extends Vue {
   }
 
   get totalAmount(): number {
-    let totalAmount = 0;
+    let totalAmount: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      totalAmount += transaction.amount;
+      totalAmount += parseInt(transaction.amount.toString());
     });
     return totalAmount;
   }

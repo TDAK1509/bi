@@ -81,10 +81,6 @@ export default class ClientComponent extends Vue {
 
     this.isShowAddModal = false;
   }
-
-  mounted() {
-    console.log(this.$route);
-  }
 }
 </script>
 
