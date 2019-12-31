@@ -6,3 +6,17 @@ export function formatDateToString(date: Date): string {
   const dayString: string = day < 10 ? "0" + day : "" + day;
   return `${year}-${monthString}-${dayString}`;
 }
+
+export function getFirstDayOfMonth() {
+  const firstDayOfMonth: Date = new Date();
+  firstDayOfMonth.setDate(1);
+  return firstDayOfMonth;
+}
+
+export function getLastDayOfMonth() {
+  const lastDayOfMonth: Date = new Date();
+  const month = lastDayOfMonth.getMonth();
+  lastDayOfMonth.setMonth(month + 1);
+  lastDayOfMonth.setDate(0);
+  return lastDayOfMonth;
+}

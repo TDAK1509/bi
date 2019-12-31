@@ -3,17 +3,12 @@
     <page-title>BÁO CÁO TÀI CHÍNH</page-title>
 
     <div class="home__transaction-filter">
-      <transaction-filter @filter="onFilter" />
+      <transaction-date-picker v-model="dateRange" />
 
       <div class="home__transaction-filter-total-amount">
         Tổng tiền:
         <span class="has-text-danger">{{ totalAmount | monetize }}</span>
       </div>
-
-      <transaction-filter-content
-        v-model="filterValue"
-        :filter-type="filterType"
-      />
     </div>
 
     <transaction-table
@@ -47,58 +42,52 @@
 </template>
 
 <script lang="ts">
-import TransactionFilter from "@/components/TransactionFilter.vue";
+import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
-import TransactionFilterContent from "@/components/TransactionFilterContent.vue";
 import AddButton from "@/components/AddButton.vue";
 import TransactionModalAdd from "@/components/TransactionModalAdd.vue";
 import PageTitle from "@/components/PageTitle.vue";
-import { Component, Vue } from "vue-property-decorator";
-import {
-  FilterType,
-  TransactionView,
-  Client,
-  TransactionAddArguments
-} from "@/models/transaction";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import filtersMixin from "@/mixins/filters";
+import { FilterType } from "@/models/helpers";
+import {
+  TransactionView,
+  Transaction,
+  TransactionForDebt
+} from "@/models/transaction";
+import { ClientView } from "@/models/client";
+import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 
 @Component({
   components: {
     PageTitle,
-    TransactionFilter,
+    TransactionDatePicker,
     TransactionTable,
-    TransactionFilterContent,
     AddButton,
     TransactionModalAdd
   },
-  mixins: [filtersMixin]
+  mixins: [filtersMixin],
+  beforeRouteEnter(from, to, next) {
+    console.log("eeeee");
+    next();
+  }
 })
 export default class Home extends Vue {
-  filterType: FilterType = "month";
   isShowAddModal: boolean = false;
   isAddingClient: boolean = false;
   isAddingTransaction: boolean = false;
+  isAddingSelectOption: boolean = false;
 
   get isLoading(): boolean {
-    return this.$store.state.isFetchingClients;
+    return (
+      this.$store.state.isFetchingClients ||
+      this.$store.state.isFetchingTransactions ||
+      this.isAddingSelectOption
+    );
   }
 
   get transactionsToShow(): TransactionView[] {
-    if (this.filterType === "month") {
-      return this.$store.getters.transactionViewsThisMonth;
-    } else if (this.filterType === "year") {
-      return this.$store.getters.transactionViewsThisYear;
-    } else {
-      return this.$store.getters.transactionViews;
-    }
-  }
-
-  get filterValue(): number {
-    return this.$store.state.filterValue;
-  }
-
-  set filterValue(newValue) {
-    this.$store.commit("setFilterValue", newValue);
+    return this.$store.state.transactions;
   }
 
   get totalAmount(): number {
@@ -109,25 +98,35 @@ export default class Home extends Vue {
     return totalAmount;
   }
 
-  onFilter(filterType: FilterType) {
-    this.filterType = filterType;
-
-    if (filterType === "month") {
-      const filterValue = new Date().getMonth();
-      this.$store.commit("setFilterValue", filterValue);
-    } else if (filterType === "year") {
-      const filterValue = new Date().getFullYear();
-      this.$store.commit("setFilterValue", filterValue);
-    }
+  get dateRange(): Date[] {
+    return [this.$store.state.filterDateStart, this.$store.state.filterDateEnd];
   }
 
-  async addTransaction(transactionArgs: TransactionAddArguments) {
+  set dateRange(dateRange: Date[]) {
+    this.$store.commit("setFilterDateStart", dateRange[0]);
+    this.$store.commit("setFilterDateEnd", dateRange[1]);
+    this.$store.dispatch("fetchTransactions");
+  }
+
+  async addTransaction(transaction: Transaction | TransactionForDebt) {
     this.isAddingTransaction = true;
 
-    await this.$store.dispatch("addTransaction", {
-      clientId: transactionArgs.clientId,
-      transaction: transactionArgs.transaction
-    });
+    if (transaction instanceof TransactionForDebt) {
+      const transactionId = await this.$store.dispatch(
+        "addTransaction",
+        transaction.transaction
+      );
+
+      await this.$store.dispatch("updateDebt", {
+        clientId: transaction.transaction.client_id,
+        debtId: transaction.debtId,
+        transactionId,
+        amount: transaction.transaction.amount,
+        transactionDate: transaction.transaction.date
+      });
+    } else {
+      await this.$store.dispatch("addTransaction", transaction);
+    }
 
     this.isAddingTransaction = false;
 
@@ -142,28 +141,76 @@ export default class Home extends Vue {
   async addClient(clientName: string) {
     this.isAddingClient = true;
     await this.$store.dispatch("addClient", clientName);
-    this.isAddingClient = false;
 
     this.$buefy.toast.open({
       message: `Khách hàng ${clientName} đã được tạo!`,
       type: "is-success"
     });
+
+    this.isAddingClient = false;
   }
 
   async addSeller(sellerName: string) {
+    this.isAddingSelectOption = true;
     await this.$store.dispatch("addSeller", sellerName);
+
+    this.$buefy.toast.open({
+      message: `Thêm người bán thành công!`,
+      type: "is-success"
+    });
+
+    this.isAddingSelectOption = false;
   }
 
   async addTransactionType(transactionType: string) {
+    this.isAddingSelectOption = true;
     await this.$store.dispatch("addTransactionType", transactionType);
+
+    this.$buefy.toast.open({
+      message: `Thêm người bán thành công!`,
+      type: "is-success"
+    });
+
+    this.isAddingSelectOption = false;
   }
 
   async addProductName(productName: string) {
+    this.isAddingSelectOption = true;
     await this.$store.dispatch("addProductName", productName);
+
+    this.$buefy.toast.open({
+      message: `Thêm người bán thành công!`,
+      type: "is-success"
+    });
+
+    this.isAddingSelectOption = false;
   }
 
   async addPaymentType(paymentType: string) {
+    this.isAddingSelectOption = true;
     await this.$store.dispatch("addPaymentType", paymentType);
+
+    this.$buefy.toast.open({
+      message: `Thêm người bán thành công!`,
+      type: "is-success"
+    });
+
+    this.isAddingSelectOption = false;
+  }
+
+  init() {
+    if (this.$route.query.transaction_date) {
+      const transactionDate = this.$route.query.transaction_date.toString();
+      this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
+    } else {
+      if (!this.$store.state.isFetchedTransactions) {
+        this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
+      }
+    }
+  }
+
+  mounted() {
+    this.init();
   }
 }
 </script>

@@ -1,12 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import {
-  TransactionView,
-  Client,
-  ClientInfo,
-  ClientToAddToDatabase,
-  SelectOptions
-} from "@/models/transaction";
+import { Transaction, TransactionView } from "@/models/transaction";
+import { Client, ClientView, DebtTransaction } from "@/models/client";
+import { SelectOptions } from "@/models/helpers";
 import * as API from "@/api/api-methods";
 import { formatDateToString } from "@/utils/date";
 
@@ -14,73 +10,25 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    clients: <Array<Client>>[],
-    filterValue: <Number>new Date().getMonth(),
+    transactions: <Array<TransactionView>>[],
+    filterDateStart: new Date(),
+    filterDateEnd: new Date(),
+    clients: <Array<ClientView>>[],
     options: <SelectOptions>{},
     isFetchingClients: false,
-    isFetchingOptions: false
-  },
-
-  getters: {
-    transactionViews: function(state): TransactionView[] {
-      const clients = state.clients;
-
-      let transactionViews: TransactionView[] = [];
-
-      clients.forEach(client => {
-        // Convert Transaction[] to TransactionView[]
-        const transactionViewsOfThisClient: TransactionView[] = client.transactions.map(
-          transaction => {
-            return {
-              client_id: client._id,
-              client_name: client.name,
-              ...transaction
-            };
-          }
-        );
-
-        transactionViews = [
-          ...transactionViews,
-          ...transactionViewsOfThisClient
-        ];
-      });
-
-      return transactionViews;
-    },
-
-    transactionViewsThisMonth: function(state, getters): TransactionView[] {
-      return getters.transactionViews.filter(
-        (transactionView: TransactionView) => {
-          const date = new Date(transactionView.date);
-          return date.getMonth() === state.filterValue;
-        }
-      );
-    },
-
-    transactionViewsThisYear: function(state, getters): TransactionView[] {
-      return getters.transactionViews.filter(
-        (transactionView: TransactionView) => {
-          const date = new Date(transactionView.date);
-          return date.getFullYear() === state.filterValue;
-        }
-      );
-    },
-
-    clientList: function(state): ClientInfo[] {
-      const clientList: ClientInfo[] = [];
-      state.clients.forEach(client => {
-        clientList.push({ id: client._id, name: client.name });
-      });
-      return clientList;
-    }
+    isFetchingOptions: false,
+    isFetchingTransactions: false,
+    isFetchedClients: false,
+    isFetchedOptions: false,
+    isFetchedTransactions: false
   },
 
   mutations: {
-    setClients(state, payload: Array<Client>) {
-      state.clients = payload;
+    setTransactions(state, payload: TransactionView[]) {
+      state.transactions = payload;
     },
-    setFilterValue(state, payload: number) {
-      state.filterValue = payload;
+    setClients(state, payload: ClientView[]) {
+      state.clients = payload;
     },
     setOptions(state, payload: SelectOptions) {
       state.options = payload;
@@ -90,18 +38,49 @@ export default new Vuex.Store({
     },
     setIsFetchingOptions(state, payload: boolean) {
       state.isFetchingOptions = payload;
+    },
+    setIsFetchingTransactions(state, payload: boolean) {
+      state.isFetchingTransactions = payload;
+    },
+    setIsFetchedClients(state, payload: boolean) {
+      state.isFetchedClients = payload;
+    },
+    setIsFetchedOptions(state, payload: boolean) {
+      state.isFetchedOptions = payload;
+    },
+    setIsFetchedTransactions(state, payload: boolean) {
+      state.isFetchedTransactions = payload;
+    },
+    setFilterDateStart(state, payload: Date) {
+      state.filterDateStart = payload;
+    },
+    setFilterDateEnd(state, payload: Date) {
+      state.filterDateEnd = payload;
     }
   },
 
   actions: {
-    async init({ dispatch }) {
-      await dispatch("fetchClients");
+    async init({ state, dispatch }) {
+      if (!state.isFetchedClients) await dispatch("fetchClients");
     },
+
+    async fetchTransactions({ commit, state }) {
+      commit("setIsFetchingTransactions", true);
+      const transactions: TransactionView[] = await API.fetchTransactions(
+        state.filterDateStart,
+        state.filterDateEnd
+      );
+      commit("setTransactions", transactions);
+      commit("setIsFetchingTransactions", false);
+      commit("setIsFetchedTransactions", true);
+    },
+
     async fetchClients({ commit }) {
       commit("setIsFetchingClients", true);
-      const clients: Client[] = await API.getAllClients();
+      const clients: ClientView[] = await API.fetchClients();
       commit("setClients", clients);
       commit("setIsFetchingClients", false);
+      commit("setIsFetchedClients", true);
     },
 
     async fetchOptions({ commit }) {
@@ -109,31 +88,34 @@ export default new Vuex.Store({
       const options = await API.getOptions();
       commit("setOptions", options);
       commit("setIsFetchingOptions", false);
+      commit("setIsFetchedOptions", true);
     },
 
-    async addTransaction({ state }, { clientId, transaction }) {
-      await API.addTransaction(clientId, transaction);
+    async addTransaction(
+      { state, commit },
+      transaction: Transaction
+    ): Promise<String> {
+      const transactionId = await API.addTransaction(transaction);
 
-      const clientToAdd: Client | undefined = state.clients.find(
-        (client: Client) => client._id === clientId
-      );
+      const transactionView: TransactionView = {
+        id: transactionId,
+        ...transaction
+      };
 
-      // No need to commit because clientToAdd is not cloned
-      if (typeof clientToAdd !== "undefined")
-        clientToAdd.transactions.push(transaction);
+      commit("setTransactions", [...state.transactions, transactionView]);
+      return transactionId;
     },
 
     async addClient({ state, commit }, clientName: string) {
-      const newClientInfo: ClientToAddToDatabase = {
+      const newClientInfo: Client = {
         name: clientName,
-        created_at: formatDateToString(new Date()),
-        transactions: [],
+        date: formatDateToString(new Date()),
         debts: []
       };
-      const clientId = await API.addClient(newClientInfo);
 
-      const client: Client = {
-        _id: clientId,
+      const clientId = await API.addClient(newClientInfo);
+      const client: ClientView = {
+        id: clientId,
         ...newClientInfo
       };
 
@@ -142,13 +124,34 @@ export default new Vuex.Store({
 
     async addDebt({ state }, { clientId, debt }) {
       await API.addDebt(clientId, debt);
-
-      const clientToAdd: Client | undefined = state.clients.find(
-        (client: Client) => client._id === clientId
+      const clientToAdd: ClientView | undefined = state.clients.find(
+        (client: ClientView) => client.id === clientId
       );
-
       // No need to commit because clientToAdd is not cloned
       if (typeof clientToAdd !== "undefined") clientToAdd.debts.push(debt);
+    },
+
+    async updateDebt(
+      { state },
+      { clientId, debtId, transactionId, amount, transactionDate }
+    ) {
+      const clientToUpdate: ClientView | undefined = state.clients.find(
+        (client: ClientView) => client.id === clientId
+      );
+
+      if (typeof clientToUpdate === "undefined") {
+        return;
+      }
+
+      const debtTransaction: DebtTransaction = {
+        id: transactionId,
+        amount: amount,
+        date: transactionDate
+      };
+
+      clientToUpdate.debts[debtId].paid_transaction_list.push(debtTransaction);
+
+      await API.updateDebts(clientId, clientToUpdate.debts);
     },
 
     async addSeller({ state }, sellerName: string) {

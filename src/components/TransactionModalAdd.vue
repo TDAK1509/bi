@@ -26,9 +26,21 @@
           v-model="clientInfo"
           label="Tên Khách Hàng"
           :error-message="errorClientName"
-          :list="clientList"
+          :list="clients"
           @add-to-list="addClient"
         />
+
+        <b-field label="Thanh Toán Nợ" v-show="debtList.length > 0">
+          <b-select placeholder="Không phải nợ" v-model="debtId">
+            <option
+              v-for="(debt, index) in debtList"
+              :value="index"
+              :key="`debt${index}`"
+            >
+              {{ debt.name }}
+            </option>
+          </b-select>
+        </b-field>
 
         <transaction-modal-add-select-with-create-button
           v-if="sellerNameList"
@@ -101,7 +113,8 @@
 
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
-import { ClientInfo, TransactionAddArguments } from "@/models/transaction";
+import { Transaction, TransactionForDebt } from "@/models/transaction";
+import { ClientInfo, ClientView, Debt } from "@/models/client";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "./TransactionModalAddSelectWithCreateButton.vue";
 import filterMixin from "@/mixins/filters";
@@ -112,7 +125,7 @@ import filterMixin from "@/mixins/filters";
   },
   mixins: [filterMixin]
 })
-export default class ModalAddTransaction extends Vue {
+export default class TransactionModalAdd extends Vue {
   date: Date = new Date();
   clientInfo: ClientInfo = { id: "", name: "" };
   transactionType = "";
@@ -121,6 +134,7 @@ export default class ModalAddTransaction extends Vue {
   sellerName = "";
   productName = "";
   productQuantity = "";
+  debtId = -1;
 
   errorClientName = "";
   errorTransactionType = "";
@@ -139,8 +153,25 @@ export default class ModalAddTransaction extends Vue {
     return this.$store.state.isFetchingOptions;
   }
 
-  get clientList(): ClientInfo[] {
-    return this.$store.getters.clientList;
+  get clients(): ClientView[] {
+    return this.$store.state.clients;
+  }
+
+  get clientInfoList(): ClientInfo[] {
+    return this.clients.map((client: ClientView) => {
+      return {
+        id: client.id,
+        name: client.name
+      };
+    });
+  }
+
+  get debtList(): Debt[] {
+    const thisClient: ClientView | undefined = this.clients.find(
+      (client: ClientView) => client.id === this.clientInfo.id
+    );
+
+    return typeof thisClient !== "undefined" ? thisClient.debts : [];
   }
 
   get sellerNameList(): string[] {
@@ -194,20 +225,24 @@ export default class ModalAddTransaction extends Vue {
   }
 
   @Emit("add-transaction")
-  addTransaction(): TransactionAddArguments {
-    return {
-      clientId: this.clientInfo.id,
-
-      transaction: {
-        date: this.formatDateToString(this.date),
-        transaction_type: this.transactionType,
-        amount: this.amount,
-        payment_type: this.paymentType,
-        seller_name: this.sellerName,
-        product_name: this.productName,
-        product_quantity: this.productQuantity
-      }
+  addTransaction(): TransactionForDebt | Transaction {
+    const transaction: Transaction = {
+      date: formatDateToString(this.date),
+      transaction_type: this.transactionType,
+      amount: this.amount,
+      payment_type: this.paymentType,
+      seller_name: this.sellerName,
+      product_name: this.productName,
+      product_quantity: this.productQuantity,
+      client_name: this.clientInfo.name,
+      client_id: this.clientInfo.id
     };
+
+    if (this.debtId >= 0) {
+      return new TransactionForDebt(transaction, this.debtId);
+    } else {
+      return transaction;
+    }
   }
 
   @Emit("add-client")
@@ -226,7 +261,9 @@ export default class ModalAddTransaction extends Vue {
   addPaymentType(value: string) {}
 
   mounted() {
-    this.$store.dispatch("fetchOptions");
+    if (!this.$store.state.isFetchedOptions) {
+      this.$store.dispatch("fetchOptions");
+    }
   }
 }
 </script>
