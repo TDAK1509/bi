@@ -3,7 +3,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-01,Kwon,Long,Bưu Cục,Kush Class A,10g,ACB,3000000
 2019-07-01,Phương Đèn Dầu,Long,Gdtt,King Glue,1g,Tiền Mặt,270000
 2019-07-01,Trần Kiên,Mi,Gdtt,Cam Lẻ,15g,Tiền Mặt,500000
-2019-07-01,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-01,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-01,Khoa Đoàn,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,380000
 2019-07-01,Cậu Minh Tân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-01,Nho Xanh,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
@@ -20,9 +20,9 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-02,Vũ Mạnh,Long,Bưu Cục,Cam Cành,550g,ACB,11000000
 2019-07-02,Vũ Mạnh,Long,Bưu Cục,Kush Class A,1g,ACB,0
 2019-07-02,Vũ Mạnh,Long,Bưu Cục,Kush Vụn,1g,ACB,0
-2019-07-02,Vid,Duy ,Gdtt,Cam Lọc,850g,VIB,12200000
+2019-07-02,Vid,Duy,Gdtt,Cam Lọc,850g,VIB,12200000
 2019-07-02,Long Phan,Long,Bưu Cục,Cam Cành,2000g,ACB,36000000
-2019-07-02,Nguyên,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-02,Nguyên,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-02,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
 2019-07-02,Phạm Hiền,Mi,Ats,Kush Class A,2g,Tiền Mặt,900000
 2019-07-02,Cậu Minh Tân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
@@ -36,14 +36,14 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-04,Tài,Hải,Ats,Cam Điếu,3 điếu,Tiền Mặt,100000
 2019-07-04,Huy 18Cm,Bw Team,Gdtt,Kush Class A,10g,Tiền Mặt,2200000
 2019-07-04,Khang,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
-2019-07-04,Đỗ Tình,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
-2019-07-04,Cơ Minh,Duy ,Bưu Cục,Cam Lẻ,25g,VIB,1000000
-2019-07-04,Linh,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
-2019-07-04,Hải,Duy ,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-04,Đỗ Tình,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-04,Cơ Minh,Duy,Bưu Cục,Cam Lẻ,25g,VIB,1000000
+2019-07-04,Linh,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-04,Hải,Duy,Đại Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-04,Minh,Mi,Đại Ship,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-05,Sơn,Mi,Ats,Kush Class A,2g,Tiền Mặt,900000
 2019-07-05,Huy 18Cm,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
-2019-07-05,Minh Mario,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-05,Minh Mario,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-05,Khách Mi,Mi,Gdtt,Cam Điếu,10 điếu,Tiền Mặt,350000
 2019-07-05,Khách Hải,Hải,Đại Ship,Cam Điếu,3 điếu,Tiền Mặt,105000
 2019-07-05,Hoàng Anh,Long,Bưu Cục,Cam Cành,400g,ACB,8000000
@@ -58,7 +58,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-06,An The,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-06,Hằng Nguyễn,Mi,Bưu Cục,Kush Class A,20g,ACB,6000000
 2019-07-06,Nin Pi,Mi,Ats,Cam Điếu,5 điếu,Tiền Mặt,175000
-2019-07-06,Phú Trịnh,Duy ,Ats,Kush Vụn,2.8g,VIB,1000000
+2019-07-06,Phú Trịnh,Duy,Ats,Kush Vụn,2.8g,VIB,1000000
 2019-07-06,An Lê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-06,An Lê,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
 2019-07-06,Sandra,Mi,Gdtt,Kush Điếu,1 điếu,Tiền Mặt,250000
@@ -70,16 +70,16 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-08,Phương Đèn Dầu,Long,Gdtt,Kush Class A,2g,Tiền Mặt,480000
 2019-07-08,Phương Đèn Dầu,Long,Gdtt,King Glue,1g,Tiền Mặt,260000
 2019-07-08,Long Trần,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
-2019-07-08,Ngọc Hùng,Duy ,Bưu Cục,Cam Cành,100g,VIB,2200000
+2019-07-08,Ngọc Hùng,Duy,Bưu Cục,Cam Cành,100g,VIB,2200000
 2019-07-08,Jackcop,Long,Bưu Cục,Cam Cành,100g,ACB,2300000
 2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
 2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,200g,ACB,4000000
 2019-07-08,Vũ Mạnh,Long,Bưu Cục,Cam Cành,250g,ACB,5000000
 2019-07-08,An ,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
-2019-07-08,Vid,Duy ,Gdtt,Cam Lọc,1000g,ACB,14000000
+2019-07-08,Vid,Duy,Gdtt,Cam Lọc,1000g,ACB,14000000
 2019-07-09,Vũ Hiếu,Long,Bưu Cục,Kush Class A,10g,ACB,2500000
-2019-07-09,Tuấn Trần,Duy ,Ats,Cam Cành,100g,Tiền Mặt,2200000
-2019-07-09,Phú Trịnh,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-09,Tuấn Trần,Duy,Ats,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-09,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-09,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,100g,Tiền Mặt,1900000
 2019-07-09,Vũ Hiếu,Long,Bưu Cục,Cam Cành,300g,ACB,5100000
 2019-07-09,Vũ Hiếu,Long,Bưu Cục,Cam Lọc,200g,ACB,2700000
@@ -93,8 +93,8 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-09,Vương Vũ,Phi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-09,Tài Trương,Long,Gdtt,Cam Cành,2000g,Tiền Mặt,36000000
 2019-07-09,Uyên Trúc,Mi,Đại Ship,Cam Cành,50g,Tiền Mặt,1200000
-2019-07-10,Thanh Huyền,Duy ,Bưu Cục,Cam Lọc,1000g,VIB,14000000
-2019-07-10,Thanh Huyền,Duy ,Bưu Cục,Moon I,10g,VIB,6000000
+2019-07-10,Thanh Huyền,Duy,Bưu Cục,Cam Lọc,1000g,VIB,14000000
+2019-07-10,Thanh Huyền,Duy,Bưu Cục,Moon I,10g,VIB,6000000
 2019-07-10,Sơn,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
 2019-07-10,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
 2019-07-10,Kim Trường,Mi,Gdtt,Cam Điếu,5 điếu,Tiền Mặt,175000
@@ -103,10 +103,10 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-10,Minh,Hải,Ats,Cam Lẻ,5g,VIB,200000
 2019-07-10,Nguyễn Khoa,Mi,Gdtt,Tarantula,1 điếu,Tiền Mặt,300000
 2019-07-10,Nguyễn Khoa,Mi,Gdtt,Cam Điếu,2 điếu,Tiền Mặt,70000
-2019-07-10,Nguyên,Duy ,Hải Ship,Kush Class A,1g,Tiền Mặt,400000
-2019-07-10,Trung Phạm,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-10,Nguyên,Duy,Hải Ship,Kush Class A,1g,Tiền Mặt,400000
+2019-07-10,Trung Phạm,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-11,Minh,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,200000
-2019-07-11,Tú Mỡ,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-11,Tú Mỡ,Duy,Ats,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-11,A Hoàng,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
 2019-07-11,Sơn,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-11,Bích Lào Cai,Long,Bưu Cục,King Glue,50g,ACB,13000000
@@ -129,7 +129,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-11,Phương Đèn Dầu,Long,Gdtt,Golden Glue,2g,Tiền Mặt,520000
 2019-07-12,Nguyễn Quốc Luân,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
 2019-07-12,Dũng ( Quân ) ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
-2019-07-12,Huy Hoàng,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-12,Huy Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
 2019-07-12,Anh Quang,Mi,Bưu Cục,Cam Lọc,200g,ACB,3700000
 2019-07-12,Long An,Mi,Ats,Kush Class A+,1g,Tiền Mặt,520000
 2019-07-12,No Name,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
@@ -139,7 +139,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-13,Trịnh Tú Hải,Long,Bưu Cục,Cam Lọc,200g,ACB,3700000
 2019-07-13,Việt Linh,Phi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-13,Yến Nhi,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
-2019-07-13,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-13,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-13,Quân,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
 2019-07-13,Quân,Long,Gdtt,Kush Class A,1g,Tiền Mặt,240000
 2019-07-13,Anh Quân,Mi,Ats,Kush Class A+,10g,Tiền Mặt,3300000
@@ -151,8 +151,8 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-13,Phạm Bình,Mi,Gdtt,Cam Lẻ,27g,Tiền Mặt,1000000
 2019-07-13,Hà Nguyễn,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-13,Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
-2019-07-13,Thảo Uyên,Duy ,Ats,Tarantula,1 điếu,Tiền Mặt,300000
-2019-07-13,Thảo Uyên,Duy ,Ats,Kush Điếu,1 điếu,Tiền Mặt,200000
+2019-07-13,Thảo Uyên,Duy,Ats,Tarantula,1 điếu,Tiền Mặt,300000
+2019-07-13,Thảo Uyên,Duy,Ats,Kush Điếu,1 điếu,Tiền Mặt,200000
 2019-07-13,Sơn Suôn Sẻ,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
 2019-07-13,Minh Thuận,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-14,Bin,Mi,Gdtt,Cam Cành,50g,Tiền Mặt,1200000
@@ -192,11 +192,11 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-17,Huy 18Cm,Bw Team,Gdtt,Kush Class A+,5g,Tiền Mặt,1200000
 2019-07-17,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
 2019-07-17,Mr.Bùi,Long,Ats,Cam Cành,200g,Tiền Mặt,4400000
-2019-07-17,Vi Lê,Duy ,Bưu Cục,Cam Lẻ,15g,VIB,500000
+2019-07-17,Vi Lê,Duy,Bưu Cục,Cam Lẻ,15g,VIB,500000
 2019-07-17,A Rex,Bw Team,Gdtt,Kush Class A+,10g,VCB,2600000
 2019-07-17,A Rex,Bw Team,Gdtt,Kush Class A,15g,VCB,3600000
 2019-07-17,Đờ Rê,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
-2019-07-17,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,220000
+2019-07-17,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-17,Tấn Lộc,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-17,Quân,Mi,Ats,Cam Lẻ,15g,Tiền Mặt,550000
 2019-07-17,Sandra,Mi,Gdtt,Cam Lẻ,5g,ACB,220000
@@ -208,7 +208,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-18,Vũ Mạnh,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
 2019-07-18,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
 2019-07-18,Cao Minh,Mi,Ats,Cam Lẻ,5g,ACB,220000
-2019-07-18,Nguyên,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-18,Nguyên,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-18,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-18,Trinh Phụng,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-18,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
@@ -217,7 +217,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-18,Bạn Khiêm,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-19,Bích Lào Cai,Long,Bưu Cục,Kush Class A+,50g,ACB,13000000
 2019-07-19,Trang Đà Lạt,Long,Bưu Cục,Cam Cành,100g,ACB,2000000
-2019-07-19,Quốc Đại,Duy ,Bưu Cục,Cam Cành,1000g,ACB,18000000
+2019-07-19,Quốc Đại,Duy,Bưu Cục,Cam Cành,1000g,ACB,18000000
 2019-07-20,Huy Hoàng,Mi,Bưu Cục,Cam Cành,50g,ACB,1200000
 2019-07-20,Thái,Mi,Đại Ship,Cam Điếu,3 điếu,Tiền Mặt,105000
 2019-07-20,Ngọc Đăng,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000
@@ -240,8 +240,8 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-21,Quân,Long,Gdtt,Cam Lẻ,5g,Tiền Mặt,125000
 2019-07-21,Vũ Mạnh,Long,Bưu Cục,Cam Cành,50g,ACB,1000000
 2019-07-22,Huy 18Cm,Bw Team,Gdtt,Cam Cành,200g,Tiền Mặt,3400000
-2019-07-22,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
-2019-07-22,Lu La,Duy ,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-22,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-22,Lu La,Duy,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-22,Nhật Hiếu,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
 2019-07-22,Trần Kiên,Mi,Ats,Cam Lẻ,14g,Tiền Mặt,670000
 2019-07-22,Trần Kiên,Mi,Ats,Kush Class A,1g,Tiền Mặt,0
@@ -253,14 +253,14 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-22,Dũng ( Quân ) ,Long,Gdtt,Cam Lẻ,10g,Tiền Mặt,250000
 2019-07-23,Đức Thịnh,Mi,Ats,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-23,Quang Đức,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
-2019-07-23,Đỗ Tình,Duy ,Bưu Cục,Cam Cành,100g,VIB,2200000
+2019-07-23,Đỗ Tình,Duy,Bưu Cục,Cam Cành,100g,VIB,2200000
 2019-07-23,Quốc Đức,Mi,Bưu Cục,Cam Cành,50g,ACB,1200000
 2019-07-23,Quốc Đức,Mi,Bưu Cục,Kush Class A,1g,ACB,450000
 2019-07-23,Huyền,Long,Bưu Cục,Pink Candy A+,80g,ACB,22000000
 2019-07-23,Huyền,Long,Bưu Cục,Og,60g,ACB,0
 2019-07-23,Phúc,Mi,Gdtt,Cam Điếu,4 điếu,Tiền Mặt,140000
 2019-07-23,Hoàng Anh,Long,Bưu Cục,Cam Cành,500g,ACB,10000000
-2019-07-23,Vid,Duy ,Gdtt,Cam Lọc,400g,ACB,6000000
+2019-07-23,Vid,Duy,Gdtt,Cam Lọc,400g,ACB,6000000
 2019-07-23,Nghĩa Minh,Mi,Bưu Cục,Cam Lẻ,14g,ACB,500000
 2019-07-23,Đốm Khánh,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
 2019-07-23,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
@@ -269,15 +269,15 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-23,Xuân Tân,Long,Bưu Cục,Cam Cành,1000g,ACB,18000000
 2019-07-23,Xuân Tân,Long,Bưu Cục,Kush Class A,30g,ACB,6600000
 2019-07-24,Huy 18Cm,Long,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
-2019-07-24,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-24,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-24,Tài,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-24,Thảo Vi,Mi,Ats,Cam Cành,100g,Tiền Mặt,2200000
 2019-07-24,Thảo Vi,Mi,Ats,Tarantula,1g,Tiền Mặt,300000
-2019-07-24,Trung Phạm,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-24,Trung Phạm,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-24,Trí La,Mi,Ats,Cam Lẻ,10g,Tiền Mặt,400000
 2019-07-24,Trí La,Mi,Ats,Kush Class A,1g,Tiền Mặt,450000
 2019-07-24,Vũ Hiếu,Long,Bưu Cục,Kush Class A,5g,ACB,1300000
-2019-07-24,Vid,Duy ,Gdtt,Cam Lọc,1000g,VIB,14000000
+2019-07-24,Vid,Duy,Gdtt,Cam Lọc,1000g,VIB,14000000
 2019-07-24,Viết Hải,Long,Bưu Cục,Cam Cành,50g,ACB,1200000
 2019-07-24,Ryan,Long,Bưu Cục,Cam Cành,1000g,ACB,18500000
 2019-07-24,Việt Linh,Phi,Bưu Cục,Cam Cành,100g,ACB,2200000
@@ -290,7 +290,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-26,Cô Tiên Thơm,Long,Bưu Cục,Cam Lọc,200g,ACB,3500000
 2019-07-26,Cô Tiên Thơm,Long,Bưu Cục,Cam Cành,100g,ACB,2200000
 2019-07-26,Tý Đô,Long,Gdtt,Cam Cành,100g,X,1800000
-2019-07-26,Kadgeyy,Duy ,Gdtt,Cam Cành,100g,Tiền Mặt,2200000
+2019-07-26,Kadgeyy,Duy,Gdtt,Cam Cành,100g,Tiền Mặt,2200000
 2019-07-26,Huy 18Cm,Bw Team,Gdtt,Cam Cành,100g,Tiền Mặt,1700000
 2019-07-26,Huy 18Cm,Bw Team,Gdtt,Kush Vụn,5g,Tiền Mặt,1000000
 2019-07-26,Phương Đèn Dầu,Long,Gdtt,Doom Day,1g,Tiền Mặt,260000
@@ -300,13 +300,13 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-26,Thịnh,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-26,Chú A Nhân,Hải,Ats,Cam Lẻ,10g,Tiền Mặt,400000
 2019-07-26,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
-2019-07-26,Phú Trịnh,Duy ,Ats,Cam Cành,50g,Tiền Mặt,1200000
+2019-07-26,Phú Trịnh,Duy,Ats,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-26,A Nhân,Hải,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-26,Bin,Mi,Đại Ship,Cam Cành,50g,Tiền Mặt,1200000
 2019-07-27,Dũng ( Quân ) ,Long,Gdtt,Cam Cành,50g,Tiền Mặt,950000
 2019-07-27,The An,Mi,Gdtt,Cam Lẻ,10g,Tiền Mặt,400000
 2019-07-27,Kiều,Mi,Gdtt,Vpp,1g,Tiền Mặt,400000
-2019-07-27,Chính Quyền,Duy ,Hải Ship,Cam Lẻ,20g,Tiền Mặt,650000
+2019-07-27,Chính Quyền,Duy,Hải Ship,Cam Lẻ,20g,Tiền Mặt,650000
 2019-07-27,A Thông,Bw Team,Gdtt,Durban Poison A,5g,VCB,1200000
 2019-07-28,Ming Nguyễn,Mi,Gdtt,Rove,1 ống,Tiền Mặt,2500000
 2019-07-28,Ming Nguyễn,Mi,Gdtt,Imini,1 cái,Tiền Mặt,500000
@@ -319,7 +319,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-29,Tổng Sơn,Long,Bưu Cục,Cam Cành,100g,ACB,1700000
 2019-07-29,Triết,Long,Ats,Cam Lẻ,30g,Tiền Mặt,1000000
 2019-07-29,Huy 18Cm,Bw Team,Gdtt,Kush Class A,5g,Tiền Mặt,1100000
-2019-07-29,Minh Mario,Duy ,Ats,Cam Lẻ,5g,Tiền Mặt,200000
+2019-07-29,Minh Mario,Duy,Ats,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-29,Anh Quân,Bi,Ats,Tarantula,4 điếu,Tiền Mặt,1200000
 2019-07-29,Anh Quân,Bi,Ats,Kush Điếu,1 điếu,X,-50000
 2019-07-29,Mạnh Duy,Mi,Ats,Cam Lẻ,5g,Tiền Mặt,220000
@@ -337,7 +337,7 @@ date,client,seller,transaction_type,product_name,quantity,payment_type,amount
 2019-07-30,Brick,Mi,Bưu Cục,Cam Cành,100g,ACB,2200000
 2019-07-30,Hồng Phú,Mi,Bưu Cục,Cam Lẻ,17g,ACB,600000
 2019-07-30,Hữu Mạnh,Mi,Bưu Cục,Cam Lẻ,27g,ACB,1000000
-2019-07-30,Huy Hoàng,Duy ,Bưu Cục,Cam Cành,50g,VIB,1200000
+2019-07-30,Huy Hoàng,Duy,Bưu Cục,Cam Cành,50g,VIB,1200000
 2019-07-30,Tài,Hải,Hải Ship,Cam Lẻ,5g,Tiền Mặt,200000
 2019-07-30,Hoàng Lê,Mi,Bưu Cục,Cam Lọc,100g,ACB,1900000
 2019-07-30,Uyên Trúc,Mi,Gdtt,Cam Lẻ,5g,Tiền Mặt,220000

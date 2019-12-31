@@ -5,7 +5,6 @@ const db = firebase.firestore();
 const sellers = [
   "Long",
   "Mi",
-  "Duy ",
   "Hải",
   "Bw Team",
   "Phi",
