@@ -1,11 +1,11 @@
 <template>
-  <form class="modal-add-transaction">
+  <form class="transaction-modal-add">
     <div v-if="!isLoading" class="modal-card" style="width: 500px;">
-      <header class="modal-card-head modal-add-transaction__header">
+      <header class="modal-card-head transaction-modal-add__header">
         <p class="modal-card-title">Thêm Giao Dịch</p>
 
         <button
-          class="modal-add-transaction__close-button"
+          class="transaction-modal-add__close-button"
           type="button"
           @click="$parent.close()"
         >
@@ -22,25 +22,37 @@
           ></b-datepicker>
         </b-field>
 
-        <transaction-modal-add-select-with-create-button
-          v-model="clientInfo"
-          label="Tên Khách Hàng"
-          :error-message="errorClientName"
-          :list="clients"
-          @add-to-list="addClient"
-        />
+        <div class="transaction-modal-add__client">
+          <transaction-modal-add-select-with-create-button
+            v-model="clientInfo"
+            label="Tên Khách Hàng"
+            :error-message="errorClientName"
+            :list="clients"
+            @add-to-list="addClient"
+          />
 
-        <b-field label="Thanh Toán Nợ" v-show="debtList.length > 0">
-          <b-select placeholder="Không phải nợ" v-model="debtId">
-            <option
-              v-for="(debt, index) in debtList"
-              :value="index"
-              :key="`debt${index}`"
+          <transition name="fade">
+            <b-field
+              v-show="debtList.length > 0"
+              label="Thanh Toán Nợ"
+              type="is-dark"
             >
-              {{ debt.name }}
-            </option>
-          </b-select>
-        </b-field>
+              <b-select
+                v-model="debtId"
+                class="transaction-modal-add__client-debt"
+              >
+                <option :value="-1"></option>
+                <option
+                  v-for="(debt, index) in debtList"
+                  :value="index"
+                  :key="`debt${index}`"
+                >
+                  {{ debt.name }}
+                </option>
+              </b-select>
+            </b-field>
+          </transition>
+        </div>
 
         <transaction-modal-add-select-with-create-button
           v-if="sellerNameList"
@@ -95,9 +107,9 @@
           ></b-numberinput>
         </b-field>
       </section>
-      <footer class="modal-card-foot modal-add-transaction__footer">
+      <footer class="modal-card-foot transaction-modal-add__footer">
         <b-button
-          class="modal-add-transaction__add-button"
+          class="transaction-modal-add__add-button"
           icon-left="plus"
           type="is-dark"
           :loading="isAddingTransaction"
@@ -270,10 +282,10 @@ export default class TransactionModalAdd extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.modal-add-transaction__header {
+.transaction-modal-add__header {
   position: relative;
 }
-.modal-add-transaction__close-button {
+.transaction-modal-add__close-button {
   border: none;
   background: none;
   transform: rotate(45deg);
@@ -291,14 +303,29 @@ export default class TransactionModalAdd extends Vue {
   }
 }
 
-.modal-add-transaction__footer {
+.transaction-modal-add__footer {
   text-align: center;
 
-  .modal-add-transaction__add-button {
+  .transaction-modal-add__add-button {
     margin: auto;
   }
 }
-.modal-add-transaction__client-name {
+.transaction-modal-add__client {
   display: flex;
+  justify-content: space-between;
+
+  .transaction-modal-add__client-debt {
+    text-align: right;
+    color: red;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
