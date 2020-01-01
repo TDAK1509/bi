@@ -1,6 +1,10 @@
 <template>
   <div class="logi">
-    <form class="login__form">
+    <form
+      class="login__form"
+      @keydown.enter.prevent="login"
+      @submit.prevent="login"
+    >
       <b-field label="Email">
         <b-input v-model="email" type="email" />
       </b-field>
@@ -15,7 +19,7 @@
         class="login__form-button"
         type="is-dark"
         :loading="loading"
-        @click="login"
+        native-type="submit"
         >ĐĂNG NHẬP</b-button
       >
     </form>
