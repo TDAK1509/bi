@@ -21,6 +21,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1000,
     height: 600,
+    icon: "src/assets/images/icon.ico",
     webPreferences: {
       nodeIntegration: true
     }
