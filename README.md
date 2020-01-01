@@ -1,24 +1,27 @@
-# bi
+# Bi Finance Tool
 
-## Project setup
+## Import database
+
+- Checkout to `functions` branch
+- Create .env file holding firebase credentials in this structure
+
 ```
-yarn install
+VUE_APP_FIREBASE_API_KEY=
+VUE_APP_FIREBASE_AUTH_DOMAIN=
+VUE_APP_FIREBASE_DATABASE_URL=
+VUE_APP_FIREBASE_PROJECT_ID=
+VUE_APP_FIREBASE_STORAGE_BUCKET=
+VUE_APP_FIREBASE_MESSAGING_SENDER_ID=
+VUE_APP_FIREBASE_APP_ID=
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- Run all import files
 
-### Compiles and minifies for production
+## Build app
+
+- Check to `master` branch
+- Run
+
 ```
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
