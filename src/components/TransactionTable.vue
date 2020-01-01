@@ -1,6 +1,8 @@
 <template>
   <div class="transaction-table">
     <b-table
+      paginated
+      per-page="10"
       default-sort="date"
       sort-icon="chevron-up"
       :data="transactions"

@@ -9,6 +9,8 @@
       detailed
       show-detail-icon
       detail-key="_id"
+      paginated
+      per-page="10"
     >
       <template slot-scope="props">
         <b-table-column field="date" label="Ngày" sortable>
