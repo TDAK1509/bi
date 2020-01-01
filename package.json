@@ -1,6 +1,8 @@
 {
   "name": "bi_finance_tool",
   "version": "0.1.0",
+  "author": "TDAK",
+  "description": "Finance tool for Chris M. Fang",
   "private": true,
   "scripts": {
     "lint": "vue-cli-service lint",
