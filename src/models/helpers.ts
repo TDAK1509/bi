@@ -6,3 +6,8 @@ export interface SelectOptions {
   product_names: string[];
   payment_types: string[];
 }
+
+export interface ErrorMessage {
+  success: boolean;
+  message: string;
+}

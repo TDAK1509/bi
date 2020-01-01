@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { Client, ClientView, DebtTransaction } from "@/models/client";
-import { SelectOptions } from "@/models/helpers";
+import { SelectOptions, ErrorMessage } from "@/models/helpers";
 import * as API from "@/api/api-methods";
 import { formatDateToString } from "@/utils/date";
 
@@ -20,7 +20,9 @@ export default new Vuex.Store({
     isFetchingTransactions: false,
     isFetchedClients: false,
     isFetchedOptions: false,
-    isFetchedTransactions: false
+    isFetchedTransactions: false,
+    isLoggedIn: false,
+    userEmail: ""
   },
 
   mutations: {
@@ -56,6 +58,12 @@ export default new Vuex.Store({
     },
     setFilterDateEnd(state, payload: Date) {
       state.filterDateEnd = payload;
+    },
+    setIsLoggedIn(state, payload: boolean) {
+      state.isLoggedIn = payload;
+    },
+    setUserEmail(state, payload: string) {
+      state.userEmail = payload;
     }
   },
 
@@ -172,6 +180,32 @@ export default new Vuex.Store({
     async addPaymentType({ state }, payload: string) {
       state.options.payment_types.push(payload);
       await API.addOptionPaymentType(state.options.payment_types);
+    },
+
+    async login({ commit }, { username, password }): Promise<Boolean> {
+      const loggedIn = await API.login(username, password);
+      commit("setIsLoggedIn", loggedIn);
+      commit("setUserEmail", username);
+      return loggedIn;
+    },
+
+    async changePassword(
+      { dispatch, state },
+      { oldPassword, newPassword }
+    ): Promise<ErrorMessage> {
+      const loggedIn = await dispatch("login", {
+        username: state.userEmail,
+        password: oldPassword
+      });
+
+      if (!loggedIn) {
+        return {
+          success: false,
+          message: "Password cũ không chính xác"
+        };
+      }
+
+      return await API.changePassword(newPassword);
     }
   }
 });

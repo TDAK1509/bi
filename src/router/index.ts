@@ -1,20 +1,34 @@
-import Vue from "vue";
+import Vue, { VNode, CreateElement } from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Login from "../views/Login.vue";
+import Main from "../views/Main.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    name: "login",
+    component: Login
   },
 
   {
-    path: "/client/:clientId",
-    name: "client",
-    component: () => import("@/views/Client.vue")
+    path: "/main",
+    name: "main",
+    component: Main,
+    children: [
+      {
+        path: "client/:clientId",
+        name: "client",
+        component: () => import("@/views/Client.vue")
+      },
+
+      {
+        path: "transaction",
+        name: "transaction",
+        component: () => import("@/views/Transaction.vue")
+      }
+    ]
   }
 ];
 

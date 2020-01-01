@@ -1,8 +1,8 @@
 import * as firebase from "firebase";
-import { db } from "@/firebase";
+import { db, auth } from "@/firebase";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { Client, Debt, ClientView } from "@/models/client";
-import { SelectOptions } from "@/models/helpers";
+import { SelectOptions, ErrorMessage } from "@/models/helpers";
 import { formatDateToString } from "@/utils/date";
 
 enum FirebaseCollection {
@@ -83,6 +83,39 @@ export async function fetchClients(): Promise<Array<ClientView>> {
   });
 
   return clients;
+}
+
+export async function login(
+  username: string,
+  password: string
+): Promise<Boolean> {
+  try {
+    await auth.signInWithEmailAndPassword(username, password);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+export async function changePassword(
+  newPassword: string
+): Promise<ErrorMessage> {
+  try {
+    if (auth.currentUser) {
+      await auth.currentUser.updatePassword(newPassword);
+      return {
+        success: true,
+        message: "Đổi password thành công"
+      };
+    } else {
+      throw { message: "Cần đăng nhập trước" };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: error.message
+    };
+  }
 }
 
 export async function getOptions(): Promise<SelectOptions> {

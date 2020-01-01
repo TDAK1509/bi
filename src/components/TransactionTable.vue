@@ -28,7 +28,10 @@
           >
             <router-link
               class="transaction-table__link"
-              :to="`/client/${props.row.client_id}`"
+              :to="{
+                name: 'client',
+                params: { clientId: props.row.client_id }
+              }"
               >{{ props.row.client_name }}</router-link
             >
           </b-tooltip>

@@ -28,8 +28,20 @@
       </div>
     </div>
 
+    <div class="nav-bar__change-password">
+      <b-button
+        type="is-danger"
+        icon-left="key"
+        @click="showPasswordModal = true"
+        >Đổi password</b-button
+      >
+    </div>
+
     <nav class="nav-bar__navigator">
-      <router-link class="nav-bar__navigator-item" to="/" exact
+      <router-link
+        class="nav-bar__navigator-item"
+        :to="{ name: 'transaction' }"
+        exact
         >Xem báo cáo tài chính</router-link
       >
     </nav>
@@ -39,16 +51,24 @@
       icon-right="long-arrow-alt-right"
       @click="toNextPage"
     />
+
+    <change-password-modal v-model="showPasswordModal" />
   </header>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { ClientView } from "@/models/client";
+import ChangePasswordModal from "./ChangePasswordModal.vue";
 
-@Component
+@Component({
+  components: {
+    ChangePasswordModal
+  }
+})
 export default class NavBar extends Vue {
   searchText: string = "";
+  showPasswordModal = false;
 
   get clients(): ClientView[] {
     return this.$store.state.clients;
@@ -120,7 +140,6 @@ export default class NavBar extends Vue {
 .nav-bar__navigator {
   display: flex;
   justify-content: flex-end;
-  flex: 1;
 
   .nav-bar__navigator-item {
     margin-right: 20px;
@@ -132,5 +151,10 @@ export default class NavBar extends Vue {
       cursor: not-allowed;
     }
   }
+}
+
+.nav-bar__change-password {
+  flex: 1;
+  text-align: center;
 }
 </style>

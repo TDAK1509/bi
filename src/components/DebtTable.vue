@@ -47,7 +47,7 @@
             <router-link
               class="debt-table__transaction-detail-list-item-link"
               :to="{
-                name: 'home',
+                name: 'transaction',
                 query: { transaction_date: transaction.date }
               }"
               >Trả nợ <strong>{{ transaction.amount | monetize }}</strong> vào
