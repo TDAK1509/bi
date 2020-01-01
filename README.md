@@ -3,7 +3,7 @@
 ## Import database
 
 - Checkout to `functions` branch
-- Create .env file holding firebase credentials in this structure
+- Create `.env` file holding firebase credentials in this structure
 
 ```
 VUE_APP_FIREBASE_API_KEY=
@@ -19,7 +19,7 @@ VUE_APP_FIREBASE_APP_ID=
 
 ## Build app
 
-- Check to `master` branch
+- Checkout to `master` branch
 - Run
 
 ```
