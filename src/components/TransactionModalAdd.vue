@@ -91,12 +91,7 @@
         </transition>
 
         <transition name="fade">
-          <b-field
-            v-if="productName"
-            label="Số Lượng"
-            :type="errorProductQuantity ? 'is-danger' : ''"
-            :message="errorProductQuantity"
-          >
+          <b-field v-if="productName" label="Số Lượng">
             <b-input v-model="productQuantity"></b-input>
           </b-field>
         </transition>
@@ -134,7 +129,8 @@
           icon-left="plus"
           type="is-dark"
           :loading="isAddingTransaction"
-          @click="validateForm"
+          :disabled="isButtonDisabled"
+          @click="addTransaction"
           >Thêm Giao Dịch</b-button
         >
       </footer>
@@ -172,13 +168,6 @@ export default class TransactionModalAdd extends Vue {
   productQuantity = "";
   debtId = -1;
 
-  errorClientName = "";
-  errorTransactionType = "";
-  errorPaymentType = "";
-  errorSellerName = "";
-  errorProductName = "";
-  errorProductQuantity = "";
-
   @Prop({ type: Boolean, default: false })
   isAddingClient!: boolean;
 
@@ -187,6 +176,18 @@ export default class TransactionModalAdd extends Vue {
 
   get isLoading(): boolean {
     return this.$store.state.isFetchingOptions;
+  }
+
+  get isButtonDisabled(): boolean {
+    return (
+      !this.clientInfo.id ||
+      !this.sellerName ||
+      !this.transactionType ||
+      this.amount < 0 ||
+      !this.paymentType ||
+      !this.productName ||
+      !this.productQuantity
+    );
   }
 
   get clients(): ClientView[] {
@@ -223,36 +224,6 @@ export default class TransactionModalAdd extends Vue {
 
   formatDateToString(date: Date): string {
     return formatDateToString(date);
-  }
-
-  validateForm() {
-    this.errorClientName =
-      this.clientInfo.name === "" ? "Vui lòng chọn khách hàng" : "";
-
-    this.errorTransactionType =
-      this.transactionType === "" ? "Vui lòng chọn loại giao dịch" : "";
-
-    this.errorSellerName =
-      this.sellerName === "" ? "Vui lòng chọn người bán" : "";
-
-    this.errorPaymentType =
-      this.paymentType === "" ? "Vui lòng chọn hình thức thanh toán" : "";
-
-    this.errorProductName =
-      this.productName === "" ? "Vui lòng chọn tên hàng hóa" : "";
-
-    this.errorProductQuantity =
-      this.productQuantity === "" ? "Vui lòng chọn số lượng" : "";
-
-    const isValid =
-      !this.errorClientName &&
-      !this.errorTransactionType &&
-      !this.errorSellerName &&
-      !this.errorPaymentType &&
-      !this.errorProductName &&
-      !this.errorProductQuantity;
-
-    if (isValid === true) return this.addTransaction();
   }
 
   @Emit("add-transaction")
