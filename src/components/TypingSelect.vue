@@ -18,7 +18,7 @@
       :values="selected"
       @input="onInput"
       :options="options"
-      :reduce="option => option.value"
+      :reduce="vueSelectReduce"
       label="label"
     />
   </div>
@@ -34,7 +34,7 @@ export default class TypingSelect extends Vue {
   selected!: any;
 
   @Prop({ type: Array, required: true })
-  options!: VueSelectOption[];
+  options!: VueSelectOption[] | string[];
 
   @Prop({ type: String, default: "Label" })
   label!: string;
@@ -44,6 +44,14 @@ export default class TypingSelect extends Vue {
 
   @Emit("add")
   onClickAdd(value: string) {}
+
+  vueSelectReduce(option: VueSelectOption | string) {
+    if (typeof option === "object") {
+      return option.value;
+    }
+
+    return {};
+  }
 
   prompt() {
     this.$buefy.dialog.prompt({

@@ -302,7 +302,7 @@ export default class TransactionModalAdd extends Vue {
 
 <style lang="scss" scoped>
 .transaction-modal-add__modal-card {
-  min-height: 500px;
+  min-height: 800px;
 }
 
 .transaction-modal-add__header {
