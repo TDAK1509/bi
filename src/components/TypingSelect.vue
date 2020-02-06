@@ -50,7 +50,7 @@ export default class TypingSelect extends Vue {
       return option.value;
     }
 
-    return {};
+    return option;
   }
 
   prompt() {
