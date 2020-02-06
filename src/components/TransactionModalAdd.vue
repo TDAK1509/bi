@@ -53,31 +53,31 @@
           </transition>
         </div>
 
-        <transaction-modal-add-select-with-create-button
+        <typing-select
           v-if="sellerNameList"
+          class="transaction-modal-add__typing-select"
           v-model="sellerName"
+          :options="sellerNameList"
           label="Tên Người Bán"
-          :error-message="errorSellerName"
-          :list="sellerNameList"
-          @add-to-list="addSeller"
+          @add="addSeller"
         />
 
-        <transaction-modal-add-select-with-create-button
+        <typing-select
           v-if="transactionTypeList"
+          class="transaction-modal-add__typing-select"
           v-model="transactionType"
+          :options="transactionTypeList"
           label="Hình Thức Giao Dịch"
-          :error-message="errorTransactionType"
-          :list="transactionTypeList"
-          @add-to-list="addTransactionType"
+          @add="addTransactionType"
         />
 
-        <transaction-modal-add-select-with-create-button
+        <typing-select
           v-if="productNameList"
+          class="transaction-modal-add__typing-select"
           v-model="productName"
+          :options="productNameList"
           label="Tên Hàng Hóa"
-          :error-message="errorProductName"
-          :list="productNameList"
-          @add-to-list="addProductName"
+          @add="addProductName"
         />
 
         <b-field
@@ -88,13 +88,13 @@
           <b-input v-model="productQuantity"></b-input>
         </b-field>
 
-        <transaction-modal-add-select-with-create-button
+        <typing-select
           v-if="paymentTypeList"
+          class="transaction-modal-add__typing-select"
           v-model="paymentType"
           label="Hình Thức Thanh Toán"
-          :error-message="errorPaymentType"
-          :list="paymentTypeList"
-          @add-to-list="addPaymentType"
+          :options="paymentTypeList"
+          @add="addPaymentType"
         />
 
         <b-field label="Thành Tiền" :message="amount | monetize">
@@ -308,9 +308,17 @@ export default class TransactionModalAdd extends Vue {
   }
 }
 
+.transaction-modal-add__client {
+  margin-bottom: 10px;
+}
+
 .transaction-modal-add__client-debt {
   text-align: right;
   color: red;
+}
+
+.transaction-modal-add__typing-select {
+  margin-bottom: 10px;
 }
 
 .fade-enter-active,
