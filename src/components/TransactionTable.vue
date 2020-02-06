@@ -82,6 +82,16 @@
 
           <span v-else>{{ props.row.amount | monetize }}</span>
         </b-table-column>
+
+        <b-table-column>
+          <button class="transaction-table__icon-button">
+            <b-icon icon="edit" pack="far" size="is-small" />
+          </button>
+
+          <button class="transaction-table__icon-button">
+            <b-icon icon="trash" size="is-small" />
+          </button>
+        </b-table-column>
       </template>
 
       <template slot="empty">
@@ -126,6 +136,18 @@ export default class TransactionTable extends Vue {
 
   .transaction-table__link {
     color: #fff;
+  }
+}
+
+.transaction-table__icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 10px;
   }
 }
 </style>
