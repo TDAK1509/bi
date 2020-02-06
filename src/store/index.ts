@@ -1,8 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { Transaction, TransactionView } from "@/models/transaction";
-import { Client, ClientView, DebtTransaction } from "@/models/client";
-import { SelectOptions, ErrorMessage } from "@/models/helpers";
+import {
+  Client,
+  ClientView,
+  DebtTransaction,
+  ClientInfo
+} from "@/models/client";
+import { SelectOptions, ErrorMessage, VueSelectOption } from "@/models/helpers";
 import * as API from "@/api/api-methods";
 import { formatDateToString } from "@/utils/date";
 
@@ -23,6 +28,18 @@ export default new Vuex.Store({
     isFetchedTransactions: false,
     isLoggedIn: false,
     userEmail: ""
+  },
+
+  getters: {
+    optionClients(state): VueSelectOption[] {
+      const options: VueSelectOption[] = [];
+      state.clients.forEach((client: ClientView) => {
+        const value: ClientInfo = { id: client.id, name: client.name };
+        const label = client.name;
+        options.push({ value, label });
+      });
+      return options;
+    }
   },
 
   mutations: {

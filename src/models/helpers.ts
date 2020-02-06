@@ -11,3 +11,8 @@ export interface ErrorMessage {
   success: boolean;
   message: string;
 }
+
+export interface VueSelectOption {
+  value: any;
+  label: string;
+}

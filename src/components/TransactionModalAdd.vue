@@ -23,12 +23,11 @@
         </b-field>
 
         <div class="transaction-modal-add__client">
-          <transaction-modal-add-select-with-create-button
+          <typing-select
             v-model="clientInfo"
+            :options="clientSelectList"
             label="Tên Khách Hàng"
-            :error-message="errorClientName"
-            :list="clients"
-            @add-to-list="addClient"
+            @add="addClient"
           />
 
           <transition name="fade">
@@ -129,11 +128,14 @@ import { Transaction, TransactionForDebt } from "@/models/transaction";
 import { ClientInfo, ClientView, Debt } from "@/models/client";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "./TransactionModalAddSelectWithCreateButton.vue";
+import TypingSelect from "./TypingSelect.vue";
 import filterMixin from "@/mixins/filters";
+import { VueSelectOption } from "../models/helpers";
 
 @Component({
   components: {
-    TransactionModalAddSelectWithCreateButton
+    TransactionModalAddSelectWithCreateButton,
+    TypingSelect
   },
   mixins: [filterMixin]
 })
@@ -169,13 +171,8 @@ export default class TransactionModalAdd extends Vue {
     return this.$store.state.clients;
   }
 
-  get clientInfoList(): ClientInfo[] {
-    return this.clients.map((client: ClientView) => {
-      return {
-        id: client.id,
-        name: client.name
-      };
-    });
+  get clientSelectList(): VueSelectOption[] {
+    return this.$store.getters.optionClients;
   }
 
   get debtList(): Debt[] {
@@ -310,14 +307,10 @@ export default class TransactionModalAdd extends Vue {
     margin: auto;
   }
 }
-.transaction-modal-add__client {
-  display: flex;
-  justify-content: space-between;
 
-  .transaction-modal-add__client-debt {
-    text-align: right;
-    color: red;
-  }
+.transaction-modal-add__client-debt {
+  text-align: right;
+  color: red;
 }
 
 .fade-enter-active,

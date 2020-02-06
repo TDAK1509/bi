@@ -5,6 +5,7 @@ import store from "./store";
 import Buefy from "buefy";
 import "./../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 
 Vue.config.productionTip = false;
 Vue.use(Buefy, {
