@@ -1,6 +1,10 @@
 <template>
   <form class="transaction-modal-add">
-    <div v-if="!isLoading" class="modal-card" style="width: 500px;">
+    <div
+      v-if="!isLoading"
+      class="modal-card transaction-modal-add__modal-card"
+      style="width: 500px;"
+    >
       <header class="modal-card-head transaction-modal-add__header">
         <p class="modal-card-title">Thêm Giao Dịch</p>
 
@@ -53,59 +57,77 @@
           </transition>
         </div>
 
-        <typing-select
-          v-if="sellerNameList"
-          class="transaction-modal-add__typing-select"
-          v-model="sellerName"
-          :options="sellerNameList"
-          label="Tên Người Bán"
-          @add="addSeller"
-        />
+        <transition name="fade">
+          <typing-select
+            v-if="sellerNameList && clientInfo.id"
+            class="transaction-modal-add__typing-select"
+            v-model="sellerName"
+            :options="sellerNameList"
+            label="Tên Người Bán"
+            @add="addSeller"
+          />
+        </transition>
 
-        <typing-select
-          v-if="transactionTypeList"
-          class="transaction-modal-add__typing-select"
-          v-model="transactionType"
-          :options="transactionTypeList"
-          label="Hình Thức Giao Dịch"
-          @add="addTransactionType"
-        />
+        <transition name="fade">
+          <typing-select
+            v-if="transactionTypeList && sellerName"
+            class="transaction-modal-add__typing-select"
+            v-model="transactionType"
+            :options="transactionTypeList"
+            label="Hình Thức Giao Dịch"
+            @add="addTransactionType"
+          />
+        </transition>
 
-        <typing-select
-          v-if="productNameList"
-          class="transaction-modal-add__typing-select"
-          v-model="productName"
-          :options="productNameList"
-          label="Tên Hàng Hóa"
-          @add="addProductName"
-        />
+        <transition name="fade">
+          <typing-select
+            v-if="productNameList && transactionType"
+            class="transaction-modal-add__typing-select"
+            v-model="productName"
+            :options="productNameList"
+            label="Tên Hàng Hóa"
+            @add="addProductName"
+          />
+        </transition>
 
-        <b-field
-          label="Số Lượng"
-          :type="errorProductQuantity ? 'is-danger' : ''"
-          :message="errorProductQuantity"
-        >
-          <b-input v-model="productQuantity"></b-input>
-        </b-field>
+        <transition name="fade">
+          <b-field
+            v-if="productName"
+            label="Số Lượng"
+            :type="errorProductQuantity ? 'is-danger' : ''"
+            :message="errorProductQuantity"
+          >
+            <b-input v-model="productQuantity"></b-input>
+          </b-field>
+        </transition>
 
-        <typing-select
-          v-if="paymentTypeList"
-          class="transaction-modal-add__typing-select"
-          v-model="paymentType"
-          label="Hình Thức Thanh Toán"
-          :options="paymentTypeList"
-          @add="addPaymentType"
-        />
+        <transition name="fade">
+          <typing-select
+            v-if="paymentTypeList && productQuantity"
+            class="transaction-modal-add__typing-select"
+            v-model="paymentType"
+            label="Hình Thức Thanh Toán"
+            :options="paymentTypeList"
+            @add="addPaymentType"
+          />
+        </transition>
 
-        <b-field label="Thành Tiền" :message="amount | monetize">
-          <b-numberinput
-            v-model="amount"
-            type="is-dark"
-            controls-position="compact"
-            @focus="$event.target.select()"
-          ></b-numberinput>
-        </b-field>
+        <transition name="fade">
+          <b-field
+            v-if="paymentType"
+            label="Thành Tiền"
+            :message="amount | monetize"
+          >
+            <b-numberinput
+              v-model="amount"
+              type="is-dark"
+              controls-position="compact"
+              @focus="$event.target.select()"
+            ></b-numberinput>
+          </b-field>
+        </transition>
       </section>
+
       <footer class="modal-card-foot transaction-modal-add__footer">
         <b-button
           class="transaction-modal-add__add-button"
@@ -279,6 +301,10 @@ export default class TransactionModalAdd extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.transaction-modal-add__modal-card {
+  min-height: 500px;
+}
+
 .transaction-modal-add__header {
   position: relative;
 }
