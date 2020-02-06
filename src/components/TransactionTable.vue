@@ -88,7 +88,10 @@
             <b-icon icon="edit" pack="far" size="is-small" />
           </button>
 
-          <button class="transaction-table__icon-button">
+          <button
+            class="transaction-table__icon-button"
+            @click="onDelete(props.row.id)"
+          >
             <b-icon icon="trash" size="is-small" />
           </button>
         </b-table-column>
@@ -109,7 +112,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { TransactionView } from "../models/transaction";
 import filtersMixin from "@/mixins/filters";
 
@@ -126,6 +129,9 @@ export default class TransactionTable extends Vue {
     }
     return "";
   }
+
+  @Emit("delete")
+  onDelete(transactionId: string) {}
 }
 </script>
 

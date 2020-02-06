@@ -170,3 +170,17 @@ export async function addOptionPaymentType(paymentTypes: string[]) {
     { merge: true }
   );
 }
+
+export async function deleteTransaction(
+  transactionId: string
+): Promise<boolean> {
+  try {
+    await db
+      .collection(FirebaseCollection.TRANSACTIONS)
+      .doc(transactionId)
+      .delete();
+    return true;
+  } catch (error) {
+    return false;
+  }
+}

@@ -27,6 +27,7 @@ export default new Vuex.Store({
     isFetchedOptions: false,
     isFetchedTransactions: false,
     isLoggedIn: false,
+    isDeletingTransaction: false,
     userEmail: ""
   },
 
@@ -81,6 +82,9 @@ export default new Vuex.Store({
     },
     setUserEmail(state, payload: string) {
       state.userEmail = payload;
+    },
+    setIsDeletingTransaction(state, payload: boolean) {
+      state.isDeletingTransaction = payload;
     }
   },
 
@@ -129,6 +133,24 @@ export default new Vuex.Store({
 
       commit("setTransactions", [...state.transactions, transactionView]);
       return transactionId;
+    },
+
+    async deleteTransaction(
+      { state, commit },
+      transactionId: string
+    ): Promise<boolean> {
+      try {
+        commit("setIsDeletingTransaction", true);
+        await API.deleteTransaction(transactionId);
+        const newTransactions = state.transactions.filter(
+          (transaction: TransactionView) => transaction.id != transactionId
+        );
+        commit("setTransactions", newTransactions);
+        commit("setIsDeletingTransaction", false);
+        return true;
+      } catch (error) {
+        return false;
+      }
     },
 
     async addClient({ state, commit }, clientName: string) {

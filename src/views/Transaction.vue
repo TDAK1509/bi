@@ -14,6 +14,7 @@
     <transaction-table
       class="home__transaction-table"
       :transactions="transactionsToShow"
+      @delete="onDelete"
     />
 
     <add-button @click="isShowAddModal = true" />
@@ -78,7 +79,8 @@ export default class Home extends Vue {
     return (
       this.$store.state.isFetchingClients ||
       this.$store.state.isFetchingTransactions ||
-      this.isAddingSelectOption
+      this.isAddingSelectOption ||
+      this.$store.state.isDeletingTransaction
     );
   }
 
@@ -192,6 +194,26 @@ export default class Home extends Vue {
     });
 
     this.isAddingSelectOption = false;
+  }
+
+  async onDelete(transactionId: string) {
+    const response = await this.$store.dispatch(
+      "deleteTransaction",
+      transactionId
+    );
+    if (response) {
+      this.$buefy.toast.open({
+        message: `Xóa giao dịch thành công!`,
+        type: "is-success",
+        position: "is-bottom"
+      });
+    } else {
+      this.$buefy.toast.open({
+        message: `Đã có lỗi xảy ra! Vui lòng thử lại sau`,
+        type: "is-danger",
+        position: "is-bottom"
+      });
+    }
   }
 
   init() {
