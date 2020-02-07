@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { ApiRes } from "@/api/api-res";
-import { Client, Debt, ClientView } from "@/models/client";
+import { Client, ClientView } from "@/models/client";
 
 export default class ApiClient {
   private db: firebase.firestore.Firestore;
