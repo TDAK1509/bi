@@ -1,6 +1,11 @@
 import { MutationTree, ActionTree, GetterTree } from "vuex";
 import { RootState } from "@/store/";
-import { Client, ClientView, ClientInfo } from "@/models/client";
+import {
+  Client,
+  ClientView,
+  ClientInfo,
+  DebtTransaction
+} from "@/models/client";
 import { VueSelectOption } from "@/models/helpers";
 import { formatDateToString } from "@/utils/date";
 
@@ -57,6 +62,38 @@ const actions = <ActionTree<ClientState, RootState>>{
     };
 
     commit("setClients", [...state.clients, client]);
+  },
+
+  async addDebt({ state, rootState }, { clientId, debt }) {
+    await rootState.api.debt.addDebt(clientId, debt);
+    const clientToAdd: ClientView | undefined = state.clients.find(
+      (client: ClientView) => client.id === clientId
+    );
+    // No need to commit because clientToAdd is not cloned
+    if (typeof clientToAdd !== "undefined") clientToAdd.debts.push(debt);
+  },
+
+  async updateDebt(
+    { state, rootState },
+    { clientId, debtId, transactionId, amount, transactionDate }
+  ) {
+    const clientToUpdate: ClientView | undefined = state.clients.find(
+      (client: ClientView) => client.id === clientId
+    );
+
+    if (typeof clientToUpdate === "undefined") {
+      return;
+    }
+
+    const debtTransaction: DebtTransaction = {
+      id: transactionId,
+      amount: amount,
+      date: transactionDate
+    };
+
+    clientToUpdate.debts[debtId].paid_transaction_list.push(debtTransaction);
+
+    await rootState.api.debt.updateDebts(clientId, clientToUpdate.debts);
   }
 };
 
