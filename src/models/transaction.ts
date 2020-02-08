@@ -7,7 +7,6 @@ export interface Transaction {
   product_name: string;
   product_quantity: string;
   client_name: string;
-  client_id: string;
   is_transaction_debt?: boolean;
 }
 

@@ -28,33 +28,12 @@
 
         <div class="transaction-modal-add__client">
           <typing-select
-            v-model="clientInfo"
-            :options="clientSelectList"
-            label="Tên Khách Hàng"
+            class="transaction-modal-add__typing-select"
+            v-model="client"
+            :options="clientList"
+            llabel="Tên Khách Hàng"
             @add="addClient"
           />
-
-          <transition name="fade">
-            <b-field
-              v-show="debtList.length > 0"
-              label="Thanh Toán Nợ"
-              type="is-dark"
-            >
-              <b-select
-                v-model="debtId"
-                class="transaction-modal-add__client-debt"
-              >
-                <option :value="-1"></option>
-                <option
-                  v-for="(debt, index) in debtList"
-                  :value="index"
-                  :key="`debt${index}`"
-                >
-                  {{ debt.name }}
-                </option>
-              </b-select>
-            </b-field>
-          </transition>
         </div>
 
         <transition name="fade">
@@ -142,8 +121,7 @@
 
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
-import { Transaction, TransactionForDebt } from "@/models/transaction";
-import { ClientInfo, ClientView, Debt } from "@/models/client";
+import { Transaction } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
 import TypingSelect from "@/components/TypingSelect.vue";
@@ -159,14 +137,13 @@ import { VueSelectOption } from "@/models/helpers";
 })
 export default class TransactionModalAdd extends Vue {
   date: Date = new Date();
-  clientInfo: ClientInfo = { id: "", name: "" };
+  client = "";
   transactionType = "";
   amount = 0;
   paymentType = "";
   sellerName = "";
   productName = "";
   productQuantity = "";
-  debtId = -1;
 
   @Prop({ type: Boolean, default: false })
   isAddingClient!: boolean;
@@ -184,7 +161,7 @@ export default class TransactionModalAdd extends Vue {
 
   get isButtonDisabled(): boolean {
     return (
-      !this.clientInfo.id ||
+      !this.client ||
       !this.sellerName ||
       !this.transactionType ||
       this.amount < 0 ||
@@ -194,20 +171,11 @@ export default class TransactionModalAdd extends Vue {
     );
   }
 
-  get clients(): ClientView[] {
-    return this.$store.state.client.clients;
-  }
-
-  get clientSelectList(): VueSelectOption[] {
-    return this.$store.getters["client/optionClients"];
-  }
-
-  get debtList(): Debt[] {
-    const thisClient: ClientView | undefined = this.clients.find(
-      (client: ClientView) => client.id === this.clientInfo.id
-    );
-
-    return typeof thisClient !== "undefined" ? thisClient.debts : [];
+  get clientList(): VueSelectOption[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.clients;
   }
 
   get sellerNameList(): string[] {
@@ -243,7 +211,7 @@ export default class TransactionModalAdd extends Vue {
   }
 
   @Emit("add-transaction")
-  addTransaction(): TransactionForDebt | Transaction {
+  addTransaction(): Transaction {
     const transaction: Transaction = {
       date: formatDateToString(this.date),
       transaction_type: this.transactionType,
@@ -252,16 +220,10 @@ export default class TransactionModalAdd extends Vue {
       seller_name: this.sellerName,
       product_name: this.productName,
       product_quantity: this.productQuantity,
-      client_name: this.clientInfo.name,
-      client_id: this.clientInfo.id
+      client_name: this.client
     };
 
-    if (this.debtId >= 0) {
-      transaction.is_transaction_debt = true;
-      return new TransactionForDebt(transaction, this.debtId);
-    } else {
-      return transaction;
-    }
+    return transaction;
   }
 
   @Emit("add-client")
@@ -323,11 +285,6 @@ export default class TransactionModalAdd extends Vue {
 
 .transaction-modal-add__client {
   margin-bottom: 10px;
-}
-
-.transaction-modal-add__client-debt {
-  text-align: right;
-  color: red;
 }
 
 .transaction-modal-add__typing-select {

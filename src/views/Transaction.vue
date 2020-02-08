@@ -109,26 +109,9 @@ export default class Home extends Vue {
     this.$store.dispatch("transaction/fetchTransactions");
   }
 
-  async addTransaction(transaction: Transaction | TransactionForDebt) {
+  async addTransaction(transaction: Transaction) {
     this.isAddingTransaction = true;
-
-    if (transaction instanceof TransactionForDebt) {
-      const transactionId = await this.$store.dispatch(
-        "transaction/addTransaction",
-        transaction.transaction
-      );
-
-      await this.$store.dispatch("client/updateDebt", {
-        clientId: transaction.transaction.client_id,
-        debtId: transaction.debtId,
-        transactionId,
-        amount: transaction.transaction.amount,
-        transactionDate: transaction.transaction.date
-      });
-    } else {
-      await this.$store.dispatch("transaction/addTransaction", transaction);
-    }
-
+    await this.$store.dispatch("transaction/addTransaction", transaction);
     this.isAddingTransaction = false;
 
     this.$buefy.toast.open({
@@ -141,7 +124,7 @@ export default class Home extends Vue {
 
   async addClient(clientName: string) {
     this.isAddingClient = true;
-    await this.$store.dispatch("client/addClient", clientName);
+    await this.$store.dispatch("options/addClient", clientName);
 
     this.$buefy.toast.open({
       message: `Khách hàng ${clientName} đã được tạo!`,

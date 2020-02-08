@@ -26,7 +26,8 @@ export default class ApiOptions {
           sellers: data.sellers || [],
           transaction_types: data.transaction_types || [],
           product_names: data.product_names || [],
-          payment_types: data.payment_types || []
+          payment_types: data.payment_types || [],
+          clients: data.clients || []
         };
         storeCommit(commitName, options);
         callback.forEach(c => c());
@@ -35,6 +36,15 @@ export default class ApiOptions {
         console.log(`Error getting real time options`, err);
       }
     );
+  }
+
+  async addOptionClient(clientName: string) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.OPTIONS)
+      .doc("options");
+    await docRef.update({
+      clients: firebase.firestore.FieldValue.arrayUnion(clientName)
+    });
   }
 
   async addOptionSeller(sellerName: string) {
