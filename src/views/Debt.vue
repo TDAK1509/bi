@@ -6,15 +6,12 @@
       <transaction-date-picker v-model="dateRange" />
 
       <div class="debt__transaction-filter-total-amount">
-        Tổng tiền:
+        Tổng nợ:
         <span class="has-text-danger">{{ totalAmount | monetize }}</span>
       </div>
     </div>
 
-    <transaction-table
-      class="debt__transaction-table"
-      :transactions="transactionsToShow"
-    />
+    <debt-table class="debt__transaction-table" :debts="debts" />
 
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
   </div>
@@ -22,7 +19,7 @@
 
 <script lang="ts">
 import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
-import TransactionTable from "@/components/TransactionTable.vue";
+import DebtTable from "@/components/DebtTable.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 import filtersMixin from "@/mixins/filters";
@@ -33,25 +30,26 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
   components: {
     PageTitle,
     TransactionDatePicker,
-    TransactionTable
+    DebtTable
   },
   mixins: [filtersMixin]
 })
 export default class Debt extends Vue {
   get isLoading(): boolean {
-    return this.$store.state.debt.isFetchingDebts;
+    return (
+      this.$store.state.debt.isFetchingDebts ||
+      this.$store.state.debt.isUpdatingDebt
+    );
   }
 
-  get transactionsToShow(): TransactionView[] {
+  get debts(): TransactionView[] {
     return this.$store.state.debt.debts;
   }
 
   get totalAmount(): number {
     let totalAmount: number = 0;
-    this.transactionsToShow.forEach(transaction => {
-      if (transaction.is_debt) {
-        totalAmount += parseInt(transaction.amount.toString());
-      }
+    this.debts.forEach(transaction => {
+      totalAmount += parseInt(transaction.amount.toString());
     });
     return totalAmount;
   }
