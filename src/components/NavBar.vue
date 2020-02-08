@@ -6,28 +6,6 @@
       @click="toPreviousPage"
     />
 
-    <div class="nav-bar__search">
-      <b-input
-        v-model="searchText"
-        class="nav-bar__search-input"
-        placeholder="Nhập tên khách hàng"
-        icon="search"
-        type="search"
-        expanded
-      ></b-input>
-
-      <div v-if="searchedClients !== null" class="nav-bar__search-results">
-        <router-link
-          v-for="client in searchedClients"
-          :key="client._id"
-          class="nav-bar__search-results-item"
-          :to="`/client/${client.id}`"
-          @click.native="searchText = ''"
-          >{{ client.name }}</router-link
-        >
-      </div>
-    </div>
-
     <div class="nav-bar__change-password">
       <b-button
         type="is-danger"
@@ -58,7 +36,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { ClientView } from "@/models/client";
 import ChangePasswordModal from "./ChangePasswordModal.vue";
 
 @Component({
@@ -69,20 +46,6 @@ import ChangePasswordModal from "./ChangePasswordModal.vue";
 export default class NavBar extends Vue {
   searchText: string = "";
   showPasswordModal = false;
-
-  get clients(): ClientView[] {
-    return this.$store.state.clients;
-  }
-
-  get searchedClients(): ClientView[] | null {
-    if (this.searchText === "") {
-      return null;
-    }
-
-    return this.clients.filter((client: ClientView) =>
-      client.name.toLowerCase().includes(this.searchText.toLowerCase())
-    );
-  }
 
   toPreviousPage() {
     history.back();
