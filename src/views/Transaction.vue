@@ -14,7 +14,7 @@
     <transaction-table
       class="home__transaction-table"
       :transactions="transactionsToShow"
-      @delete="onDelete"
+      @delete="openDeleteConfirm"
     />
 
     <add-button @click="isShowAddModal = true" />
@@ -176,6 +176,19 @@ export default class Home extends Vue {
     });
 
     this.isAddingSelectOption = false;
+  }
+
+  openDeleteConfirm(transactionId: string) {
+    this.$buefy.dialog.confirm({
+      title: "Xóa Giao Dịch",
+      message:
+        "Bạn có chắc là muốn <strong>xóa giao dịch</strong> này?<br />Hạ thủ bất hoàn!",
+      cancelText: "Em nhầm",
+      confirmText: "Chắc chắn",
+      type: "is-danger",
+      hasIcon: true,
+      onConfirm: () => this.onDelete(transactionId)
+    });
   }
 
   async onDelete(transactionId: string) {

@@ -77,10 +77,6 @@
         </b-table-column>
 
         <b-table-column>
-          <button class="transaction-table__icon-button">
-            <b-icon icon="edit" pack="far" size="is-small" />
-          </button>
-
           <button
             class="transaction-table__icon-button"
             @click="onDelete(props.row.id)"
