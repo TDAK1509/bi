@@ -20,21 +20,7 @@
           sortable
           searchable
         >
-          <b-tooltip
-            label="Xem chi tiết khách hàng"
-            :type="
-              props.row.is_transaction_debt === true ? 'is-warning' : 'is-dark'
-            "
-          >
-            <router-link
-              class="transaction-table__link"
-              :to="{
-                name: 'client',
-                params: { clientId: props.row.client_id }
-              }"
-              >{{ props.row.client_name }}</router-link
-            >
-          </b-tooltip>
+          {{ props.row.client_name }}
         </b-table-column>
 
         <b-table-column
@@ -50,11 +36,17 @@
           field="transaction_type"
           label="Hình Thức Giao Dịch"
           sortable
+          searchable
         >
           {{ props.row.transaction_type }}
         </b-table-column>
 
-        <b-table-column field="product_name" label="Tên Hàng Hóa" sortable>
+        <b-table-column
+          field="product_name"
+          label="Tên Hàng Hóa"
+          sortable
+          searchable
+        >
           {{ props.row.product_name }}
         </b-table-column>
 
@@ -66,6 +58,7 @@
           field="payment_type"
           label="Hình Thức Thanh Toán"
           sortable
+          searchable
         >
           {{ props.row.payment_type }}
         </b-table-column>
