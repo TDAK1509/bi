@@ -1,5 +1,5 @@
 <template>
-  <div class="transaction-table">
+  <div class="debt-table">
     <b-table
       paginated
       per-page="10"
@@ -36,6 +36,15 @@
         </b-table-column>
 
         <b-table-column
+          field="transaction_type"
+          label="Hình Thức Giao Dịch"
+          sortable
+          searchable
+        >
+          {{ props.row.transaction_type }}
+        </b-table-column>
+
+        <b-table-column
           field="product_name"
           label="Tên Hàng Hóa"
           sortable
@@ -46,6 +55,15 @@
 
         <b-table-column field="product_quantity" label="Số Lượng" sortable>
           {{ props.row.product_quantity }}
+        </b-table-column>
+
+        <b-table-column
+          field="payment_type"
+          label="Hình Thức Thanh Toán"
+          sortable
+          searchable
+        >
+          {{ props.row.payment_type }}
         </b-table-column>
 
         <b-table-column field="amount" label="Thành Tiền" sortable numeric>
