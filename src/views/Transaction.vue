@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <page-title>BÁO CÁO TÀI CHÍNH</page-title>
+    <page-title>DOANH THU</page-title>
 
     <div class="home__transaction-filter">
       <transaction-date-picker v-model="dateRange" />
@@ -83,9 +83,7 @@ export default class Home extends Vue {
   get totalAmount(): number {
     let totalAmount: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      if (!transaction.is_debt) {
-        totalAmount += parseInt(transaction.amount.toString());
-      }
+      totalAmount += parseInt(transaction.amount.toString());
     });
     return totalAmount;
   }
