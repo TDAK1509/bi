@@ -27,7 +27,7 @@ const getters: GetterTree<ClientState, RootState> = {
   }
 };
 
-const mutations = <MutationTree<ClientState>>{
+const mutations: MutationTree<ClientState> = {
   setClients(state, payload: ClientView[]) {
     state.clients = payload;
   },
@@ -39,7 +39,7 @@ const mutations = <MutationTree<ClientState>>{
   }
 };
 
-const actions = <ActionTree<ClientState, RootState>>{
+const actions: ActionTree<ClientState, RootState> = {
   async fetchClients({ commit, rootState }) {
     commit("setIsFetchingClients", true);
     const clients: ClientView[] = await rootState.api.client.fetchClients();

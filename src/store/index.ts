@@ -4,6 +4,7 @@ import { api, ApiState } from "@/store/modules/api";
 import { client, ClientState } from "@/store/modules/client";
 import { options, OptionsState } from "@/store/modules/options";
 import { transaction, TransactionState } from "@/store/modules/transaction";
+import { auth, AuthState } from "@/store/modules/auth";
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ export interface RootState {
   client: ClientState;
   options: OptionsState;
   transaction: TransactionState;
+  auth: AuthState;
 }
 
 const actions: ActionTree<RootState, RootState> = {
@@ -25,7 +27,8 @@ export default new Vuex.Store<RootState>({
     api,
     client,
     options,
-    transaction
+    transaction,
+    auth
   },
 
   actions
