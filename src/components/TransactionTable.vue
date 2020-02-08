@@ -65,8 +65,8 @@
 
         <b-table-column field="amount" label="Thành Tiền" sortable numeric>
           <b-tooltip
-            v-if="props.row.is_transaction_debt === true"
-            label="Đây là giao dịch trả nợ"
+            v-if="props.row.is_debt === true"
+            label="Nợ"
             type="is-warning"
             position="is-left"
           >
