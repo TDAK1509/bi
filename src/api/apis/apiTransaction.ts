@@ -41,25 +41,20 @@ export default class ApiTransaction {
       .where("date", ">=", formatDateToString(startDate))
       .where("date", "<=", formatDateToString(endDate));
 
-    docRef.onSnapshot(
-      querySnapshot => {
-        const transactions: TransactionView[] = [];
+    docRef.onSnapshot(querySnapshot => {
+      const transactions: TransactionView[] = [];
 
-        querySnapshot.forEach(doc => {
-          const data = <Transaction>doc.data();
-          const transaction: TransactionView = {
-            ...data,
-            id: doc.id.toString()
-          };
-          transactions.push(transaction);
-        });
+      querySnapshot.forEach(doc => {
+        const data = <Transaction>doc.data();
+        const transaction: TransactionView = {
+          ...data,
+          id: doc.id.toString()
+        };
+        transactions.push(transaction);
+      });
 
-        storeCommit(commitName, transactions);
-        callback.forEach(c => c());
-      },
-      err => {
-        console.log(`Error getting real time transactions`, err);
-      }
-    );
+      storeCommit(commitName, transactions);
+      callback.forEach(c => c());
+    });
   }
 }
