@@ -1,29 +1,16 @@
 require("firebase/firestore");
 const firebase = require("./config");
 const db = firebase.firestore();
-const csv = require("csv-parser");
-const fs = require("fs");
+const clientJson = require("./clients.json");
 
-const dbRef = db.collection("clients");
+const clients = clientJson.map(c => c.name);
 
-fs.createReadStream("functions/clients.csv")
-  .pipe(csv())
-  .on("data", async row => {
-    const clientId = row.id;
-    const client = {
-      name: row.name,
-      date: "2019-12-31",
-      debts: []
-    };
-
-    dbRef
-      .doc(clientId)
-      .set(client)
-      .then()
-      .catch(() => {
-        console.log("ERROR: ", clientId);
-      });
+const docRef = db.collection("options").doc("options");
+docRef
+  .set({ clients }, { merge: true })
+  .then(() => {
+    console.log("done");
   })
-  .on("end", () => {
-    console.log("DONE");
+  .catch(error => {
+    console.log("ERROR", error);
   });
