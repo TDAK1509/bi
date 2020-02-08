@@ -18,9 +18,9 @@ const routes = [
     component: Main,
     children: [
       {
-        path: "client/:clientId",
-        name: "client",
-        component: () => import("@/views/Client.vue")
+        path: "debt",
+        name: "debt",
+        component: () => import("@/views/Debt.vue")
       },
 
       {
