@@ -9,7 +9,6 @@ export class TransactionState {
   isFetchingTransactions = false;
   isFetchedTransactions = false;
   isDeletingTransaction = false;
-  isUpdatingDebt = false;
 }
 
 const mutations: MutationTree<TransactionState> = {
@@ -25,15 +24,11 @@ const mutations: MutationTree<TransactionState> = {
   setIsFetchingTransactions(state, payload: boolean) {
     state.isFetchingTransactions = payload;
   },
-
   setIsFetchedTransactions(state, payload: boolean) {
     state.isFetchedTransactions = payload;
   },
   setIsDeletingTransaction(state, payload: boolean) {
     state.isDeletingTransaction = payload;
-  },
-  setIsUpdatingDebt(state, payload: boolean) {
-    state.isUpdatingDebt = payload;
   }
 };
 
@@ -75,18 +70,6 @@ const actions: ActionTree<TransactionState, RootState> = {
     } catch (error) {
       return false;
     }
-  },
-
-  async updateDebtAmount({ commit, rootState }, { transactionId, debtAmount }) {
-    commit("setIsUpdatingDebt", true);
-    await rootState.api.debt.updateDebtAmount(transactionId, debtAmount);
-    commit("setIsUpdatingDebt", false);
-  },
-
-  async updateDebtStatus({ commit, rootState }, { transactionId, isDebt }) {
-    commit("setIsUpdatingDebt", true);
-    await rootState.api.debt.updateDebtStatus(transactionId, isDebt);
-    commit("setIsUpdatingDebt", false);
   }
 };
 
