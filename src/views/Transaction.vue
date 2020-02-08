@@ -50,11 +50,7 @@ import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 import filtersMixin from "@/mixins/filters";
 import { FilterType } from "@/models/helpers";
-import {
-  TransactionView,
-  Transaction,
-  TransactionForDebt
-} from "@/models/transaction";
+import { TransactionView, Transaction } from "@/models/transaction";
 import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 
 @Component({

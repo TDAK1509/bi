@@ -16,10 +16,10 @@ export default {
   },
 
   async mounted() {
-    if (this.$store.state.auth.isLoggedIn === false) {
-      this.$router.push({ name: "login" });
-      return;
-    }
+    // if (this.$store.state.auth.isLoggedIn === false) {
+    //   this.$router.push({ name: "login" });
+    //   return;
+    // }
   }
 };
 </script>

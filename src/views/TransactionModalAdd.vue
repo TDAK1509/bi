@@ -16,6 +16,7 @@
           +
         </button>
       </header>
+
       <section class="modal-card-body">
         <b-field label="Ngày Giao Dịch">
           <b-datepicker
@@ -25,6 +26,12 @@
             :date-formatter="formatDateToString"
           ></b-datepicker>
         </b-field>
+
+        <div class="transaction-modal-add__is-debt">
+          <b-switch v-model="isDebt" type="is-success">
+            {{ isDebtText }}
+          </b-switch>
+        </div>
 
         <div class="transaction-modal-add__client">
           <typing-select
@@ -144,6 +151,7 @@ export default class TransactionModalAdd extends Vue {
   sellerName = "";
   productName = "";
   productQuantity = "";
+  isDebt = false;
 
   @Prop({ type: Boolean, default: false })
   isAddingClient!: boolean;
@@ -169,6 +177,10 @@ export default class TransactionModalAdd extends Vue {
       !this.productName ||
       !this.productQuantity
     );
+  }
+
+  get isDebtText(): string {
+    return this.isDebt ? "Nợ" : "Không phải nợ";
   }
 
   get clientList(): VueSelectOption[] {
@@ -220,7 +232,8 @@ export default class TransactionModalAdd extends Vue {
       seller_name: this.sellerName,
       product_name: this.productName,
       product_quantity: this.productQuantity,
-      client_name: this.client
+      client_name: this.client,
+      is_debt: this.isDebt
     };
 
     return transaction;
@@ -281,6 +294,11 @@ export default class TransactionModalAdd extends Vue {
   .transaction-modal-add__add-button {
     margin: auto;
   }
+}
+
+.transaction-modal-add__is-debt {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .transaction-modal-add__client {

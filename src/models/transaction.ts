@@ -7,16 +7,9 @@ export interface Transaction {
   product_name: string;
   product_quantity: string;
   client_name: string;
-  is_transaction_debt?: boolean;
+  is_debt?: boolean;
 }
 
 export interface TransactionView extends Transaction {
   id: string;
-}
-
-export class TransactionForDebt {
-  constructor(
-    public readonly transaction: Transaction,
-    public readonly debtId: number
-  ) {}
 }

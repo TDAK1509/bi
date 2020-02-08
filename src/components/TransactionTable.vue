@@ -113,7 +113,7 @@ export default class TransactionTable extends Vue {
   transactions!: Array<TransactionView>;
 
   getIsDebtClass(row: TransactionView, index: number): string {
-    if (row.is_transaction_debt === true) {
+    if (row.is_debt === true) {
       return "transaction-table__row-debt";
     }
     return "";
