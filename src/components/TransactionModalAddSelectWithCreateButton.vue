@@ -5,16 +5,7 @@
       :type="errorMessage ? 'is-danger' : ''"
       :message="errorMessage"
     >
-      <b-select v-if="isClientName" :value="selected" @input="onSelect">
-        <option
-          v-for="l in list"
-          :key="l.id"
-          :value="{ id: l.id, name: l.name }"
-          >{{ l.name }}</option
-        >
-      </b-select>
-
-      <b-select v-else :value="selected" @input="onSelect">
+      <b-select :value="selected" @input="onSelect">
         <option v-for="(l, index) in list" :key="index" :value="l">{{
           l
         }}</option>
@@ -38,7 +29,6 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit, Model } from "vue-property-decorator";
-import { ClientInfo } from "@/models/client";
 
 @Component
 export default class TransactionModalAddSelectWithCreateButton extends Vue {
@@ -55,14 +45,10 @@ export default class TransactionModalAddSelectWithCreateButton extends Vue {
   errorMessage!: string;
 
   @Prop({ type: Array, required: true })
-  list!: Array<String | ClientInfo>;
+  list!: string[];
 
   @Emit("add-to-list")
   addToList(value: string) {}
-
-  get isClientName(): boolean {
-    return this.list[0] instanceof Object;
-  }
 
   prompt() {
     this.$buefy.dialog.prompt({

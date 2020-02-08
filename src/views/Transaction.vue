@@ -27,7 +27,6 @@
       aria-modal
     >
       <transaction-modal-add
-        :is-adding-client="isAddingClient"
         :is-adding-transaction="isAddingTransaction"
         @add-transaction="addTransaction"
         @add-client="addClient"
@@ -56,7 +55,6 @@ import {
   Transaction,
   TransactionForDebt
 } from "@/models/transaction";
-import { ClientView } from "@/models/client";
 import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 
 @Component({
@@ -71,13 +69,11 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 })
 export default class Home extends Vue {
   isShowAddModal: boolean = false;
-  isAddingClient: boolean = false;
   isAddingTransaction: boolean = false;
   isAddingSelectOption: boolean = false;
 
   get isLoading(): boolean {
     return (
-      this.$store.state.client.isFetchingClients ||
       this.$store.state.transaction.isFetchingTransactions ||
       this.isAddingSelectOption ||
       this.$store.state.transaction.isDeletingTransaction
@@ -123,7 +119,7 @@ export default class Home extends Vue {
   }
 
   async addClient(clientName: string) {
-    this.isAddingClient = true;
+    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addClient", clientName);
 
     this.$buefy.toast.open({
@@ -131,7 +127,7 @@ export default class Home extends Vue {
       type: "is-success"
     });
 
-    this.isAddingClient = false;
+    this.isAddingSelectOption = false;
   }
 
   async addSeller(sellerName: string) {

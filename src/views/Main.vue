@@ -15,18 +15,11 @@ export default {
     NavBar
   },
 
-  methods: {
-    init() {
-      return this.$store.dispatch("init");
-    }
-  },
-
   async mounted() {
-    if (this.$store.state.isLoggedIn === false) {
-      this.$router.push({ name: "login" });
-      return;
-    }
-    await this.init();
+    // if (this.$store.state.auth.isLoggedIn === false) {
+    //   this.$router.push({ name: "login" });
+    //   return;
+    // }
   }
 };
 </script>

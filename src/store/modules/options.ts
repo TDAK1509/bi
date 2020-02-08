@@ -30,6 +30,10 @@ const actions: ActionTree<OptionsState, RootState> = {
     ]);
   },
 
+  async addClient({ rootState }, clientName: string) {
+    await rootState.api.options.addOptionClient(clientName);
+  },
+
   async addSeller({ rootState }, sellerName: string) {
     await rootState.api.options.addOptionSeller(sellerName);
   },

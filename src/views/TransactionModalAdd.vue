@@ -31,14 +31,14 @@
             class="transaction-modal-add__typing-select"
             v-model="client"
             :options="clientList"
-            llabel="Tên Khách Hàng"
+            label="Tên Khách Hàng"
             @add="addClient"
           />
         </div>
 
         <transition name="fade">
           <typing-select
-            v-if="sellerNameList && clientInfo.id"
+            v-if="sellerNameList && client"
             class="transaction-modal-add__typing-select"
             v-model="sellerName"
             :options="sellerNameList"
