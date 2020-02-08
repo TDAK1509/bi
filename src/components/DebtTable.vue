@@ -73,9 +73,9 @@
         <b-table-column>
           <button
             class="debt-table__icon-button"
-            @click="onDelete(props.row.id)"
+            @click="showModalEdit(props.row)"
           >
-            <b-icon icon="trash" size="is-small" />
+            <b-icon icon="edit" size="is-small" />
           </button>
         </b-table-column>
       </template>
@@ -104,10 +104,18 @@ import filtersMixin from "@/mixins/filters";
 })
 export default class DebtTable extends Vue {
   @Prop({ type: Array, required: true })
-  debts!: Array<TransactionView>;
+  debts!: TransactionView[];
 
   @Emit("delete")
-  onDelete(transactionId: string) {}
+  onEdit(transactionId: string) {}
+
+  showModal = false;
+  editData: TransactionView | null = null;
+
+  showModalEdit(rowData: TransactionView) {
+    this.showModal = true;
+    this.editData = rowData;
+  }
 }
 </script>
 
