@@ -39,11 +39,11 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 })
 export default class Debt extends Vue {
   get isLoading(): boolean {
-    return this.$store.state.transaction.isFetchingTransactions;
+    return this.$store.state.debt.isFetchingDebts;
   }
 
   get transactionsToShow(): TransactionView[] {
-    return this.$store.state.transaction.transactions;
+    return this.$store.state.debt.debts;
   }
 
   get totalAmount(): number {
@@ -58,15 +58,15 @@ export default class Debt extends Vue {
 
   get dateRange(): Date[] {
     return [
-      this.$store.state.transaction.filterDateStart,
-      this.$store.state.transaction.filterDateEnd
+      this.$store.state.debt.filterDateStart,
+      this.$store.state.debt.filterDateEnd
     ];
   }
 
   set dateRange(dateRange: Date[]) {
-    this.$store.commit("transaction/setFilterDateStart", dateRange[0]);
-    this.$store.commit("transaction/setFilterDateEnd", dateRange[1]);
-    this.$store.dispatch("transaction/fetchTransactions");
+    this.$store.commit("debt/setFilterDateStart", dateRange[0]);
+    this.$store.commit("debt/setFilterDateEnd", dateRange[1]);
+    this.$store.dispatch("debt/fetchDebts");
   }
 
   init() {
@@ -74,7 +74,7 @@ export default class Debt extends Vue {
       const transactionDate = this.$route.query.transaction_date.toString();
       this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
     } else {
-      if (!this.$store.state.transaction.isFetchedTransactions) {
+      if (!this.$store.state.debt.isFetchedDebts) {
         this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
       }
     }
