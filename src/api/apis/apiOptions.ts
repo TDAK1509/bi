@@ -10,22 +10,11 @@ export default class ApiOptions {
     this.db = db;
   }
 
-  async getOptions(): Promise<SelectOptions> {
-    const docRef = this.db
-      .collection(ApiRes.FirebaseCollection.OPTIONS)
-      .doc("options");
-    const doc = await docRef.get();
-    const data = <ApiRes.Options>doc.data();
-
-    return {
-      sellers: data.sellers || [],
-      transaction_types: data.transaction_types || [],
-      product_names: data.product_names || [],
-      payment_types: data.payment_types || []
-    };
-  }
-
-  async setRealtimeUpdateOptions(storeCommit: Function, commitName: string) {
+  async fetchOptions(
+    storeCommit: Function,
+    commitName: string,
+    callback: Function[] = []
+  ) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
       .doc("options");
@@ -40,6 +29,7 @@ export default class ApiOptions {
           payment_types: data.payment_types || []
         };
         storeCommit(commitName, options);
+        callback.forEach(c => c());
       },
       err => {
         console.log(`Error getting real time options`, err);

@@ -22,12 +22,12 @@ const mutations: MutationTree<OptionsState> = {
 
 const actions: ActionTree<OptionsState, RootState> = {
   async fetchOptions({ commit, rootState }) {
+    commit("setIsFetchedOptions", false);
     commit("setIsFetchingOptions", true);
-    const options = await rootState.api.options.getOptions();
-    commit("setOptions", options);
-    commit("setIsFetchingOptions", false);
-    commit("setIsFetchedOptions", true);
-    rootState.api.options.setRealtimeUpdateOptions(commit, "setOptions");
+    rootState.api.options.fetchOptions(commit, "setOptions", [
+      () => commit("setIsFetchingOptions", false),
+      () => commit("setIsFetchedOptions", true)
+    ]);
   },
 
   async addSeller({ rootState }, sellerName: string) {

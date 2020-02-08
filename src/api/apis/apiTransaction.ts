@@ -33,7 +33,8 @@ export default class ApiTransaction {
     storeCommit: Function,
     commitName: string,
     startDate: Date,
-    endDate: Date
+    endDate: Date,
+    callback: Function[] = []
   ) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
@@ -54,6 +55,7 @@ export default class ApiTransaction {
         });
 
         storeCommit(commitName, transactions);
+        callback.forEach(c => c());
       },
       err => {
         console.log(`Error getting real time transactions`, err);

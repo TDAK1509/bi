@@ -37,15 +37,16 @@ const actions: ActionTree<TransactionState, RootState> = {
   async fetchTransactions({ commit, state, rootState }) {
     commit("setIsFetchingTransactions", true);
 
-    await rootState.api.transaction.fetchTransactions(
+    rootState.api.transaction.fetchTransactions(
       commit,
       "setTransactions",
       state.filterDateStart,
-      state.filterDateEnd
+      state.filterDateEnd,
+      [
+        () => commit("setIsFetchingTransactions", false),
+        () => commit("setIsFetchedTransactions", true)
+      ]
     );
-
-    commit("setIsFetchingTransactions", false);
-    commit("setIsFetchedTransactions", true);
   },
 
   async addTransaction(
