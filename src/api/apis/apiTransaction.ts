@@ -17,27 +17,6 @@ export default class ApiTransaction {
     return docRef.id;
   }
 
-  async fetchTransactions(
-    startDate: Date,
-    endDate: Date
-  ): Promise<TransactionView[]> {
-    const transactions: TransactionView[] = [];
-
-    const docRef = this.db
-      .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
-      .where("date", ">=", formatDateToString(startDate))
-      .where("date", "<=", formatDateToString(endDate));
-    const querySnapshot = await docRef.get();
-
-    querySnapshot.forEach(doc => {
-      const data = <Transaction>doc.data();
-      const transaction: TransactionView = { ...data, id: doc.id.toString() };
-      transactions.push(transaction);
-    });
-
-    return transactions;
-  }
-
   async deleteTransaction(transactionId: string): Promise<boolean> {
     try {
       await this.db
@@ -50,7 +29,7 @@ export default class ApiTransaction {
     }
   }
 
-  async setRealtimeUpdateTransactions(
+  async fetchTransactions(
     storeCommit: Function,
     commitName: string,
     startDate: Date,

@@ -36,20 +36,16 @@ const mutations: MutationTree<TransactionState> = {
 const actions: ActionTree<TransactionState, RootState> = {
   async fetchTransactions({ commit, state, rootState }) {
     commit("setIsFetchingTransactions", true);
-    const transactions: TransactionView[] = await rootState.api.transaction.fetchTransactions(
-      state.filterDateStart,
-      state.filterDateEnd
-    );
-    commit("setTransactions", transactions);
-    commit("setIsFetchingTransactions", false);
-    commit("setIsFetchedTransactions", true);
 
-    rootState.api.transaction.setRealtimeUpdateTransactions(
+    await rootState.api.transaction.fetchTransactions(
       commit,
       "setTransactions",
       state.filterDateStart,
       state.filterDateEnd
     );
+
+    commit("setIsFetchingTransactions", false);
+    commit("setIsFetchedTransactions", true);
   },
 
   async addTransaction(
