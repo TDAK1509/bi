@@ -25,6 +25,28 @@ export default class ApiOptions {
     };
   }
 
+  async setRealtimeUpdateOptions(storeCommit: Function, commitName: string) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.OPTIONS)
+      .doc("options");
+
+    docRef.onSnapshot(
+      doc => {
+        const data = <ApiRes.Options>doc.data();
+        const options = {
+          sellers: data.sellers || [],
+          transaction_types: data.transaction_types || [],
+          product_names: data.product_names || [],
+          payment_types: data.payment_types || []
+        };
+        storeCommit(commitName, options);
+      },
+      err => {
+        console.log(`Error getting real time options`, err);
+      }
+    );
+  }
+
   async addOptionSeller(sellerName: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
