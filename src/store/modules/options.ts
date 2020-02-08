@@ -3,8 +3,7 @@ import { RootState } from "@/store/";
 import { SelectOptions, VueSelectOption } from "@/models/helpers";
 
 export class OptionsState {
-  options: SelectOptions = {};
-
+  options: SelectOptions | null = null;
   isFetchingOptions = false;
   isFetchedOptions = false;
 }
@@ -13,11 +12,9 @@ const mutations: MutationTree<OptionsState> = {
   setOptions(state, payload: SelectOptions) {
     state.options = payload;
   },
-
   setIsFetchingOptions(state, payload: boolean) {
     state.isFetchingOptions = payload;
   },
-
   setIsFetchedOptions(state, payload: boolean) {
     state.isFetchedOptions = payload;
   }
@@ -32,30 +29,20 @@ const actions: ActionTree<OptionsState, RootState> = {
     commit("setIsFetchedOptions", true);
   },
 
-  async addSeller({ state, rootState }, sellerName: string) {
-    state.options.sellers.push(sellerName);
-    await rootState.api.options.addOptionSeller(state.options.sellers);
+  async addSeller({ rootState }, sellerName: string) {
+    await rootState.api.options.addOptionSeller(sellerName);
   },
 
-  async addProductName({ state, rootState }, payload: string) {
-    state.options.product_names.push(payload);
-    await rootState.api.options.addOptionProductName(
-      state.options.product_names
-    );
+  async addProductName({ rootState }, productName: string) {
+    await rootState.api.options.addOptionProductName(productName);
   },
 
-  async addTransactionType({ state, rootState }, payload: string) {
-    state.options.transaction_types.push(payload);
-    await rootState.api.options.addOptionTransactionType(
-      state.options.transaction_types
-    );
+  async addTransactionType({ rootState }, transactionType: string) {
+    await rootState.api.options.addOptionTransactionType(transactionType);
   },
 
-  async addPaymentType({ state, rootState }, payload: string) {
-    state.options.payment_types.push(payload);
-    await rootState.api.options.addOptionPaymentType(
-      state.options.payment_types
-    );
+  async addPaymentType({ rootState }, paymentType: string) {
+    await rootState.api.options.addOptionPaymentType(paymentType);
   }
 };
 

@@ -39,7 +39,7 @@ export default class Login extends Vue {
   async login() {
     this.loading = true;
 
-    const loggedIn = await this.$store.dispatch("login", {
+    const loggedIn = await this.$store.dispatch("auth/login", {
       username: this.email,
       password: this.password
     });

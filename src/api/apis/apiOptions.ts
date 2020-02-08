@@ -1,6 +1,7 @@
 import { db } from "@/firebase";
 import { ApiRes } from "@/api/api-res";
 import { SelectOptions } from "@/models/helpers";
+import * as firebase from "firebase";
 
 export default class ApiOptions {
   private db: firebase.firestore.Firestore;
@@ -24,51 +25,41 @@ export default class ApiOptions {
     };
   }
 
-  async addOptionSeller(sellerNames: string[]) {
+  async addOptionSeller(sellerName: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
       .doc("options");
-    await docRef.set(
-      {
-        sellers: sellerNames
-      },
-      { merge: true }
-    );
+    await docRef.update({
+      sellers: firebase.firestore.FieldValue.arrayUnion(sellerName)
+    });
   }
 
-  async addOptionTransactionType(transactionTypes: string[]) {
+  async addOptionTransactionType(transactionType: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
       .doc("options");
-    await docRef.set(
-      {
-        transaction_types: transactionTypes
-      },
-      { merge: true }
-    );
+    await docRef.update({
+      transaction_types: firebase.firestore.FieldValue.arrayUnion(
+        transactionType
+      )
+    });
   }
 
-  async addOptionProductName(productNames: string[]) {
+  async addOptionProductName(productName: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
       .doc("options");
-    await docRef.set(
-      {
-        product_names: productNames
-      },
-      { merge: true }
-    );
+    await docRef.update({
+      product_names: firebase.firestore.FieldValue.arrayUnion(productName)
+    });
   }
 
-  async addOptionPaymentType(paymentTypes: string[]) {
+  async addOptionPaymentType(paymentType: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
       .doc("options");
-    await docRef.set(
-      {
-        payment_types: paymentTypes
-      },
-      { merge: true }
-    );
+    await docRef.update({
+      payment_types: firebase.firestore.FieldValue.arrayUnion(paymentType)
+    });
   }
 }
