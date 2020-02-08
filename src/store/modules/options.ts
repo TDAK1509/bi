@@ -25,9 +25,9 @@ const actions: ActionTree<OptionsState, RootState> = {
     commit("setIsFetchingOptions", true);
     const options = await rootState.api.options.getOptions();
     commit("setOptions", options);
-    rootState.api.options.setRealtimeUpdateOptions(commit, "setOptions");
     commit("setIsFetchingOptions", false);
     commit("setIsFetchedOptions", true);
+    rootState.api.options.setRealtimeUpdateOptions(commit, "setOptions");
   },
 
   async addSeller({ rootState }, sellerName: string) {

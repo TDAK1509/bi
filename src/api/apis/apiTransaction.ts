@@ -49,4 +49,36 @@ export default class ApiTransaction {
       return false;
     }
   }
+
+  async setRealtimeUpdateTransactions(
+    storeCommit: Function,
+    commitName: string,
+    startDate: Date,
+    endDate: Date
+  ) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
+      .where("date", ">=", formatDateToString(startDate))
+      .where("date", "<=", formatDateToString(endDate));
+
+    docRef.onSnapshot(
+      querySnapshot => {
+        const transactions: TransactionView[] = [];
+
+        querySnapshot.forEach(doc => {
+          const data = <Transaction>doc.data();
+          const transaction: TransactionView = {
+            ...data,
+            id: doc.id.toString()
+          };
+          transactions.push(transaction);
+        });
+
+        storeCommit(commitName, transactions);
+      },
+      err => {
+        console.log(`Error getting real time transactions`, err);
+      }
+    );
+  }
 }

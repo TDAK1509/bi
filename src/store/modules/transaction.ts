@@ -43,36 +43,32 @@ const actions: ActionTree<TransactionState, RootState> = {
     commit("setTransactions", transactions);
     commit("setIsFetchingTransactions", false);
     commit("setIsFetchedTransactions", true);
+
+    rootState.api.transaction.setRealtimeUpdateTransactions(
+      commit,
+      "setTransactions",
+      state.filterDateStart,
+      state.filterDateEnd
+    );
   },
 
   async addTransaction(
-    { state, commit, rootState },
+    { rootState },
     transaction: Transaction
   ): Promise<String> {
     const transactionId = await rootState.api.transaction.addTransaction(
       transaction
     );
-
-    const transactionView: TransactionView = {
-      id: transactionId,
-      ...transaction
-    };
-
-    commit("setTransactions", [...state.transactions, transactionView]);
     return transactionId;
   },
 
   async deleteTransaction(
-    { state, commit, rootState },
+    { commit, rootState },
     transactionId: string
   ): Promise<boolean> {
     try {
       commit("setIsDeletingTransaction", true);
       await rootState.api.transaction.deleteTransaction(transactionId);
-      const newTransactions = state.transactions.filter(
-        (transaction: TransactionView) => transaction.id != transactionId
-      );
-      commit("setTransactions", newTransactions);
       commit("setIsDeletingTransaction", false);
       return true;
     } catch (error) {
