@@ -77,15 +77,15 @@ export default class Home extends Vue {
 
   get isLoading(): boolean {
     return (
-      this.$store.state.isFetchingClients ||
-      this.$store.state.isFetchingTransactions ||
+      this.$store.state.client.isFetchingClients ||
+      this.$store.state.transaction.isFetchingTransactions ||
       this.isAddingSelectOption ||
-      this.$store.state.isDeletingTransaction
+      this.$store.state.transaction.isDeletingTransaction
     );
   }
 
   get transactionsToShow(): TransactionView[] {
-    return this.$store.state.transactions;
+    return this.$store.state.transaction.transactions;
   }
 
   get totalAmount(): number {
@@ -97,13 +97,16 @@ export default class Home extends Vue {
   }
 
   get dateRange(): Date[] {
-    return [this.$store.state.filterDateStart, this.$store.state.filterDateEnd];
+    return [
+      this.$store.state.transaction.filterDateStart,
+      this.$store.state.transaction.filterDateEnd
+    ];
   }
 
   set dateRange(dateRange: Date[]) {
-    this.$store.commit("setFilterDateStart", dateRange[0]);
-    this.$store.commit("setFilterDateEnd", dateRange[1]);
-    this.$store.dispatch("fetchTransactions");
+    this.$store.commit("transaction/setFilterDateStart", dateRange[0]);
+    this.$store.commit("transaction/setFilterDateEnd", dateRange[1]);
+    this.$store.dispatch("transaction/fetchTransactions");
   }
 
   async addTransaction(transaction: Transaction | TransactionForDebt) {
@@ -111,11 +114,11 @@ export default class Home extends Vue {
 
     if (transaction instanceof TransactionForDebt) {
       const transactionId = await this.$store.dispatch(
-        "addTransaction",
+        "transaction/addTransaction",
         transaction.transaction
       );
 
-      await this.$store.dispatch("updateDebt", {
+      await this.$store.dispatch("client/updateDebt", {
         clientId: transaction.transaction.client_id,
         debtId: transaction.debtId,
         transactionId,
@@ -123,7 +126,7 @@ export default class Home extends Vue {
         transactionDate: transaction.transaction.date
       });
     } else {
-      await this.$store.dispatch("addTransaction", transaction);
+      await this.$store.dispatch("transaction/addTransaction", transaction);
     }
 
     this.isAddingTransaction = false;
@@ -138,7 +141,7 @@ export default class Home extends Vue {
 
   async addClient(clientName: string) {
     this.isAddingClient = true;
-    await this.$store.dispatch("addClient", clientName);
+    await this.$store.dispatch("client/addClient", clientName);
 
     this.$buefy.toast.open({
       message: `Khách hàng ${clientName} đã được tạo!`,
@@ -150,7 +153,7 @@ export default class Home extends Vue {
 
   async addSeller(sellerName: string) {
     this.isAddingSelectOption = true;
-    await this.$store.dispatch("addSeller", sellerName);
+    await this.$store.dispatch("options/addSeller", sellerName);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
@@ -162,7 +165,7 @@ export default class Home extends Vue {
 
   async addTransactionType(transactionType: string) {
     this.isAddingSelectOption = true;
-    await this.$store.dispatch("addTransactionType", transactionType);
+    await this.$store.dispatch("options/addTransactionType", transactionType);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
@@ -174,7 +177,7 @@ export default class Home extends Vue {
 
   async addProductName(productName: string) {
     this.isAddingSelectOption = true;
-    await this.$store.dispatch("addProductName", productName);
+    await this.$store.dispatch("options/addProductName", productName);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
@@ -186,7 +189,7 @@ export default class Home extends Vue {
 
   async addPaymentType(paymentType: string) {
     this.isAddingSelectOption = true;
-    await this.$store.dispatch("addPaymentType", paymentType);
+    await this.$store.dispatch("options/addPaymentType", paymentType);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
@@ -198,7 +201,7 @@ export default class Home extends Vue {
 
   async onDelete(transactionId: string) {
     const response = await this.$store.dispatch(
-      "deleteTransaction",
+      "transaction/deleteTransaction",
       transactionId
     );
     if (response) {
@@ -221,7 +224,7 @@ export default class Home extends Vue {
       const transactionDate = this.$route.query.transaction_date.toString();
       this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
     } else {
-      if (!this.$store.state.isFetchedTransactions) {
+      if (!this.$store.state.transaction.isFetchedTransactions) {
         this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
       }
     }

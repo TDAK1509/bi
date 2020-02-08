@@ -7,7 +7,6 @@ export class TransactionState {
   filterDateStart = new Date();
   filterDateEnd = new Date();
   isFetchingTransactions = false;
-
   isFetchedTransactions = false;
   isDeletingTransaction = false;
 }
