@@ -83,7 +83,9 @@ export default class Home extends Vue {
   get totalAmount(): number {
     let totalAmount: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      totalAmount += parseInt(transaction.amount.toString());
+      if (!transaction.is_debt) {
+        totalAmount += parseInt(transaction.amount.toString());
+      }
     });
     return totalAmount;
   }
