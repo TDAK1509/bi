@@ -145,10 +145,10 @@ import { Component, Vue, Emit, Prop } from "vue-property-decorator";
 import { Transaction, TransactionForDebt } from "@/models/transaction";
 import { ClientInfo, ClientView, Debt } from "@/models/client";
 import { formatDateToString } from "@/utils/date";
-import TransactionModalAddSelectWithCreateButton from "./TransactionModalAddSelectWithCreateButton.vue";
-import TypingSelect from "./TypingSelect.vue";
+import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
+import TypingSelect from "@/components/TypingSelect.vue";
 import filterMixin from "@/mixins/filters";
-import { VueSelectOption } from "../models/helpers";
+import { VueSelectOption } from "@/models/helpers";
 
 @Component({
   components: {
@@ -175,7 +175,11 @@ export default class TransactionModalAdd extends Vue {
   isAddingTransaction!: boolean;
 
   get isLoading(): boolean {
-    return this.$store.state.isFetchingOptions;
+    return this.$store.state.options.isFetchingOptions;
+  }
+
+  get isOptionsFetched(): boolean {
+    return this.$store.state.options.isFetchedOptions;
   }
 
   get isButtonDisabled(): boolean {
@@ -191,11 +195,11 @@ export default class TransactionModalAdd extends Vue {
   }
 
   get clients(): ClientView[] {
-    return this.$store.state.clients;
+    return this.$store.state.client.clients;
   }
 
   get clientSelectList(): VueSelectOption[] {
-    return this.$store.getters.optionClients;
+    return this.$store.getters["client/optionClients"];
   }
 
   get debtList(): Debt[] {
@@ -207,19 +211,31 @@ export default class TransactionModalAdd extends Vue {
   }
 
   get sellerNameList(): string[] {
-    return this.$store.state.options.sellers;
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.sellers;
   }
 
   get transactionTypeList(): string[] {
-    return this.$store.state.options.transaction_types;
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.transaction_types;
   }
 
   get productNameList(): string[] {
-    return this.$store.state.options.product_names;
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.product_names;
   }
 
   get paymentTypeList(): string[] {
-    return this.$store.state.options.payment_types;
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.payment_types;
   }
 
   formatDateToString(date: Date): string {
@@ -264,8 +280,8 @@ export default class TransactionModalAdd extends Vue {
   addPaymentType(value: string) {}
 
   mounted() {
-    if (!this.$store.state.isFetchedOptions) {
-      this.$store.dispatch("fetchOptions");
+    if (!this.$store.state.options.isFetchedOptions) {
+      this.$store.dispatch("options/fetchOptions");
     }
   }
 }

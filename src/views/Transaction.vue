@@ -46,7 +46,7 @@
 import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 import AddButton from "@/components/AddButton.vue";
-import TransactionModalAdd from "@/components/TransactionModalAdd.vue";
+import TransactionModalAdd from "@/views/TransactionModalAdd.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 import filtersMixin from "@/mixins/filters";

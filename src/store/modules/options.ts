@@ -1,6 +1,6 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
-import { SelectOptions, VueSelectOption } from "@/models/helpers";
+import { SelectOptions } from "@/models/helpers";
 
 export class OptionsState {
   options: SelectOptions | null = null;
