@@ -16,21 +16,32 @@ export default class ApiClient {
     return docRef.id;
   }
 
-  async fetchClients(): Promise<ClientView[]> {
-    const clients: ClientView[] = [];
-
+  async fetchClients(
+    storeCommit: Function,
+    commitName: string,
+    callback: Function[] = []
+  ) {
     const docRef = await this.db.collection(ApiRes.FirebaseCollection.CLIENTS);
-    const querySnapshot = await docRef.get();
 
-    querySnapshot.forEach(doc => {
-      const data = <Client>doc.data();
-      const client: ClientView = {
-        id: doc.id.toString(),
-        ...data
-      };
-      clients.push(client);
-    });
+    docRef.onSnapshot(
+      querySnapshot => {
+        const clients: ClientView[] = [];
 
-    return clients;
+        querySnapshot.forEach(doc => {
+          const data = <Client>doc.data();
+          const client: ClientView = {
+            id: doc.id.toString(),
+            ...data
+          };
+          clients.push(client);
+        });
+
+        storeCommit(commitName, clients);
+        callback.forEach(c => c());
+      },
+      err => {
+        console.log(`Error getting real time clients`, err);
+      }
+    );
   }
 }

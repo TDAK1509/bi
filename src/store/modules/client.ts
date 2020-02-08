@@ -40,37 +40,26 @@ const mutations: MutationTree<ClientState> = {
 };
 
 const actions: ActionTree<ClientState, RootState> = {
-  async fetchClients({ commit, rootState }) {
+  fetchClients({ commit, rootState }) {
     commit("setIsFetchingClients", true);
-    const clients: ClientView[] = await rootState.api.client.fetchClients();
-    commit("setClients", clients);
-    commit("setIsFetchingClients", false);
-    commit("setIsFetchedClients", true);
+    rootState.api.client.fetchClients(commit, "setClients", [
+      () => commit("setIsFetchingClients", false),
+      () => commit("setIsFetchedClients", true)
+    ]);
   },
 
-  async addClient({ state, commit, rootState }, clientName: string) {
+  async addClient({ rootState }, clientName: string) {
     const newClientInfo: Client = {
       name: clientName,
       date: formatDateToString(new Date()),
       debts: []
     };
 
-    const clientId = await rootState.api.client.addClient(newClientInfo);
-    const client: ClientView = {
-      id: clientId,
-      ...newClientInfo
-    };
-
-    commit("setClients", [...state.clients, client]);
+    await rootState.api.client.addClient(newClientInfo);
   },
 
-  async addDebt({ state, rootState }, { clientId, debt }) {
+  async addDebt({ rootState }, { clientId, debt }) {
     await rootState.api.debt.addDebt(clientId, debt);
-    const clientToAdd: ClientView | undefined = state.clients.find(
-      (client: ClientView) => client.id === clientId
-    );
-    // No need to commit because clientToAdd is not cloned
-    if (typeof clientToAdd !== "undefined") clientToAdd.debts.push(debt);
   },
 
   async updateDebt(
