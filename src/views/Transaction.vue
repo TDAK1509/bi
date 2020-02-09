@@ -3,7 +3,9 @@
     <page-title>DOANH THU</page-title>
 
     <div class="home__transaction-filter">
-      <transaction-date-picker v-model="dateRange" />
+      <div class="home__transaction-time">
+        {{ dateRange }}
+      </div>
 
       <div class="home__transaction-filter-total-amount">
         Tổng tiền:
@@ -44,7 +46,11 @@ import Filters from "@/mixins/filters";
 import ErrorHandling from "@/mixins/errorHandling";
 import { FilterType } from "@/models/helpers";
 import { TransactionView, Transaction } from "@/models/transaction";
-import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
+import {
+  getFirstDayOfMonth,
+  getLastDayOfMonth,
+  formatDateToString
+} from "@/utils/date";
 
 @Component({
   components: {
@@ -57,6 +63,7 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 })
 export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
+  dateRange: string = "";
 
   get isLoading(): boolean {
     return (
@@ -64,10 +71,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
       this.$store.state.options.isAddingOption ||
       this.$store.state.transaction.isDeletingTransaction
     );
-  }
-
-  get isFetchedTransactions(): boolean {
-    return this.$store.state.transaction.isFetchedTransactions;
   }
 
   get transactionsToShow(): TransactionView[] {
@@ -80,18 +83,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
       totalAmount += parseInt(transaction.amount.toString());
     });
     return totalAmount;
-  }
-
-  get dateRange(): Date[] {
-    return [
-      this.$store.state.transaction.filterDateStart,
-      this.$store.state.transaction.filterDateEnd
-    ];
-  }
-
-  set dateRange(dateRange: Date[]) {
-    this.$store.commit("transaction/setFilterDateStart", dateRange[0]);
-    this.$store.commit("transaction/setFilterDateEnd", dateRange[1]);
   }
 
   openDeleteConfirm(transactionId: string) {
@@ -126,26 +117,23 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
   searchTransactionsByQuery() {
     const query = this.$route.query;
 
-    if (
-      !query.field ||
-      !query.value ||
-      !query.operator ||
-      !query.start_date ||
-      !query.end_date
-    ) {
+    if (query.start_date && query.end_date) {
+      this.dateRange = query.start_date + " đến " + query.end_date;
+      this.$store.dispatch("transaction/fetchTransactions", query);
       return;
     }
 
-    this.$store.commit("transaction/setFilterDateStart", query.start_date);
-    this.$store.commit("transaction/setFilterDateEnd", query.end_date);
-    this.$store.dispatch("transaction/fetchTransactions", query);
+    const startDate: string = formatDateToString(getFirstDayOfMonth());
+    const endDate: string = formatDateToString(getLastDayOfMonth());
+    this.dateRange = startDate + " đến " + endDate;
+    this.$store.dispatch("transaction/fetchTransactions", {
+      start_date: startDate,
+      end_date: endDate
+    });
   }
 
   init() {
     this.searchTransactionsByQuery();
-
-    this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
-    // this.$store.dispatch("transaction/fetchTransactions");
   }
 
   mounted() {

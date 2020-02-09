@@ -5,30 +5,18 @@ import { SearchQuery } from "@/models/search";
 
 export class TransactionState {
   transactions: TransactionView[] = [];
-  filterDateStart = new Date();
-  filterDateEnd = new Date();
   isFetchingTransactions = false;
-  isFetchedTransactions = false;
   isDeletingTransaction = false;
   isUpdatingTransaction = false;
   isAddingTransaction = false;
 }
 
 const mutations: MutationTree<TransactionState> = {
-  setFilterDateStart(state, payload: Date) {
-    state.filterDateStart = payload;
-  },
-  setFilterDateEnd(state, payload: Date) {
-    state.filterDateEnd = payload;
-  },
   setTransactions(state, payload: TransactionView[]) {
     state.transactions = payload;
   },
   setIsFetchingTransactions(state, payload: boolean) {
     state.isFetchingTransactions = payload;
-  },
-  setIsFetchedTransactions(state, payload: boolean) {
-    state.isFetchedTransactions = payload;
   },
   setIsDeletingTransaction(state, payload: boolean) {
     state.isDeletingTransaction = payload;
@@ -49,10 +37,7 @@ const actions: ActionTree<TransactionState, RootState> = {
       commit,
       "setTransactions",
       searchQuery,
-      [
-        () => commit("setIsFetchingTransactions", false),
-        () => commit("setIsFetchedTransactions", true)
-      ]
+      [() => commit("setIsFetchingTransactions", false)]
     );
   },
 
