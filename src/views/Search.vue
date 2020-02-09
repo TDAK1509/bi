@@ -2,7 +2,18 @@
   <div class="search">
     <page-title>TÌM GIAO DỊCH</page-title>
 
-    <div class="search__select-container">
+    <div class="search__date-container">
+      <b-field label="Ngày Giao Dịch" :message="selectDateMessage">
+        <b-datepicker
+          v-model="date"
+          :date-formatter="formatDateToString"
+          range
+          nearby-selectable-month-days
+        />
+      </b-field>
+    </div>
+
+    <div v-show="date.length === 2" class="search__select-container">
       <div class="search__select-item">
         <b-radio
           v-model="searchCriteria"
@@ -131,17 +142,17 @@
           />
         </div>
       </div>
+    </div>
 
-      <div class="search__button-container">
-        <b-button
-          type="is-dark"
-          icon-right="search"
-          :disabled="!searchValue"
-          @click="search"
-        >
-          Tìm
-        </b-button>
-      </div>
+    <div class="search__button-container">
+      <b-button
+        type="is-dark"
+        icon-right="search"
+        :disabled="!searchValue || date.length != 2"
+        @click="search"
+      >
+        Tìm
+      </b-button>
     </div>
 
     <b-loading :is-full-page="true" :active="!isOptionsFetched"></b-loading>
@@ -151,6 +162,7 @@
 <script lang="ts">
 import { Vue, Component, Watch } from "vue-property-decorator";
 import PageTitle from "@/components/PageTitle.vue";
+import { formatDateToString } from "@/utils/date";
 
 @Component({
   components: {
@@ -158,14 +170,19 @@ import PageTitle from "@/components/PageTitle.vue";
   }
 })
 export default class Search extends Vue {
-  searchCriteria: string = "id";
+  searchCriteria: string = "";
   searchValue: string | number = "";
   amountOperator = "==";
+  date: Date[] = [];
 
   @Watch("searchCriteria")
   onSearchCriteriaChange(value: string) {
     this.searchValue = value === "amount" ? 0 : "";
     this.amountOperator = value === "amount" ? "<=" : "==";
+  }
+
+  get selectDateMessage(): string {
+    return this.date.length === 2 ? "" : "Vui lòng chọn ngày";
   }
 
   get isOptionsFetched(): boolean {
@@ -207,6 +224,15 @@ export default class Search extends Vue {
     return this.$store.state.options.options.payment_types;
   }
 
+  formatDateToString(dateRange: Date[]): string {
+    if (dateRange.length !== 2) {
+      return "";
+    }
+    const startDate = formatDateToString(dateRange[0]);
+    const endDate = formatDateToString(dateRange[1]);
+    return `${startDate} đến ${endDate}`;
+  }
+
   onSelectSearchCriteria(e: MouseEvent) {
     const target = e.target as HTMLElement;
     const container = target.closest(".search__select-item") as HTMLElement;
@@ -220,7 +246,9 @@ export default class Search extends Vue {
     const query: { [key: string]: string } = {
       field: this.searchCriteria,
       value: this.searchValue.toString(),
-      operator: this.amountOperator
+      operator: this.amountOperator,
+      startDate: formatDateToString(this.date[0]),
+      endDate: formatDateToString(this.date[1])
     };
 
     this.$router.push({ name: "transaction", query: query });
@@ -235,9 +263,13 @@ export default class Search extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.search__select-container {
+.search {
   width: 500px;
   margin: auto;
+}
+
+.search__date-container {
+  margin-bottom: 20px;
 }
 
 .search__select-item {
