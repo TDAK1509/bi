@@ -10,7 +10,7 @@
 
         <b-input
           class="search__select-item-input"
-          v-model="searchValue"
+          v-model.trim="searchValue"
           placeholder="Điền mã giao dịch"
         ></b-input>
       </div>
@@ -23,6 +23,12 @@
         >
           Tên khách hàng
         </b-radio>
+
+        <v-select
+          v-model.trim="searchValue"
+          :options="clientList"
+          :clearable="false"
+        />
       </div>
 
       <div class="search__select-item">
@@ -61,6 +67,8 @@
         </b-radio>
       </div>
     </div>
+
+    <b-loading :is-full-page="true" :active="!isOptionsFetched"></b-loading>
   </div>
 </template>
 
@@ -76,6 +84,51 @@ import PageTitle from "@/components/PageTitle.vue";
 export default class Search extends Vue {
   searchCriteria: string = "id";
   searchValue: string = "";
+
+  get isOptionsFetched(): boolean {
+    return this.$store.state.options.isFetchedOptions;
+  }
+
+  get clientList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.clients;
+  }
+
+  get sellerNameList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.sellers;
+  }
+
+  get transactionTypeList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.transaction_types;
+  }
+
+  get productNameList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.product_names;
+  }
+
+  get paymentTypeList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.payment_types;
+  }
+
+  mounted() {
+    if (!this.$store.state.options.isFetchedOptions) {
+      this.$store.dispatch("options/fetchOptions");
+    }
+  }
 }
 </script>
 
