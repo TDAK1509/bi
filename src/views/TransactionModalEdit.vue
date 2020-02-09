@@ -104,7 +104,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Mixins } from "vue-property-decorator";
+import { Component, Vue, Prop, Mixins, Emit } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
@@ -205,10 +205,14 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     try {
       await this.$store.dispatch("transaction/updateTransaction", transaction);
       this.toastSuccess("Sửa giao dịch thành công");
+      this.onEditTransactionDone();
     } catch (error) {
       this.toastError();
     }
   }
+
+  @Emit("edit-transaction-done")
+  onEditTransactionDone() {}
 
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {

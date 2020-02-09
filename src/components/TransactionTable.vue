@@ -79,6 +79,13 @@
         <b-table-column>
           <button
             class="transaction-table__icon-button"
+            @click="showModalEdit(props.row)"
+          >
+            <b-icon icon="edit" size="is-small" />
+          </button>
+
+          <button
+            class="transaction-table__icon-button"
             @click="onDelete(props.row.id)"
           >
             <b-icon icon="trash" size="is-small" />
@@ -97,20 +104,39 @@
         </section>
       </template>
     </b-table>
+
+    <b-modal
+      :active.sync="showModal"
+      has-modal-card
+      trap-focus
+      aria-role="dialog"
+      aria-modal
+    >
+      <transaction-modal-edit
+        :transaction="editData"
+        @edit-transaction-done="onEditTransactionDone"
+      />
+    </b-modal>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { TransactionView } from "../models/transaction";
-import filtersMixin from "@/mixins/filters";
+import Filters from "@/mixins/filters";
+import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
-  mixins: [filtersMixin]
+  components: {
+    TransactionModalEdit
+  }
 })
-export default class TransactionTable extends Vue {
+export default class TransactionTable extends Filters {
   @Prop({ type: Array, required: true })
-  transactions!: Array<TransactionView>;
+  transactions!: TransactionView[];
+
+  showModal = false;
+  editData: TransactionView | null = null;
 
   getIsDebtClass(row: TransactionView, index: number): string {
     if (row.is_debt === true) {
@@ -121,6 +147,15 @@ export default class TransactionTable extends Vue {
 
   @Emit("delete")
   onDelete(transactionId: string) {}
+
+  showModalEdit(rowData: TransactionView) {
+    this.showModal = true;
+    this.editData = rowData;
+  }
+
+  onEditTransactionDone() {
+    this.showModal = false;
+  }
 }
 </script>
 

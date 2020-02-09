@@ -107,24 +107,20 @@
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
-import filtersMixin from "@/mixins/filters";
+import Filters from "@/mixins/filters";
 import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
   components: {
     TransactionModalEdit
-  },
-  mixins: [filtersMixin]
+  }
 })
-export default class DebtTable extends Vue {
+export default class DebtTable extends Filters {
   @Prop({ type: Array, required: true })
   debts!: TransactionView[];
 
   showModal = false;
   editData: TransactionView | null = null;
-
-  @Emit("delete")
-  onEdit(transactionId: string) {}
 
   showModalEdit(rowData: TransactionView) {
     this.showModal = true;
