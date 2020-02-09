@@ -85,7 +85,21 @@
           />
         </transition>
 
-        <transition-group name="fade">
+        <transition-group name="fade"
+          ><b-field
+            v-if="paymentType"
+            label="Thành Tiền"
+            :message="amount | monetize"
+            key="amount"
+          >
+            <b-numberinput
+              v-model="amount"
+              type="is-dark"
+              step="5000"
+              @focus="$event.target.select()"
+            ></b-numberinput>
+          </b-field>
+
           <div
             v-if="paymentType"
             class="transaction-modal-add__is-debt"
@@ -95,20 +109,6 @@
               {{ isDebtText }}
             </b-switch>
           </div>
-
-          <b-field
-            v-if="paymentType"
-            label="Thành Tiền"
-            :message="amount | monetize"
-            key="amount"
-          >
-            <b-numberinput
-              v-model="amount"
-              type="is-dark"
-              step="10000"
-              @focus="$event.target.select()"
-            ></b-numberinput>
-          </b-field>
         </transition-group>
 
         <transition name="fade">
@@ -125,7 +125,7 @@
               <b-numberinput
                 v-model="debtAmount"
                 type="is-danger"
-                step="10000"
+                step="5000"
                 @focus="$event.target.select()"
               ></b-numberinput>
             </b-field>
@@ -250,6 +250,23 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
   @Watch("isDebt")
   onChangeIsDebt(value: boolean) {
     this.debtAmount = value ? this.amount : 0;
+
+    if (value) {
+      this.scrollToDebtAmount();
+    }
+  }
+
+  scrollToDebtAmount() {
+    setTimeout(() => {
+      const debtAmountElement = document.querySelector(
+        ".transaction-modal-add__debt-amount"
+      );
+      if (debtAmountElement !== null) {
+        debtAmountElement.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }, 100);
   }
 
   formatDateToString(date: Date): string {
