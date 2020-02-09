@@ -154,7 +154,7 @@
       <b-button
         type="is-dark"
         icon-right="search"
-        :disabled="!searchValue || date.length != 2"
+        :disabled="date.length != 2"
         @click="search"
       >
         Tìm
@@ -250,12 +250,15 @@ export default class Search extends Vue {
 
   search() {
     const query: { [key: string]: string } = {
-      field: this.searchCriteria,
-      value: this.searchValue.toString(),
-      operator: this.amountOperator,
       start_date: formatDateToString(this.date[0]),
       end_date: formatDateToString(this.date[1])
     };
+
+    if (this.searchValue) {
+      query.field = this.searchCriteria;
+      query.value = this.searchValue.toString();
+      query.operator = this.amountOperator;
+    }
 
     this.$router.push({ name: "transaction", query: query });
   }

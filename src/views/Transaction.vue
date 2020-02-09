@@ -67,7 +67,7 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
   endDate: string = "";
 
   get dateRange(): string {
-    return `Từ ${this.startDate} đến ${this.startDate}`;
+    return `Từ ${this.startDate} đến ${this.endDate}`;
   }
 
   get isLoading(): boolean {
