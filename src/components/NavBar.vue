@@ -21,10 +21,7 @@
     </div>
 
     <nav class="nav-bar__navigator">
-      <router-link
-        class="nav-bar__navigator-item"
-        :to="{ name: 'transaction' }"
-        exact
+      <router-link class="nav-bar__navigator-item" :to="{ name: 'transaction' }"
         >Doanh Thu</router-link
       >
 
