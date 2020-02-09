@@ -17,6 +17,10 @@ export default class ApiAuth {
     }
   }
 
+  logout() {
+    return this.auth.signOut();
+  }
+
   async checkAuthState(
     commit: Function,
     commitIsCheckedAuth: string,

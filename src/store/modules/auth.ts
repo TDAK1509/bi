@@ -21,6 +21,11 @@ const mutations: MutationTree<AuthState> = {
   },
   setIsCheckedAuthState(state, payload: boolean) {
     state.isCheckedAuthState = payload;
+  },
+  setLoggedOut(state) {
+    state.isAdmin = false;
+    state.isAuth = false;
+    state.userEmail = "";
   }
 };
 
@@ -49,6 +54,11 @@ const actions: ActionTree<AuthState, RootState> = {
     }
 
     return await rootState.api.auth.changePassword(newPassword);
+  },
+
+  async logout({ commit, rootState }) {
+    await rootState.api.auth.logout();
+    commit("setLoggedOut");
   },
 
   checkAuthState({ commit, rootState }) {
