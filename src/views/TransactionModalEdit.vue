@@ -107,6 +107,7 @@
               v-model="debtAmount"
               type="is-danger"
               step="5000"
+              :max="amount"
               @focus="$event.target.select()"
             ></b-numberinput>
           </b-field>
@@ -232,6 +233,11 @@ export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
     if (value) {
       this.scrollToDebtAmount();
     }
+  }
+
+  @Watch("debtAmount")
+  onChangeDebtAmount(value: number) {
+    this.debtAmount = value > this.amount ? this.amount : value;
   }
 
   scrollToDebtAmount() {
