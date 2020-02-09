@@ -42,25 +42,10 @@ const mutations: MutationTree<TransactionState> = {
 };
 
 const actions: ActionTree<TransactionState, RootState> = {
-  async fetchTransactions({ commit, state, rootState }) {
+  async fetchTransactions({ commit, rootState }, searchQuery: SearchQuery) {
     commit("setIsFetchingTransactions", true);
 
     rootState.api.transaction.fetchTransactions(
-      commit,
-      "setTransactions",
-      state.filterDateStart,
-      state.filterDateEnd,
-      [
-        () => commit("setIsFetchingTransactions", false),
-        () => commit("setIsFetchedTransactions", true)
-      ]
-    );
-  },
-
-  async searchTransactions({ commit, rootState }, searchQuery: SearchQuery) {
-    commit("setIsFetchingTransactions", true);
-
-    rootState.api.transaction.searchTransactions(
       commit,
       "setTransactions",
       searchQuery,

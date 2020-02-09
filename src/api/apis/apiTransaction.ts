@@ -41,43 +41,21 @@ export default class ApiTransaction {
   async fetchTransactions(
     storeCommit: Function,
     commitName: string,
-    startDate: Date,
-    endDate: Date,
-    callback: Function[] = []
-  ) {
-    const docRef = this.db
-      .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
-      .where("date", ">=", formatDateToString(startDate))
-      .where("date", "<=", formatDateToString(endDate));
-
-    docRef.onSnapshot(querySnapshot => {
-      const transactions: TransactionView[] = [];
-
-      querySnapshot.forEach(doc => {
-        const data = <Transaction>doc.data();
-        const transaction: TransactionView = {
-          ...data,
-          id: doc.id.toString()
-        };
-        transactions.push(transaction);
-      });
-
-      storeCommit(commitName, transactions);
-      callback.forEach(c => c());
-    });
-  }
-
-  async searchTransactions(
-    storeCommit: Function,
-    commitName: string,
     query: SearchQuery,
     callback: Function[] = []
   ) {
-    const docRef = this.db
+    let docRef = this.db
       .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
       .where("date", ">=", query.start_date)
-      .where("date", "<=", query.end_date)
-      .where(query.field, <FirebaseOperator>query.operator, query.value);
+      .where("date", "<=", query.end_date);
+
+    if (query.field && query.operator && query.value) {
+      docRef = this.db
+        .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
+        .where("date", ">=", query.start_date)
+        .where("date", "<=", query.end_date)
+        .where(query.field, <FirebaseOperator>query.operator, query.value);
+    }
 
     docRef.onSnapshot(querySnapshot => {
       const transactions: TransactionView[] = [];

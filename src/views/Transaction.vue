@@ -66,6 +66,10 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     );
   }
 
+  get isFetchedTransactions(): boolean {
+    return this.$store.state.transaction.isFetchedTransactions;
+  }
+
   get transactionsToShow(): TransactionView[] {
     return this.$store.state.transaction.transactions;
   }
@@ -88,7 +92,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
   set dateRange(dateRange: Date[]) {
     this.$store.commit("transaction/setFilterDateStart", dateRange[0]);
     this.$store.commit("transaction/setFilterDateEnd", dateRange[1]);
-    this.$store.dispatch("transaction/fetchTransactions");
   }
 
   openDeleteConfirm(transactionId: string) {
@@ -124,27 +127,25 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     const query = this.$route.query;
 
     if (
-      !query.hasOwnProperty("field") ||
-      !query.hasOwnProperty("value") ||
-      !query.hasOwnProperty("operator") ||
-      !query.hasOwnProperty("start_date") ||
-      !query.hasOwnProperty("end_date")
+      !query.field ||
+      !query.value ||
+      !query.operator ||
+      !query.start_date ||
+      !query.end_date
     ) {
       return;
     }
 
-    // do search
+    this.$store.commit("transaction/setFilterDateStart", query.start_date);
+    this.$store.commit("transaction/setFilterDateEnd", query.end_date);
+    this.$store.dispatch("transaction/fetchTransactions", query);
   }
 
   init() {
-    if (this.$route.query.transaction_date) {
-      const transactionDate = this.$route.query.transaction_date.toString();
-      this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
-    } else {
-      if (!this.$store.state.transaction.isFetchedTransactions) {
-        this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
-      }
-    }
+    this.searchTransactionsByQuery();
+
+    this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
+    // this.$store.dispatch("transaction/fetchTransactions");
   }
 
   mounted() {
