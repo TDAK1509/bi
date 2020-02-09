@@ -104,11 +104,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Mixins } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
 import filterMixin from "@/mixins/filters";
+import ErrorHandling from "@/mixins/errorHandling";
 
 @Component({
   components: {
@@ -116,7 +117,7 @@ import filterMixin from "@/mixins/filters";
   },
   mixins: [filterMixin]
 })
-export default class TransactionModalAdd extends Vue {
+export default class TransactionModalAdd extends Mixins(ErrorHandling) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
 
@@ -253,22 +254,6 @@ export default class TransactionModalAdd extends Vue {
     } catch (error) {
       this.toastError();
     }
-  }
-
-  toastSuccess(message: string) {
-    this.$buefy.toast.open({
-      message: message,
-      type: "is-success",
-      position: "is-bottom"
-    });
-  }
-
-  toastError(message: string = "Đã có lỗi xảy ra!") {
-    this.$buefy.toast.open({
-      message: message,
-      type: "is-danger",
-      position: "is-bottom"
-    });
   }
 
   mounted() {
