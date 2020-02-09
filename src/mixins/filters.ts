@@ -1,4 +1,6 @@
-export default {
+import { Vue, Component } from "vue-property-decorator";
+
+@Component({
   filters: {
     monetize: (value: number): string => {
       const currencyFormatter = new Intl.NumberFormat("vn-VN", {
@@ -9,4 +11,5 @@ export default {
       return currencyFormatter.format(value);
     }
   }
-};
+})
+export default class Filters extends Vue {}

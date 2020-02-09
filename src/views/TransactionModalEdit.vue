@@ -108,16 +108,18 @@ import { Component, Vue, Prop, Mixins } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
-import filterMixin from "@/mixins/filters";
+import Filters from "@/mixins/filters";
 import ErrorHandling from "@/mixins/errorHandling";
 
 @Component({
   components: {
     TypingSelect
-  },
-  mixins: [filterMixin]
+  }
 })
-export default class TransactionModalAdd extends Mixins(ErrorHandling) {
+export default class TransactionModalAdd extends Mixins(
+  ErrorHandling,
+  Filters
+) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
 
