@@ -9,10 +9,11 @@
         </b-radio>
 
         <b-input
+          v-if="searchCriteria === 'id'"
           class="search__select-item-input"
           v-model.trim="searchValue"
           placeholder="Điền mã giao dịch"
-        ></b-input>
+        />
       </div>
 
       <div class="search__select-item">
@@ -91,6 +92,34 @@
         <b-radio v-model="searchCriteria" type="is-dark" native-value="amount">
           Thành tiền
         </b-radio>
+
+        <div
+          v-if="searchCriteria === 'amount'"
+          class="search__select-item-input search__select-item-input-amount"
+        >
+          <b-field>
+            <b-radio-button v-model="amountOperator" native-value=">=">
+              &gt;=
+            </b-radio-button>
+
+            <b-radio-button v-model="amountOperator" native-value="==">
+              =
+            </b-radio-button>
+
+            <b-radio-button v-model="amountOperator" native-value="<=">
+              &lt;=
+            </b-radio-button>
+          </b-field>
+
+          <b-numberinput
+            class="search__select-item-input-amount--input"
+            v-model.trim="searchValue"
+            controls-position="compact"
+            expanded
+            type="is-dark"
+            step="5000"
+          />
+        </div>
       </div>
     </div>
 
@@ -99,7 +128,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Watch } from "vue-property-decorator";
 import PageTitle from "@/components/PageTitle.vue";
 
 @Component({
@@ -109,7 +138,13 @@ import PageTitle from "@/components/PageTitle.vue";
 })
 export default class Search extends Vue {
   searchCriteria: string = "id";
-  searchValue: string = "";
+  searchValue: string | number = "";
+  amountOperator = "<=";
+
+  @Watch("searchCriteria")
+  onSearchCriteriaChange(value: string) {
+    this.searchValue = value === "amount" ? 0 : "";
+  }
 
   get isOptionsFetched(): boolean {
     return this.$store.state.options.isFetchedOptions;
@@ -172,5 +207,15 @@ export default class Search extends Vue {
 
 .search__select-item-input {
   margin-top: 10px;
+}
+
+.search__select-item-input-amount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__select-item-input-amount--input {
+  flex: 1;
+  margin-left: 20px;
 }
 </style>
