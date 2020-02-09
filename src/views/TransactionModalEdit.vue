@@ -92,8 +92,8 @@
           class="transaction-modal-edit__button"
           icon-left="plus"
           type="is-dark"
-          :loading="isEditingTransaction"
-          @click="editTransaction"
+          :loading="isUpdatingTransaction"
+          @click="updateTransaction"
           >Sửa Giao Dịch</b-button
         >
       </footer>
@@ -130,13 +130,15 @@ export default class TransactionModalAdd extends Vue {
   productQuantity = this.transaction.product_quantity;
   isDebt = this.transaction.is_debt;
 
-  isEditingTransaction = false;
-  isAddingSelectOption = false;
-
   get isLoading(): boolean {
     return (
-      this.$store.state.options.isFetchingOptions || this.isAddingSelectOption
+      this.$store.state.options.isFetchingOptions ||
+      this.$store.state.options.isAddingSelectOption
     );
+  }
+
+  get isUpdatingTransaction(): boolean {
+    return this.$store.state.transaction.isUpdatingTransaction;
   }
 
   get isOptionsFetched(): boolean {
@@ -187,67 +189,86 @@ export default class TransactionModalAdd extends Vue {
   }
 
   async addClient(clientName: string) {
-    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addClient", clientName);
 
     this.$buefy.toast.open({
       message: `Khách hàng ${clientName} đã được tạo!`,
       type: "is-success"
     });
-
-    this.isAddingSelectOption = false;
   }
 
   async addSeller(sellerName: string) {
-    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addSeller", sellerName);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
       type: "is-success"
     });
-
-    this.isAddingSelectOption = false;
   }
 
   async addTransactionType(transactionType: string) {
-    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addTransactionType", transactionType);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
       type: "is-success"
     });
-
-    this.isAddingSelectOption = false;
   }
 
   async addProductName(productName: string) {
-    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addProductName", productName);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
       type: "is-success"
     });
-
-    this.isAddingSelectOption = false;
   }
 
   async addPaymentType(paymentType: string) {
-    this.isAddingSelectOption = true;
     await this.$store.dispatch("options/addPaymentType", paymentType);
 
     this.$buefy.toast.open({
       message: `Thêm người bán thành công!`,
       type: "is-success"
     });
-
-    this.isAddingSelectOption = false;
   }
 
-  async editTransaction() {
-    console.log("edit");
+  async updateTransaction() {
+    const transaction: TransactionView = {
+      id: this.transaction.id,
+      date: this.formatDateToString(this.date),
+      transaction_type: this.transactionType,
+      amount: this.amount,
+      payment_type: this.paymentType,
+      seller_name: this.sellerName,
+      product_name: this.productName,
+      product_quantity: this.productQuantity,
+      client_name: this.client,
+      is_debt: this.isDebt
+    };
+
+    try {
+      await this.$store.dispatch("transaction/updateTransaction", transaction);
+      this.toastSuccess("Sửa giao dịch thành công");
+    } catch (error) {
+      this.toastError();
+    }
+  }
+
+  toastSuccess(message: string) {
+    this.$buefy.toast.open({
+      message: message,
+      type: "is-success",
+      position: "is-bottom"
+    });
+  }
+
+  toastError(message: string = "Đã có lỗi xảy ra") {
+    this.$buefy.toast.open({
+      message: message,
+      type: "is-danger",
+      position: "is-bottom"
+    });
   }
 
   mounted() {

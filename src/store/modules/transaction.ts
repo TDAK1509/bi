@@ -9,6 +9,7 @@ export class TransactionState {
   isFetchingTransactions = false;
   isFetchedTransactions = false;
   isDeletingTransaction = false;
+  isUpdatingTransaction = false;
 }
 
 const mutations: MutationTree<TransactionState> = {
@@ -29,6 +30,9 @@ const mutations: MutationTree<TransactionState> = {
   },
   setIsDeletingTransaction(state, payload: boolean) {
     state.isDeletingTransaction = payload;
+  },
+  setIsUpdatingTransaction(state, payload: boolean) {
+    state.isUpdatingTransaction = payload;
   }
 };
 
@@ -70,6 +74,12 @@ const actions: ActionTree<TransactionState, RootState> = {
     } catch (error) {
       return false;
     }
+  },
+
+  async updateTransaction({ commit, rootState }, transaction: TransactionView) {
+    commit("setIsUpdatingTransaction", true);
+    await rootState.api.transaction.updateTransaction(transaction);
+    commit("setIsUpdatingTransaction", false);
   }
 };
 

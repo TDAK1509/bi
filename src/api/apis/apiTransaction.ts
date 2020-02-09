@@ -29,6 +29,14 @@ export default class ApiTransaction {
     }
   }
 
+  async updateTransaction(transaction: TransactionView) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
+      .doc(transaction.id);
+    delete transaction.id;
+    await docRef.set(transaction);
+  }
+
   async fetchTransactions(
     storeCommit: Function,
     commitName: string,

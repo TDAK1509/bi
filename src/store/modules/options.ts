@@ -6,6 +6,7 @@ export class OptionsState {
   options: SelectOptions | null = null;
   isFetchingOptions = false;
   isFetchedOptions = false;
+  isAddingOption = false;
 }
 
 const mutations: MutationTree<OptionsState> = {
@@ -17,6 +18,9 @@ const mutations: MutationTree<OptionsState> = {
   },
   setIsFetchedOptions(state, payload: boolean) {
     state.isFetchedOptions = payload;
+  },
+  setIsAddingOption(state, payload: boolean) {
+    state.isAddingOption = payload;
   }
 };
 
@@ -30,24 +34,34 @@ const actions: ActionTree<OptionsState, RootState> = {
     ]);
   },
 
-  async addClient({ rootState }, clientName: string) {
+  async addClient({ commit, rootState }, clientName: string) {
+    commit("setIsAddingOptions", true);
     await rootState.api.options.addOptionClient(clientName);
+    commit("setIsAddingOptions", false);
   },
 
-  async addSeller({ rootState }, sellerName: string) {
+  async addSeller({ commit, rootState }, sellerName: string) {
+    commit("setIsAddingOptions", true);
     await rootState.api.options.addOptionSeller(sellerName);
+    commit("setIsAddingOptions", false);
   },
 
-  async addProductName({ rootState }, productName: string) {
+  async addProductName({ commit, rootState }, productName: string) {
+    commit("setIsAddingOptions", true);
     await rootState.api.options.addOptionProductName(productName);
+    commit("setIsAddingOptions", false);
   },
 
-  async addTransactionType({ rootState }, transactionType: string) {
+  async addTransactionType({ commit, rootState }, transactionType: string) {
+    commit("setIsAddingOptions", true);
     await rootState.api.options.addOptionTransactionType(transactionType);
+    commit("setIsAddingOptions", false);
   },
 
-  async addPaymentType({ rootState }, paymentType: string) {
+  async addPaymentType({ commit, rootState }, paymentType: string) {
+    commit("setIsAddingOptions", true);
     await rootState.api.options.addOptionPaymentType(paymentType);
+    commit("setIsAddingOptions", false);
   }
 };
 
