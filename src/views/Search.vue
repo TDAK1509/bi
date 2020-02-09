@@ -121,6 +121,17 @@
           />
         </div>
       </div>
+
+      <div class="search__button-container">
+        <b-button
+          type="is-dark"
+          icon-right="search"
+          :disabled="!searchValue"
+          @click="search"
+        >
+          Tìm
+        </b-button>
+      </div>
     </div>
 
     <b-loading :is-full-page="true" :active="!isOptionsFetched"></b-loading>
@@ -139,11 +150,12 @@ import PageTitle from "@/components/PageTitle.vue";
 export default class Search extends Vue {
   searchCriteria: string = "id";
   searchValue: string | number = "";
-  amountOperator = "<=";
+  amountOperator = "==";
 
   @Watch("searchCriteria")
   onSearchCriteriaChange(value: string) {
     this.searchValue = value === "amount" ? 0 : "";
+    this.amountOperator = value === "amount" ? "<=" : "==";
   }
 
   get isOptionsFetched(): boolean {
@@ -185,6 +197,16 @@ export default class Search extends Vue {
     return this.$store.state.options.options.payment_types;
   }
 
+  search() {
+    const query: { [key: string]: string } = {
+      field: this.searchCriteria,
+      value: this.searchValue.toString(),
+      operator: this.amountOperator
+    };
+
+    this.$router.push({ name: "transaction", query: query });
+  }
+
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {
       this.$store.dispatch("options/fetchOptions");
@@ -217,5 +239,12 @@ export default class Search extends Vue {
 .search__select-item-input-amount--input {
   flex: 1;
   margin-left: 20px;
+}
+
+.search__button-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: auto;
 }
 </style>
