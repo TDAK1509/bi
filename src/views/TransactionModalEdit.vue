@@ -165,8 +165,8 @@ export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
   sellerName = this.transaction.seller_name;
   productName = this.transaction.product_name;
   productQuantity = this.transaction.product_quantity;
-  isDebt = this.transaction.is_debt;
-  debtAmount = this.transaction.debt_amount;
+  isDebt = this.transaction.is_debt || false;
+  debtAmount = this.transaction.debt_amount || 0;
 
   get isLoading(): boolean {
     return (
@@ -236,8 +236,15 @@ export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
   }
 
   @Watch("debtAmount")
-  onChangeDebtAmount(value: number) {
-    this.debtAmount = value > this.amount ? this.amount : value;
+  onChangeDebtAmount(debtAmount: number) {
+    this.debtAmount = debtAmount > this.amount ? this.amount : debtAmount;
+  }
+
+  @Watch("amount")
+  onChangeAmount(amount: number) {
+    if (this.isDebt && this.debtAmount > amount) {
+      this.debtAmount = amount;
+    }
   }
 
   scrollToDebtAmount() {

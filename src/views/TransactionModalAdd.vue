@@ -262,6 +262,13 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     this.debtAmount = value > this.amount ? this.amount : value;
   }
 
+  @Watch("amount")
+  onChangeAmount(amount: number) {
+    if (this.isDebt && this.debtAmount > amount) {
+      this.debtAmount = amount;
+    }
+  }
+
   scrollToDebtAmount() {
     setTimeout(() => {
       const debtAmountElement = document.querySelector(
