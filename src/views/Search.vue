@@ -13,136 +13,142 @@
       </b-field>
     </div>
 
-    <div v-show="date.length === 2" class="search__select-container">
-      <div class="search__select-item">
-        <b-radio
-          v-model="searchCriteria"
-          type="is-dark"
-          native-value="id"
-          @change.native="onSelectSearchCriteria"
-        >
-          Mã giao dịch
-        </b-radio>
-
-        <b-input
-          v-if="searchCriteria === 'id'"
-          class="search__select-item-input"
-          v-model.trim="searchValue"
-          placeholder="Điền mã giao dịch"
-        />
-      </div>
-
-      <div class="search__select-item">
-        <b-radio
-          v-model="searchCriteria"
-          type="is-dark"
-          native-value="client_name"
-          @change.native="onSelectSearchCriteria"
-        >
-          Tên khách hàng
-        </b-radio>
-
-        <v-select
-          v-if="searchCriteria === 'client_name'"
-          class="search__select-item-input"
-          v-model.trim="searchValue"
-          :options="clientList"
-          :clearable="false"
-        />
-      </div>
-
-      <div class="search__select-item">
-        <b-radio
-          v-model="searchCriteria"
-          type="is-dark"
-          native-value="seller_name"
-          @change.native="onSelectSearchCriteria"
-        >
-          Tên người bán
-        </b-radio>
-
-        <v-select
-          v-if="searchCriteria === 'seller_name'"
-          class="search__select-item-input"
-          v-model.trim="searchValue"
-          :options="sellerNameList"
-          :clearable="false"
-        />
-      </div>
-
-      <div class="search__select-item">
-        <b-radio
-          v-model="searchCriteria"
-          type="is-dark"
-          native-value="product_name"
-          @change.native="onSelectSearchCriteria"
-        >
-          Tên hàng hóa
-        </b-radio>
-
-        <v-select
-          v-if="searchCriteria === 'product_name'"
-          class="search__select-item-input"
-          v-model.trim="searchValue"
-          :options="productNameList"
-          :clearable="false"
-        />
-      </div>
-
-      <div class="search__select-item">
-        <b-radio
-          v-model="searchCriteria"
-          type="is-dark"
-          native-value="payment_type"
-          @change.native="onSelectSearchCriteria"
-        >
-          Hình thức thanh toán
-        </b-radio>
-
-        <v-select
-          v-if="searchCriteria === 'payment_type'"
-          class="search__select-item-input"
-          v-model.trim="searchValue"
-          :options="paymentTypeList"
-          :clearable="false"
-        />
-      </div>
-
-      <div class="search__select-item">
-        <b-radio v-model="searchCriteria" type="is-dark" native-value="amount">
-          Thành tiền
-        </b-radio>
-
-        <div
-          v-if="searchCriteria === 'amount'"
-          class="search__select-item-input search__select-item-input-amount"
-        >
-          <b-field>
-            <b-radio-button v-model="amountOperator" native-value=">=">
-              <strong>&gt;=</strong>
-            </b-radio-button>
-
-            <b-radio-button v-model="amountOperator" native-value="==">
-              <strong>=</strong>
-            </b-radio-button>
-
-            <b-radio-button v-model="amountOperator" native-value="<=">
-              <strong>&lt;=</strong>
-            </b-radio-button>
-          </b-field>
-
-          <b-numberinput
-            class="search__select-item-input-amount--input"
-            v-model.trim="searchValue"
-            controls-position="compact"
-            expanded
+    <transition name="fade">
+      <div v-show="date.length === 2" class="search__select-container">
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
             type="is-dark"
-            step="5000"
-            @focus="$event.target.select()"
+            native-value="id"
+            @change.native="onSelectSearchCriteria"
+          >
+            Mã giao dịch
+          </b-radio>
+
+          <b-input
+            v-if="searchCriteria === 'id'"
+            class="search__select-item-input"
+            v-model.trim="searchValue"
+            placeholder="Điền mã giao dịch"
           />
         </div>
+
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
+            type="is-dark"
+            native-value="client_name"
+            @change.native="onSelectSearchCriteria"
+          >
+            Tên khách hàng
+          </b-radio>
+
+          <v-select
+            v-if="searchCriteria === 'client_name'"
+            class="search__select-item-input"
+            v-model.trim="searchValue"
+            :options="clientList"
+            :clearable="false"
+          />
+        </div>
+
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
+            type="is-dark"
+            native-value="seller_name"
+            @change.native="onSelectSearchCriteria"
+          >
+            Tên người bán
+          </b-radio>
+
+          <v-select
+            v-if="searchCriteria === 'seller_name'"
+            class="search__select-item-input"
+            v-model.trim="searchValue"
+            :options="sellerNameList"
+            :clearable="false"
+          />
+        </div>
+
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
+            type="is-dark"
+            native-value="product_name"
+            @change.native="onSelectSearchCriteria"
+          >
+            Tên hàng hóa
+          </b-radio>
+
+          <v-select
+            v-if="searchCriteria === 'product_name'"
+            class="search__select-item-input"
+            v-model.trim="searchValue"
+            :options="productNameList"
+            :clearable="false"
+          />
+        </div>
+
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
+            type="is-dark"
+            native-value="payment_type"
+            @change.native="onSelectSearchCriteria"
+          >
+            Hình thức thanh toán
+          </b-radio>
+
+          <v-select
+            v-if="searchCriteria === 'payment_type'"
+            class="search__select-item-input"
+            v-model.trim="searchValue"
+            :options="paymentTypeList"
+            :clearable="false"
+          />
+        </div>
+
+        <div class="search__select-item">
+          <b-radio
+            v-model="searchCriteria"
+            type="is-dark"
+            native-value="amount"
+          >
+            Thành tiền
+          </b-radio>
+
+          <div
+            v-if="searchCriteria === 'amount'"
+            class="search__select-item-input search__select-item-input-amount"
+          >
+            <b-field>
+              <b-radio-button v-model="amountOperator" native-value=">=">
+                <strong>&gt;=</strong>
+              </b-radio-button>
+
+              <b-radio-button v-model="amountOperator" native-value="==">
+                <strong>=</strong>
+              </b-radio-button>
+
+              <b-radio-button v-model="amountOperator" native-value="<=">
+                <strong>&lt;=</strong>
+              </b-radio-button>
+            </b-field>
+
+            <b-numberinput
+              class="search__select-item-input-amount--input"
+              v-model.trim="searchValue"
+              controls-position="compact"
+              expanded
+              type="is-dark"
+              step="5000"
+              @focus="$event.target.select()"
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    </transition>
 
     <div class="search__button-container">
       <b-button
@@ -263,6 +269,8 @@ export default class Search extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/animations.scss";
+
 .search {
   width: 500px;
   margin: auto;
