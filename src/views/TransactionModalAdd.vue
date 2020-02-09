@@ -321,6 +321,8 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/animations.scss";
+
 .transaction-modal-add__modal-card {
   min-height: 800px;
 }
@@ -365,14 +367,5 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
 
 .transaction-modal-add__typing-select {
   margin-bottom: 10px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>

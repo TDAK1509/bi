@@ -3,7 +3,9 @@
     <page-title>DOANH THU</page-title>
 
     <div class="home__transaction-filter">
-      <transaction-date-picker v-model="dateRange" />
+      <div class="home__transaction-time">
+        {{ dateRange }}
+      </div>
 
       <div class="home__transaction-filter-total-amount">
         Tổng tiền:
@@ -44,7 +46,11 @@ import Filters from "@/mixins/filters";
 import ErrorHandling from "@/mixins/errorHandling";
 import { FilterType } from "@/models/helpers";
 import { TransactionView, Transaction } from "@/models/transaction";
-import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
+import {
+  getFirstDayOfMonth,
+  getLastDayOfMonth,
+  formatDateToString
+} from "@/utils/date";
 
 @Component({
   components: {
@@ -57,6 +63,12 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
 })
 export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
+  startDate: string = "";
+  endDate: string = "";
+
+  get dateRange(): string {
+    return `Từ ${this.startDate} đến ${this.endDate}`;
+  }
 
   get isLoading(): boolean {
     return (
@@ -76,19 +88,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
       totalAmount += parseInt(transaction.amount.toString());
     });
     return totalAmount;
-  }
-
-  get dateRange(): Date[] {
-    return [
-      this.$store.state.transaction.filterDateStart,
-      this.$store.state.transaction.filterDateEnd
-    ];
-  }
-
-  set dateRange(dateRange: Date[]) {
-    this.$store.commit("transaction/setFilterDateStart", dateRange[0]);
-    this.$store.commit("transaction/setFilterDateEnd", dateRange[1]);
-    this.$store.dispatch("transaction/fetchTransactions");
   }
 
   openDeleteConfirm(transactionId: string) {
@@ -120,15 +119,26 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     this.isShowAddModal = false;
   }
 
-  init() {
-    if (this.$route.query.transaction_date) {
-      const transactionDate = this.$route.query.transaction_date.toString();
-      this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
-    } else {
-      if (!this.$store.state.transaction.isFetchedTransactions) {
-        this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
-      }
+  searchTransactionsByQuery() {
+    const query = this.$route.query;
+
+    if (query.start_date && query.end_date) {
+      this.startDate = query.start_date as string;
+      this.endDate = query.end_date as string;
+      this.$store.dispatch("transaction/fetchTransactions", query);
+      return;
     }
+
+    this.startDate = formatDateToString(getFirstDayOfMonth());
+    this.endDate = formatDateToString(getLastDayOfMonth());
+    this.$store.dispatch("transaction/fetchTransactions", {
+      start_date: this.startDate,
+      end_date: this.endDate
+    });
+  }
+
+  init() {
+    this.searchTransactionsByQuery();
   }
 
   mounted() {
@@ -138,11 +148,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  padding: 0 20px;
-  margin-top: 30px;
-}
-
 .home__transaction-filter {
   display: flex;
   justify-content: space-between;
