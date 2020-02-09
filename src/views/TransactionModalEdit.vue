@@ -109,7 +109,6 @@ import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
 import filterMixin from "@/mixins/filters";
-import { VueSelectOption } from "@/models/helpers";
 
 @Component({
   components: {
@@ -148,7 +147,7 @@ export default class TransactionModalAdd extends Vue {
     return this.isDebt ? "Nợ" : "Không phải nợ";
   }
 
-  get clientList(): VueSelectOption[] {
+  get clientList(): string[] {
     if (!this.isOptionsFetched) {
       return [];
     }
