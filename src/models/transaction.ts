@@ -8,6 +8,7 @@ export interface Transaction {
   product_quantity: string;
   client_name: string;
   is_debt?: boolean;
+  debt_amount?: number;
 }
 
 export interface TransactionView extends Transaction {

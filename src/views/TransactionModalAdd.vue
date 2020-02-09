@@ -27,21 +27,13 @@
           ></b-datepicker>
         </b-field>
 
-        <div class="transaction-modal-add__is-debt">
-          <b-switch v-model="isDebt" type="is-success">
-            {{ isDebtText }}
-          </b-switch>
-        </div>
-
-        <div class="transaction-modal-add__client">
-          <typing-select
-            class="transaction-modal-add__typing-select"
-            v-model="client"
-            :options="clientList"
-            label="Tên Khách Hàng"
-            @add="addClient"
-          />
-        </div>
+        <typing-select
+          class="transaction-modal-add__typing-select"
+          v-model="client"
+          :options="clientList"
+          label="Tên Khách Hàng"
+          @add="addClient"
+        />
 
         <transition name="fade">
           <typing-select
@@ -93,19 +85,51 @@
           />
         </transition>
 
-        <transition name="fade">
+        <transition-group name="fade">
+          <div
+            v-if="paymentType"
+            class="transaction-modal-add__is-debt"
+            key="isDebt"
+          >
+            <b-switch v-model="isDebt" type="is-success">
+              {{ isDebtText }}
+            </b-switch>
+          </div>
+
           <b-field
             v-if="paymentType"
             label="Thành Tiền"
             :message="amount | monetize"
+            key="amount"
           >
             <b-numberinput
               v-model="amount"
               type="is-dark"
-              controls-position="compact"
+              step="10000"
               @focus="$event.target.select()"
             ></b-numberinput>
           </b-field>
+        </transition-group>
+
+        <transition name="fade">
+          <div
+            v-if="isDebt"
+            class="transaction-modal-add__debt-amount"
+            key="debtAmount"
+          >
+            <b-field
+              label="Tiền Nợ"
+              type="is-danger"
+              :message="debtAmount | monetize"
+            >
+              <b-numberinput
+                v-model="debtAmount"
+                type="is-danger"
+                step="10000"
+                @focus="$event.target.select()"
+              ></b-numberinput>
+            </b-field>
+          </div>
         </transition>
       </section>
 
@@ -127,7 +151,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Prop, Mixins } from "vue-property-decorator";
+import {
+  Component,
+  Vue,
+  Emit,
+  Prop,
+  Mixins,
+  Watch
+} from "vue-property-decorator";
 import { Transaction } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
@@ -151,6 +182,7 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
   productName = "";
   productQuantity = "";
   isDebt = false;
+  debtAmount = 0;
 
   get isLoading(): boolean {
     return this.$store.state.options.isFetchingOptions;
@@ -215,6 +247,11 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     return this.$store.state.options.options.payment_types;
   }
 
+  @Watch("isDebt")
+  onChangeIsDebt(value: boolean) {
+    this.debtAmount = value ? this.amount : 0;
+  }
+
   formatDateToString(date: Date): string {
     return formatDateToString(date);
   }
@@ -229,7 +266,8 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
       product_name: this.productName,
       product_quantity: this.productQuantity,
       client_name: this.client,
-      is_debt: this.isDebt
+      is_debt: this.isDebt,
+      debt_amount: this.debtAmount
     };
 
     try {
@@ -287,12 +325,12 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
 }
 
 .transaction-modal-add__is-debt {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 28px;
+  margin-bottom: 20px;
 }
 
-.transaction-modal-add__client {
-  margin-bottom: 10px;
+.transaction-modal-add__debt-amount {
+  margin-top: 10px;
 }
 
 .transaction-modal-add__typing-select {

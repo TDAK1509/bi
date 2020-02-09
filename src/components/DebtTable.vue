@@ -70,6 +70,10 @@
           {{ props.row.amount | monetize }}
         </b-table-column>
 
+        <b-table-column field="amount" label="Tiền nợ" sortable numeric>
+          {{ props.row.debt_amount | monetize }}
+        </b-table-column>
+
         <b-table-column>
           <button
             class="debt-table__icon-button"
