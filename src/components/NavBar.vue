@@ -8,7 +8,7 @@
 
     <div class="nav-bar__change-password">
       <b-button
-        type="is-danger"
+        type="is-warning"
         icon-left="key"
         @click="showPasswordModal = true"
         >Đổi password</b-button
@@ -20,7 +20,11 @@
         class="nav-bar__navigator-item"
         :to="{ name: 'transaction' }"
         exact
-        >Xem báo cáo tài chính</router-link
+        >Doanh Thu</router-link
+      >
+
+      <router-link class="nav-bar__navigator-item" :to="{ name: 'debt' }" exact
+        >Nợ</router-link
       >
     </nav>
 
@@ -69,53 +73,62 @@ export default class NavBar extends Vue {
 .nav-bar__search {
   margin-left: 20px;
   position: relative;
+}
 
-  .nav-bar__search-input {
-    width: 220px;
+.nav-bar__search-input {
+  width: 220px;
+}
+
+.nav-bar__search-results {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+}
+
+.nav-bar__search-results-item {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  color: #727272;
+
+  &:not(:last-child) {
+    border-bottom: none;
   }
 
-  .nav-bar__search-results {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 1;
-
-    .nav-bar__search-results-item {
-      display: block;
-      padding: 5px 10px;
-      border: 1px solid #ccc;
-      color: #727272;
-
-      &:not(:last-child) {
-        border-bottom: none;
-      }
-
-      &:hover {
-        background: #ccc;
-      }
-    }
+  &:hover {
+    background: #ccc;
   }
 }
 
 .nav-bar__navigator {
   display: flex;
   justify-content: flex-end;
-
-  .nav-bar__navigator-item {
-    margin-right: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-
-    &.router-link-active {
-      color: #ccc;
-      cursor: not-allowed;
-    }
-  }
 }
 
+.nav-bar__navigator-item {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #000;
+  padding: 0px 20px;
+
+  &:hover {
+    color: red;
+  }
+
+  &.router-link-active {
+    color: red;
+    cursor: not-allowed;
+  }
+
+  &:not(:first-child) {
+    border-left: 1px solid #000;
+  }
+}
 .nav-bar__change-password {
   flex: 1;
   text-align: center;
