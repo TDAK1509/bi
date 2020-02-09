@@ -19,10 +19,13 @@ export default {
   },
 
   async mounted() {
-    // if (this.$store.state.auth.isAuth === false) {
-    //   this.$router.push({ name: "login" });
-    //   return;
-    // }
+    if (
+      this.$store.state.auth.isCheckedAuthState &&
+      !this.$store.state.auth.isAuth
+    ) {
+      this.$router.push({ name: "login" });
+      return;
+    }
   }
 };
 </script>

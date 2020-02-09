@@ -17,8 +17,9 @@ export default class ApiAuth {
     }
   }
 
-  checkAuthState(
+  async checkAuthState(
     commit: Function,
+    commitIsCheckedAuth: string,
     commitIsAuthName: string,
     commitIsAdminName: string
   ) {
@@ -33,6 +34,8 @@ export default class ApiAuth {
         commit(commitIsAuthName, false);
         commit(commitIsAdminName, false);
       }
+
+      commit(commitIsCheckedAuth, true);
     });
   }
 

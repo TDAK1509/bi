@@ -6,6 +6,7 @@ export class AuthState {
   isAuth = false;
   userEmail = "";
   isAdmin = false;
+  isCheckedAuthState = false;
 }
 
 const mutations: MutationTree<AuthState> = {
@@ -17,6 +18,9 @@ const mutations: MutationTree<AuthState> = {
   },
   setIsAdmin(state, payload: boolean) {
     state.isAdmin = payload;
+  },
+  setIsCheckedAuthState(state, payload: boolean) {
+    state.isCheckedAuthState = payload;
   }
 };
 
@@ -48,7 +52,12 @@ const actions: ActionTree<AuthState, RootState> = {
   },
 
   checkAuthState({ commit, rootState }) {
-    rootState.api.auth.checkAuthState(commit, "setIsAuth", "setIsAdmin");
+    rootState.api.auth.checkAuthState(
+      commit,
+      "setIsCheckedAuthState",
+      "setIsAuth",
+      "setIsAdmin"
+    );
   }
 };
 
