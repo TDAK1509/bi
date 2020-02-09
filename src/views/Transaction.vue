@@ -120,6 +120,22 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     this.isShowAddModal = false;
   }
 
+  searchTransactionsByQuery() {
+    const query = this.$route.query;
+
+    if (
+      !query.hasOwnProperty("field") ||
+      !query.hasOwnProperty("value") ||
+      !query.hasOwnProperty("operator") ||
+      !query.hasOwnProperty("start_date") ||
+      !query.hasOwnProperty("end_date")
+    ) {
+      return;
+    }
+
+    // do search
+  }
+
   init() {
     if (this.$route.query.transaction_date) {
       const transactionDate = this.$route.query.transaction_date.toString();

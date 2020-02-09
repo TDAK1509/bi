@@ -253,8 +253,8 @@ export default class Search extends Vue {
       field: this.searchCriteria,
       value: this.searchValue.toString(),
       operator: this.amountOperator,
-      startDate: formatDateToString(this.date[0]),
-      endDate: formatDateToString(this.date[1])
+      start_date: formatDateToString(this.date[0]),
+      end_date: formatDateToString(this.date[1])
     };
 
     this.$router.push({ name: "transaction", query: query });

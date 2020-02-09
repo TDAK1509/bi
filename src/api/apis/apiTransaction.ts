@@ -2,6 +2,7 @@ import { db } from "@/firebase";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { ApiRes } from "@/api/api-res";
 import { formatDateToString } from "@/utils/date";
+import { SearchQuery, FirebaseOperator } from "@/models/search";
 
 export default class ApiTransaction {
   private db: firebase.firestore.Firestore;
@@ -48,6 +49,35 @@ export default class ApiTransaction {
       .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
       .where("date", ">=", formatDateToString(startDate))
       .where("date", "<=", formatDateToString(endDate));
+
+    docRef.onSnapshot(querySnapshot => {
+      const transactions: TransactionView[] = [];
+
+      querySnapshot.forEach(doc => {
+        const data = <Transaction>doc.data();
+        const transaction: TransactionView = {
+          ...data,
+          id: doc.id.toString()
+        };
+        transactions.push(transaction);
+      });
+
+      storeCommit(commitName, transactions);
+      callback.forEach(c => c());
+    });
+  }
+
+  async searchTransactions(
+    storeCommit: Function,
+    commitName: string,
+    query: SearchQuery,
+    callback: Function[] = []
+  ) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
+      .where("date", ">=", query.start_date)
+      .where("date", "<=", query.end_date)
+      .where(query.field, <FirebaseOperator>query.operator, query.value);
 
     docRef.onSnapshot(querySnapshot => {
       const transactions: TransactionView[] = [];
