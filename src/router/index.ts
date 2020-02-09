@@ -27,6 +27,12 @@ const routes = [
         path: "transaction",
         name: "transaction",
         component: () => import("@/views/Transaction.vue")
+      },
+
+      {
+        path: "search",
+        name: "search",
+        component: () => import("@/views/Search.vue")
       }
     ]
   }

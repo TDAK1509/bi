@@ -6,6 +6,11 @@
       @click="toPreviousPage"
     />
 
+    <router-link class="nav-bar__search" :to="{ name: 'search' }" exact>
+      <b-icon icon="search" size="is-small" />
+      Tìm giao dịch
+    </router-link>
+
     <div class="nav-bar__change-password">
       <b-button
         type="is-warning"
@@ -73,6 +78,11 @@ export default class NavBar extends Vue {
 .nav-bar__search {
   margin-left: 20px;
   position: relative;
+  color: #000;
+
+  &:hover {
+    color: red;
+  }
 }
 
 .nav-bar__search-input {
