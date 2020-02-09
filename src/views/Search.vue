@@ -99,15 +99,15 @@
         >
           <b-field>
             <b-radio-button v-model="amountOperator" native-value=">=">
-              &gt;=
+              <strong>&gt;=</strong>
             </b-radio-button>
 
             <b-radio-button v-model="amountOperator" native-value="==">
-              =
+              <strong>=</strong>
             </b-radio-button>
 
             <b-radio-button v-model="amountOperator" native-value="<=">
-              &lt;=
+              <strong>&lt;=</strong>
             </b-radio-button>
           </b-field>
 
