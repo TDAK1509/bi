@@ -17,16 +17,22 @@ export default class ApiAuth {
     }
   }
 
-  checkAuthState(storeCommit: Function, commitName: string) {
+  checkAuthState(
+    commit: Function,
+    commitIsAuthName: string,
+    commitIsAdminName: string
+  ) {
     auth.onAuthStateChanged(async user => {
-      let isAdmin = false;
-
       if (user) {
-        const token = await user.getIdTokenResult();
-        isAdmin = !!token.claims.isAdmin;
-      }
+        commit(commitIsAuthName, true);
 
-      storeCommit(commitName, isAdmin);
+        const token = await user.getIdTokenResult();
+        const isAdmin = !!token.claims.isAdmin;
+        commit(commitIsAdminName, isAdmin);
+      } else {
+        commit(commitIsAuthName, false);
+        commit(commitIsAdminName, false);
+      }
     });
   }
 

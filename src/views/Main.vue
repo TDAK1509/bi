@@ -19,7 +19,7 @@ export default {
   },
 
   async mounted() {
-    // if (this.$store.state.auth.isLoggedIn === false) {
+    // if (this.$store.state.auth.isAuth === false) {
     //   this.$router.push({ name: "login" });
     //   return;
     // }

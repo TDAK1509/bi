@@ -3,14 +3,14 @@ import { RootState } from "@/store/";
 import { ErrorMessage } from "@/models/helpers";
 
 export class AuthState {
-  isLoggedIn = false;
+  isAuth = false;
   userEmail = "";
   isAdmin = false;
 }
 
 const mutations: MutationTree<AuthState> = {
-  setIsLoggedIn(state, payload: boolean) {
-    state.isLoggedIn = payload;
+  setIsAuth(state, payload: boolean) {
+    state.isAuth = payload;
   },
   setUserEmail(state, payload: string) {
     state.userEmail = payload;
@@ -23,7 +23,7 @@ const mutations: MutationTree<AuthState> = {
 const actions: ActionTree<AuthState, RootState> = {
   async login({ commit, rootState }, { username, password }): Promise<Boolean> {
     const loggedIn = await rootState.api.auth.login(username, password);
-    commit("setIsLoggedIn", loggedIn);
+    commit("setIsAuth", loggedIn);
     commit("setUserEmail", username);
     return loggedIn;
   },
@@ -48,7 +48,7 @@ const actions: ActionTree<AuthState, RootState> = {
   },
 
   checkAuthState({ commit, rootState }) {
-    rootState.api.auth.checkAuthState(commit, "setIsAdmin");
+    rootState.api.auth.checkAuthState(commit, "setIsAuth", "setIsAdmin");
   }
 };
 
