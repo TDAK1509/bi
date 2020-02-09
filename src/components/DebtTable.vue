@@ -91,26 +91,40 @@
         </section>
       </template>
     </b-table>
+
+    <b-modal
+      :active.sync="showModal"
+      has-modal-card
+      trap-focus
+      aria-role="dialog"
+      aria-modal
+    >
+      <transaction-modal-edit :transaction="editData" />
+    </b-modal>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
-import { TransactionView } from "../models/transaction";
+import { TransactionView } from "@/models/transaction";
 import filtersMixin from "@/mixins/filters";
+import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
+  components: {
+    TransactionModalEdit
+  },
   mixins: [filtersMixin]
 })
 export default class DebtTable extends Vue {
   @Prop({ type: Array, required: true })
   debts!: TransactionView[];
 
-  @Emit("delete")
-  onEdit(transactionId: string) {}
-
   showModal = false;
   editData: TransactionView | null = null;
+
+  @Emit("delete")
+  onEdit(transactionId: string) {}
 
   showModalEdit(rowData: TransactionView) {
     this.showModal = true;

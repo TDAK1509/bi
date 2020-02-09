@@ -15,7 +15,7 @@
     </div>
 
     <v-select
-      :values="selected"
+      :value="selected"
       @input="onInput"
       :options="options"
       :reduce="vueSelectReduce"
