@@ -26,15 +26,7 @@
       aria-role="dialog"
       aria-modal
     >
-      <transaction-modal-add
-        :is-adding-transaction="isAddingTransaction"
-        @add-transaction="addTransaction"
-        @add-client="addClient"
-        @add-seller="addSeller"
-        @add-transaction-type="addTransactionType"
-        @add-product-name="addProductName"
-        @add-payment-type="addPaymentType"
-      />
+      <transaction-modal-add />
     </b-modal>
 
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
@@ -47,8 +39,9 @@ import TransactionTable from "@/components/TransactionTable.vue";
 import AddButton from "@/components/AddButton.vue";
 import TransactionModalAdd from "@/views/TransactionModalAdd.vue";
 import PageTitle from "@/components/PageTitle.vue";
-import { Component, Vue, Watch } from "vue-property-decorator";
-import filtersMixin from "@/mixins/filters";
+import { Component, Vue, Watch, Mixins } from "vue-property-decorator";
+import Filters from "@/mixins/filters";
+import ErrorHandling from "@/mixins/errorHandling";
 import { FilterType } from "@/models/helpers";
 import { TransactionView, Transaction } from "@/models/transaction";
 import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
@@ -60,18 +53,15 @@ import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
     TransactionTable,
     AddButton,
     TransactionModalAdd
-  },
-  mixins: [filtersMixin]
+  }
 })
-export default class Home extends Vue {
+export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
-  isAddingTransaction: boolean = false;
-  isAddingSelectOption: boolean = false;
 
   get isLoading(): boolean {
     return (
       this.$store.state.transaction.isFetchingTransactions ||
-      this.isAddingSelectOption ||
+      this.$store.state.options.isAddingOption ||
       this.$store.state.transaction.isDeletingTransaction
     );
   }
@@ -101,79 +91,6 @@ export default class Home extends Vue {
     this.$store.dispatch("transaction/fetchTransactions");
   }
 
-  async addTransaction(transaction: Transaction) {
-    this.isAddingTransaction = true;
-    await this.$store.dispatch("transaction/addTransaction", transaction);
-    this.isAddingTransaction = false;
-
-    this.$buefy.toast.open({
-      message: `Thêm giao dịch thành công!`,
-      type: "is-success"
-    });
-
-    this.isShowAddModal = false;
-  }
-
-  async addClient(clientName: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("options/addClient", clientName);
-
-    this.$buefy.toast.open({
-      message: `Khách hàng ${clientName} đã được tạo!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addSeller(sellerName: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("options/addSeller", sellerName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addTransactionType(transactionType: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("options/addTransactionType", transactionType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addProductName(productName: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("options/addProductName", productName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addPaymentType(paymentType: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("options/addPaymentType", paymentType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
   openDeleteConfirm(transactionId: string) {
     this.$buefy.dialog.confirm({
       title: "Xóa Giao Dịch",
@@ -193,17 +110,9 @@ export default class Home extends Vue {
       transactionId
     );
     if (response) {
-      this.$buefy.toast.open({
-        message: `Xóa giao dịch thành công!`,
-        type: "is-success",
-        position: "is-bottom"
-      });
+      this.toastSuccess(`Xóa giao dịch thành công!`);
     } else {
-      this.$buefy.toast.open({
-        message: `Đã có lỗi xảy ra! Vui lòng thử lại sau`,
-        type: "is-danger",
-        position: "is-bottom"
-      });
+      this.toastError(`Đã có lỗi xảy ra! Vui lòng thử lại sau`);
     }
   }
 

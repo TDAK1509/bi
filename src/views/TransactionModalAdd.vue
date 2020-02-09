@@ -127,21 +127,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Prop } from "vue-property-decorator";
+import { Component, Vue, Emit, Prop, Mixins } from "vue-property-decorator";
 import { Transaction } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
 import TypingSelect from "@/components/TypingSelect.vue";
-import filterMixin from "@/mixins/filters";
+import Filters from "@/mixins/filters";
+import AddOptions from "@/mixins/addOptions";
 
 @Component({
   components: {
     TransactionModalAddSelectWithCreateButton,
     TypingSelect
-  },
-  mixins: [filterMixin]
+  }
 })
-export default class TransactionModalAdd extends Vue {
+export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
   date: Date = new Date();
   client = "";
   transactionType = "";
@@ -152,14 +152,12 @@ export default class TransactionModalAdd extends Vue {
   productQuantity = "";
   isDebt = false;
 
-  @Prop({ type: Boolean, default: false })
-  isAddingClient!: boolean;
-
-  @Prop({ type: Boolean, default: false })
-  isAddingTransaction!: boolean;
-
   get isLoading(): boolean {
     return this.$store.state.options.isFetchingOptions;
+  }
+
+  get isAddingTransaction(): boolean {
+    return this.$store.state.transaction.isAddingTransaction;
   }
 
   get isOptionsFetched(): boolean {
@@ -221,8 +219,7 @@ export default class TransactionModalAdd extends Vue {
     return formatDateToString(date);
   }
 
-  @Emit("add-transaction")
-  addTransaction(): Transaction {
+  async addTransaction() {
     const transaction: Transaction = {
       date: formatDateToString(this.date),
       transaction_type: this.transactionType,
@@ -235,23 +232,13 @@ export default class TransactionModalAdd extends Vue {
       is_debt: this.isDebt
     };
 
-    return transaction;
+    try {
+      await this.$store.dispatch("transaction/addTransaction", transaction);
+      this.toastSuccess("Thêm giao dịch thành công");
+    } catch (error) {
+      this.toastError();
+    }
   }
-
-  @Emit("add-client")
-  addClient(value: string) {}
-
-  @Emit("add-seller")
-  addSeller(value: string) {}
-
-  @Emit("add-transaction-type")
-  addTransactionType(value: string) {}
-
-  @Emit("add-product-name")
-  addProductName(value: string) {}
-
-  @Emit("add-payment-type")
-  addPaymentType(value: string) {}
 
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {

@@ -10,6 +10,7 @@ export class TransactionState {
   isFetchedTransactions = false;
   isDeletingTransaction = false;
   isUpdatingTransaction = false;
+  isAddingTransaction = false;
 }
 
 const mutations: MutationTree<TransactionState> = {
@@ -33,6 +34,9 @@ const mutations: MutationTree<TransactionState> = {
   },
   setIsUpdatingTransaction(state, payload: boolean) {
     state.isUpdatingTransaction = payload;
+  },
+  setIsAddingTransaction(state, payload: boolean) {
+    state.isAddingTransaction = payload;
   }
 };
 
@@ -53,12 +57,14 @@ const actions: ActionTree<TransactionState, RootState> = {
   },
 
   async addTransaction(
-    { rootState },
+    { commit, rootState },
     transaction: Transaction
   ): Promise<String> {
+    commit("setIsAddingTransaction", true);
     const transactionId = await rootState.api.transaction.addTransaction(
       transaction
     );
+    commit("setIsAddingTransaction", false);
     return transactionId;
   },
 
