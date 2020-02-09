@@ -25,6 +25,8 @@
         </b-radio>
 
         <v-select
+          v-if="searchCriteria === 'client_name'"
+          class="search__select-item-input"
           v-model.trim="searchValue"
           :options="clientList"
           :clearable="false"
@@ -39,6 +41,14 @@
         >
           Tên người bán
         </b-radio>
+
+        <v-select
+          v-if="searchCriteria === 'seller_name'"
+          class="search__select-item-input"
+          v-model.trim="searchValue"
+          :options="sellerNameList"
+          :clearable="false"
+        />
       </div>
 
       <div class="search__select-item">
@@ -49,6 +59,14 @@
         >
           Tên hàng hóa
         </b-radio>
+
+        <v-select
+          v-if="searchCriteria === 'product_name'"
+          class="search__select-item-input"
+          v-model.trim="searchValue"
+          :options="productNameList"
+          :clearable="false"
+        />
       </div>
 
       <div class="search__select-item">
@@ -59,6 +77,14 @@
         >
           Hình thức thanh toán
         </b-radio>
+
+        <v-select
+          v-if="searchCriteria === 'payment_type'"
+          class="search__select-item-input"
+          v-model.trim="searchValue"
+          :options="paymentTypeList"
+          :clearable="false"
+        />
       </div>
 
       <div class="search__select-item">
