@@ -63,7 +63,12 @@ import {
 })
 export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
-  dateRange: string = "";
+  startDate: string = "";
+  endDate: string = "";
+
+  get dateRange(): string {
+    return `Từ ${this.startDate} đến ${this.startDate}`;
+  }
 
   get isLoading(): boolean {
     return (
@@ -118,17 +123,17 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     const query = this.$route.query;
 
     if (query.start_date && query.end_date) {
-      this.dateRange = query.start_date + " đến " + query.end_date;
+      this.startDate = query.start_date as string;
+      this.endDate = query.end_date as string;
       this.$store.dispatch("transaction/fetchTransactions", query);
       return;
     }
 
-    const startDate: string = formatDateToString(getFirstDayOfMonth());
-    const endDate: string = formatDateToString(getLastDayOfMonth());
-    this.dateRange = startDate + " đến " + endDate;
+    this.startDate = formatDateToString(getFirstDayOfMonth());
+    this.endDate = formatDateToString(getLastDayOfMonth());
     this.$store.dispatch("transaction/fetchTransactions", {
-      start_date: startDate,
-      end_date: endDate
+      start_date: this.startDate,
+      end_date: this.endDate
     });
   }
 
