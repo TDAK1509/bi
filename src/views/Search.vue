@@ -4,7 +4,12 @@
 
     <div class="search__select-container">
       <div class="search__select-item">
-        <b-radio v-model="searchCriteria" type="is-dark" native-value="id">
+        <b-radio
+          v-model="searchCriteria"
+          type="is-dark"
+          native-value="id"
+          @change.native="onSelectSearchCriteria"
+        >
           Mã giao dịch
         </b-radio>
 
@@ -21,6 +26,7 @@
           v-model="searchCriteria"
           type="is-dark"
           native-value="client_name"
+          @change.native="onSelectSearchCriteria"
         >
           Tên khách hàng
         </b-radio>
@@ -39,6 +45,7 @@
           v-model="searchCriteria"
           type="is-dark"
           native-value="seller_name"
+          @change.native="onSelectSearchCriteria"
         >
           Tên người bán
         </b-radio>
@@ -57,6 +64,7 @@
           v-model="searchCriteria"
           type="is-dark"
           native-value="product_name"
+          @change.native="onSelectSearchCriteria"
         >
           Tên hàng hóa
         </b-radio>
@@ -75,6 +83,7 @@
           v-model="searchCriteria"
           type="is-dark"
           native-value="payment_type"
+          @change.native="onSelectSearchCriteria"
         >
           Hình thức thanh toán
         </b-radio>
@@ -118,6 +127,7 @@
             expanded
             type="is-dark"
             step="5000"
+            @focus="$event.target.select()"
           />
         </div>
       </div>
@@ -195,6 +205,15 @@ export default class Search extends Vue {
       return [];
     }
     return this.$store.state.options.options.payment_types;
+  }
+
+  onSelectSearchCriteria(e: MouseEvent) {
+    const target = e.target as HTMLElement;
+    const container = target.closest(".search__select-item") as HTMLElement;
+    const input = container.querySelector(
+      ".search__select-item-input input"
+    ) as HTMLInputElement;
+    input.focus();
   }
 
   search() {
