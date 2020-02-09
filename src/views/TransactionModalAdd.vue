@@ -235,10 +235,14 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     try {
       await this.$store.dispatch("transaction/addTransaction", transaction);
       this.toastSuccess("Thêm giao dịch thành công");
+      this.addTransactionDone();
     } catch (error) {
       this.toastError();
     }
   }
+
+  @Emit("add-transaction-done")
+  addTransactionDone() {}
 
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {

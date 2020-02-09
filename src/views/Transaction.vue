@@ -26,7 +26,7 @@
       aria-role="dialog"
       aria-modal
     >
-      <transaction-modal-add />
+      <transaction-modal-add @add-transaction-done="addTransactionDone" />
     </b-modal>
 
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
@@ -114,6 +114,10 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     } else {
       this.toastError(`Đã có lỗi xảy ra! Vui lòng thử lại sau`);
     }
+  }
+
+  addTransactionDone() {
+    this.isShowAddModal = false;
   }
 
   init() {
