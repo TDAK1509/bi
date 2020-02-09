@@ -109,17 +109,14 @@ import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import ErrorHandling from "@/mixins/errorHandling";
+import AddOptions from "@/mixins/addOptions";
 
 @Component({
   components: {
     TypingSelect
   }
 })
-export default class TransactionModalAdd extends Mixins(
-  ErrorHandling,
-  Filters
-) {
+export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
 
@@ -136,7 +133,7 @@ export default class TransactionModalAdd extends Mixins(
   get isLoading(): boolean {
     return (
       this.$store.state.options.isFetchingOptions ||
-      this.$store.state.options.isAddingSelectOption
+      this.$store.state.options.isAddingOption
     );
   }
 
@@ -189,51 +186,6 @@ export default class TransactionModalAdd extends Mixins(
 
   formatDateToString(date: Date): string {
     return formatDateToString(date);
-  }
-
-  async addClient(clientName: string) {
-    try {
-      await this.$store.dispatch("options/addClient", clientName);
-      this.toastSuccess(`Khách hàng ${clientName} đã được tạo!`);
-    } catch (error) {
-      this.toastError();
-    }
-  }
-
-  async addSeller(sellerName: string) {
-    try {
-      await this.$store.dispatch("options/addSeller", sellerName);
-      this.toastSuccess(`Thêm người bán thành công!`);
-    } catch (error) {
-      this.toastError();
-    }
-  }
-
-  async addTransactionType(transactionType: string) {
-    try {
-      await this.$store.dispatch("options/addTransactionType", transactionType);
-      this.toastSuccess(`Thêm loại giao dịch thành công!`);
-    } catch (error) {
-      this.toastError();
-    }
-  }
-
-  async addProductName(productName: string) {
-    try {
-      await this.$store.dispatch("options/addProductName", productName);
-      this.toastSuccess(`Thêm sản phẩm thành công!`);
-    } catch (error) {
-      this.toastError();
-    }
-  }
-
-  async addPaymentType(paymentType: string) {
-    try {
-      await this.$store.dispatch("options/addPaymentType", paymentType);
-      this.toastSuccess(`Thêm hình thức thanh toán thành công!`);
-    } catch (error) {
-      this.toastError();
-    }
   }
 
   async updateTransaction() {

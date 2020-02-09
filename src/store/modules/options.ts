@@ -35,33 +35,33 @@ const actions: ActionTree<OptionsState, RootState> = {
   },
 
   async addClient({ commit, rootState }, clientName: string) {
-    commit("setIsAddingOptions", true);
+    commit("setIsAddingOption", true);
     await rootState.api.options.addOptionClient(clientName);
-    commit("setIsAddingOptions", false);
+    commit("setIsAddingOption", false);
   },
 
   async addSeller({ commit, rootState }, sellerName: string) {
-    commit("setIsAddingOptions", true);
+    commit("setIsAddingOption", true);
     await rootState.api.options.addOptionSeller(sellerName);
-    commit("setIsAddingOptions", false);
+    commit("setIsAddingOption", false);
   },
 
   async addProductName({ commit, rootState }, productName: string) {
-    commit("setIsAddingOptions", true);
+    commit("setIsAddingOption", true);
     await rootState.api.options.addOptionProductName(productName);
-    commit("setIsAddingOptions", false);
+    commit("setIsAddingOption", false);
   },
 
   async addTransactionType({ commit, rootState }, transactionType: string) {
-    commit("setIsAddingOptions", true);
+    commit("setIsAddingOption", true);
     await rootState.api.options.addOptionTransactionType(transactionType);
-    commit("setIsAddingOptions", false);
+    commit("setIsAddingOption", false);
   },
 
   async addPaymentType({ commit, rootState }, paymentType: string) {
-    commit("setIsAddingOptions", true);
+    commit("setIsAddingOption", true);
     await rootState.api.options.addOptionPaymentType(paymentType);
-    commit("setIsAddingOptions", false);
+    commit("setIsAddingOption", false);
   }
 };
 
