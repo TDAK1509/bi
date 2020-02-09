@@ -138,11 +138,6 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  padding: 0 20px;
-  margin-top: 30px;
-}
-
 .home__transaction-filter {
   display: flex;
   justify-content: space-between;
