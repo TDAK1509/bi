@@ -24,6 +24,7 @@
             icon="calendar-alt"
             v-model="date"
             :date-formatter="formatDateToString"
+            :disabled="isEditDebt"
           ></b-datepicker>
         </b-field>
 
@@ -32,6 +33,7 @@
           v-model="client"
           :options="clientList"
           label="Tên Khách Hàng"
+          :disabled="isEditDebt"
           @add="addClient"
         />
 
@@ -40,6 +42,7 @@
           v-model="sellerName"
           :options="sellerNameList"
           label="Tên Người Bán"
+          :disabled="isEditDebt"
           @add="addSeller"
         />
 
@@ -48,6 +51,7 @@
           v-model="transactionType"
           :options="transactionTypeList"
           label="Hình Thức Giao Dịch"
+          :disabled="isEditDebt"
           @add="addTransactionType"
         />
 
@@ -56,11 +60,12 @@
           v-model="productName"
           :options="productNameList"
           label="Tên Hàng Hóa"
+          :disabled="isEditDebt"
           @add="addProductName"
         />
 
         <b-field label="Số Lượng">
-          <b-input v-model="productQuantity"></b-input>
+          <b-input v-model="productQuantity" :disabled="isEditDebt"></b-input>
         </b-field>
 
         <typing-select
@@ -68,6 +73,7 @@
           v-model="paymentType"
           label="Hình Thức Thanh Toán"
           :options="paymentTypeList"
+          :disabled="isEditDebt"
           @add="addPaymentType"
         />
 
@@ -76,6 +82,7 @@
             v-model="amount"
             type="is-dark"
             step="5000"
+            :disabled="isEditDebt"
             @focus="$event.target.select()"
           ></b-numberinput>
         </b-field>
@@ -145,6 +152,9 @@ import AddOptions from "@/mixins/addOptions";
 export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
+
+  @Prop({ type: Boolean, default: false })
+  isEditDebt!: boolean;
 
   date: Date = new Date(this.transaction.date);
   client = this.transaction.client_name;

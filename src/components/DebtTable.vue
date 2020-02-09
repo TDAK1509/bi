@@ -103,7 +103,7 @@
       aria-role="dialog"
       aria-modal
     >
-      <transaction-modal-edit :transaction="editData" />
+      <transaction-modal-edit :transaction="editData" is-edit-debt />
     </b-modal>
   </div>
 </template>

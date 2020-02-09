@@ -19,6 +19,8 @@
       @input="onInput"
       :options="options"
       :reduce="vueSelectReduce"
+      :disabled="disabled"
+      :clearable="false"
       label="label"
     />
   </div>
@@ -38,6 +40,9 @@ export default class TypingSelect extends Vue {
 
   @Prop({ type: String, default: "Label" })
   label!: string;
+
+  @Prop({ type: Boolean, default: false })
+  disabled!: boolean;
 
   @Emit("input")
   onInput(value: any) {}
