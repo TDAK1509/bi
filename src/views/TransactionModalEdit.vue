@@ -27,12 +27,6 @@
           ></b-datepicker>
         </b-field>
 
-        <div class="transaction-modal-edit__is-debt">
-          <b-switch v-model="isDebt" type="is-success">
-            {{ isDebtText }}
-          </b-switch>
-        </div>
-
         <typing-select
           class="transaction-modal-edit__typing-select"
           v-model="client"
@@ -81,10 +75,35 @@
           <b-numberinput
             v-model="amount"
             type="is-dark"
-            controls-position="compact"
+            step="5000"
             @focus="$event.target.select()"
           ></b-numberinput>
         </b-field>
+
+        <div class="transaction-modal-edit__is-debt">
+          <b-switch v-model="isDebt" type="is-success">
+            {{ isDebtText }}
+          </b-switch>
+        </div>
+
+        <div
+          v-if="isDebt"
+          class="transaction-modal-edit__debt-amount"
+          key="debtAmount"
+        >
+          <b-field
+            label="Tiền Nợ"
+            type="is-danger"
+            :message="debtAmount | monetize"
+          >
+            <b-numberinput
+              v-model="debtAmount"
+              type="is-danger"
+              step="5000"
+              @focus="$event.target.select()"
+            ></b-numberinput>
+          </b-field>
+        </div>
       </section>
 
       <footer class="modal-card-foot transaction-modal-edit__footer">
@@ -104,7 +123,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Mixins, Emit } from "vue-property-decorator";
+import {
+  Component,
+  Vue,
+  Prop,
+  Mixins,
+  Emit,
+  Watch
+} from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
@@ -116,7 +142,7 @@ import AddOptions from "@/mixins/addOptions";
     TypingSelect
   }
 })
-export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
+export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
 
@@ -129,6 +155,7 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
   productName = this.transaction.product_name;
   productQuantity = this.transaction.product_quantity;
   isDebt = this.transaction.is_debt;
+  debtAmount = this.transaction.debt_amount;
 
   get isLoading(): boolean {
     return (
@@ -188,6 +215,28 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     return formatDateToString(date);
   }
 
+  @Watch("isDebt")
+  onChangeIsDebt(value: boolean) {
+    this.debtAmount = value ? this.amount : 0;
+
+    if (value) {
+      this.scrollToDebtAmount();
+    }
+  }
+
+  scrollToDebtAmount() {
+    setTimeout(() => {
+      const debtAmountElement = document.querySelector(
+        ".transaction-modal-edit__debt-amount"
+      );
+      if (debtAmountElement !== null) {
+        debtAmountElement.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }, 100);
+  }
+
   async updateTransaction() {
     const transaction: TransactionView = {
       id: this.transaction.id,
@@ -199,7 +248,8 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
       product_name: this.productName,
       product_quantity: this.productQuantity,
       client_name: this.client,
-      is_debt: this.isDebt
+      is_debt: this.isDebt,
+      debt_amount: this.debtAmount
     };
 
     try {
@@ -257,8 +307,12 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
 }
 
 .transaction-modal-edit__is-debt {
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+
+.transaction-modal-edit__debt-amount {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .transaction-modal-edit__typing-select {
