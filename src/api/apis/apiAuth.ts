@@ -17,6 +17,19 @@ export default class ApiAuth {
     }
   }
 
+  checkAuthState(storeCommit: Function, commitName: string) {
+    auth.onAuthStateChanged(async user => {
+      let isAdmin = false;
+
+      if (user) {
+        const token = await user.getIdTokenResult();
+        isAdmin = !!token.claims.isAdmin;
+      }
+
+      storeCommit(commitName, isAdmin);
+    });
+  }
+
   async changePassword(newPassword: string): Promise<ErrorMessage> {
     try {
       if (this.auth.currentUser) {

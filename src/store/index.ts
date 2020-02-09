@@ -16,7 +16,11 @@ export interface RootState {
   debt: DebtState;
 }
 
-const actions: ActionTree<RootState, RootState> = {};
+const actions: ActionTree<RootState, RootState> = {
+  init({ dispatch }) {
+    dispatch("auth/checkAuthState");
+  }
+};
 
 export default new Vuex.Store<RootState>({
   modules: {

@@ -5,6 +5,7 @@ import { ErrorMessage } from "@/models/helpers";
 export class AuthState {
   isLoggedIn = false;
   userEmail = "";
+  isAdmin = false;
 }
 
 const mutations: MutationTree<AuthState> = {
@@ -13,6 +14,9 @@ const mutations: MutationTree<AuthState> = {
   },
   setUserEmail(state, payload: string) {
     state.userEmail = payload;
+  },
+  setIsAdmin(state, payload: boolean) {
+    state.isAdmin = payload;
   }
 };
 
@@ -41,6 +45,10 @@ const actions: ActionTree<AuthState, RootState> = {
     }
 
     return await rootState.api.auth.changePassword(newPassword);
+  },
+
+  checkAuthState({ commit, rootState }) {
+    rootState.api.auth.checkAuthState(commit, "setIsAdmin");
   }
 };
 
