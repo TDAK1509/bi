@@ -2,6 +2,9 @@ import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { ErrorMessage } from "@/models/helpers";
 
+const LAST_LOGGED_IN_KEY = "lastLoggedIn";
+const SESSION_MAX_LENGTH = 30 * 60 * 60; // 30min in mSec
+
 export class AuthState {
   isAuth = false;
   userEmail = "";
@@ -61,15 +64,41 @@ const actions: ActionTree<AuthState, RootState> = {
     commit("setLoggedOut");
   },
 
-  checkAuthState({ commit, rootState }) {
+  checkAuthState({ commit, dispatch, rootState }) {
     rootState.api.auth.checkAuthState(
       commit,
       "setIsCheckedAuthState",
       "setIsAuth",
       "setIsAdmin"
     );
+
+    if (_checkIfLoggedInTooLong()) {
+      dispatch("logout");
+    } else {
+      _resetLastLoggedInTime();
+    }
   }
 };
+
+function _resetLastLoggedInTime() {
+  window.localStorage.setItem(
+    LAST_LOGGED_IN_KEY,
+    new Date().getTime().toString()
+  );
+}
+
+function _checkIfLoggedInTooLong(): boolean {
+  const lastLoggedIn = window.localStorage.getItem(LAST_LOGGED_IN_KEY);
+
+  if (lastLoggedIn === null) {
+    return false;
+  }
+
+  const lastLoggedInMsec = parseInt(lastLoggedIn);
+  const currentTime = new Date().getTime();
+  const isPastMaxLength = currentTime - lastLoggedInMsec > SESSION_MAX_LENGTH;
+  return isPastMaxLength;
+}
 
 export const auth = {
   namespaced: true,
