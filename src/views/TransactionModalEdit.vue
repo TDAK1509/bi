@@ -189,48 +189,48 @@ export default class TransactionModalAdd extends Vue {
   }
 
   async addClient(clientName: string) {
-    await this.$store.dispatch("options/addClient", clientName);
-
-    this.$buefy.toast.open({
-      message: `Khách hàng ${clientName} đã được tạo!`,
-      type: "is-success"
-    });
+    try {
+      await this.$store.dispatch("options/addClient", clientName);
+      this.toastSuccess(`Khách hàng ${clientName} đã được tạo!`);
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   async addSeller(sellerName: string) {
-    await this.$store.dispatch("options/addSeller", sellerName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
+    try {
+      await this.$store.dispatch("options/addSeller", sellerName);
+      this.toastSuccess(`Thêm người bán thành công!`);
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   async addTransactionType(transactionType: string) {
-    await this.$store.dispatch("options/addTransactionType", transactionType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
+    try {
+      await this.$store.dispatch("options/addTransactionType", transactionType);
+      this.toastSuccess(`Thêm loại giao dịch thành công!`);
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   async addProductName(productName: string) {
-    await this.$store.dispatch("options/addProductName", productName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
+    try {
+      await this.$store.dispatch("options/addProductName", productName);
+      this.toastSuccess(`Thêm sản phẩm thành công!`);
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   async addPaymentType(paymentType: string) {
-    await this.$store.dispatch("options/addPaymentType", paymentType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
+    try {
+      await this.$store.dispatch("options/addPaymentType", paymentType);
+      this.toastSuccess(`Thêm hình thức thanh toán thành công!`);
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   async updateTransaction() {
@@ -263,7 +263,7 @@ export default class TransactionModalAdd extends Vue {
     });
   }
 
-  toastError(message: string = "Đã có lỗi xảy ra") {
+  toastError(message: string = "Đã có lỗi xảy ra!") {
     this.$buefy.toast.open({
       message: message,
       type: "is-danger",
