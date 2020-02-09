@@ -135,7 +135,9 @@ export default class TransactionModalAdd extends Vue {
   isAddingSelectOption = false;
 
   get isLoading(): boolean {
-    return this.$store.state.options.isFetchingOptions;
+    return (
+      this.$store.state.options.isFetchingOptions || this.isAddingSelectOption
+    );
   }
 
   get isOptionsFetched(): boolean {
