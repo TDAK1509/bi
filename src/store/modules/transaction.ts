@@ -57,6 +57,10 @@ const actions: ActionTree<TransactionState, RootState> = {
     { commit, rootState },
     transactionId: string
   ): Promise<boolean> {
+    if (!rootState.auth.isAdmin) {
+      return false;
+    }
+
     try {
       commit("setIsDeletingTransaction", true);
       await rootState.api.transaction.deleteTransaction(transactionId);
@@ -68,6 +72,10 @@ const actions: ActionTree<TransactionState, RootState> = {
   },
 
   async updateTransaction({ commit, rootState }, transaction: TransactionView) {
+    if (!rootState.auth.isAdmin) {
+      return false;
+    }
+
     commit("setIsUpdatingTransaction", true);
     await rootState.api.transaction.updateTransaction(transaction);
     commit("setIsUpdatingTransaction", false);
