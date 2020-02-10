@@ -74,7 +74,7 @@
           {{ props.row.debt_amount | monetize }}
         </b-table-column>
 
-        <b-table-column>
+        <b-table-column v-if="isAdmin">
           <button
             class="debt-table__icon-button"
             @click="showModalEdit(props.row)"
@@ -122,6 +122,9 @@ import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 export default class DebtTable extends Filters {
   @Prop({ type: Array, required: true })
   debts!: TransactionView[];
+
+  @Prop({ type: Boolean, default: false })
+  isAdmin!: boolean;
 
   showModal = false;
   editData: TransactionView | null = null;

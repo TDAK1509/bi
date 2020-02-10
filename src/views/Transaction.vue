@@ -16,6 +16,7 @@
     <transaction-table
       class="home__transaction-table"
       :transactions="transactionsToShow"
+      :is-admin="isAdmin"
       @delete="openDeleteConfirm"
     />
 
@@ -76,6 +77,10 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
       this.$store.state.options.isAddingOption ||
       this.$store.state.transaction.isDeletingTransaction
     );
+  }
+
+  get isAdmin(): boolean {
+    return this.$store.state.auth.isAdmin;
   }
 
   get transactionsToShow(): TransactionView[] {

@@ -76,7 +76,7 @@
           <span v-else>{{ props.row.amount | monetize }}</span>
         </b-table-column>
 
-        <b-table-column>
+        <b-table-column v-if="isAdmin">
           <button
             class="transaction-table__icon-button"
             @click="showModalEdit(props.row)"
@@ -134,6 +134,9 @@ import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 export default class TransactionTable extends Filters {
   @Prop({ type: Array, required: true })
   transactions!: TransactionView[];
+
+  @Prop({ type: Boolean, default: false })
+  isAdmin!: boolean;
 
   showModal = false;
   editData: TransactionView | null = null;
