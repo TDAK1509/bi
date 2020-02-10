@@ -55,6 +55,8 @@ router.beforeEach(async (to, from, next) => {
         next({ name: "login" });
       }
 
+      _resetLastLoggedInTime();
+
       const token = await user.getIdTokenResult();
       const isAdmin = !!token.claims.isAdmin;
 
@@ -75,6 +77,14 @@ router.beforeEach(async (to, from, next) => {
     }
   });
 });
+
+function _resetLastLoggedInTime() {
+  console.log("reset", window.localStorage);
+  window.localStorage.setItem(
+    LAST_LOGGED_IN_KEY,
+    new Date().getTime().toString()
+  );
+}
 
 function _checkIfLoggedInTooLong(): boolean {
   const lastLoggedIn = window.localStorage.getItem(LAST_LOGGED_IN_KEY);

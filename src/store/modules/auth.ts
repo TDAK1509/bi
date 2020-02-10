@@ -1,7 +1,6 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { ErrorMessage } from "@/models/helpers";
-import { LAST_LOGGED_IN_KEY } from "@/const/auth";
 
 export class AuthState {
   isAuth = false;
@@ -35,7 +34,6 @@ const actions: ActionTree<AuthState, RootState> = {
     const loggedIn = await rootState.api.auth.login(username, password);
     commit("setIsAuth", loggedIn);
     commit("setUserEmail", username);
-    _resetLastLoggedInTime();
     return loggedIn;
   },
 
@@ -63,13 +61,6 @@ const actions: ActionTree<AuthState, RootState> = {
     commit("setLoggedOut");
   }
 };
-
-function _resetLastLoggedInTime() {
-  window.localStorage.setItem(
-    LAST_LOGGED_IN_KEY,
-    new Date().getTime().toString()
-  );
-}
 
 export const auth = {
   namespaced: true,
