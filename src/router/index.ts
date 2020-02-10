@@ -59,6 +59,7 @@ router.beforeEach(async (to, from, next) => {
       const isAdmin = !!token.claims.isAdmin;
 
       store.commit("auth/setIsAuth", true);
+      store.commit("auth/setUserEmail", user.email);
       store.commit("auth/setIsAdmin", isAdmin);
 
       next();

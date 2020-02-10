@@ -6,19 +6,31 @@
       @click="toPreviousPage"
     />
 
+    <div class="nav-bar__user">
+      <b-dropdown hoverable position="is-bottom-left">
+        <div class="nav-bar__user-list-trigger" slot="trigger">
+          <span class="nav-bar__user-list-text"
+            ><strong>{{ userEmail }}</strong></span
+          >
+          <b-icon icon="caret-down" size="is-small"></b-icon>
+        </div>
+
+        <b-dropdown-item @click="showPasswordModal = true">
+          <b-icon icon="key" size="is-small" />
+          <span class="nav-bar__user-action-text">Đổi password</span>
+        </b-dropdown-item>
+
+        <b-dropdown-item @click="logout">
+          <b-icon icon="sign-out-alt" size="is-small" />
+          <span class="nav-bar__user-action-text">Đăng xuất</span>
+        </b-dropdown-item>
+      </b-dropdown>
+    </div>
+
     <router-link class="nav-bar__search" :to="{ name: 'search' }" exact>
       <b-icon icon="search" size="is-small" />
       Tìm giao dịch
     </router-link>
-
-    <div class="nav-bar__change-password">
-      <b-button
-        type="is-warning"
-        icon-left="key"
-        @click="showPasswordModal = true"
-        >Đổi password</b-button
-      >
-    </div>
 
     <nav class="nav-bar__navigator">
       <router-link class="nav-bar__navigator-item" :to="{ name: 'transaction' }"
@@ -42,7 +54,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import ChangePasswordModal from "./ChangePasswordModal.vue";
+import ChangePasswordModal from "@/components/ChangePasswordModal.vue";
 
 @Component({
   components: {
@@ -53,12 +65,20 @@ export default class NavBar extends Vue {
   searchText: string = "";
   showPasswordModal = false;
 
+  get userEmail(): string {
+    return this.$store.state.auth.userEmail;
+  }
+
   toPreviousPage() {
     history.back();
   }
 
   toNextPage() {
     history.forward();
+  }
+
+  logout() {
+    this.$store.dispatch("auth/logout");
   }
 }
 </script>
@@ -73,9 +93,10 @@ export default class NavBar extends Vue {
 }
 
 .nav-bar__search {
-  margin-left: 20px;
+  flex: 1;
   position: relative;
   color: #000;
+  text-align: center;
 
   &:hover {
     color: red;
@@ -136,8 +157,16 @@ export default class NavBar extends Vue {
     border-left: 1px solid #000;
   }
 }
-.nav-bar__change-password {
-  flex: 1;
-  text-align: center;
+
+.nav-bar__user {
+  margin-left: 20px;
+}
+
+.nav-bar__user-list-text {
+  margin-right: 3px;
+}
+
+.nav-bar__user-action-text {
+  margin-left: 10px;
 }
 </style>
