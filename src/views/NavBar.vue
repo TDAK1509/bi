@@ -33,6 +33,13 @@
     </router-link>
 
     <nav class="nav-bar__navigator">
+      <router-link
+        v-if="isAdmin"
+        class="nav-bar__navigator-item"
+        :to="{ name: 'admin' }"
+        >ADMIN</router-link
+      >
+
       <router-link class="nav-bar__navigator-item" :to="{ name: 'transaction' }"
         >Doanh Thu</router-link
       >
@@ -67,6 +74,10 @@ export default class NavBar extends Vue {
 
   get userEmail(): string {
     return this.$store.state.auth.userEmail;
+  }
+
+  get isAdmin(): boolean {
+    return this.$store.state.auth.isAdmin;
   }
 
   toPreviousPage() {

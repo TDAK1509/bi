@@ -1,7 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Login from "@/views/Login.vue";
-import Main from "@/views/Main.vue";
 import store from "@/store";
 import { auth } from "@/firebase";
 import { LAST_LOGGED_IN_KEY, SESSION_MAX_LENGTH } from "@/const/auth";
@@ -12,13 +10,13 @@ const routes = [
   {
     path: "/",
     name: "login",
-    component: Login
+    component: () => import("@/views/Login.vue")
   },
 
   {
     path: "/main",
     name: "main",
-    component: Main,
+    component: () => import("@/views/Main.vue"),
     children: [
       {
         path: "debt",
@@ -36,6 +34,12 @@ const routes = [
         path: "search",
         name: "search",
         component: () => import("@/views/Search.vue")
+      },
+
+      {
+        path: "admin",
+        name: "admin",
+        component: () => import("@/views/Admin.vue")
       }
     ]
   }
@@ -53,6 +57,7 @@ router.beforeEach(async (to, from, next) => {
       if (_checkIfLoggedInTooLong()) {
         store.dispatch("auth/logout");
         next({ name: "login" });
+        return;
       }
 
       _resetLastLoggedInTime();
@@ -64,6 +69,16 @@ router.beforeEach(async (to, from, next) => {
       store.commit("auth/setUserEmail", user.email);
       store.commit("auth/setIsAdmin", isAdmin);
 
+      if (to.name === "admin") {
+        if (store.state.auth.isAdmin) {
+          next();
+          return;
+        }
+
+        next({ name: "login" });
+        return;
+      }
+
       next();
     } else {
       store.commit("auth/setIsAuth", false);
@@ -71,6 +86,7 @@ router.beforeEach(async (to, from, next) => {
 
       if (to.name !== "login") {
         next({ name: "login" });
+        return;
       }
 
       next();
@@ -79,7 +95,6 @@ router.beforeEach(async (to, from, next) => {
 });
 
 function _resetLastLoggedInTime() {
-  console.log("reset", window.localStorage);
   window.localStorage.setItem(
     LAST_LOGGED_IN_KEY,
     new Date().getTime().toString()
