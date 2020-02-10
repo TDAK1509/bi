@@ -1,7 +1,10 @@
 <template>
   <div>
     <nav-bar />
-    <router-view />
+
+    <main class="main">
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -23,3 +26,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.main {
+  padding: 0 20px;
+  margin-top: 30px;
+}
+</style>

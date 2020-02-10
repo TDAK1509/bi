@@ -85,11 +85,6 @@ export default class Debt extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  padding: 0 20px;
-  margin-top: 30px;
-}
-
 .debt__transaction-filter {
   display: flex;
   justify-content: space-between;

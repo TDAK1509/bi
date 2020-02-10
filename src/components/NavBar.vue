@@ -6,6 +6,11 @@
       @click="toPreviousPage"
     />
 
+    <router-link class="nav-bar__search" :to="{ name: 'search' }" exact>
+      <b-icon icon="search" size="is-small" />
+      Tìm giao dịch
+    </router-link>
+
     <div class="nav-bar__change-password">
       <b-button
         type="is-warning"
@@ -16,10 +21,7 @@
     </div>
 
     <nav class="nav-bar__navigator">
-      <router-link
-        class="nav-bar__navigator-item"
-        :to="{ name: 'transaction' }"
-        exact
+      <router-link class="nav-bar__navigator-item" :to="{ name: 'transaction' }"
         >Doanh Thu</router-link
       >
 
@@ -73,6 +75,11 @@ export default class NavBar extends Vue {
 .nav-bar__search {
   margin-left: 20px;
   position: relative;
+  color: #000;
+
+  &:hover {
+    color: red;
+  }
 }
 
 .nav-bar__search-input {

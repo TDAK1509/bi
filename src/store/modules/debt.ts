@@ -46,18 +46,6 @@ const actions: ActionTree<DebtState, RootState> = {
         () => commit("setIsFetchedDebts", true)
       ]
     );
-  },
-
-  async updateDebtAmount({ commit, rootState }, { transactionId, debtAmount }) {
-    commit("setIsUpdatingDebt", true);
-    await rootState.api.debt.updateDebtAmount(transactionId, debtAmount);
-    commit("setIsUpdatingDebt", false);
-  },
-
-  async updateDebtStatus({ commit, rootState }, { transactionId, isDebt }) {
-    commit("setIsUpdatingDebt", true);
-    await rootState.api.debt.updateDebtStatus(transactionId, isDebt);
-    commit("setIsUpdatingDebt", false);
   }
 };
 
