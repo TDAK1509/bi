@@ -39,4 +39,8 @@ export default class ApiAuth {
       };
     }
   }
+
+  createUser(email: string, password: string) {
+    return this.auth.createUserWithEmailAndPassword(email, password);
+  }
 }

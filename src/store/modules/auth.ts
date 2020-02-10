@@ -59,6 +59,10 @@ const actions: ActionTree<AuthState, RootState> = {
   async logout({ commit, rootState }) {
     await rootState.api.auth.logout();
     commit("setLoggedOut");
+  },
+
+  createUser({ rootState }, { email, password }) {
+    return rootState.api.auth.createUser(email, password);
   }
 };
 

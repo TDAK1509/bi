@@ -44,7 +44,7 @@
                 icon-left="plus"
                 type="is-dark"
                 :disabled="!email || !password || !isEmailValid"
-                @click="addUser"
+                @click="createUser"
                 >Thêm</b-button
               >
             </div>
@@ -57,9 +57,10 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import ErrorHandling from "@/mixins/errorHandling";
 
 @Component
-export default class Admin extends Vue {
+export default class Admin extends ErrorHandling {
   showAddUserModal = false;
   email = "";
   password = "";
@@ -73,7 +74,17 @@ export default class Admin extends Vue {
     return this.isEmailValid || !this.email ? "" : "Định dạng email không đúng";
   }
 
-  addUser() {}
+  async createUser() {
+    try {
+      await this.$store.dispatch("auth/createUser", {
+        email: this.email,
+        password: this.password
+      });
+      this.toastSuccess("Thêm người dùng thành công!");
+    } catch (error) {
+      this.toastError(error.message);
+    }
+  }
 }
 </script>
 
