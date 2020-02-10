@@ -79,6 +79,7 @@ export default class NavBar extends Vue {
 
   logout() {
     this.$store.dispatch("auth/logout");
+    this.$router.push({ name: "login" });
   }
 }
 </script>
