@@ -6,11 +6,7 @@
 
 <script>
 export default {
-  name: "App",
-
-  created() {
-    this.$store.dispatch("init");
-  }
+  name: "App"
 };
 </script>
 

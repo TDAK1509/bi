@@ -8,23 +8,16 @@
   </div>
 </template>
 
-<script>
-import NavBar from "@/components/NavBar";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import NavBar from "@/components/NavBar.vue";
 
-export default {
-  name: "Main",
-
+@Component({
   components: {
     NavBar
-  },
-
-  async mounted() {
-    if (!this.$store.state.auth.isAuth) {
-      this.$router.push({ name: "login" });
-      return;
-    }
   }
-};
+})
+export default class Main extends Vue {}
 </script>
 
 <style lang="scss" scoped>
