@@ -276,7 +276,13 @@ export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
     };
 
     try {
-      await this.$store.dispatch("transaction/updateTransaction", transaction);
+      const isSuccess = await this.$store.dispatch(
+        "transaction/updateTransaction",
+        transaction
+      );
+
+      if (!isSuccess) throw "Failed";
+
       this.toastSuccess("Sửa giao dịch thành công");
       this.onEditTransactionDone();
     } catch (error) {

@@ -11,7 +11,11 @@
       </div>
     </div>
 
-    <debt-table class="debt__transaction-table" :debts="debts" />
+    <debt-table
+      class="debt__transaction-table"
+      :debts="debts"
+      :is-admin="isAdmin"
+    />
 
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
   </div>
@@ -40,6 +44,10 @@ export default class Debt extends Vue {
       this.$store.state.debt.isFetchingDebts ||
       this.$store.state.debt.isUpdatingDebt
     );
+  }
+
+  get isAdmin(): boolean {
+    return this.$store.state.auth.isAdmin;
   }
 
   get debts(): TransactionView[] {

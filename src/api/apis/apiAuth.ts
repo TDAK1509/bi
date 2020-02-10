@@ -17,6 +17,10 @@ export default class ApiAuth {
     }
   }
 
+  logout() {
+    return this.auth.signOut();
+  }
+
   async changePassword(newPassword: string): Promise<ErrorMessage> {
     try {
       if (this.auth.currentUser) {
@@ -34,5 +38,9 @@ export default class ApiAuth {
         message: error.message
       };
     }
+  }
+
+  createUser(email: string, password: string) {
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 }
