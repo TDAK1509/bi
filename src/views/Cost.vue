@@ -15,6 +15,18 @@
 
     <cost-table class="cost__table" :costs="costs" :is-admin="isAdmin" />
 
+    <add-button @click="isShowAddModal = true" />
+
+    <b-modal
+      :active.sync="isShowAddModal"
+      has-modal-card
+      trap-focus
+      aria-role="dialog"
+      aria-modal
+    >
+      <cost-modal-add @add-done="onAddCostDone" />
+    </b-modal>
+
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
   </div>
 </template>
@@ -23,6 +35,8 @@
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import CostTable from "@/components/CostTable.vue";
 import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
+import CostModalAdd from "@/views/CostModalAdd.vue";
+import AddButton from "@/components/AddButton.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import { CostView } from "@/models/cost";
 import Filters from "@/mixins/filters";
@@ -37,10 +51,13 @@ import {
   components: {
     CostTable,
     PageTitle,
-    TransactionDatePicker
+    TransactionDatePicker,
+    AddButton,
+    CostModalAdd
   }
 })
 export default class Cost extends Mixins(Filters, ErrorHandling) {
+  isShowAddModal = false;
   startDate: string = "";
   endDate: string = "";
 
@@ -87,6 +104,10 @@ export default class Cost extends Mixins(Filters, ErrorHandling) {
       start_date: this.startDate,
       end_date: this.endDate
     });
+  }
+
+  onAddCostDone() {
+    this.isShowAddModal = false;
   }
 
   async init() {
