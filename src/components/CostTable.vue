@@ -37,6 +37,13 @@
           >
             <b-icon icon="edit" size="is-small" />
           </button>
+
+          <button
+            class="cost-table__icon-button"
+            @click="onDelete(props.row.id)"
+          >
+            <b-icon icon="trash" size="is-small" />
+          </button>
         </b-table-column>
       </template>
 
@@ -89,6 +96,9 @@ export default class CostTable extends Filters {
     this.showModal = true;
     this.editData = rowData;
   }
+
+  @Emit("delete")
+  onDelete(transactionId: string) {}
 }
 </script>
 

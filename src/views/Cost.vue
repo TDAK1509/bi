@@ -13,7 +13,12 @@
       </div>
     </div>
 
-    <cost-table class="cost__table" :costs="costs" :is-admin="isAdmin" />
+    <cost-table
+      class="cost__table"
+      :costs="costs"
+      :is-admin="isAdmin"
+      @delete="openDeleteConfirm"
+    />
 
     <add-button @click="isShowAddModal = true" />
 
@@ -86,6 +91,28 @@ export default class Cost extends Mixins(Filters, ErrorHandling) {
       totalAmount += parseInt(cost.amount.toString());
     });
     return totalAmount;
+  }
+
+  openDeleteConfirm(costId: string) {
+    this.$buefy.dialog.confirm({
+      title: "Xóa Giao Dịch",
+      message:
+        "Bạn có chắc là muốn <strong>xóa chi phí</strong> này?<br />Hạ thủ bất hoàn!",
+      cancelText: "Em nhầm",
+      confirmText: "Chắc chắn",
+      type: "is-danger",
+      hasIcon: true,
+      onConfirm: () => this.onDelete(costId)
+    });
+  }
+
+  async onDelete(costId: string) {
+    const response = await this.$store.dispatch("cost/removeCost", costId);
+    if (response) {
+      this.toastSuccess(`Xóa chi phí thành công!`);
+    } else {
+      this.toastError(`Đã có lỗi xảy ra! Vui lòng thử lại sau`);
+    }
   }
 
   async searchCostsByQuery() {
