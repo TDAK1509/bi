@@ -68,6 +68,7 @@ const actions: ActionTree<CostState, RootState> = {
     commit("setIsUpdatingCost", true);
     await rootState.api.cost.updateCost(cost);
     commit("setIsUpdatingCost", false);
+    return true;
   }
 };
 

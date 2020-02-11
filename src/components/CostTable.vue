@@ -59,7 +59,7 @@
       aria-role="dialog"
       aria-modal
     >
-      <transaction-modal-edit :transaction="editData" is-edit-debt />
+      <cost-modal-edit :cost="editData" @edit-done="showModal = false" />
     </b-modal>
   </div>
 </template>
@@ -68,11 +68,11 @@
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { CostView } from "@/models/cost";
 import Filters from "@/mixins/filters";
-import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
+import CostModalEdit from "@/views/CostModalEdit.vue";
 
 @Component({
   components: {
-    TransactionModalEdit
+    CostModalEdit
   }
 })
 export default class CostTable extends Filters {
@@ -93,15 +93,6 @@ export default class CostTable extends Filters {
 </script>
 
 <style lang="scss">
-.cost-table__row-debt {
-  background: #3d8b88;
-  color: #fff;
-
-  .cost-table__link {
-    color: #fff;
-  }
-}
-
 .cost-table__icon-button {
   background: none;
   border: none;
