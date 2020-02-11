@@ -13,3 +13,4 @@ export namespace ApiRes {
     payment_types: string[];
     clients: string[];
   }
+}
