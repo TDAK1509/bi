@@ -1,7 +1,7 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
-import { Cost } from "@/models/cost";
-import { SearchQuery } from "@/models/search";
+import { Cost, CostView } from "@/models/cost";
+import { CostSearchQuery } from "@/models/search";
 
 export class CostState {
   costs: Cost[] = [];
@@ -30,7 +30,7 @@ const mutations: MutationTree<CostState> = {
 };
 
 const actions: ActionTree<CostState, RootState> = {
-  async fetchCosts({ commit, rootState }, searchQuery: SearchQuery) {
+  async fetchCosts({ commit, rootState }, searchQuery: CostSearchQuery) {
     commit("setIsFetchingCosts", true);
 
     rootState.api.cost.fetchCosts(commit, "setCosts", searchQuery, [
@@ -58,17 +58,17 @@ const actions: ActionTree<CostState, RootState> = {
     } catch (error) {
       return false;
     }
+  },
+
+  async updateCost({ commit, rootState }, cost: CostView) {
+    if (!rootState.auth.isAdmin) {
+      return false;
+    }
+
+    commit("setIsUpdatingCost", true);
+    await rootState.api.cost.updateCost(cost);
+    commit("setIsUpdatingCost", false);
   }
-
-  // async updateCost({ commit, rootState }, Cost: CostView) {
-  //   if (!rootState.auth.isAdmin) {
-  //     return false;
-  //   }
-
-  //   commit("setIsUpdatingCost", true);
-  //   await rootState.api.cost.updateCost(Cost);
-  //   commit("setIsUpdatingCost", false);
-  // }
 };
 
 export const cost = {

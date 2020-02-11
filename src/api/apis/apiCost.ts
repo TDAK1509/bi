@@ -1,6 +1,7 @@
 import { db } from "@/firebase";
 import { ApiRes } from "@/api/api-res";
-import { CostManager, Cost, CostSearchQuery } from "@/models/cost";
+import { CostView, Cost } from "@/models/cost";
+import { CostSearchQuery } from "@/models/search";
 import * as firebase from "firebase";
 
 export default class ApiOptions {
@@ -22,20 +23,18 @@ export default class ApiOptions {
       .where("date", "<=", query.end_date);
 
     docRef.onSnapshot(querySnapshot => {
-      const costsFromApi: ApiRes.Cost[] = [];
+      const costs: CostView[] = [];
 
       querySnapshot.forEach(doc => {
-        const data = doc.data();
-        const cost = <ApiRes.Cost>{
+        const data = <Cost>doc.data();
+        const cost: CostView = {
           ...data,
           id: doc.id.toString()
         };
-        costsFromApi.push(cost);
+        costs.push(cost);
       });
 
-      const costManager = CostManager.buildFromJson(costsFromApi);
-
-      storeCommit(commitName, costManager.costs);
+      storeCommit(commitName, costs);
       callback.forEach(c => c());
     });
   }
@@ -57,5 +56,13 @@ export default class ApiOptions {
     } catch (error) {
       return false;
     }
+  }
+
+  async updateCost(cost: CostView) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.COST)
+      .doc(cost.id);
+    delete cost.id;
+    await docRef.set(cost);
   }
 }

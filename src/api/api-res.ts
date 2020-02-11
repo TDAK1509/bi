@@ -13,12 +13,3 @@ export namespace ApiRes {
     payment_types: string[];
     clients: string[];
   }
-
-  export interface Cost {
-    id: string;
-    description: string;
-    seller_name: string;
-    amount: number;
-    date: string;
-  }
-}
