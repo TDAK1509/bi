@@ -82,6 +82,7 @@ const actions: ActionTree<TransactionState, RootState> = {
     commit("setIsUpdatingTransaction", true);
     await rootState.api.transaction.updateTransaction(transaction);
     commit("setIsUpdatingTransaction", false);
+    return true;
   }
 };
 
