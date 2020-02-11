@@ -35,7 +35,7 @@ export default class ApiOptions {
 
       const costManager = CostManager.buildFromJson(costsFromApi);
 
-      storeCommit(commitName, costManager);
+      storeCommit(commitName, costManager.costs);
       callback.forEach(c => c());
     });
   }
