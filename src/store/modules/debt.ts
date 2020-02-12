@@ -1,22 +1,22 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
-import { Transaction, TransactionView } from "@/models/transaction";
+import { TransactionView } from "@/models/transaction";
 
 export class DebtState {
   debts: TransactionView[] = []; // Transaction which has is_debt = true
-  filterDateStart = new Date();
-  filterDateEnd = new Date();
+  startDate: string = "";
+  endDate: string = "";
   isUpdatingDebt = false;
   isFetchingDebts = false;
   isFetchedDebts = false;
 }
 
 const mutations: MutationTree<DebtState> = {
-  setFilterDateStart(state, payload: Date) {
-    state.filterDateStart = payload;
+  setStartDate(state, payload: string) {
+    state.startDate = payload;
   },
-  setFilterDateEnd(state, payload: Date) {
-    state.filterDateEnd = payload;
+  setEndDate(state, payload: string) {
+    state.endDate = payload;
   },
   setDebts(state, payload: TransactionView[]) {
     state.debts = payload;
@@ -39,8 +39,8 @@ const actions: ActionTree<DebtState, RootState> = {
     rootState.api.debt.fetchDebts(
       commit,
       "setDebts",
-      state.filterDateStart,
-      state.filterDateEnd,
+      state.startDate,
+      state.endDate,
       [
         () => commit("setIsFetchingDebts", false),
         () => commit("setIsFetchedDebts", true)
