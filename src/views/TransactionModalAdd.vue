@@ -72,6 +72,7 @@
           <b-field
             v-if="productName"
             label="Số Lượng"
+            :type="{ 'is-danger': !hasStock }"
             :message="selectedProductStockText"
           >
             <b-input v-model="productQuantity"></b-input>
@@ -199,7 +200,8 @@ export default class TransactionModalAdd extends Mixins(Options, Filters) {
       this.amount < 0 ||
       !this.paymentType ||
       !this.productName ||
-      !this.productQuantity
+      !this.productQuantity ||
+      !this.hasStock
     );
   }
 
@@ -217,6 +219,10 @@ export default class TransactionModalAdd extends Mixins(Options, Filters) {
 
   get selectedProductStockText(): string {
     return `Còn ${this.selectedProduct.stock} ${this.selectedProduct.unit}`;
+  }
+
+  get hasStock(): boolean {
+    return parseInt(this.productQuantity) <= this.selectedProduct.stock;
   }
 
   @Watch("isDebt")
