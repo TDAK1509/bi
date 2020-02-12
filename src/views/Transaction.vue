@@ -7,9 +7,23 @@
         {{ dateRange }}
       </div>
 
-      <div class="home__transaction-filter-total-amount">
-        Tổng tiền:
-        <span class="has-text-danger">{{ totalAmount | monetize }}</span>
+      <div class="home__transaction-total">
+        <p class="home__transaction-total-item home__transaction-income">
+          <span class="home__transaction-total-text">Doanh thu</span>
+          <span>{{ totalAmount | monetize }}</span>
+        </p>
+
+        <p class="home__transaction-total-item home__transaction-cost">
+          <span class="home__transaction-total-text">Chi phí</span>
+          <span>{{ totalAmount | monetize }}</span>
+        </p>
+
+        <p
+          class="home__transaction-total-item home__transaction-net-income has-text-danger"
+        >
+          <span class="home__transaction-total-text">Lợi nhuận</span>
+          <span>{{ totalAmount | monetize }}</span>
+        </p>
       </div>
     </div>
 
@@ -156,15 +170,32 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 .home__transaction-filter {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.home__transaction-filter-total-amount {
-  display: inline-block;
-  padding: 10px 30px;
+.home__transaction-total {
   margin-right: 0px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.home__transaction-total-item {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.home__transaction-total-text {
+  margin-right: 15px;
+}
+
+.home__transaction-net-income {
+  border-top: 1px solid #8d8d8d;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 
 .home__transaction-table {
