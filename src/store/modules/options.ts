@@ -1,6 +1,6 @@
-import { MutationTree, ActionTree } from "vuex";
+import { MutationTree, ActionTree, GetterTree } from "vuex";
 import { RootState } from "@/store/";
-import { SelectOptions } from "@/models/helpers";
+import { SelectOptions, Product } from "@/models/helpers";
 
 export class OptionsState {
   options: SelectOptions | null = null;
@@ -8,6 +8,13 @@ export class OptionsState {
   isFetchedOptions = false;
   isAddingOption = false;
 }
+
+const getters: GetterTree<OptionsState, RootState> = {
+  productNames(state): string[] {
+    if (state.options === null) return [];
+    return state.options.product_names.map((product: Product) => product.name);
+  }
+};
 
 const mutations: MutationTree<OptionsState> = {
   setOptions(state, payload: SelectOptions) {
@@ -69,5 +76,6 @@ export const options = {
   namespaced: true,
   state: new OptionsState(),
   mutations: mutations,
-  actions: actions
+  actions: actions,
+  getters
 };

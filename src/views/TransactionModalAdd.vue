@@ -69,7 +69,11 @@
         </transition>
 
         <transition name="fade">
-          <b-field v-if="productName" label="Số Lượng">
+          <b-field
+            v-if="productName"
+            label="Số Lượng"
+            :message="selectedProductStockText"
+          >
             <b-input v-model="productQuantity"></b-input>
           </b-field>
         </transition>
@@ -159,6 +163,7 @@ import TransactionModalAddSelectWithCreateButton from "@/components/TransactionM
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
 import Options from "@/mixins/options";
+import { Product } from "@/models/helpers";
 
 @Component({
   components: {
@@ -200,6 +205,18 @@ export default class TransactionModalAdd extends Mixins(Options, Filters) {
 
   get isDebtText(): string {
     return this.isDebt ? "Nợ" : "Không phải nợ";
+  }
+
+  get selectedProduct(): Product {
+    const selectedProduct: Product | undefined = this.productList.find(
+      (product: Product) => product.name === this.productName
+    );
+
+    return selectedProduct || { name: this.productName, stock: 0, unit: "cái" };
+  }
+
+  get selectedProductStockText(): string {
+    return `Còn ${this.selectedProduct.stock} ${this.selectedProduct.unit}`;
   }
 
   @Watch("isDebt")

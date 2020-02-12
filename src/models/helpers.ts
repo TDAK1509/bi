@@ -3,7 +3,7 @@ export type FilterType = "month" | "year" | "all";
 export interface SelectOptions {
   sellers: string[];
   transaction_types: string[];
-  product_names: string[] | Product[];
+  product_names: Product[];
   payment_types: string[];
   clients: string[];
 }

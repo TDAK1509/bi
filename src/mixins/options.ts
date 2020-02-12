@@ -1,5 +1,6 @@
 import { Component } from "vue-property-decorator";
 import ErrorHandling from "./errorHandling";
+import { Product } from "@/models/helpers";
 
 @Component
 export default class Options extends ErrorHandling {
@@ -29,6 +30,13 @@ export default class Options extends ErrorHandling {
   }
 
   get productNameList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.getters["options/productNames"];
+  }
+
+  get productList(): Product[] {
     if (!this.isOptionsFetched) {
       return [];
     }
