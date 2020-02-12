@@ -8,7 +8,7 @@
       </div>
 
       <div class="cost__total-amount">
-        Tổng tiền:
+        Tổng chi phí:
         <span class="has-text-danger">{{ totalAmount | monetize }}</span>
       </div>
     </div>
