@@ -9,11 +9,19 @@ export class TransactionState {
   isDeletingTransaction = false;
   isUpdatingTransaction = false;
   isAddingTransaction = false;
+  startDate: string = "";
+  endDate: string = "";
 }
 
 const mutations: MutationTree<TransactionState> = {
   setTransactions(state, payload: TransactionView[]) {
     state.transactions = payload;
+  },
+  setStartDate(state, payload: string) {
+    state.startDate = payload;
+  },
+  setEndDate(state, payload: string) {
+    state.endDate = payload;
   },
   setIsFetchingTransactions(state, payload: boolean) {
     state.isFetchingTransactions = payload;
@@ -40,7 +48,11 @@ const actions: ActionTree<TransactionState, RootState> = {
       commit,
       "setTransactions",
       searchQuery,
-      [() => commit("setIsFetchingTransactions", false)]
+      [
+        () => commit("setStartDate", searchQuery.start_date),
+        () => commit("setEndDate", searchQuery.end_date),
+        () => commit("setIsFetchingTransactions", false)
+      ]
     );
   },
 

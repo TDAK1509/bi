@@ -79,8 +79,14 @@ import { CostView } from "@/models/cost";
 })
 export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
-  startDate: string = "";
-  endDate: string = "";
+
+  get startDate(): string {
+    return this.$store.state.transaction.startDate;
+  }
+
+  get endDate(): string {
+    return this.$store.state.transaction.endDate;
+  }
 
   get dateRange(): string {
     return `Từ ${this.startDate} đến ${this.endDate}`;
@@ -159,34 +165,30 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 
   searchTransactionsByQuery() {
     const query = this.$route.query;
+    let startDate: string;
+    let endDate: string;
 
     if (query.start_date && query.end_date) {
-      this.startDate = query.start_date as string;
-      this.endDate = query.end_date as string;
-      this.$store.dispatch("transaction/fetchTransactions", query);
-      return;
+      startDate = query.start_date as string;
+      endDate = query.end_date as string;
+    } else if (
+      this.$store.state.transaction.startDate &&
+      this.$store.state.transaction.endDate
+    ) {
+      startDate = this.$store.state.transaction.startDate;
+      endDate = this.$store.state.transaction.endDate;
+    } else {
+      startDate = formatDateToString(getFirstDayOfMonth());
+      endDate = formatDateToString(getLastDayOfMonth());
     }
 
-    this.startDate = formatDateToString(getFirstDayOfMonth());
-    this.endDate = formatDateToString(getLastDayOfMonth());
     this.$store.dispatch("transaction/fetchTransactions", {
-      start_date: this.startDate,
-      end_date: this.endDate
+      start_date: startDate,
+      end_date: endDate
     });
   }
 
   async searchCostsByQuery() {
-    const query = this.$route.query;
-
-    if (query.start_date && query.end_date) {
-      this.startDate = query.start_date as string;
-      this.endDate = query.end_date as string;
-      await this.$store.dispatch("cost/fetchCosts", query);
-      return;
-    }
-
-    this.startDate = formatDateToString(getFirstDayOfMonth());
-    this.endDate = formatDateToString(getLastDayOfMonth());
     await this.$store.dispatch("cost/fetchCosts", {
       start_date: this.startDate,
       end_date: this.endDate
