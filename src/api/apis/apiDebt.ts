@@ -1,7 +1,6 @@
 import { db } from "@/firebase";
 import { ApiRes } from "@/api/api-res";
 import { Transaction, TransactionView } from "@/models/transaction";
-import { formatDateToString } from "@/utils/date";
 
 export default class ApiClient {
   private db: firebase.firestore.Firestore;
@@ -13,14 +12,14 @@ export default class ApiClient {
   async fetchDebts(
     storeCommit: Function,
     commitName: string,
-    startDate: Date,
-    endDate: Date,
+    startDate: string,
+    endDate: string,
     callback: Function[] = []
   ) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.TRANSACTIONS)
-      .where("date", ">=", formatDateToString(startDate))
-      .where("date", "<=", formatDateToString(endDate))
+      .where("date", ">=", startDate)
+      .where("date", "<=", endDate)
       .where("is_debt", "==", true);
 
     docRef.onSnapshot(querySnapshot => {

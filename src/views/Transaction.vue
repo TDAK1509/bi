@@ -7,9 +7,23 @@
         {{ dateRange }}
       </div>
 
-      <div class="home__transaction-filter-total-amount">
-        Tổng tiền:
-        <span class="has-text-danger">{{ totalAmount | monetize }}</span>
+      <div class="home__transaction-total">
+        <p class="home__transaction-total-item home__transaction-income">
+          <span class="home__transaction-total-text">Doanh thu</span>
+          <span>{{ totalIncome | monetize }}</span>
+        </p>
+
+        <p class="home__transaction-total-item home__transaction-cost">
+          <span class="home__transaction-total-text">Chi phí</span>
+          <span>{{ totalCost | monetize }}</span>
+        </p>
+
+        <p
+          class="home__transaction-total-item home__transaction-net-income has-text-danger"
+        >
+          <span class="home__transaction-total-text">Lợi nhuận</span>
+          <span>{{ (totalIncome - totalCost) | monetize }}</span>
+        </p>
       </div>
     </div>
 
@@ -52,6 +66,7 @@ import {
   getLastDayOfMonth,
   formatDateToString
 } from "@/utils/date";
+import { CostView } from "@/models/cost";
 
 @Component({
   components: {
@@ -64,8 +79,14 @@ import {
 })
 export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
-  startDate: string = "";
-  endDate: string = "";
+
+  get startDate(): string {
+    return this.$store.state.transaction.startDate;
+  }
+
+  get endDate(): string {
+    return this.$store.state.transaction.endDate;
+  }
 
   get dateRange(): string {
     return `Từ ${this.startDate} đến ${this.endDate}`;
@@ -74,6 +95,7 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
   get isLoading(): boolean {
     return (
       this.$store.state.transaction.isFetchingTransactions ||
+      this.$store.state.cost.isFetchingCosts ||
       this.$store.state.options.isAddingOption ||
       this.$store.state.transaction.isDeletingTransaction
     );
@@ -87,12 +109,29 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     return this.$store.state.transaction.transactions;
   }
 
-  get totalAmount(): number {
-    let totalAmount: number = 0;
+  get costs(): CostView[] {
+    return this.$store.state.cost.costs;
+  }
+
+  get totalIncome(): number {
+    let totalIncome: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      totalAmount += parseInt(transaction.amount.toString());
+      totalIncome += parseInt(transaction.amount.toString());
     });
-    return totalAmount;
+    return totalIncome;
+  }
+
+  get totalCost(): number {
+    if (this.costs.length <= 0) return 0;
+
+    const costAmounts: number[] = this.costs.map(
+      (cost: CostView) => cost.amount
+    );
+    let totalCost = 0;
+
+    return costAmounts.reduce(
+      (totalCost, costAmount: number) => totalCost + costAmount
+    );
   }
 
   openDeleteConfirm(transactionId: string) {
@@ -126,24 +165,39 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 
   searchTransactionsByQuery() {
     const query = this.$route.query;
+    let startDate: string;
+    let endDate: string;
 
     if (query.start_date && query.end_date) {
-      this.startDate = query.start_date as string;
-      this.endDate = query.end_date as string;
-      this.$store.dispatch("transaction/fetchTransactions", query);
-      return;
+      startDate = query.start_date as string;
+      endDate = query.end_date as string;
+    } else if (
+      this.$store.state.transaction.startDate &&
+      this.$store.state.transaction.endDate
+    ) {
+      startDate = this.$store.state.transaction.startDate;
+      endDate = this.$store.state.transaction.endDate;
+    } else {
+      startDate = formatDateToString(getFirstDayOfMonth());
+      endDate = formatDateToString(getLastDayOfMonth());
     }
 
-    this.startDate = formatDateToString(getFirstDayOfMonth());
-    this.endDate = formatDateToString(getLastDayOfMonth());
     this.$store.dispatch("transaction/fetchTransactions", {
+      start_date: startDate,
+      end_date: endDate
+    });
+  }
+
+  async searchCostsByQuery() {
+    await this.$store.dispatch("cost/fetchCosts", {
       start_date: this.startDate,
       end_date: this.endDate
     });
   }
 
-  init() {
+  async init() {
     this.searchTransactionsByQuery();
+    await this.searchCostsByQuery();
   }
 
   mounted() {
@@ -156,15 +210,32 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
 .home__transaction-filter {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.home__transaction-filter-total-amount {
-  display: inline-block;
-  padding: 10px 30px;
+.home__transaction-total {
   margin-right: 0px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.home__transaction-total-item {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.home__transaction-total-text {
+  margin-right: 15px;
+}
+
+.home__transaction-net-income {
+  border-top: 1px solid #8d8d8d;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 
 .home__transaction-table {

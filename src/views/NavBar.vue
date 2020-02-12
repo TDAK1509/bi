@@ -40,15 +40,23 @@
         >ADMIN</router-link
       > -->
 
-      <router-link class="nav-bar__navigator-item" :to="{ name: 'transaction' }"
+      <router-link
+        class="nav-bar__navigator-item"
+        :to="{ name: 'transaction', query: this.$route.query }"
         >Doanh Thu</router-link
       >
 
-      <router-link class="nav-bar__navigator-item" :to="{ name: 'debt' }" exact
+      <router-link
+        class="nav-bar__navigator-item"
+        :to="{ name: 'debt', query: this.$route.query }"
+        exact
         >Nợ</router-link
       >
 
-      <router-link class="nav-bar__navigator-item" :to="{ name: 'cost' }" exact
+      <router-link
+        class="nav-bar__navigator-item"
+        :to="{ name: 'cost', query: this.$route.query }"
+        exact
         >Chi Phí</router-link
       >
     </nav>

@@ -68,7 +68,7 @@
           :loading="isAddingCost"
           :disabled="isButtonDisabled"
           @click="addCost"
-          >Thêm Giao Dịch</b-button
+          >Thêm Chi Phí</b-button
         >
       </footer>
     </div>

@@ -28,7 +28,11 @@ import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
 import filtersMixin from "@/mixins/filters";
 import { TransactionView, Transaction } from "@/models/transaction";
-import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
+import {
+  formatDateToString,
+  getFirstDayOfMonth,
+  getLastDayOfMonth
+} from "@/utils/date";
 
 @Component({
   components: {
@@ -62,32 +66,40 @@ export default class Debt extends Vue {
     return totalAmount;
   }
 
+  get startDate(): string {
+    return this.$store.state.debt.startDate;
+  }
+
+  get endDate(): string {
+    return this.$store.state.debt.endDate;
+  }
+
   get dateRange(): Date[] {
-    return [
-      this.$store.state.debt.filterDateStart,
-      this.$store.state.debt.filterDateEnd
-    ];
+    return [new Date(this.startDate), new Date(this.endDate)];
   }
 
   set dateRange(dateRange: Date[]) {
-    this.$store.commit("debt/setFilterDateStart", dateRange[0]);
-    this.$store.commit("debt/setFilterDateEnd", dateRange[1]);
+    this.$store.commit("debt/setStartDate", formatDateToString(dateRange[0]));
+    this.$store.commit("debt/setEndDate", formatDateToString(dateRange[1]));
     this.$store.dispatch("debt/fetchDebts");
   }
 
-  init() {
-    if (this.$route.query.transaction_date) {
-      const transactionDate = this.$route.query.transaction_date.toString();
-      this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
+  searchDebt() {
+    let startDate: string;
+    let endDate: string;
+    if (this.$route.query.start_date && this.$route.query.end_date) {
+      startDate = this.$route.query.start_date as string;
+      endDate = this.$route.query.end_date as string;
     } else {
-      if (!this.$store.state.debt.isFetchedDebts) {
-        this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
-      }
+      startDate = formatDateToString(getFirstDayOfMonth());
+      endDate = formatDateToString(getLastDayOfMonth());
     }
+
+    this.dateRange = [new Date(startDate), new Date(endDate)];
   }
 
   mounted() {
-    this.init();
+    this.searchDebt();
   }
 }
 </script>
