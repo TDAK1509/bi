@@ -166,16 +166,17 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from "vue-property-decorator";
+import { Component, Watch } from "vue-property-decorator";
 import PageTitle from "@/components/PageTitle.vue";
 import { formatDateToString } from "@/utils/date";
+import Options from "@/mixins/options";
 
 @Component({
   components: {
     PageTitle
   }
 })
-export default class Search extends Vue {
+export default class Search extends Options {
   searchCriteria: string = "";
   searchValue: string | number = "";
   amountOperator = "==";
@@ -189,45 +190,6 @@ export default class Search extends Vue {
 
   get selectDateMessage(): string {
     return this.date.length === 2 ? "" : "Vui lòng chọn ngày";
-  }
-
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
-  get clientList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.clients;
-  }
-
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
-  }
-
-  get transactionTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.transaction_types;
-  }
-
-  get productNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.product_names;
-  }
-
-  get paymentTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.payment_types;
   }
 
   formatDateToString(dateRange: Date[]): string {

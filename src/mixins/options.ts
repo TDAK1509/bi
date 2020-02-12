@@ -2,7 +2,46 @@ import { Component } from "vue-property-decorator";
 import ErrorHandling from "./errorHandling";
 
 @Component
-export default class AddOptions extends ErrorHandling {
+export default class Options extends ErrorHandling {
+  get isOptionsFetched(): boolean {
+    return this.$store.state.options.isFetchedOptions;
+  }
+
+  get clientList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.clients;
+  }
+
+  get sellerNameList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.sellers;
+  }
+
+  get transactionTypeList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.transaction_types;
+  }
+
+  get productNameList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.product_names;
+  }
+
+  get paymentTypeList(): string[] {
+    if (!this.isOptionsFetched) {
+      return [];
+    }
+    return this.$store.state.options.options.payment_types;
+  }
+
   async addClient(clientName: string) {
     try {
       await this.$store.dispatch("options/addClient", clientName);

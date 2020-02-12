@@ -91,7 +91,7 @@ import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import AddOptions from "@/mixins/addOptions";
+import Options from "@/mixins/options";
 import { Cost } from "@/models/cost";
 
 @Component({
@@ -100,7 +100,7 @@ import { Cost } from "@/models/cost";
     TypingSelect
   }
 })
-export default class CostModalAdd extends Mixins(AddOptions, Filters) {
+export default class CostModalAdd extends Mixins(Options, Filters) {
   date: Date = new Date();
   description = "";
   amount = 0;
@@ -114,19 +114,8 @@ export default class CostModalAdd extends Mixins(AddOptions, Filters) {
     return this.$store.state.cost.isAddingCost;
   }
 
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
   get isButtonDisabled(): boolean {
     return !this.sellerName || !this.description || this.amount < 0;
-  }
-
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
   }
 
   formatDateToString(date: Date): string {

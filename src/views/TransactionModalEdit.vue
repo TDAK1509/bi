@@ -131,26 +131,19 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue,
-  Prop,
-  Mixins,
-  Emit,
-  Watch
-} from "vue-property-decorator";
+import { Component, Prop, Mixins, Emit, Watch } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import AddOptions from "@/mixins/addOptions";
+import Options from "@/mixins/options";
 
 @Component({
   components: {
     TypingSelect
   }
 })
-export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
+export default class TransactionModalEdit extends Mixins(Options, Filters) {
   @Prop({ type: Object, required: true })
   transaction!: TransactionView;
 
@@ -179,47 +172,8 @@ export default class TransactionModalEdit extends Mixins(AddOptions, Filters) {
     return this.$store.state.transaction.isUpdatingTransaction;
   }
 
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
   get isDebtText(): string {
     return this.isDebt ? "Nợ" : "Không phải nợ";
-  }
-
-  get clientList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.clients;
-  }
-
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
-  }
-
-  get transactionTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.transaction_types;
-  }
-
-  get productNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.product_names;
-  }
-
-  get paymentTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.payment_types;
   }
 
   formatDateToString(date: Date): string {

@@ -152,20 +152,13 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue,
-  Emit,
-  Prop,
-  Mixins,
-  Watch
-} from "vue-property-decorator";
+import { Component, Emit, Prop, Mixins, Watch } from "vue-property-decorator";
 import { Transaction } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import AddOptions from "@/mixins/addOptions";
+import Options from "@/mixins/options";
 
 @Component({
   components: {
@@ -173,7 +166,7 @@ import AddOptions from "@/mixins/addOptions";
     TypingSelect
   }
 })
-export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
+export default class TransactionModalAdd extends Mixins(Options, Filters) {
   date: Date = new Date();
   client = "";
   transactionType = "";
@@ -193,10 +186,6 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     return this.$store.state.transaction.isAddingTransaction;
   }
 
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
   get isButtonDisabled(): boolean {
     return (
       !this.client ||
@@ -211,41 +200,6 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
 
   get isDebtText(): string {
     return this.isDebt ? "Nợ" : "Không phải nợ";
-  }
-
-  get clientList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.clients;
-  }
-
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
-  }
-
-  get transactionTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.transaction_types;
-  }
-
-  get productNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.product_names;
-  }
-
-  get paymentTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.payment_types;
   }
 
   @Watch("isDebt")
