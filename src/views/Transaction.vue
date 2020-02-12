@@ -10,19 +10,19 @@
       <div class="home__transaction-total">
         <p class="home__transaction-total-item home__transaction-income">
           <span class="home__transaction-total-text">Doanh thu</span>
-          <span>{{ totalAmount | monetize }}</span>
+          <span>{{ totalIncome | monetize }}</span>
         </p>
 
         <p class="home__transaction-total-item home__transaction-cost">
           <span class="home__transaction-total-text">Chi phí</span>
-          <span>{{ totalAmount | monetize }}</span>
+          <span>{{ totalCost | monetize }}</span>
         </p>
 
         <p
           class="home__transaction-total-item home__transaction-net-income has-text-danger"
         >
           <span class="home__transaction-total-text">Lợi nhuận</span>
-          <span>{{ totalAmount | monetize }}</span>
+          <span>{{ (totalIncome - totalCost) | monetize }}</span>
         </p>
       </div>
     </div>
@@ -66,6 +66,7 @@ import {
   getLastDayOfMonth,
   formatDateToString
 } from "@/utils/date";
+import { CostView } from "@/models/cost";
 
 @Component({
   components: {
@@ -88,6 +89,7 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
   get isLoading(): boolean {
     return (
       this.$store.state.transaction.isFetchingTransactions ||
+      this.$store.state.cost.isFetchingCosts ||
       this.$store.state.options.isAddingOption ||
       this.$store.state.transaction.isDeletingTransaction
     );
@@ -101,12 +103,29 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     return this.$store.state.transaction.transactions;
   }
 
-  get totalAmount(): number {
-    let totalAmount: number = 0;
+  get costs(): CostView[] {
+    return this.$store.state.cost.costs;
+  }
+
+  get totalIncome(): number {
+    let totalIncome: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      totalAmount += parseInt(transaction.amount.toString());
+      totalIncome += parseInt(transaction.amount.toString());
     });
-    return totalAmount;
+    return totalIncome;
+  }
+
+  get totalCost(): number {
+    if (this.costs.length <= 0) return 0;
+
+    const costAmounts: number[] = this.costs.map(
+      (cost: CostView) => cost.amount
+    );
+    let totalCost = 0;
+
+    return costAmounts.reduce(
+      (totalCost, costAmount: number) => totalCost + costAmount
+    );
   }
 
   openDeleteConfirm(transactionId: string) {
@@ -156,8 +175,27 @@ export default class Home extends Mixins(ErrorHandling, Filters) {
     });
   }
 
-  init() {
+  async searchCostsByQuery() {
+    const query = this.$route.query;
+
+    if (query.start_date && query.end_date) {
+      this.startDate = query.start_date as string;
+      this.endDate = query.end_date as string;
+      await this.$store.dispatch("cost/fetchCosts", query);
+      return;
+    }
+
+    this.startDate = formatDateToString(getFirstDayOfMonth());
+    this.endDate = formatDateToString(getLastDayOfMonth());
+    await this.$store.dispatch("cost/fetchCosts", {
+      start_date: this.startDate,
+      end_date: this.endDate
+    });
+  }
+
+  async init() {
     this.searchTransactionsByQuery();
+    await this.searchCostsByQuery();
   }
 
   mounted() {
