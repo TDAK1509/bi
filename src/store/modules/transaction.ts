@@ -1,7 +1,7 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { Transaction, TransactionView } from "@/models/transaction";
-import { SearchQuery } from "@/models/search";
+import { TransactionSearchQuery } from "@/models/search";
 
 export class TransactionState {
   transactions: TransactionView[] = [];
@@ -30,7 +30,10 @@ const mutations: MutationTree<TransactionState> = {
 };
 
 const actions: ActionTree<TransactionState, RootState> = {
-  async fetchTransactions({ commit, rootState }, searchQuery: SearchQuery) {
+  async fetchTransactions(
+    { commit, rootState },
+    searchQuery: TransactionSearchQuery
+  ) {
     commit("setIsFetchingTransactions", true);
 
     rootState.api.transaction.fetchTransactions(
@@ -79,6 +82,7 @@ const actions: ActionTree<TransactionState, RootState> = {
     commit("setIsUpdatingTransaction", true);
     await rootState.api.transaction.updateTransaction(transaction);
     commit("setIsUpdatingTransaction", false);
+    return true;
   }
 };
 

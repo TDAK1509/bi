@@ -47,6 +47,10 @@
       <router-link class="nav-bar__navigator-item" :to="{ name: 'debt' }" exact
         >Nợ</router-link
       >
+
+      <router-link class="nav-bar__navigator-item" :to="{ name: 'cost' }" exact
+        >Chi Phí</router-link
+      >
     </nav>
 
     <b-button

@@ -1,6 +1,7 @@
 import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { ErrorMessage } from "@/models/helpers";
+import { LAST_LOGGED_IN_KEY, SESSION_MAX_LENGTH } from "@/const/auth";
 
 export class AuthState {
   isAuth = false;
@@ -32,8 +33,14 @@ const mutations: MutationTree<AuthState> = {
 const actions: ActionTree<AuthState, RootState> = {
   async login({ commit, rootState }, { username, password }): Promise<Boolean> {
     const loggedIn = await rootState.api.auth.login(username, password);
+
+    if (!loggedIn) {
+      return false;
+    }
+
     commit("setIsAuth", loggedIn);
     commit("setUserEmail", username);
+    _resetLastLoggedInTime();
     return loggedIn;
   },
 
@@ -65,6 +72,26 @@ const actions: ActionTree<AuthState, RootState> = {
     return rootState.api.auth.createUser(email, password);
   }
 };
+
+export function _resetLastLoggedInTime() {
+  window.localStorage.setItem(
+    LAST_LOGGED_IN_KEY,
+    new Date().getTime().toString()
+  );
+}
+
+export function _checkIfLoggedInTooLong(): boolean {
+  const lastLoggedIn = window.localStorage.getItem(LAST_LOGGED_IN_KEY);
+
+  if (lastLoggedIn === null) {
+    return false;
+  }
+
+  const lastLoggedInMsec = parseInt(lastLoggedIn);
+  const currentTime = new Date().getTime();
+  const isPastMaxLength = currentTime - lastLoggedInMsec > SESSION_MAX_LENGTH;
+  return isPastMaxLength;
+}
 
 export const auth = {
   namespaced: true,

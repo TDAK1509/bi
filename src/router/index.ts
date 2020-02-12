@@ -40,6 +40,12 @@ const routes = [
         path: "admin",
         name: "admin",
         component: () => import("@/views/Admin.vue")
+      },
+
+      {
+        path: "cost",
+        name: "cost",
+        component: () => import("@/views/Cost.vue")
       }
     ]
   }
@@ -54,7 +60,7 @@ const router = new VueRouter({
 router.beforeEach(async (to, from, next) => {
   auth.onAuthStateChanged(async user => {
     if (user) {
-      if (_checkIfLoggedInTooLong()) {
+      if (to.name === "login" && _checkIfLoggedInTooLong()) {
         store.dispatch("auth/logout");
         next({ name: "login" });
         return;

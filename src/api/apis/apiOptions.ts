@@ -21,7 +21,7 @@ export default class ApiOptions {
 
     docRef.onSnapshot(doc => {
       const data = <ApiRes.Options>doc.data();
-      const options = {
+      const options: SelectOptions = {
         sellers: data.sellers || [],
         transaction_types: data.transaction_types || [],
         product_names: data.product_names || [],

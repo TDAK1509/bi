@@ -2,7 +2,7 @@ import { db } from "@/firebase";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { ApiRes } from "@/api/api-res";
 import { formatDateToString } from "@/utils/date";
-import { SearchQuery, FirebaseOperator } from "@/models/search";
+import { TransactionSearchQuery, FirebaseOperator } from "@/models/search";
 
 export default class ApiTransaction {
   private db: firebase.firestore.Firestore;
@@ -41,7 +41,7 @@ export default class ApiTransaction {
   async fetchTransactions(
     storeCommit: Function,
     commitName: string,
-    query: SearchQuery,
+    query: TransactionSearchQuery,
     callback: Function[] = []
   ) {
     let docRef = this.db

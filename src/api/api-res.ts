@@ -2,7 +2,8 @@ export namespace ApiRes {
   export enum FirebaseCollection {
     CLIENTS = "clients",
     TRANSACTIONS = "transactions",
-    OPTIONS = "options"
+    OPTIONS = "options",
+    COST = "cost"
   }
 
   export interface Options {
