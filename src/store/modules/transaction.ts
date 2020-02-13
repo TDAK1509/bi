@@ -2,6 +2,7 @@ import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { TransactionSearchQuery } from "@/models/search";
+import { Product } from "@/models/helpers";
 
 export class TransactionState {
   transactions: TransactionView[] = [];
@@ -64,6 +65,18 @@ const actions: ActionTree<TransactionState, RootState> = {
     const transactionId = await rootState.api.transaction.addTransaction(
       transaction
     );
+
+    const products: Product[] = [...rootState.options.options!.product_names];
+
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].name === transaction.product_name) {
+        products[i].stock -= parseInt(transaction.product_quantity);
+        break;
+      }
+    }
+
+    await rootState.api.options.updateStock(products);
+
     commit("setIsAddingTransaction", false);
     return transactionId;
   },
