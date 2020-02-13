@@ -49,6 +49,15 @@ export default class ApiOptions {
     });
   }
 
+  updateStock(products: Product[]) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.OPTIONS)
+      .doc("options");
+    return docRef.update({
+      product_names: products
+    });
+  }
+
   async addOptionClient(clientName: string) {
     const docRef = this.db
       .collection(ApiRes.FirebaseCollection.OPTIONS)
