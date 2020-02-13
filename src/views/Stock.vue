@@ -90,7 +90,12 @@ export default class Stock extends Mixins(ErrorHandling) {
   }
 
   async updateStock() {
-    await this.$store.dispatch("options/updateStock", this.productList);
+    try {
+      await this.$store.dispatch("options/updateStock", this.productList);
+      this.toastSuccess("Cập nhật kho thành công");
+    } catch (error) {
+      this.toastError();
+    }
   }
 
   mounted() {
