@@ -94,4 +94,13 @@ export default class Options extends ErrorHandling {
       this.toastError();
     }
   }
+
+  getProductUnit(productName: string): string {
+    for (let i = 0; i < this.productList.length; i++) {
+      if (this.productList[i].name === productName) {
+        return this.productList[i].unit;
+      }
+    }
+    return "";
+  }
 }
