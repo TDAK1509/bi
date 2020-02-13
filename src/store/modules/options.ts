@@ -8,6 +8,7 @@ export class OptionsState {
   isFetchingOptions = false;
   isFetchedOptions = false;
   isAddingOption = false;
+  isUpdatingOption = false;
 }
 
 const getters: GetterTree<OptionsState, RootState> = {
@@ -33,6 +34,9 @@ const mutations: MutationTree<OptionsState> = {
   },
   setIsAddingOption(state, payload: boolean) {
     state.isAddingOption = payload;
+  },
+  setIsUpdatingOption(state, payload: boolean) {
+    state.isUpdatingOption = payload;
   }
 };
 
@@ -44,6 +48,12 @@ const actions: ActionTree<OptionsState, RootState> = {
       () => commit("setIsFetchingOptions", false),
       () => commit("setIsFetchedOptions", true)
     ]);
+  },
+
+  async updateStock({ commit, rootState }, products: Product[]) {
+    commit("setIsUpdatingOption", true);
+    await rootState.api.options.updateStock(products);
+    commit("setIsUpdatingOption", false);
   },
 
   async addClient({ commit, rootState }, clientName: string) {

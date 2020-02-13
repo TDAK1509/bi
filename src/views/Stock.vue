@@ -57,7 +57,10 @@ import * as _ from "lodash";
 })
 export default class Stock extends Mixins(ErrorHandling) {
   get isLoading(): boolean {
-    return this.$store.state.cost.isFetchingCosts;
+    return (
+      this.$store.state.options.isFetchingOptions ||
+      this.$store.state.options.isUpdatingOptions
+    );
   }
 
   get sortedProductList(): Product[] {
@@ -86,7 +89,9 @@ export default class Stock extends Mixins(ErrorHandling) {
     this.productList = products;
   }
 
-  updateStock() {}
+  async updateStock() {
+    await this.$store.dispatch("options/updateStock", this.productList);
+  }
 
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {
