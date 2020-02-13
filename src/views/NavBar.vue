@@ -59,6 +59,13 @@
         exact
         >Chi Phí</router-link
       >
+
+      <router-link
+        class="nav-bar__navigator-item"
+        :to="{ name: 'stock', query: this.$route.query }"
+        exact
+        >Kho</router-link
+      >
     </nav>
 
     <b-button
