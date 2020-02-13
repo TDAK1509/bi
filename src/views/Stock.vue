@@ -24,7 +24,7 @@
             field="stock"
             label="Số Lượng Còn Lại"
             sortable
-            numeric
+            centered
           >
             <div class="stock__product-stock">
               <b-numberinput
@@ -32,8 +32,17 @@
                 @input="onStockChange($event, props.row.name)"
                 controls-position="compact"
                 type="is-dark"
+                @focus="$event.target.select()"
               />
             </div>
+          </b-table-column>
+
+          <b-table-column field="unit" label="Đơn vị" centered :width="100">
+            <b-input
+              :value="props.row.unit"
+              @input="onUnitChange($event, props.row.name)"
+              @focus="$event.target.select()"
+            />
           </b-table-column>
         </template>
       </b-table>
@@ -89,6 +98,19 @@ export default class Stock extends Mixins(ErrorHandling) {
     this.productList = products;
   }
 
+  onUnitChange(unit: string, productName: string) {
+    const products: Product[] = [...this.productList];
+
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].name === productName) {
+        products[i].unit = unit;
+        break;
+      }
+    }
+
+    this.productList = products;
+  }
+
   async updateStock() {
     try {
       await this.$store.dispatch("options/updateStock", this.productList);
@@ -108,13 +130,13 @@ export default class Stock extends Mixins(ErrorHandling) {
 
 <style lang="scss" scoped>
 .stock__product-container {
-  width: 550px;
+  width: 700px;
   margin: auto;
 }
 
 .stock__product-stock {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .stock__save-button-container {
