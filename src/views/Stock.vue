@@ -4,7 +4,7 @@
 
     <div class="stock__product-container">
       <div class="stock__save-button-container">
-        <button class="stock__save-button">LƯU</button>
+        <button class="stock__save-button" @click="updateStock">LƯU</button>
       </div>
 
       <b-table
@@ -29,6 +29,7 @@
             <div class="stock__product-stock">
               <b-numberinput
                 :value="props.row.stock"
+                @input="onStockChange($event, props.row.name)"
                 controls-position="compact"
                 type="is-dark"
               />
@@ -46,7 +47,6 @@
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import PageTitle from "@/components/PageTitle.vue";
 import ErrorHandling from "@/mixins/errorHandling";
-import Options from "@/mixins/options";
 import { Product } from "../models/helpers";
 import * as _ from "lodash";
 
@@ -55,7 +55,7 @@ import * as _ from "lodash";
     PageTitle
   }
 })
-export default class Stock extends Mixins(ErrorHandling, Options) {
+export default class Stock extends Mixins(ErrorHandling) {
   get isLoading(): boolean {
     return this.$store.state.cost.isFetchingCosts;
   }
@@ -64,6 +64,29 @@ export default class Stock extends Mixins(ErrorHandling, Options) {
     const productList = [...this.productList];
     return _.sortBy(productList, ["name"]);
   }
+
+  get productList(): Product[] {
+    return this.$store.state.options.editingProducts;
+  }
+
+  set productList(products: Product[]) {
+    this.$store.commit("options/setEditingProducts", products);
+  }
+
+  onStockChange(stock: number, productName: string) {
+    const products: Product[] = [...this.productList];
+
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].name === productName) {
+        products[i].stock = stock;
+        break;
+      }
+    }
+
+    this.productList = products;
+  }
+
+  updateStock() {}
 
   mounted() {
     if (!this.$store.state.options.isFetchedOptions) {

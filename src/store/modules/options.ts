@@ -4,6 +4,7 @@ import { SelectOptions, Product } from "@/models/helpers";
 
 export class OptionsState {
   options: SelectOptions | null = null;
+  editingProducts: Product[] = [];
   isFetchingOptions = false;
   isFetchedOptions = false;
   isAddingOption = false;
@@ -19,6 +20,10 @@ const getters: GetterTree<OptionsState, RootState> = {
 const mutations: MutationTree<OptionsState> = {
   setOptions(state, payload: SelectOptions) {
     state.options = payload;
+    state.editingProducts = payload.product_names;
+  },
+  setEditingProducts(state, payload: Product[]) {
+    state.editingProducts = payload;
   },
   setIsFetchingOptions(state, payload: boolean) {
     state.isFetchingOptions = payload;
