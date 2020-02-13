@@ -59,7 +59,7 @@ export default class Stock extends Mixins(ErrorHandling) {
   get isLoading(): boolean {
     return (
       this.$store.state.options.isFetchingOptions ||
-      this.$store.state.options.isUpdatingOptions
+      this.$store.state.options.isUpdatingStock
     );
   }
 
