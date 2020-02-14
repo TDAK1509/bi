@@ -64,8 +64,8 @@
           @add="addProductName"
         />
 
-        <b-field label="Số Lượng">
-          <b-input v-model="productQuantity" :disabled="isEditDebt"></b-input>
+        <b-field :label="`Số Lượng (${selectedProductUnit})`">
+          <b-input v-model="productQuantity" disabled></b-input>
         </b-field>
 
         <typing-select
@@ -174,6 +174,10 @@ export default class TransactionModalEdit extends Mixins(Options, Filters) {
 
   get isDebtText(): string {
     return this.isDebt ? "Nợ" : "Không phải nợ";
+  }
+
+  get selectedProductUnit(): string {
+    return this.getProductUnit(this.productName);
   }
 
   formatDateToString(date: Date): string {
