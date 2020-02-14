@@ -20,21 +20,7 @@
           sortable
           searchable
         >
-          <b-tooltip
-            label="Xem chi tiết khách hàng"
-            :type="
-              props.row.is_transaction_debt === true ? 'is-warning' : 'is-dark'
-            "
-          >
-            <router-link
-              class="transaction-table__link"
-              :to="{
-                name: 'client',
-                params: { clientId: props.row.client_id }
-              }"
-              >{{ props.row.client_name }}</router-link
-            >
-          </b-tooltip>
+          {{ props.row.client_name }}
         </b-table-column>
 
         <b-table-column
@@ -50,30 +36,38 @@
           field="transaction_type"
           label="Hình Thức Giao Dịch"
           sortable
+          searchable
         >
           {{ props.row.transaction_type }}
         </b-table-column>
 
-        <b-table-column field="product_name" label="Tên Hàng Hóa" sortable>
+        <b-table-column
+          field="product_name"
+          label="Tên Hàng Hóa"
+          sortable
+          searchable
+        >
           {{ props.row.product_name }}
         </b-table-column>
 
         <b-table-column field="product_quantity" label="Số Lượng" sortable>
           {{ props.row.product_quantity }}
+          {{ getProductUnit(props.row.product_name) }}
         </b-table-column>
 
         <b-table-column
           field="payment_type"
           label="Hình Thức Thanh Toán"
           sortable
+          searchable
         >
           {{ props.row.payment_type }}
         </b-table-column>
 
         <b-table-column field="amount" label="Thành Tiền" sortable numeric>
           <b-tooltip
-            v-if="props.row.is_transaction_debt === true"
-            label="Đây là giao dịch trả nợ"
+            v-if="props.row.is_debt === true"
+            label="Nợ"
             type="is-warning"
             position="is-left"
           >
@@ -81,6 +75,22 @@
           </b-tooltip>
 
           <span v-else>{{ props.row.amount | monetize }}</span>
+        </b-table-column>
+
+        <b-table-column v-if="isAdmin">
+          <button
+            class="transaction-table__icon-button"
+            @click="showModalEdit(props.row)"
+          >
+            <b-icon icon="edit" size="is-small" />
+          </button>
+
+          <button
+            class="transaction-table__icon-button"
+            @click="onDelete(props.row.id)"
+          >
+            <b-icon icon="trash" size="is-small" />
+          </button>
         </b-table-column>
       </template>
 
@@ -95,26 +105,61 @@
         </section>
       </template>
     </b-table>
+
+    <b-modal
+      :active.sync="showModal"
+      has-modal-card
+      trap-focus
+      aria-role="dialog"
+      aria-modal
+    >
+      <transaction-modal-edit
+        :transaction="editData"
+        @edit-transaction-done="onEditTransactionDone"
+      />
+    </b-modal>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Mixins, Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { TransactionView } from "../models/transaction";
-import filtersMixin from "@/mixins/filters";
+import Filters from "@/mixins/filters";
+import Options from "@/mixins/options";
+import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
-  mixins: [filtersMixin]
+  components: {
+    TransactionModalEdit
+  }
 })
-export default class TransactionTable extends Vue {
+export default class TransactionTable extends Mixins(Filters, Options) {
   @Prop({ type: Array, required: true })
-  transactions!: Array<TransactionView>;
+  transactions!: TransactionView[];
+
+  @Prop({ type: Boolean, default: false })
+  isAdmin!: boolean;
+
+  showModal = false;
+  editData: TransactionView | null = null;
 
   getIsDebtClass(row: TransactionView, index: number): string {
-    if (row.is_transaction_debt === true) {
+    if (row.is_debt === true) {
       return "transaction-table__row-debt";
     }
     return "";
+  }
+
+  @Emit("delete")
+  onDelete(transactionId: string) {}
+
+  showModalEdit(rowData: TransactionView) {
+    this.showModal = true;
+    this.editData = rowData;
+  }
+
+  onEditTransactionDone() {
+    this.showModal = false;
   }
 }
 </script>
@@ -126,6 +171,18 @@ export default class TransactionTable extends Vue {
 
   .transaction-table__link {
     color: #fff;
+  }
+}
+
+.transaction-table__icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 10px;
   }
 }
 </style>

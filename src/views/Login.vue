@@ -39,17 +39,19 @@ export default class Login extends Vue {
   async login() {
     this.loading = true;
 
-    const loggedIn = await this.$store.dispatch("login", {
+    const loggedIn = await this.$store.dispatch("auth/login", {
       username: this.email,
       password: this.password
     });
 
-    if (loggedIn === true) {
-      this.$router.push({ name: "transaction" });
-    }
-
-    this.errorMessage = "Sai email/password";
-    this.loading = false;
+    setTimeout(() => {
+      if (loggedIn === true) {
+        this.$router.push({ name: "transaction" });
+      } else {
+        this.errorMessage = "Sai email/password";
+        this.loading = false;
+      }
+    }, 1000);
   }
 }
 </script>

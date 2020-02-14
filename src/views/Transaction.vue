@@ -1,19 +1,37 @@
 <template>
   <div class="home">
-    <page-title>BÁO CÁO TÀI CHÍNH</page-title>
+    <page-title>DOANH THU</page-title>
 
     <div class="home__transaction-filter">
-      <transaction-date-picker v-model="dateRange" />
+      <div class="home__transaction-time">
+        {{ dateRange }}
+      </div>
 
-      <div class="home__transaction-filter-total-amount">
-        Tổng tiền:
-        <span class="has-text-danger">{{ totalAmount | monetize }}</span>
+      <div class="home__transaction-total">
+        <p class="home__transaction-total-item home__transaction-income">
+          <span class="home__transaction-total-text">Doanh thu</span>
+          <span>{{ totalIncome | monetize }}</span>
+        </p>
+
+        <p class="home__transaction-total-item home__transaction-cost">
+          <span class="home__transaction-total-text">Chi phí</span>
+          <span>{{ totalCost | monetize }}</span>
+        </p>
+
+        <p
+          class="home__transaction-total-item home__transaction-net-income has-text-danger"
+        >
+          <span class="home__transaction-total-text">Lợi nhuận</span>
+          <span>{{ (totalIncome - totalCost) | monetize }}</span>
+        </p>
       </div>
     </div>
 
     <transaction-table
       class="home__transaction-table"
       :transactions="transactionsToShow"
+      :is-admin="isAdmin"
+      @delete="openDeleteConfirm"
     />
 
     <add-button @click="isShowAddModal = true" />
@@ -25,16 +43,7 @@
       aria-role="dialog"
       aria-modal
     >
-      <transaction-modal-add
-        :is-adding-client="isAddingClient"
-        :is-adding-transaction="isAddingTransaction"
-        @add-transaction="addTransaction"
-        @add-client="addClient"
-        @add-seller="addSeller"
-        @add-transaction-type="addTransactionType"
-        @add-product-name="addProductName"
-        @add-payment-type="addPaymentType"
-      />
+      <transaction-modal-add @add-transaction-done="onAddTransactionDone" />
     </b-modal>
 
     <b-loading :is-full-page="true" :active.sync="isLoading"></b-loading>
@@ -42,167 +51,151 @@
 </template>
 
 <script lang="ts">
-import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 import AddButton from "@/components/AddButton.vue";
-import TransactionModalAdd from "@/components/TransactionModalAdd.vue";
+import TransactionModalAdd from "@/views/TransactionModalAdd.vue";
 import PageTitle from "@/components/PageTitle.vue";
-import { Component, Vue, Watch } from "vue-property-decorator";
-import filtersMixin from "@/mixins/filters";
+import { Component, Vue, Watch, Mixins } from "vue-property-decorator";
+import Filters from "@/mixins/filters";
+import ErrorHandling from "@/mixins/errorHandling";
 import { FilterType } from "@/models/helpers";
+import { TransactionView, Transaction } from "@/models/transaction";
 import {
-  TransactionView,
-  Transaction,
-  TransactionForDebt
-} from "@/models/transaction";
-import { ClientView } from "@/models/client";
-import { getFirstDayOfMonth, getLastDayOfMonth } from "@/utils/date";
+  getFirstDayOfMonth,
+  getLastDayOfMonth,
+  formatDateToString
+} from "@/utils/date";
+import { CostView } from "@/models/cost";
 
 @Component({
   components: {
     PageTitle,
-    TransactionDatePicker,
     TransactionTable,
     AddButton,
     TransactionModalAdd
-  },
-  mixins: [filtersMixin]
+  }
 })
-export default class Home extends Vue {
+export default class Home extends Mixins(ErrorHandling, Filters) {
   isShowAddModal: boolean = false;
-  isAddingClient: boolean = false;
-  isAddingTransaction: boolean = false;
-  isAddingSelectOption: boolean = false;
+
+  get startDate(): string {
+    return this.$store.state.transaction.startDate;
+  }
+
+  get endDate(): string {
+    return this.$store.state.transaction.endDate;
+  }
+
+  get dateRange(): string {
+    return `Từ ${this.startDate} đến ${this.endDate}`;
+  }
 
   get isLoading(): boolean {
     return (
-      this.$store.state.isFetchingClients ||
-      this.$store.state.isFetchingTransactions ||
-      this.isAddingSelectOption
+      this.$store.state.transaction.isFetchingTransactions ||
+      this.$store.state.cost.isFetchingCosts ||
+      this.$store.state.options.isAddingOption ||
+      this.$store.state.transaction.isDeletingTransaction
     );
   }
 
+  get isAdmin(): boolean {
+    return this.$store.state.auth.isAdmin;
+  }
+
   get transactionsToShow(): TransactionView[] {
-    return this.$store.state.transactions;
+    return this.$store.state.transaction.transactions;
   }
 
-  get totalAmount(): number {
-    let totalAmount: number = 0;
+  get costs(): CostView[] {
+    return this.$store.state.cost.costs;
+  }
+
+  get totalIncome(): number {
+    let totalIncome: number = 0;
     this.transactionsToShow.forEach(transaction => {
-      totalAmount += parseInt(transaction.amount.toString());
+      totalIncome += parseInt(transaction.amount.toString());
     });
-    return totalAmount;
+    return totalIncome;
   }
 
-  get dateRange(): Date[] {
-    return [this.$store.state.filterDateStart, this.$store.state.filterDateEnd];
+  get totalCost(): number {
+    if (this.costs.length <= 0) return 0;
+
+    const costAmounts: number[] = this.costs.map(
+      (cost: CostView) => cost.amount
+    );
+    let totalCost = 0;
+
+    return costAmounts.reduce(
+      (totalCost, costAmount: number) => totalCost + costAmount
+    );
   }
 
-  set dateRange(dateRange: Date[]) {
-    this.$store.commit("setFilterDateStart", dateRange[0]);
-    this.$store.commit("setFilterDateEnd", dateRange[1]);
-    this.$store.dispatch("fetchTransactions");
+  openDeleteConfirm(transactionId: string) {
+    this.$buefy.dialog.confirm({
+      title: "Xóa Giao Dịch",
+      message:
+        "Bạn có chắc là muốn <strong>xóa giao dịch</strong> này?<br />Hạ thủ bất hoàn!",
+      cancelText: "Em nhầm",
+      confirmText: "Chắc chắn",
+      type: "is-danger",
+      hasIcon: true,
+      onConfirm: () => this.onDelete(transactionId)
+    });
   }
 
-  async addTransaction(transaction: Transaction | TransactionForDebt) {
-    this.isAddingTransaction = true;
-
-    if (transaction instanceof TransactionForDebt) {
-      const transactionId = await this.$store.dispatch(
-        "addTransaction",
-        transaction.transaction
-      );
-
-      await this.$store.dispatch("updateDebt", {
-        clientId: transaction.transaction.client_id,
-        debtId: transaction.debtId,
-        transactionId,
-        amount: transaction.transaction.amount,
-        transactionDate: transaction.transaction.date
-      });
+  async onDelete(transactionId: string) {
+    const response = await this.$store.dispatch(
+      "transaction/deleteTransaction",
+      transactionId
+    );
+    if (response) {
+      this.toastSuccess(`Xóa giao dịch thành công!`);
     } else {
-      await this.$store.dispatch("addTransaction", transaction);
+      this.toastError(`Đã có lỗi xảy ra! Vui lòng thử lại sau`);
     }
+  }
 
-    this.isAddingTransaction = false;
-
-    this.$buefy.toast.open({
-      message: `Thêm giao dịch thành công!`,
-      type: "is-success"
-    });
-
+  onAddTransactionDone() {
     this.isShowAddModal = false;
   }
 
-  async addClient(clientName: string) {
-    this.isAddingClient = true;
-    await this.$store.dispatch("addClient", clientName);
+  searchTransactionsByQuery() {
+    const query = this.$route.query;
+    let startDate: string;
+    let endDate: string;
 
-    this.$buefy.toast.open({
-      message: `Khách hàng ${clientName} đã được tạo!`,
-      type: "is-success"
-    });
-
-    this.isAddingClient = false;
-  }
-
-  async addSeller(sellerName: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("addSeller", sellerName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addTransactionType(transactionType: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("addTransactionType", transactionType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addProductName(productName: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("addProductName", productName);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  async addPaymentType(paymentType: string) {
-    this.isAddingSelectOption = true;
-    await this.$store.dispatch("addPaymentType", paymentType);
-
-    this.$buefy.toast.open({
-      message: `Thêm người bán thành công!`,
-      type: "is-success"
-    });
-
-    this.isAddingSelectOption = false;
-  }
-
-  init() {
-    if (this.$route.query.transaction_date) {
-      const transactionDate = this.$route.query.transaction_date.toString();
-      this.dateRange = [new Date(transactionDate), new Date(transactionDate)];
+    if (query.start_date && query.end_date) {
+      startDate = query.start_date as string;
+      endDate = query.end_date as string;
+    } else if (
+      this.$store.state.transaction.startDate &&
+      this.$store.state.transaction.endDate
+    ) {
+      startDate = this.$store.state.transaction.startDate;
+      endDate = this.$store.state.transaction.endDate;
     } else {
-      if (!this.$store.state.isFetchedTransactions) {
-        this.dateRange = [getFirstDayOfMonth(), getLastDayOfMonth()];
-      }
+      startDate = formatDateToString(getFirstDayOfMonth());
+      endDate = formatDateToString(getLastDayOfMonth());
     }
+
+    this.$store.dispatch("transaction/fetchTransactions", {
+      start_date: startDate,
+      end_date: endDate
+    });
+  }
+
+  async searchCostsByQuery() {
+    await this.$store.dispatch("cost/fetchCosts", {
+      start_date: this.startDate,
+      end_date: this.endDate
+    });
+  }
+
+  async init() {
+    this.searchTransactionsByQuery();
+    await this.searchCostsByQuery();
   }
 
   mounted() {
@@ -212,23 +205,35 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.home {
-  padding: 0 20px;
-  margin-top: 30px;
-}
-
 .home__transaction-filter {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.home__transaction-filter-total-amount {
-  display: inline-block;
-  padding: 10px 30px;
+.home__transaction-total {
   margin-right: 0px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.home__transaction-total-item {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.home__transaction-total-text {
+  margin-right: 15px;
+}
+
+.home__transaction-net-income {
+  border-top: 1px solid #8d8d8d;
+  margin-top: 5px;
+  padding-top: 5px;
 }
 
 .home__transaction-table {

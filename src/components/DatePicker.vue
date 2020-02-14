@@ -1,7 +1,7 @@
 <template>
-  <b-field class="transaction-date-picker" label="Thời gian giao dịch">
+  <b-field class="date-picker" label="Thời gian giao dịch">
     <b-datepicker
-      class="transaction-date-picker__date-picker"
+      class="date-picker__date-picker"
       :value="dateRange"
       @input="onSelectDate"
       range
@@ -16,7 +16,7 @@ import { Component, Vue, Emit, Model } from "vue-property-decorator";
 import { formatDateToString } from "@/utils/date";
 
 @Component
-export default class TransactionDatePicker extends Vue {
+export default class DatePicker extends Vue {
   @Model("input", { type: Array, required: true })
   dateRange!: Date[];
 
@@ -35,7 +35,7 @@ export default class TransactionDatePicker extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.transaction-date-picker__date-picker {
+.date-picker__date-picker {
   width: 210px;
 }
 </style>
