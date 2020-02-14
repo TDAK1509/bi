@@ -52,6 +52,7 @@
 
         <b-table-column field="product_quantity" label="Số Lượng" sortable>
           {{ props.row.product_quantity }}
+          {{ getProductUnit(props.row.product_name) }}
         </b-table-column>
 
         <b-table-column
@@ -121,9 +122,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from "vue-property-decorator";
+import { Mixins, Component, Vue, Prop, Emit } from "vue-property-decorator";
 import { TransactionView } from "../models/transaction";
 import Filters from "@/mixins/filters";
+import Options from "@/mixins/options";
 import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
@@ -131,7 +133,7 @@ import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
     TransactionModalEdit
   }
 })
-export default class TransactionTable extends Filters {
+export default class TransactionTable extends Mixins(Filters, Options) {
   @Prop({ type: Array, required: true })
   transactions!: TransactionView[];
 

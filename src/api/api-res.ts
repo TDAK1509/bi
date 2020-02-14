@@ -9,8 +9,14 @@ export namespace ApiRes {
   export interface Options {
     sellers: string[];
     transaction_types: string[];
-    product_names: string[];
+    product_names: string[] | Product[];
     payment_types: string[];
     clients: string[];
+  }
+
+  export interface Product {
+    name: string;
+    stock: number;
+    unit: string;
   }
 }

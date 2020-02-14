@@ -13,10 +13,6 @@
           {{ props.row.date }}
         </b-table-column>
 
-        <b-table-column field="id" label="Mã Giao Dịch" searchable>
-          {{ props.row.id }}
-        </b-table-column>
-
         <b-table-column
           field="client_name"
           label="Khách Hàng"
@@ -55,6 +51,7 @@
 
         <b-table-column field="product_quantity" label="Số Lượng" sortable>
           {{ props.row.product_quantity }}
+          {{ getProductUnit(props.row.product_name) }}
         </b-table-column>
 
         <b-table-column
@@ -109,9 +106,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit, Mixins } from "vue-property-decorator";
 import { TransactionView } from "@/models/transaction";
 import Filters from "@/mixins/filters";
+import Options from "@/mixins/options";
 import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
 
 @Component({
@@ -119,7 +117,7 @@ import TransactionModalEdit from "@/views/TransactionModalEdit.vue";
     TransactionModalEdit
   }
 })
-export default class DebtTable extends Filters {
+export default class DebtTable extends Mixins(Filters, Options) {
   @Prop({ type: Array, required: true })
   debts!: TransactionView[];
 

@@ -69,7 +69,12 @@
         </transition>
 
         <transition name="fade">
-          <b-field v-if="productName" label="Số Lượng">
+          <b-field
+            v-if="productName"
+            label="Số Lượng"
+            :type="{ 'is-danger': !hasStock }"
+            :message="selectedProductStockText"
+          >
             <b-input v-model="productQuantity"></b-input>
           </b-field>
         </transition>
@@ -152,20 +157,14 @@
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue,
-  Emit,
-  Prop,
-  Mixins,
-  Watch
-} from "vue-property-decorator";
+import { Component, Emit, Prop, Mixins, Watch } from "vue-property-decorator";
 import { Transaction } from "@/models/transaction";
 import { formatDateToString } from "@/utils/date";
 import TransactionModalAddSelectWithCreateButton from "@/components/TransactionModalAddSelectWithCreateButton.vue";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import AddOptions from "@/mixins/addOptions";
+import Options from "@/mixins/options";
+import { Product } from "@/models/helpers";
 
 @Component({
   components: {
@@ -173,7 +172,7 @@ import AddOptions from "@/mixins/addOptions";
     TypingSelect
   }
 })
-export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
+export default class TransactionModalAdd extends Mixins(Options, Filters) {
   date: Date = new Date();
   client = "";
   transactionType = "";
@@ -193,10 +192,6 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     return this.$store.state.transaction.isAddingTransaction;
   }
 
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
   get isButtonDisabled(): boolean {
     return (
       !this.client ||
@@ -205,7 +200,8 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
       this.amount < 0 ||
       !this.paymentType ||
       !this.productName ||
-      !this.productQuantity
+      !this.productQuantity ||
+      !this.hasStock
     );
   }
 
@@ -213,39 +209,20 @@ export default class TransactionModalAdd extends Mixins(AddOptions, Filters) {
     return this.isDebt ? "Nợ" : "Không phải nợ";
   }
 
-  get clientList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.clients;
+  get selectedProduct(): Product {
+    const selectedProduct: Product | undefined = this.productList.find(
+      (product: Product) => product.name === this.productName
+    );
+
+    return selectedProduct || { name: this.productName, stock: 0, unit: "cái" };
   }
 
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
+  get selectedProductStockText(): string {
+    return `Còn ${this.selectedProduct.stock} ${this.selectedProduct.unit}`;
   }
 
-  get transactionTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.transaction_types;
-  }
-
-  get productNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.product_names;
-  }
-
-  get paymentTypeList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.payment_types;
+  get hasStock(): boolean {
+    return parseInt(this.productQuantity) <= this.selectedProduct.stock;
   }
 
   @Watch("isDebt")

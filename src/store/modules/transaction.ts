@@ -2,6 +2,7 @@ import { MutationTree, ActionTree } from "vuex";
 import { RootState } from "@/store/";
 import { Transaction, TransactionView } from "@/models/transaction";
 import { TransactionSearchQuery } from "@/models/search";
+import { Product } from "@/models/helpers";
 
 export class TransactionState {
   transactions: TransactionView[] = [];
@@ -57,15 +58,31 @@ const actions: ActionTree<TransactionState, RootState> = {
   },
 
   async addTransaction(
-    { commit, rootState },
+    { commit, rootState, dispatch },
     transaction: Transaction
   ): Promise<String> {
     commit("setIsAddingTransaction", true);
     const transactionId = await rootState.api.transaction.addTransaction(
       transaction
     );
+
+    await dispatch("updateStock", transaction);
+
     commit("setIsAddingTransaction", false);
     return transactionId;
+  },
+
+  async updateStock({ rootState }, transaction: TransactionView | Transaction) {
+    const products: Product[] = [...rootState.options.options!.product_names];
+
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].name === transaction.product_name) {
+        products[i].stock -= parseInt(transaction.product_quantity);
+        break;
+      }
+    }
+
+    return rootState.api.options.updateStock(products);
   },
 
   async deleteTransaction(
@@ -86,13 +103,17 @@ const actions: ActionTree<TransactionState, RootState> = {
     }
   },
 
-  async updateTransaction({ commit, rootState }, transaction: TransactionView) {
+  async updateTransaction(
+    { commit, rootState, dispatch },
+    transaction: TransactionView
+  ) {
     if (!rootState.auth.isAdmin) {
       return false;
     }
 
     commit("setIsUpdatingTransaction", true);
     await rootState.api.transaction.updateTransaction(transaction);
+    await dispatch("updateStock", transaction);
     commit("setIsUpdatingTransaction", false);
     return true;
   }

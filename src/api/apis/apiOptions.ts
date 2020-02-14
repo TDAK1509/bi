@@ -1,6 +1,6 @@
 import { db } from "@/firebase";
 import { ApiRes } from "@/api/api-res";
-import { SelectOptions } from "@/models/helpers";
+import { SelectOptions, Product } from "@/models/helpers";
 import * as firebase from "firebase";
 
 export default class ApiOptions {
@@ -24,12 +24,37 @@ export default class ApiOptions {
       const options: SelectOptions = {
         sellers: data.sellers || [],
         transaction_types: data.transaction_types || [],
-        product_names: data.product_names || [],
+        product_names: this.fromJsonToProductNames(data.product_names),
         payment_types: data.payment_types || [],
         clients: data.clients || []
       };
       storeCommit(commitName, options);
       callback.forEach(c => c());
+    });
+  }
+
+  private fromJsonToProductNames(
+    productNames: Array<string | Product>
+  ): Product[] {
+    return productNames.map((product: string | Product) => {
+      if (typeof product === "string") {
+        const productObject: Product = {
+          name: product,
+          stock: 0,
+          unit: "cái"
+        };
+        return productObject;
+      }
+      return product;
+    });
+  }
+
+  updateStock(products: Product[]) {
+    const docRef = this.db
+      .collection(ApiRes.FirebaseCollection.OPTIONS)
+      .doc("options");
+    return docRef.update({
+      product_names: products
     });
   }
 

@@ -1,17 +1,30 @@
-import { MutationTree, ActionTree } from "vuex";
+import { MutationTree, ActionTree, GetterTree } from "vuex";
 import { RootState } from "@/store/";
-import { SelectOptions } from "@/models/helpers";
+import { SelectOptions, Product } from "@/models/helpers";
 
 export class OptionsState {
   options: SelectOptions | null = null;
+  editingProducts: Product[] = [];
   isFetchingOptions = false;
   isFetchedOptions = false;
   isAddingOption = false;
+  isUpdatingStock = false;
 }
+
+const getters: GetterTree<OptionsState, RootState> = {
+  productNames(state): string[] {
+    if (state.options === null) return [];
+    return state.options.product_names.map((product: Product) => product.name);
+  }
+};
 
 const mutations: MutationTree<OptionsState> = {
   setOptions(state, payload: SelectOptions) {
     state.options = payload;
+    state.editingProducts = payload.product_names;
+  },
+  setEditingProducts(state, payload: Product[]) {
+    state.editingProducts = payload;
   },
   setIsFetchingOptions(state, payload: boolean) {
     state.isFetchingOptions = payload;
@@ -21,6 +34,9 @@ const mutations: MutationTree<OptionsState> = {
   },
   setIsAddingOption(state, payload: boolean) {
     state.isAddingOption = payload;
+  },
+  setIsUpdatingStock(state, payload: boolean) {
+    state.isUpdatingStock = payload;
   }
 };
 
@@ -32,6 +48,12 @@ const actions: ActionTree<OptionsState, RootState> = {
       () => commit("setIsFetchingOptions", false),
       () => commit("setIsFetchedOptions", true)
     ]);
+  },
+
+  async updateStock({ commit, rootState }, products: Product[]) {
+    commit("setIsUpdatingStock", true);
+    await rootState.api.options.updateStock(products);
+    commit("setIsUpdatingStock", false);
   },
 
   async addClient({ commit, rootState }, clientName: string) {
@@ -69,5 +91,6 @@ export const options = {
   namespaced: true,
   state: new OptionsState(),
   mutations: mutations,
-  actions: actions
+  actions: actions,
+  getters
 };

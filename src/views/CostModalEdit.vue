@@ -77,14 +77,14 @@ import { CostView } from "@/models/cost";
 import { formatDateToString } from "@/utils/date";
 import TypingSelect from "@/components/TypingSelect.vue";
 import Filters from "@/mixins/filters";
-import AddOptions from "@/mixins/addOptions";
+import Options from "@/mixins/options";
 
 @Component({
   components: {
     TypingSelect
   }
 })
-export default class CostModalEdit extends Mixins(AddOptions, Filters) {
+export default class CostModalEdit extends Mixins(Options, Filters) {
   @Prop({ type: Object, required: true })
   cost!: CostView;
 
@@ -102,17 +102,6 @@ export default class CostModalEdit extends Mixins(AddOptions, Filters) {
 
   get isUpdatingCost(): boolean {
     return this.$store.state.cost.isUpdatingCost;
-  }
-
-  get isOptionsFetched(): boolean {
-    return this.$store.state.options.isFetchedOptions;
-  }
-
-  get sellerNameList(): string[] {
-    if (!this.isOptionsFetched) {
-      return [];
-    }
-    return this.$store.state.options.options.sellers;
   }
 
   formatDateToString(date: Date): string {
