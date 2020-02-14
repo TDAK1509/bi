@@ -51,7 +51,6 @@
 </template>
 
 <script lang="ts">
-import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
 import TransactionTable from "@/components/TransactionTable.vue";
 import AddButton from "@/components/AddButton.vue";
 import TransactionModalAdd from "@/views/TransactionModalAdd.vue";
@@ -71,7 +70,6 @@ import { CostView } from "@/models/cost";
 @Component({
   components: {
     PageTitle,
-    TransactionDatePicker,
     TransactionTable,
     AddButton,
     TransactionModalAdd

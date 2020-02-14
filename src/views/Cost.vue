@@ -39,7 +39,6 @@
 <script lang="ts">
 import { Vue, Component, Mixins } from "vue-property-decorator";
 import CostTable from "@/components/CostTable.vue";
-import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
 import CostModalAdd from "@/views/CostModalAdd.vue";
 import AddButton from "@/components/AddButton.vue";
 import PageTitle from "@/components/PageTitle.vue";
@@ -56,7 +55,6 @@ import {
   components: {
     CostTable,
     PageTitle,
-    TransactionDatePicker,
     AddButton,
     CostModalAdd
   }

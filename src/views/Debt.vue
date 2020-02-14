@@ -3,7 +3,7 @@
     <page-title>QUẢN LÝ NỢ</page-title>
 
     <div class="debt__transaction-filter">
-      <transaction-date-picker v-model="dateRange" />
+      <date-picker v-model="dateRange" />
 
       <div class="debt__transaction-filter-total-amount">
         Tổng nợ:
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import TransactionDatePicker from "@/components/TransactionDatePicker.vue";
+import DatePicker from "@/components/DatePicker.vue";
 import DebtTable from "@/components/DebtTable.vue";
 import PageTitle from "@/components/PageTitle.vue";
 import { Component, Vue, Watch } from "vue-property-decorator";
@@ -37,7 +37,7 @@ import {
 @Component({
   components: {
     PageTitle,
-    TransactionDatePicker,
+    DatePicker,
     DebtTable
   },
   mixins: [filtersMixin]
