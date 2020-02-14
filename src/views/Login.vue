@@ -44,12 +44,14 @@ export default class Login extends Vue {
       password: this.password
     });
 
-    if (loggedIn === true) {
-      this.$router.push({ name: "transaction" });
-    }
-
-    this.errorMessage = "Sai email/password";
-    this.loading = false;
+    setTimeout(() => {
+      if (loggedIn === true) {
+        this.$router.push({ name: "transaction" });
+      } else {
+        this.errorMessage = "Sai email/password";
+        this.loading = false;
+      }
+    }, 1000);
   }
 }
 </script>
