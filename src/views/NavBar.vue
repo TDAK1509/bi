@@ -33,12 +33,12 @@
     </router-link>
 
     <nav class="nav-bar__navigator">
-      <!-- <router-link
+      <router-link
         v-if="isAdmin"
         class="nav-bar__navigator-item"
         :to="{ name: 'admin' }"
         >ADMIN</router-link
-      > -->
+      >
 
       <router-link
         class="nav-bar__navigator-item"
